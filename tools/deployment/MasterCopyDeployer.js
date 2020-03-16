@@ -168,42 +168,42 @@ class MasterCopyDeployer {
       return;
     }
 
-    console.info('\n‣ Deploying master copy contracts on auxiliary chain.');
+    // console.info('\n‣ Deploying master copy contracts on auxiliary chain.');
 
-    const utilityTokenMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
-      UTILITY_TOKEN_CONTRACT,
-      this.web3Auxiliary,
-      this.auxiliaryDeployer,
-    );
-    if (utilityTokenMasterCopyAddress !== null) {
-      this.config.updateUtilityTokenMasterCopyAddress(utilityTokenMasterCopyAddress);
-    } else {
-      return;
-    }
+    // const utilityTokenMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
+    //   UTILITY_TOKEN_CONTRACT,
+    //   this.web3Auxiliary,
+    //   this.auxiliaryDeployer,
+    // );
+    // if (utilityTokenMasterCopyAddress !== null) {
+    //   this.config.updateUtilityTokenMasterCopyAddress(utilityTokenMasterCopyAddress);
+    // } else {
+    //   return;
+    // }
 
-    const gen0ERC20CogatewayMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
-      GEN0_ERC20_COGATEWAY_CONTRACT,
-      this.web3Auxiliary,
-      this.auxiliaryDeployer,
-    );
-    if (gen0ERC20CogatewayMasterCopyAddress !== null) {
-      this.config.updateERC20CogatewayMasterCopyAddress(gen0ERC20CogatewayMasterCopyAddress);
-    } else {
-      return;
-    }
+    // const gen0ERC20CogatewayMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
+    //   GEN0_ERC20_COGATEWAY_CONTRACT,
+    //   this.web3Auxiliary,
+    //   this.auxiliaryDeployer,
+    // );
+    // if (gen0ERC20CogatewayMasterCopyAddress !== null) {
+    //   this.config.updateERC20CogatewayMasterCopyAddress(gen0ERC20CogatewayMasterCopyAddress);
+    // } else {
+    //   return;
+    // }
 
-    console.info('\n‣ Deploying master copy contracts on origin chain.');
+    // console.info('\n‣ Deploying master copy contracts on origin chain.');
 
-    const erc20GatewayMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
-      ERC20_GATEWAY_CONTRACT,
-      this.web3Origin,
-      this.originDeployer,
-    );
-    if (erc20GatewayMasterCopyAddress !== null) {
-      this.config.updateERC20GatewayMasterCopyAddress(erc20GatewayMasterCopyAddress);
-    } else {
-      return;
-    }
+    // const erc20GatewayMasterCopyAddress = await MasterCopyDeployer.deployMasterCopy(
+    //   ERC20_GATEWAY_CONTRACT,
+    //   this.web3Origin,
+    //   this.originDeployer,
+    // );
+    // if (erc20GatewayMasterCopyAddress !== null) {
+    //   this.config.updateERC20GatewayMasterCopyAddress(erc20GatewayMasterCopyAddress);
+    // } else {
+    //   return;
+    // }
 
     console.info('\n‣ Deploying proxy deployer contracts on auxiliary chain.');
 

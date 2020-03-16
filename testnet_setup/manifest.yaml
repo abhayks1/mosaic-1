@@ -5,28 +5,28 @@ ethereum node endpoints:
   origin: 'https://rpc.slock.it/goerli'
   auxiliary: 'https://chain.mosaicdao.org/hadapsar'
 deployer address:
-  origin: '0xcd8b7d0211e51b78d3fd1209ca8a6955fc7dfbca'
-  auxiliary: '0xd14087a083fdd4049dcf1e7eb01ee2f5c89eb1c9'
+  origin: '0x72E378e964470157D75a0936C86a6581CF2E2a1B'
+  auxiliary: '0xdB809336E92BBf64539Bf788FBdB78157db62a29'
 accounts:
-  - '0xcd8b7d0211e51b78d3fd1209ca8a6955fc7dfbca':
-      keystore path: tools/0xcd8b7d0211e51b78d3fd1209ca8a6955fc7dfbca.json
-      keystore password: tools/0xcd8b7d0211e51b78d3fd1209ca8a6955fc7dfbca.password
-  - '0xd14087a083fdd4049dcf1e7eb01ee2f5c89eb1c9':
-      keystore path: tools/0xd14087a083fdd4049dcf1e7eb01ee2f5c89eb1c9.json
-      keystore password: tools/0xd14087a083fdd4049dcf1e7eb01ee2f5c89eb1c9.password
+  - '0x72E378e964470157D75a0936C86a6581CF2E2a1B':
+      keystore path: tools/account/0x72E378e964470157D75a0936C86a6581CF2E2a1B.json
+      keystore password: tools/account/0x72E378e964470157D75a0936C86a6581CF2E2a1B.password
+  - '0xdB809336E92BBf64539Bf788FBdB78157db62a29':
+      keystore path: tools/account/0xdB809336E92BBf64539Bf788FBdB78157db62a29.json
+      keystore password: tools/account/0xdB809336E92BBf64539Bf788FBdB78157db62a29.password
 master copy contracts:
   origin:
     anchor: '0x4fDF26dc9a99D11FfB39a2d88a7E39E49544602a'
-    erc20 gateway: '0xc17C89084738C995Fa2f710602D92c90caac07f0'
-    proxy deployer: '0xE1169F247E08DDEF4F1C1B276dB9Af1349fb9D84'
+    erc20 gateway: '0x3D6A3C0d9dE35f0EcAf03f58D6948B3a32aa7b5c'
+    proxy deployer: '0x2E2557AA2f2e7278d909aef4eE502f38ac7D455E'
   auxiliary:
     anchor: '0x2Bbe4DFb364e76dA987Ac5754bB87b476cC6D80B'
-    utility token: '0x217A10B217319322234e6a0E0143506D2d705dF8'
-    erc20 cogateway: '0x6fb96Bd89772440b21b25600bC30013353Bf8D35'
-    proxy deployer: '0x2E74322e89D7626fe95d364367182DCE4C4e84e3'
+    utility token: '0xC4ae54F99CDca5D68DA4c55cd4f40EF5651bfBfc'
+    erc20 cogateway: '0xa074CeBCde016EAF43240D71DbEDEDCd56e87a5C'
+    proxy deployer: '0x3BD268A6eF7e9930e9FD013f6607772F6d614969'
 proxy contracts:
   origin:
-    erc20 gateway: '0xe4eA10197a2c56d69961178042847696439D5CeE'
+    erc20 gateway: '0x26DdFbC848Ba67bB4329592021635a5bd8dcAe56'
   auxiliary:
-    erc20 cogateway: '0xF6801d46b2A972Db1D93B2966FCF30bd3210F29A'
+    erc20 cogateway: '0x25a1CE197371735D6EDccC178F90841a7CEc23bb'
 maximum number of storage roots: 100
