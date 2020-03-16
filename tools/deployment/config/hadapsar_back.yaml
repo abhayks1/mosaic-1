@@ -1,0 +1,40 @@
+---
+  # Chain id
+chain id:
+  origin: '5'
+  auxiliary: '1405'
+
+# Ethereum node endpoints, 
+ethereum node endpoints:
+  origin: 'https://rpc.slock.it/goerli'
+  auxiliary: 'https://chain.mosaicdao.org/hadapsar'
+
+# Ethereum account to deploy the contracts.  
+deployer address:
+  origin: '0x18e4226843f4De5bff4F12ba17E8029abAf794Bf'
+  auxiliary: '0x18e4226843f4De5bff4F12ba17E8029abAf794Bf'
+
+# File path of encrypyed keystore file and its password.
+accounts:
+  - '0x18e4226843f4De5bff4F12ba17E8029abAf794Bf':
+      keystore path: tools/0x18e4226843f4De5bff4F12ba17E8029abAf794Bf.json
+      keystore password: tools/a
+
+# Master copy contract address.
+master copy contracts:
+  origin:
+    anchor: '0x4fDF26dc9a99D11FfB39a2d88a7E39E49544602a'
+    erc20 gateway: '0xd6689060d5A0B955598D3eBc76aed8403395C9DC'
+    proxy deployer: '0xcdc9e9a48E0f894662F36863B598e2D7Bbd8F977'
+  auxiliary:
+    anchor: '0x2Bbe4DFb364e76dA987Ac5754bB87b476cC6D80B'
+    utility token: '0x1980ECd47a206e806190c2dffD8985E11b1f2EfC'
+    erc20 cogateway: '0x4bA87c44F23a6e4A4408C25AE290f44CeFc20E0f'
+    proxy deployer: '0x72939B5D02E693fF091EfFC584DAe6D4F08D24aF'
+
+# Proxy contract address.
+proxy contracts:
+  origin:
+    erc20 gateway: ''
+  auxiliary:
+    erc20 cogateway: ''

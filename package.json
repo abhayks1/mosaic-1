@@ -19,7 +19,10 @@
     "build:package": "node tools/build_package.js",
     "generate:interacts": "ts-generator ts-generator.json && node tools/contract_interact_generator.js",
     "copy:interacts": "cp interacts/*.d.ts dist/interacts",
-    "prepare:publish": "npm run clean && npm run compile && npm run build:package && npm run generate:interacts && npm run compile:ts && npm run copy:interacts"
+    "prepare:publish": "npm run clean && npm run compile && npm run build:package && npm run generate:interacts && npm run compile:ts && npm run copy:interacts",
+    "tool:deploy:gateway": "node tools/deployment/deploy.js",
+    "tool:create:account": "ts-node tools/account/create_accounts.ts",
+    "tool:fund:hadapsar": "node tools/faucet/faucet.js"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -56,6 +59,10 @@
     "typechain": "0.3.14",
     "typescript": "3.7.2",
     "web3": "1.2.5",
-    "ethereumjs-util": "6.2.0"
+    "ethereumjs-util": "6.2.0",
+    "axios": "0.19.2",
+    "cli-progress": "3.6.0",
+    "js-yaml": "3.13.1",
+    "ts-node": "^8.6.2"
   }
 }
