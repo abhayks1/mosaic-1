@@ -1,0 +1,1791 @@
+{
+  "contractName": "ConsensusGatewayBase",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "KERNEL_INTENT_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currentMetablockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "most",
+      "outputs": [
+        {
+          "internalType": "contract ERC20I",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_kernelHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "hashKernelIntent",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "kernelIntentHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"KERNEL_INTENT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"currentMetablockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_kernelHash\",\"type\":\"bytes32\"}],\"name\":\"hashKernelIntent\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"kernelIntentHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"most\",\"outputs\":[{\"internalType\":\"contract ERC20I\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"hashKernelIntent(uint256,bytes32)\":{\"params\":{\"_height\":\"Height of metablock.\",\"_kernelHash\":\"Hash of kernel at given height.\"},\"return\":\"kernelIntentHash_ Kernel intent hash.\"}}},\"userdoc\":{\"methods\":{\"hashKernelIntent(uint256,bytes32)\":{\"notice\":\"Creates kernel intent hash.\"}},\"notice\":\"Base contract for ConsensusGateway and ConsensusCogateway contracts. \"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol\":\"ConsensusGatewayBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol\":{\"keccak256\":\"0x66811f01b3f1cdb2bbbc6e0d9921c3989ec3f43544c5f68c11ea99fa9bfe0953\",\"urls\":[\"bzz-raw://9a2e4f5f704bcc883d892e5c8746119c88771c16e5ea662d53515207a2d37462\",\"dweb:/ipfs/QmWqv2PzyGA21rSNrzFNTqE6hxZDap2BvEoiB3Y7FrsHxo\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol\":{\"keccak256\":\"0xcf58c10c0a22d4b95bb1f8e8321c1de371ad91f71db4fee254ccdb41be31fc5f\",\"urls\":[\"bzz-raw://772aa8f0c5eefac056ba31e96d20e40e95ecf5a619152bfefce0cc049d847e1a\",\"dweb:/ipfs/QmaAZ2MFn5T1NC2nt8zqYe8c6SYFPX1BpWoEBMJ2t6xurJ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061019d806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80633b7f2f191461005157806358d7889c1461006b57806385248b8a1461008f578063befce88e14610097575b600080fd5b6100596100ba565b60408051918252519081900360200190f35b6100736100c0565b604080516001600160a01b039092168252519081900360200190f35b6100596100cf565b610059600480360360408110156100ad57600080fd5b50803590602001356100ea565b60015481565b6000546001600160a01b031681565b60405180602f61013a8239602f019050604051809103902081565b6000604051808061013a602f91396040805191829003602f018220602080840191909152828201969096526060808301959095528051808303909501855260809091019052505080519101209056fe4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829a265627a7a723158204bf9a07f135d9182cb8cbdfc2bd74156b6a393c36e8f3ace60b462931b17c81864736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80633b7f2f191461005157806358d7889c1461006b57806385248b8a1461008f578063befce88e14610097575b600080fd5b6100596100ba565b60408051918252519081900360200190f35b6100736100c0565b604080516001600160a01b039092168252519081900360200190f35b6100596100cf565b610059600480360360408110156100ad57600080fd5b50803590602001356100ea565b60015481565b6000546001600160a01b031681565b60405180602f61013a8239602f019050604051809103902081565b6000604051808061013a602f91396040805191829003602f018220602080840191909152828201969096526060808301959095528051808303909501855260809091019052505080519101209056fe4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829a265627a7a723158204bf9a07f135d9182cb8cbdfc2bd74156b6a393c36e8f3ace60b462931b17c81864736f6c634300050d0032",
+  "sourceMap": "722:1330:15:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;722:1330:15;;;;;;;",
+  "deployedSourceMap": "722:1330:15:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;722:1330:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1060:37;;;:::i;:::-;;;;;;;;;;;;;;;;996:18;;;:::i;:::-;;;;-1:-1:-1;;;;;996:18:15;;;;;;;;;;;;;;780:123;;;:::i;1359:349::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1359:349:15;;;;;;;:::i;1060:37::-;;;;:::o;996:18::-;;;-1:-1:-1;;;;;996:18:15;;:::o;780:123::-;829:74;;;;;;;;;;;;;;;;;;780:123;:::o;1359:349::-;1489:25;829:74;;;;;;;;;;;;;;;;;;;1573:118;;;;;;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;1573:118:15;;;;;;-1:-1:-1;;1550:151:15;;;;;;1359:349::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../ERC20I.sol\";\n\n/** Base contract for ConsensusGateway and ConsensusCogateway contracts. */\ncontract ConsensusGatewayBase {\n\n    /* Constants */\n\n    bytes32 public constant KERNEL_INTENT_TYPEHASH = keccak256(\n        \"KernelIntent(uint256 height,bytes32 kernelHash)\"\n    );\n\n\n    /* Storage */\n\n    /** Address of most contract on origin or auxiliary chain. */\n    ERC20I public most;\n\n    /** Height of current metablock */\n    uint256 public currentMetablockHeight;\n\n\n    /* Public function */\n\n    /**\n     * @notice Creates kernel intent hash.\n     *\n     * @param _height Height of metablock.\n     * @param _kernelHash Hash of kernel at given height.\n     *\n     * @return kernelIntentHash_ Kernel intent hash.\n     */\n    function hashKernelIntent(\n        uint256 _height,\n        bytes32 _kernelHash\n    )\n        public\n        pure\n        returns(bytes32 kernelIntentHash_)\n    {\n        kernelIntentHash_ = keccak256(\n            abi.encode(\n                KERNEL_INTENT_TYPEHASH,\n                _height,\n                _kernelHash\n            )\n        );\n    }\n\n    /* Internal functions. */\n\n    function setup(\n        ERC20I _most,\n        uint256 _currentMetablockHeight\n    )\n        internal\n    {\n        require(\n            address(_most) != address(0),\n            \"most address must not be 0.\"\n        );\n\n        currentMetablockHeight = _currentMetablockHeight;\n        most = _most;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol",
+    "exportedSymbols": {
+      "ConsensusGatewayBase": [
+        3004
+      ]
+    },
+    "id": 3005,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2945,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:15"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol",
+        "file": "../ERC20I.sol",
+        "id": 2946,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 84,
+        "src": "621:23:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Base contract for ConsensusGateway and ConsensusCogateway contracts. ",
+        "fullyImplemented": true,
+        "id": 3004,
+        "linearizedBaseContracts": [
+          3004
+        ],
+        "name": "ConsensusGatewayBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 2951,
+            "name": "KERNEL_INTENT_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "780:123:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 2947,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "780:7:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829",
+                  "id": 2949,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "848:49:15",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_16142a10f8bbd48f3bbdaa2456bf86e0e61828700080d732a16bc274da711840",
+                    "typeString": "literal_string \"KernelIntent(uint256 height,bytes32 kernelHash)\""
+                  },
+                  "value": "KernelIntent(uint256 height,bytes32 kernelHash)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_16142a10f8bbd48f3bbdaa2456bf86e0e61828700080d732a16bc274da711840",
+                    "typeString": "literal_string \"KernelIntent(uint256 height,bytes32 kernelHash)\""
+                  }
+                ],
+                "id": 2948,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 19570,
+                "src": "829:9:15",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 2950,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "829:74:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2953,
+            "name": "most",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "996:18:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20I_$83",
+              "typeString": "contract ERC20I"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2952,
+              "name": "ERC20I",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 83,
+              "src": "996:6:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20I_$83",
+                "typeString": "contract ERC20I"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2955,
+            "name": "currentMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "1060:37:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2954,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1060:7:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2975,
+              "nodeType": "Block",
+              "src": "1520:188:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2973,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2964,
+                      "name": "kernelIntentHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2962,
+                      "src": "1530:17:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 2968,
+                              "name": "KERNEL_INTENT_TYPEHASH",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2951,
+                              "src": "1601:22:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 2969,
+                              "name": "_height",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2957,
+                              "src": "1641:7:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 2970,
+                              "name": "_kernelHash",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2959,
+                              "src": "1666:11:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2966,
+                              "name": "abi",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19563,
+                              "src": "1573:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_abi",
+                                "typeString": "abi"
+                              }
+                            },
+                            "id": 2967,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "encode",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1573:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                              "typeString": "function () pure returns (bytes memory)"
+                            }
+                          },
+                          "id": 2971,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1573:118:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        ],
+                        "id": 2965,
+                        "name": "keccak256",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19570,
+                        "src": "1550:9:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes memory) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 2972,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1550:151:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1530:171:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 2974,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1530:171:15"
+                }
+              ]
+            },
+            "documentation": "@notice Creates kernel intent hash.\n     * @param _height Height of metablock.\n@param _kernelHash Hash of kernel at given height.\n     * @return kernelIntentHash_ Kernel intent hash.",
+            "id": 2976,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hashKernelIntent",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2960,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2957,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1394:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2956,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1394:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2959,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1419:19:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2958,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1384:60:15"
+            },
+            "returnParameters": {
+              "id": 2963,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2962,
+                  "name": "kernelIntentHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1489:25:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2961,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1489:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1488:27:15"
+            },
+            "scope": 3004,
+            "src": "1359:349:15",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3002,
+              "nodeType": "Block",
+              "src": "1850:200:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2990,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 2985,
+                              "name": "_most",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2978,
+                              "src": "1889:5:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ERC20I_$83",
+                                "typeString": "contract ERC20I"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ERC20I_$83",
+                                "typeString": "contract ERC20I"
+                              }
+                            ],
+                            "id": 2984,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1881:7:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2986,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1881:14:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2988,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1907:1:15",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2987,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1899:7:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2989,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1899:10:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1881:28:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "6d6f73742061646472657373206d757374206e6f7420626520302e",
+                        "id": 2991,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1923:29:15",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_729979c4777019931807018b726fbad0707d6f688bf5d97526c7d6c59b3ae6be",
+                          "typeString": "literal_string \"most address must not be 0.\""
+                        },
+                        "value": "most address must not be 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_729979c4777019931807018b726fbad0707d6f688bf5d97526c7d6c59b3ae6be",
+                          "typeString": "literal_string \"most address must not be 0.\""
+                        }
+                      ],
+                      "id": 2983,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1860:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2992,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1860:102:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2993,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1860:102:15"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2996,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2994,
+                      "name": "currentMetablockHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2955,
+                      "src": "1973:22:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2995,
+                      "name": "_currentMetablockHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2980,
+                      "src": "1998:23:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1973:48:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2997,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1973:48:15"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3000,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2998,
+                      "name": "most",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2953,
+                      "src": "2031:4:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20I_$83",
+                        "typeString": "contract ERC20I"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2999,
+                      "name": "_most",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2978,
+                      "src": "2038:5:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20I_$83",
+                        "typeString": "contract ERC20I"
+                      }
+                    },
+                    "src": "2031:12:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "id": 3001,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2031:12:15"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3003,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2981,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2978,
+                  "name": "_most",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "1769:12:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20I_$83",
+                    "typeString": "contract ERC20I"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2977,
+                    "name": "ERC20I",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 83,
+                    "src": "1769:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2980,
+                  "name": "_currentMetablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "1791:31:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2979,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1791:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1759:69:15"
+            },
+            "returnParameters": {
+              "id": 2982,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1850:0:15"
+            },
+            "scope": 3004,
+            "src": "1745:305:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3005,
+        "src": "722:1330:15"
+      }
+    ],
+    "src": "0:2053:15"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol",
+    "exportedSymbols": {
+      "ConsensusGatewayBase": [
+        3004
+      ]
+    },
+    "id": 3005,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2945,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:15"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol",
+        "file": "../ERC20I.sol",
+        "id": 2946,
+        "nodeType": "ImportDirective",
+        "scope": 3005,
+        "sourceUnit": 84,
+        "src": "621:23:15",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "Base contract for ConsensusGateway and ConsensusCogateway contracts. ",
+        "fullyImplemented": true,
+        "id": 3004,
+        "linearizedBaseContracts": [
+          3004
+        ],
+        "name": "ConsensusGatewayBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": true,
+            "id": 2951,
+            "name": "KERNEL_INTENT_TYPEHASH",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "780:123:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 2947,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "780:7:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829",
+                  "id": 2949,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "string",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "848:49:15",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_stringliteral_16142a10f8bbd48f3bbdaa2456bf86e0e61828700080d732a16bc274da711840",
+                    "typeString": "literal_string \"KernelIntent(uint256 height,bytes32 kernelHash)\""
+                  },
+                  "value": "KernelIntent(uint256 height,bytes32 kernelHash)"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_stringliteral_16142a10f8bbd48f3bbdaa2456bf86e0e61828700080d732a16bc274da711840",
+                    "typeString": "literal_string \"KernelIntent(uint256 height,bytes32 kernelHash)\""
+                  }
+                ],
+                "id": 2948,
+                "name": "keccak256",
+                "nodeType": "Identifier",
+                "overloadedDeclarations": [],
+                "referencedDeclaration": 19570,
+                "src": "829:9:15",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                  "typeString": "function (bytes memory) pure returns (bytes32)"
+                }
+              },
+              "id": 2950,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "functionCall",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "829:74:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2953,
+            "name": "most",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "996:18:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ERC20I_$83",
+              "typeString": "contract ERC20I"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2952,
+              "name": "ERC20I",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 83,
+              "src": "996:6:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ERC20I_$83",
+                "typeString": "contract ERC20I"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 2955,
+            "name": "currentMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 3004,
+            "src": "1060:37:15",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 2954,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1060:7:15",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 2975,
+              "nodeType": "Block",
+              "src": "1520:188:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2973,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2964,
+                      "name": "kernelIntentHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2962,
+                      "src": "1530:17:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 2968,
+                              "name": "KERNEL_INTENT_TYPEHASH",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2951,
+                              "src": "1601:22:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 2969,
+                              "name": "_height",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2957,
+                              "src": "1641:7:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            {
+                              "argumentTypes": null,
+                              "id": 2970,
+                              "name": "_kernelHash",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2959,
+                              "src": "1666:11:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              },
+                              {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              {
+                                "typeIdentifier": "t_bytes32",
+                                "typeString": "bytes32"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2966,
+                              "name": "abi",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19563,
+                              "src": "1573:3:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_abi",
+                                "typeString": "abi"
+                              }
+                            },
+                            "id": 2967,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "encode",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1573:10:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
+                              "typeString": "function () pure returns (bytes memory)"
+                            }
+                          },
+                          "id": 2971,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1573:118:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes_memory_ptr",
+                            "typeString": "bytes memory"
+                          }
+                        ],
+                        "id": 2965,
+                        "name": "keccak256",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 19570,
+                        "src": "1550:9:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes memory) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 2972,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1550:151:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1530:171:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 2974,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1530:171:15"
+                }
+              ]
+            },
+            "documentation": "@notice Creates kernel intent hash.\n     * @param _height Height of metablock.\n@param _kernelHash Hash of kernel at given height.\n     * @return kernelIntentHash_ Kernel intent hash.",
+            "id": 2976,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "hashKernelIntent",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2960,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2957,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1394:15:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2956,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1394:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2959,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1419:19:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2958,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1419:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1384:60:15"
+            },
+            "returnParameters": {
+              "id": 2963,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2962,
+                  "name": "kernelIntentHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2976,
+                  "src": "1489:25:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2961,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1489:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1488:27:15"
+            },
+            "scope": 3004,
+            "src": "1359:349:15",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 3002,
+              "nodeType": "Block",
+              "src": "1850:200:15",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 2990,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 2985,
+                              "name": "_most",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2978,
+                              "src": "1889:5:15",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ERC20I_$83",
+                                "typeString": "contract ERC20I"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ERC20I_$83",
+                                "typeString": "contract ERC20I"
+                              }
+                            ],
+                            "id": 2984,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1881:7:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2986,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1881:14:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 2988,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1907:1:15",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 2987,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1899:7:15",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 2989,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1899:10:15",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1881:28:15",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "6d6f73742061646472657373206d757374206e6f7420626520302e",
+                        "id": 2991,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1923:29:15",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_729979c4777019931807018b726fbad0707d6f688bf5d97526c7d6c59b3ae6be",
+                          "typeString": "literal_string \"most address must not be 0.\""
+                        },
+                        "value": "most address must not be 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_729979c4777019931807018b726fbad0707d6f688bf5d97526c7d6c59b3ae6be",
+                          "typeString": "literal_string \"most address must not be 0.\""
+                        }
+                      ],
+                      "id": 2983,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1860:7:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 2992,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1860:102:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2993,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1860:102:15"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2996,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2994,
+                      "name": "currentMetablockHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2955,
+                      "src": "1973:22:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2995,
+                      "name": "_currentMetablockHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2980,
+                      "src": "1998:23:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1973:48:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 2997,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1973:48:15"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 3000,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2998,
+                      "name": "most",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2953,
+                      "src": "2031:4:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20I_$83",
+                        "typeString": "contract ERC20I"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2999,
+                      "name": "_most",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2978,
+                      "src": "2038:5:15",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20I_$83",
+                        "typeString": "contract ERC20I"
+                      }
+                    },
+                    "src": "2031:12:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "id": 3001,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2031:12:15"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3003,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2981,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2978,
+                  "name": "_most",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "1769:12:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20I_$83",
+                    "typeString": "contract ERC20I"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2977,
+                    "name": "ERC20I",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 83,
+                    "src": "1769:6:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2980,
+                  "name": "_currentMetablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3003,
+                  "src": "1791:31:15",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2979,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1791:7:15",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1759:69:15"
+            },
+            "returnParameters": {
+              "id": 2982,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1850:0:15"
+            },
+            "scope": 3004,
+            "src": "1745:305:15",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3005,
+        "src": "722:1330:15"
+      }
+    ],
+    "src": "0:2053:15"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.638Z",
+  "devdoc": {
+    "methods": {
+      "hashKernelIntent(uint256,bytes32)": {
+        "params": {
+          "_height": "Height of metablock.",
+          "_kernelHash": "Hash of kernel at given height."
+        },
+        "return": "kernelIntentHash_ Kernel intent hash."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "hashKernelIntent(uint256,bytes32)": {
+        "notice": "Creates kernel intent hash."
+      }
+    },
+    "notice": "Base contract for ConsensusGateway and ConsensusCogateway contracts. "
+  }
+}

@@ -1,0 +1,632 @@
+{
+  "contractName": "ConsensusGatewayBaseTest",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "KERNEL_INTENT_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "currentMetablockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_kernelHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "hashKernelIntent",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "kernelIntentHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "most",
+      "outputs": [
+        {
+          "internalType": "contract ERC20I",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract ERC20I",
+          "name": "_most",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_currentMetablockHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "setupExternal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"KERNEL_INTENT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"currentMetablockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_kernelHash\",\"type\":\"bytes32\"}],\"name\":\"hashKernelIntent\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"kernelIntentHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"most\",\"outputs\":[{\"internalType\":\"contract ERC20I\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ERC20I\",\"name\":\"_most\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_currentMetablockHeight\",\"type\":\"uint256\"}],\"name\":\"setupExternal\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"hashKernelIntent(uint256,bytes32)\":{\"params\":{\"_height\":\"Height of metablock.\",\"_kernelHash\":\"Hash of kernel at given height.\"},\"return\":\"kernelIntentHash_ Kernel intent hash.\"}}},\"userdoc\":{\"methods\":{\"hashKernelIntent(uint256,bytes32)\":{\"notice\":\"Creates kernel intent hash.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway_base/ConsensusGatewayBaseTest.sol\":\"ConsensusGatewayBaseTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol\":{\"keccak256\":\"0x66811f01b3f1cdb2bbbc6e0d9921c3989ec3f43544c5f68c11ea99fa9bfe0953\",\"urls\":[\"bzz-raw://9a2e4f5f704bcc883d892e5c8746119c88771c16e5ea662d53515207a2d37462\",\"dweb:/ipfs/QmWqv2PzyGA21rSNrzFNTqE6hxZDap2BvEoiB3Y7FrsHxo\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol\":{\"keccak256\":\"0xcf58c10c0a22d4b95bb1f8e8321c1de371ad91f71db4fee254ccdb41be31fc5f\",\"urls\":[\"bzz-raw://772aa8f0c5eefac056ba31e96d20e40e95ecf5a619152bfefce0cc049d847e1a\",\"dweb:/ipfs/QmaAZ2MFn5T1NC2nt8zqYe8c6SYFPX1BpWoEBMJ2t6xurJ\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway_base/ConsensusGatewayBaseTest.sol\":{\"keccak256\":\"0xb7d9a8e86a4383555dda51b8734660135bdd2a2ce84f7671556f72b973215d58\",\"urls\":[\"bzz-raw://3400d9ddbd87fce89b865155ae1d32e379bfa2cfb79340cc5e420262966a585e\",\"dweb:/ipfs/QmT8sd2GJ2ykyvGJCgEqbRUwPUVAU684PHKGv5yPKbYmi4\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610264806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80633b7f2f191461005c5780635661a5371461007657806358d7889c146100a457806385248b8a146100c8578063befce88e146100d0575b600080fd5b6100646100f3565b60408051918252519081900360200190f35b6100a26004803603604081101561008c57600080fd5b506001600160a01b0381351690602001356100f9565b005b6100ac610107565b604080516001600160a01b039092168252519081900360200190f35b610064610116565b610064600480360360408110156100e657600080fd5b5080359060200135610131565b60015481565b6101038282610180565b5050565b6000546001600160a01b031681565b60405180602f6102018239602f019050604051809103902081565b60006040518080610201602f91396040805191829003602f0182206020808401919091528282019690965260608083019590955280518083039095018552608090910190525050805191012090565b6001600160a01b0382166101db576040805162461bcd60e51b815260206004820152601b60248201527f6d6f73742061646472657373206d757374206e6f7420626520302e0000000000604482015290519081900360640190fd5b600155600080546001600160a01b0319166001600160a01b039290921691909117905556fe4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829a265627a7a7231582064c505fe48411ecef607d14e9e301443dcbb483637bd0888e8d17cc7f853973864736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80633b7f2f191461005c5780635661a5371461007657806358d7889c146100a457806385248b8a146100c8578063befce88e146100d0575b600080fd5b6100646100f3565b60408051918252519081900360200190f35b6100a26004803603604081101561008c57600080fd5b506001600160a01b0381351690602001356100f9565b005b6100ac610107565b604080516001600160a01b039092168252519081900360200190f35b610064610116565b610064600480360360408110156100e657600080fd5b5080359060200135610131565b60015481565b6101038282610180565b5050565b6000546001600160a01b031681565b60405180602f6102018239602f019050604051809103902081565b60006040518080610201602f91396040805191829003602f0182206020808401919091528282019690965260608083019590955280518083039095018552608090910190525050805191012090565b6001600160a01b0382166101db576040805162461bcd60e51b815260206004820152601b60248201527f6d6f73742061646472657373206d757374206e6f7420626520302e0000000000604482015290519081900360640190fd5b600155600080546001600160a01b0319166001600160a01b039290921691909117905556fe4b65726e656c496e74656e742875696e74323536206865696768742c62797465733332206b65726e656c4861736829a265627a7a7231582064c505fe48411ecef607d14e9e301443dcbb483637bd0888e8d17cc7f853973864736f6c634300050d0032",
+  "sourceMap": "681:257:79:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;681:257:79;;;;;;;",
+  "deployedSourceMap": "681:257:79:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;681:257:79;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1060:37:15;;;:::i;:::-;;;;;;;;;;;;;;;;747:188:79;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;747:188:79;;;;;;;;:::i;:::-;;996:18:15;;;:::i;:::-;;;;-1:-1:-1;;;;;996:18:15;;;;;;;;;;;;;;780:123;;;:::i;1359:349::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1359:349:15;;;;;;;:::i;1060:37::-;;;;:::o;747:188:79:-;870:58;897:5;904:23;870:26;:58::i;:::-;747:188;;:::o;996:18:15:-;;;-1:-1:-1;;;;;996:18:15;;:::o;780:123::-;829:74;;;;;;;;;;;;;;;;;;780:123;:::o;1359:349::-;1489:25;829:74;;;;;;;;;;;;;;;;;;;1573:118;;;;;;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;1573:118:15;;;;;;-1:-1:-1;;1550:151:15;;;;;;1359:349::o;1745:305::-;-1:-1:-1;;;;;1881:28:15;;1860:102;;;;;-1:-1:-1;;;1860:102:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;1973:22;:48;2031:4;:12;;-1:-1:-1;;;;;;2031:12:15;-1:-1:-1;;;;;2031:12:15;;;;;;;;;;1745:305::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../consensus-gateway/ConsensusGatewayBase.sol\";\n\ncontract ConsensusGatewayBaseTest is ConsensusGatewayBase {\n\n\n    function setupExternal(\n        ERC20I _most,\n        uint256 _currentMetablockHeight\n    )\n        external\n    {\n        ConsensusGatewayBase.setup(_most, _currentMetablockHeight);\n    }\n\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway_base/ConsensusGatewayBaseTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway_base/ConsensusGatewayBaseTest.sol",
+    "exportedSymbols": {
+      "ConsensusGatewayBaseTest": [
+        15681
+      ]
+    },
+    "id": 15682,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15662,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:79"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol",
+        "file": "../../consensus-gateway/ConsensusGatewayBase.sol",
+        "id": 15663,
+        "nodeType": "ImportDirective",
+        "scope": 15682,
+        "sourceUnit": 3005,
+        "src": "621:58:79",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15664,
+              "name": "ConsensusGatewayBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3004,
+              "src": "718:20:79",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusGatewayBase_$3004",
+                "typeString": "contract ConsensusGatewayBase"
+              }
+            },
+            "id": 15665,
+            "nodeType": "InheritanceSpecifier",
+            "src": "718:20:79"
+          }
+        ],
+        "contractDependencies": [
+          3004
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15681,
+        "linearizedBaseContracts": [
+          15681,
+          3004
+        ],
+        "name": "ConsensusGatewayBaseTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 15679,
+              "nodeType": "Block",
+              "src": "860:75:79",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 15675,
+                        "name": "_most",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15667,
+                        "src": "897:5:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20I_$83",
+                          "typeString": "contract ERC20I"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 15676,
+                        "name": "_currentMetablockHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15669,
+                        "src": "904:23:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC20I_$83",
+                          "typeString": "contract ERC20I"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15672,
+                        "name": "ConsensusGatewayBase",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3004,
+                        "src": "870:20:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusGatewayBase_$3004_$",
+                          "typeString": "type(contract ConsensusGatewayBase)"
+                        }
+                      },
+                      "id": 15674,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setup",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3003,
+                      "src": "870:26:79",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20I_$83_$_t_uint256_$returns$__$",
+                        "typeString": "function (contract ERC20I,uint256)"
+                      }
+                    },
+                    "id": 15677,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "870:58:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 15678,
+                  "nodeType": "ExpressionStatement",
+                  "src": "870:58:79"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15680,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15670,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15667,
+                  "name": "_most",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15680,
+                  "src": "779:12:79",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20I_$83",
+                    "typeString": "contract ERC20I"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 15666,
+                    "name": "ERC20I",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 83,
+                    "src": "779:6:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15669,
+                  "name": "_currentMetablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15680,
+                  "src": "801:31:79",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15668,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "801:7:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:69:79"
+            },
+            "returnParameters": {
+              "id": 15671,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:79"
+            },
+            "scope": 15681,
+            "src": "747:188:79",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15682,
+        "src": "681:257:79"
+      }
+    ],
+    "src": "0:939:79"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway_base/ConsensusGatewayBaseTest.sol",
+    "exportedSymbols": {
+      "ConsensusGatewayBaseTest": [
+        15681
+      ]
+    },
+    "id": 15682,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15662,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:79"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayBase.sol",
+        "file": "../../consensus-gateway/ConsensusGatewayBase.sol",
+        "id": 15663,
+        "nodeType": "ImportDirective",
+        "scope": 15682,
+        "sourceUnit": 3005,
+        "src": "621:58:79",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15664,
+              "name": "ConsensusGatewayBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3004,
+              "src": "718:20:79",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusGatewayBase_$3004",
+                "typeString": "contract ConsensusGatewayBase"
+              }
+            },
+            "id": 15665,
+            "nodeType": "InheritanceSpecifier",
+            "src": "718:20:79"
+          }
+        ],
+        "contractDependencies": [
+          3004
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15681,
+        "linearizedBaseContracts": [
+          15681,
+          3004
+        ],
+        "name": "ConsensusGatewayBaseTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 15679,
+              "nodeType": "Block",
+              "src": "860:75:79",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 15675,
+                        "name": "_most",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15667,
+                        "src": "897:5:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ERC20I_$83",
+                          "typeString": "contract ERC20I"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 15676,
+                        "name": "_currentMetablockHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15669,
+                        "src": "904:23:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ERC20I_$83",
+                          "typeString": "contract ERC20I"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 15672,
+                        "name": "ConsensusGatewayBase",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3004,
+                        "src": "870:20:79",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusGatewayBase_$3004_$",
+                          "typeString": "type(contract ConsensusGatewayBase)"
+                        }
+                      },
+                      "id": 15674,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setup",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 3003,
+                      "src": "870:26:79",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ERC20I_$83_$_t_uint256_$returns$__$",
+                        "typeString": "function (contract ERC20I,uint256)"
+                      }
+                    },
+                    "id": 15677,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "870:58:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 15678,
+                  "nodeType": "ExpressionStatement",
+                  "src": "870:58:79"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15680,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15670,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15667,
+                  "name": "_most",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15680,
+                  "src": "779:12:79",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20I_$83",
+                    "typeString": "contract ERC20I"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 15666,
+                    "name": "ERC20I",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 83,
+                    "src": "779:6:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20I_$83",
+                      "typeString": "contract ERC20I"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15669,
+                  "name": "_currentMetablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15680,
+                  "src": "801:31:79",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15668,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "801:7:79",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "769:69:79"
+            },
+            "returnParameters": {
+              "id": 15671,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "860:0:79"
+            },
+            "scope": 15681,
+            "src": "747:188:79",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15682,
+        "src": "681:257:79"
+      }
+    ],
+    "src": "0:939:79"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.800Z",
+  "devdoc": {
+    "methods": {
+      "hashKernelIntent(uint256,bytes32)": {
+        "params": {
+          "_height": "Height of metablock.",
+          "_kernelHash": "Hash of kernel at given height."
+        },
+        "return": "kernelIntentHash_ Kernel intent hash."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "hashKernelIntent(uint256,bytes32)": {
+        "notice": "Creates kernel intent hash."
+      }
+    }
+  }
+}

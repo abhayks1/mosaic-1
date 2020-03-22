@@ -1,0 +1,1387 @@
+{
+  "contractName": "ConsensusInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reputation",
+      "outputs": [
+        {
+          "internalType": "contract ReputationInterface",
+          "name": "reputation_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "coreValidatorThresholds",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "minimumValidatorCount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "joinLimit_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_metablockHeight",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_metablockHashPrecommit",
+          "type": "bytes32"
+        }
+      ],
+      "name": "precommitMetablock",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_decision",
+          "type": "bytes32"
+        }
+      ],
+      "name": "registerCommitteeDecision",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "newMetachain",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "metachainId_",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "anchor_",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "mosaicVersion_",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "consensusGateway_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getAnchor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "anchor_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"coreValidatorThresholds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"minimumValidatorCount_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"joinLimit_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"}],\"name\":\"getAnchor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"anchor_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"newMetachain\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"metachainId_\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"anchor_\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"mosaicVersion_\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"consensusGateway_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_metablockHeight\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_metablockHashPrecommit\",\"type\":\"bytes32\"}],\"name\":\"precommitMetablock\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_decision\",\"type\":\"bytes32\"}],\"name\":\"registerCommitteeDecision\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"reputation\",\"outputs\":[{\"internalType\":\"contract ReputationInterface\",\"name\":\"reputation_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getAnchor(bytes32)\":{\"params\":{\"_metachainId\":\"Metachain Id.\"},\"return\":\"Anchor contract address.\"},\"newMetachain()\":{\"return\":\"metachainId_ Metachain id.anchor_ Address of anchor.mosaicVersion_ Mosaic Version.consensusGateway_ Address of ConsensusGateway.\"},\"precommitMetablock(bytes32,uint256,bytes32)\":{\"params\":{\"_metablockHashPrecommit\":\"Metablock hash to precommit.\",\"_metablockHeight\":\"Metablock height to precommit.\",\"_metachainId\":\"Metachain id.\"}},\"registerCommitteeDecision(bytes32,bytes32)\":{\"params\":{\"_decision\":\"Committee's decision.\",\"_metachainId\":\"Metachain id to register committee decision.\"}},\"reputation()\":{\"return\":\"Reputation contract address.\"}}},\"userdoc\":{\"methods\":{\"coreValidatorThresholds()\":{\"notice\":\"Gets cores' validators minimum count and join limit. \"},\"getAnchor(bytes32)\":{\"notice\":\"Get anchor address for metachain id.\"},\"newMetachain()\":{\"notice\":\"Creates a new metachain.\"},\"precommitMetablock(bytes32,uint256,bytes32)\":{\"notice\":\"Precommits metablock from a core.\"},\"registerCommitteeDecision(bytes32,bytes32)\":{\"notice\":\"Registers a committee's decision.\"},\"reputation()\":{\"notice\":\"Gets the reputation contract address.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":\"ConsensusInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../reputation/ReputationInterface.sol\";\n\ninterface ConsensusInterface {\n\n    /**\n     * @notice Gets the reputation contract address.\n     *\n     * @return Reputation contract address.\n     */\n    function reputation()\n        external\n        view\n        returns (ReputationInterface reputation_);\n\n    /** @notice Gets cores' validators minimum count and join limit. */\n    function coreValidatorThresholds()\n        external\n        view\n        returns (uint256 minimumValidatorCount_, uint256 joinLimit_);\n\n    /**\n     * @notice Precommits metablock from a core.\n     *\n     * @param _metachainId Metachain id.\n     * @param _metablockHeight Metablock height to precommit.\n     * @param _metablockHashPrecommit Metablock hash to precommit.\n     */\n    function precommitMetablock(\n        bytes32 _metachainId,\n        uint256 _metablockHeight,\n        bytes32 _metablockHashPrecommit\n    )\n        external;\n\n    /**\n     * @notice Registers a committee's decision.\n     *\n     * @param _metachainId Metachain id to register committee decision.\n     * @param _decision Committee's decision.\n     */\n    function registerCommitteeDecision(\n        bytes32 _metachainId,\n        bytes32 _decision\n    )\n        external;\n\n    /**\n     * @notice Creates a new metachain.\n     *\n     * @return metachainId_ Metachain id.\n     * @return anchor_ Address of anchor.\n     * @return mosaicVersion_ Mosaic Version.\n     * @return consensusGateway_ Address of ConsensusGateway.\n     */\n    function newMetachain()\n        external\n        returns (\n            bytes32 metachainId_,\n            address anchor_,\n            string memory mosaicVersion_,\n            address consensusGateway_\n        );\n\n    /**\n     * @notice Get anchor address for metachain id.\n     *\n     * @param _metachainId Metachain Id.\n     *\n     * @return Anchor contract address.\n     */\n    function getAnchor(bytes32 _metachainId) external returns(address anchor_);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+    "exportedSymbols": {
+      "ConsensusInterface": [
+        5881
+      ]
+    },
+    "id": 5882,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5833,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:21"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol",
+        "file": "../reputation/ReputationInterface.sol",
+        "id": 5834,
+        "nodeType": "ImportDirective",
+        "scope": 5882,
+        "sourceUnit": 13958,
+        "src": "621:47:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5881,
+        "linearizedBaseContracts": [
+          5881
+        ],
+        "name": "ConsensusInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the reputation contract address.\n     * @return Reputation contract address.",
+            "id": 5839,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reputation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5835,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "845:2:21"
+            },
+            "returnParameters": {
+              "id": 5838,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5837,
+                  "name": "reputation_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5839,
+                  "src": "895:31:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ReputationInterface_$13957",
+                    "typeString": "contract ReputationInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5836,
+                    "name": "ReputationInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 13957,
+                    "src": "895:19:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ReputationInterface_$13957",
+                      "typeString": "contract ReputationInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "894:33:21"
+            },
+            "scope": 5881,
+            "src": "826:102:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets cores' validators minimum count and join limit. ",
+            "id": 5846,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "coreValidatorThresholds",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1038:2:21"
+            },
+            "returnParameters": {
+              "id": 5845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5842,
+                  "name": "minimumValidatorCount_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "1088:30:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5841,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1088:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5844,
+                  "name": "joinLimit_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "1120:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5843,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1120:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:52:21"
+            },
+            "scope": 5881,
+            "src": "1006:134:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Precommits metablock from a core.\n     * @param _metachainId Metachain id.\n@param _metablockHeight Metablock height to precommit.\n@param _metablockHashPrecommit Metablock hash to precommit.",
+            "id": 5855,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "precommitMetablock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5848,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1425:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5847,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1425:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5850,
+                  "name": "_metablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1455:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5849,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1455:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5852,
+                  "name": "_metablockHashPrecommit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1489:31:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5851,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1489:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1415:111:21"
+            },
+            "returnParameters": {
+              "id": 5854,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1543:0:21"
+            },
+            "scope": 5881,
+            "src": "1388:156:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Registers a committee's decision.\n     * @param _metachainId Metachain id to register committee decision.\n@param _decision Committee's decision.",
+            "id": 5862,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerCommitteeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5860,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5857,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5862,
+                  "src": "1784:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5856,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1784:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5859,
+                  "name": "_decision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5862,
+                  "src": "1814:17:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5858,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1774:63:21"
+            },
+            "returnParameters": {
+              "id": 5861,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1854:0:21"
+            },
+            "scope": 5881,
+            "src": "1740:115:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Creates a new metachain.\n     * @return metachainId_ Metachain id.\n@return anchor_ Address of anchor.\n@return mosaicVersion_ Mosaic Version.\n@return consensusGateway_ Address of ConsensusGateway.",
+            "id": 5873,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newMetachain",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5863,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2137:2:21"
+            },
+            "returnParameters": {
+              "id": 5872,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5865,
+                  "name": "metachainId_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2187:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5864,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2187:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5867,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2221:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5866,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2221:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5869,
+                  "name": "mosaicVersion_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2250:28:21",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5868,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2250:6:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5871,
+                  "name": "consensusGateway_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2292:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5870,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2292:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2173:154:21"
+            },
+            "scope": 5881,
+            "src": "2116:212:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get anchor address for metachain id.\n     * @param _metachainId Metachain Id.\n     * @return Anchor contract address.",
+            "id": 5880,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5876,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5875,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5880,
+                  "src": "2516:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5874,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2516:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2515:22:21"
+            },
+            "returnParameters": {
+              "id": 5879,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5878,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5880,
+                  "src": "2555:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5877,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2555:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2554:17:21"
+            },
+            "scope": 5881,
+            "src": "2497:75:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5882,
+        "src": "670:1904:21"
+      }
+    ],
+    "src": "0:2575:21"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+    "exportedSymbols": {
+      "ConsensusInterface": [
+        5881
+      ]
+    },
+    "id": 5882,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5833,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:21"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol",
+        "file": "../reputation/ReputationInterface.sol",
+        "id": 5834,
+        "nodeType": "ImportDirective",
+        "scope": 5882,
+        "sourceUnit": 13958,
+        "src": "621:47:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 5881,
+        "linearizedBaseContracts": [
+          5881
+        ],
+        "name": "ConsensusInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the reputation contract address.\n     * @return Reputation contract address.",
+            "id": 5839,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "reputation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5835,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "845:2:21"
+            },
+            "returnParameters": {
+              "id": 5838,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5837,
+                  "name": "reputation_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5839,
+                  "src": "895:31:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ReputationInterface_$13957",
+                    "typeString": "contract ReputationInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5836,
+                    "name": "ReputationInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 13957,
+                    "src": "895:19:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ReputationInterface_$13957",
+                      "typeString": "contract ReputationInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "894:33:21"
+            },
+            "scope": 5881,
+            "src": "826:102:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Gets cores' validators minimum count and join limit. ",
+            "id": 5846,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "coreValidatorThresholds",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5840,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1038:2:21"
+            },
+            "returnParameters": {
+              "id": 5845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5842,
+                  "name": "minimumValidatorCount_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "1088:30:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5841,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1088:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5844,
+                  "name": "joinLimit_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5846,
+                  "src": "1120:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5843,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1120:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:52:21"
+            },
+            "scope": 5881,
+            "src": "1006:134:21",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Precommits metablock from a core.\n     * @param _metachainId Metachain id.\n@param _metablockHeight Metablock height to precommit.\n@param _metablockHashPrecommit Metablock hash to precommit.",
+            "id": 5855,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "precommitMetablock",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5853,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5848,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1425:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5847,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1425:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5850,
+                  "name": "_metablockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1455:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 5849,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1455:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5852,
+                  "name": "_metablockHashPrecommit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5855,
+                  "src": "1489:31:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5851,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1489:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1415:111:21"
+            },
+            "returnParameters": {
+              "id": 5854,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1543:0:21"
+            },
+            "scope": 5881,
+            "src": "1388:156:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Registers a committee's decision.\n     * @param _metachainId Metachain id to register committee decision.\n@param _decision Committee's decision.",
+            "id": 5862,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "registerCommitteeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5860,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5857,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5862,
+                  "src": "1784:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5856,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1784:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5859,
+                  "name": "_decision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5862,
+                  "src": "1814:17:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5858,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1774:63:21"
+            },
+            "returnParameters": {
+              "id": 5861,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1854:0:21"
+            },
+            "scope": 5881,
+            "src": "1740:115:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Creates a new metachain.\n     * @return metachainId_ Metachain id.\n@return anchor_ Address of anchor.\n@return mosaicVersion_ Mosaic Version.\n@return consensusGateway_ Address of ConsensusGateway.",
+            "id": 5873,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newMetachain",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5863,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2137:2:21"
+            },
+            "returnParameters": {
+              "id": 5872,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5865,
+                  "name": "metachainId_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2187:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5864,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2187:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5867,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2221:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5866,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2221:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5869,
+                  "name": "mosaicVersion_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2250:28:21",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5868,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2250:6:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 5871,
+                  "name": "consensusGateway_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5873,
+                  "src": "2292:25:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5870,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2292:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2173:154:21"
+            },
+            "scope": 5881,
+            "src": "2116:212:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get anchor address for metachain id.\n     * @param _metachainId Metachain Id.\n     * @return Anchor contract address.",
+            "id": 5880,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5876,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5875,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5880,
+                  "src": "2516:20:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 5874,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2516:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2515:22:21"
+            },
+            "returnParameters": {
+              "id": 5879,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5878,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5880,
+                  "src": "2555:15:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 5877,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2555:7:21",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2554:17:21"
+            },
+            "scope": 5881,
+            "src": "2497:75:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 5882,
+        "src": "670:1904:21"
+      }
+    ],
+    "src": "0:2575:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.674Z",
+  "devdoc": {
+    "methods": {
+      "getAnchor(bytes32)": {
+        "params": {
+          "_metachainId": "Metachain Id."
+        },
+        "return": "Anchor contract address."
+      },
+      "newMetachain()": {
+        "return": "metachainId_ Metachain id.anchor_ Address of anchor.mosaicVersion_ Mosaic Version.consensusGateway_ Address of ConsensusGateway."
+      },
+      "precommitMetablock(bytes32,uint256,bytes32)": {
+        "params": {
+          "_metablockHashPrecommit": "Metablock hash to precommit.",
+          "_metablockHeight": "Metablock height to precommit.",
+          "_metachainId": "Metachain id."
+        }
+      },
+      "registerCommitteeDecision(bytes32,bytes32)": {
+        "params": {
+          "_decision": "Committee's decision.",
+          "_metachainId": "Metachain id to register committee decision."
+        }
+      },
+      "reputation()": {
+        "return": "Reputation contract address."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "coreValidatorThresholds()": {
+        "notice": "Gets cores' validators minimum count and join limit. "
+      },
+      "getAnchor(bytes32)": {
+        "notice": "Get anchor address for metachain id."
+      },
+      "newMetachain()": {
+        "notice": "Creates a new metachain."
+      },
+      "precommitMetablock(bytes32,uint256,bytes32)": {
+        "notice": "Precommits metablock from a core."
+      },
+      "registerCommitteeDecision(bytes32,bytes32)": {
+        "notice": "Registers a committee's decision."
+      },
+      "reputation()": {
+        "notice": "Gets the reputation contract address."
+      }
+    }
+  }
+}

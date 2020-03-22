@@ -1,0 +1,365 @@
+{
+  "contractName": "SelfProtocoreInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reputation",
+          "type": "uint256"
+        }
+      ],
+      "name": "upsertValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_reputation\",\"type\":\"uint256\"}],\"name\":\"upsertValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"upsertValidator(address,uint256,uint256)\":{\"params\":{\"_height\":\"Validator start or end height to be updated.\",\"_reputation\":\"Validator's reputation value.\",\"_validator\":\"Validator address to upsert.\"}}},\"title\":\"Self protocore interface\"},\"userdoc\":{\"methods\":{\"upsertValidator(address,uint256,uint256)\":{\"notice\":\"Insert or remove validator. It inserts validator if not already        present and reputation is greater than 0. It removes validator        if it is present and reputation is 0.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/SelfProtocoreInterface.sol\":\"SelfProtocoreInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/SelfProtocoreInterface.sol\":{\"keccak256\":\"0x0a9a3718985163f4a8933fc5bad921eda93ab6b13b1eccc44161d81a9e986fa6\",\"urls\":[\"bzz-raw://09d52f027733f612133ae926a14dfdea6e00f37ec4480f1713be59f6759d28db\",\"dweb:/ipfs/QmSkBoAnejKFWCMdJDUFwpchLmvY7LNM8bGURYsq9irvAH\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Self protocore interface\n */\ninterface SelfProtocoreInterface {\n\n    /**\n     * @notice Insert or remove validator. It inserts validator if not already\n     *         present and reputation is greater than 0. It removes validator\n     *         if it is present and reputation is 0.\n     *\n     * @param _validator Validator address to upsert.\n     * @param _height Validator start or end height to be updated.\n     * @param _reputation Validator's reputation value.\n     */\n    function upsertValidator(\n        address _validator,\n        uint256 _height,\n        uint256 _reputation\n    )\n        external;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/SelfProtocoreInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/SelfProtocoreInterface.sol",
+    "exportedSymbols": {
+      "SelfProtocoreInterface": [
+        12949
+      ]
+    },
+    "id": 12950,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12939,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:52"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Self protocore interface",
+        "fullyImplemented": false,
+        "id": 12949,
+        "linearizedBaseContracts": [
+          12949
+        ],
+        "name": "SelfProtocoreInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Insert or remove validator. It inserts validator if not already\n        present and reputation is greater than 0. It removes validator\n        if it is present and reputation is 0.\n     * @param _validator Validator address to upsert.\n@param _height Validator start or end height to be updated.\n@param _reputation Validator's reputation value.",
+            "id": 12948,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12946,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12941,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1148:18:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 12940,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1148:7:52",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12943,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1176:15:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12942,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1176:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12945,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1201:19:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12944,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1201:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1138:88:52"
+            },
+            "returnParameters": {
+              "id": 12947,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1243:0:52"
+            },
+            "scope": 12949,
+            "src": "1114:130:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12950,
+        "src": "664:582:52"
+      }
+    ],
+    "src": "0:1247:52"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/SelfProtocoreInterface.sol",
+    "exportedSymbols": {
+      "SelfProtocoreInterface": [
+        12949
+      ]
+    },
+    "id": 12950,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12939,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:52"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Self protocore interface",
+        "fullyImplemented": false,
+        "id": 12949,
+        "linearizedBaseContracts": [
+          12949
+        ],
+        "name": "SelfProtocoreInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Insert or remove validator. It inserts validator if not already\n        present and reputation is greater than 0. It removes validator\n        if it is present and reputation is 0.\n     * @param _validator Validator address to upsert.\n@param _height Validator start or end height to be updated.\n@param _reputation Validator's reputation value.",
+            "id": 12948,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12946,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12941,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1148:18:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 12940,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1148:7:52",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12943,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1176:15:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12942,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1176:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12945,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12948,
+                  "src": "1201:19:52",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12944,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1201:7:52",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1138:88:52"
+            },
+            "returnParameters": {
+              "id": 12947,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1243:0:52"
+            },
+            "scope": 12949,
+            "src": "1114:130:52",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12950,
+        "src": "664:582:52"
+      }
+    ],
+    "src": "0:1247:52"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.760Z",
+  "devdoc": {
+    "methods": {
+      "upsertValidator(address,uint256,uint256)": {
+        "params": {
+          "_height": "Validator start or end height to be updated.",
+          "_reputation": "Validator's reputation value.",
+          "_validator": "Validator address to upsert."
+        }
+      }
+    },
+    "title": "Self protocore interface"
+  },
+  "userdoc": {
+    "methods": {
+      "upsertValidator(address,uint256,uint256)": {
+        "notice": "Insert or remove validator. It inserts validator if not already        present and reputation is greater than 0. It removes validator        if it is present and reputation is 0."
+      }
+    }
+  }
+}

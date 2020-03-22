@@ -1,0 +1,585 @@
+{
+  "contractName": "GenesisCoconsensus",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "genesisMetachainIds",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "genesisObservers",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "genesisProtocores",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisSelfMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"genesisMetachainIds\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"genesisObservers\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"genesisProtocores\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisSelfMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Genesis coconsensus contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block. This contract stores the origin metachain id,       self metachain id, observer contract addresses, protocore contract       addresses. The metachain ids are stored as a linked list so that it       can be iterable.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/GenesisCoconsensus.sol\":\"GenesisCoconsensus\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/GenesisCoconsensus.sol\":{\"keccak256\":\"0x5df7d3cabb0a37d084e6ddf580fdd3e64bc8a76774f17b7d136b2644ab630de4\",\"urls\":[\"bzz-raw://54d70105ebd896142d73c3ba38d3a9841f4af65190f677bdb635afe00a534285\",\"dweb:/ipfs/QmbUN9e5cz3gwrYqpVXPM6zhZNZtpBwPbC47dAAo7bsCj1\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061017a806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806311f8c2021461005c57806381673b2214610095578063a847bbbc146100af578063c74a01e9146100cc578063fee7de65146100d4575b600080fd5b6100796004803603602081101561007257600080fd5b50356100f1565b604080516001600160a01b039092168252519081900360200190f35b61009d61010c565b60408051918252519081900360200190f35b61009d600480360360208110156100c557600080fd5b5035610112565b61009d610124565b610079600480360360208110156100ea57600080fd5b503561012a565b6004602052600090815260409020546001600160a01b031681565b60005481565b60026020526000908152604090205481565b60015481565b6003602052600090815260409020546001600160a01b03168156fea265627a7a72315820960455d8ed77d866f1adc474cef37dcc7b2bc18f53725a6118aba56d63ec6aeb64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806311f8c2021461005c57806381673b2214610095578063a847bbbc146100af578063c74a01e9146100cc578063fee7de65146100d4575b600080fd5b6100796004803603602081101561007257600080fd5b50356100f1565b604080516001600160a01b039092168252519081900360200190f35b61009d61010c565b60408051918252519081900360200190f35b61009d600480360360208110156100c557600080fd5b5035610112565b61009d610124565b610079600480360360208110156100ea57600080fd5b503561012a565b6004602052600090815260409020546001600160a01b031681565b60005481565b60026020526000908152604090205481565b60015481565b6003602052600090815260409020546001600160a01b03168156fea265627a7a72315820960455d8ed77d866f1adc474cef37dcc7b2bc18f53725a6118aba56d63ec6aeb64736f6c634300050d0032",
+  "sourceMap": "1033:696:24:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1033:696:24;;;;;;;",
+  "deployedSourceMap": "1033:696:24:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1033:696:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1674:52;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1674:52:24;;:::i;:::-;;;;-1:-1:-1;;;;;1674:52:24;;;;;;;;;;;;;;1132:39;;;:::i;:::-;;;;;;;;;;;;;;;;1330:54;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1330:54:24;;:::i;1226:37::-;;;:::i;1508:51::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1508:51:24;;:::i;1674:52::-;;;;;;;;;;;;-1:-1:-1;;;;;1674:52:24;;:::o;1132:39::-;;;;:::o;1330:54::-;;;;;;;;;;;;;:::o;1226:37::-;;;;:::o;1508:51::-;;;;;;;;;;;;-1:-1:-1;;;;;1508:51:24;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Genesis coconsensus contract is a storage contract that holds\n *        the initial values required by the contract that were written in the\n *        genesis block. This contract stores the origin metachain id,\n *        self metachain id, observer contract addresses, protocore contract\n *        addresses. The metachain ids are stored as a linked list so that it\n *        can be iterable.\n */\ncontract GenesisCoconsensus {\n\n    /* Storage */\n\n    /** Metachain id of the origin chain. */\n    bytes32 public genesisOriginMetachainId;\n\n    /** Metachain id of the auxiliary chain. */\n    bytes32 public genesisSelfMetachainId;\n\n    /** Link list of metachain ids (for all protocores). */\n    mapping(bytes32 => bytes32) public genesisMetachainIds;\n\n    /**\n     * Mapping of metachain id to its observers (anchor) contract\n     * address on auxiliary chain.\n     */\n    mapping(bytes32 => address) public genesisObservers;\n\n    /**\n     * Mapping of metachain id to its protocore contract\n     * address on auxiliary chain.\n     */\n    mapping(bytes32 => address) public genesisProtocores;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/GenesisCoconsensus.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/GenesisCoconsensus.sol",
+    "exportedSymbols": {
+      "GenesisCoconsensus": [
+        5962
+      ]
+    },
+    "id": 5963,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5945,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:24"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis coconsensus contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block. This contract stores the origin metachain id,\n       self metachain id, observer contract addresses, protocore contract\n       addresses. The metachain ids are stored as a linked list so that it\n       can be iterable.",
+        "fullyImplemented": true,
+        "id": 5962,
+        "linearizedBaseContracts": [
+          5962
+        ],
+        "name": "GenesisCoconsensus",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5947,
+            "name": "genesisOriginMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1132:39:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 5946,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1132:7:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5949,
+            "name": "genesisSelfMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1226:37:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 5948,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1226:7:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5953,
+            "name": "genesisMetachainIds",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1330:54:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes32_$",
+              "typeString": "mapping(bytes32 => bytes32)"
+            },
+            "typeName": {
+              "id": 5952,
+              "keyType": {
+                "id": 5950,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1338:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1330:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes32_$",
+                "typeString": "mapping(bytes32 => bytes32)"
+              },
+              "valueType": {
+                "id": 5951,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1349:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5957,
+            "name": "genesisObservers",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1508:51:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 5956,
+              "keyType": {
+                "id": 5954,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1516:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1508:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 5955,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1527:7:24",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5961,
+            "name": "genesisProtocores",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1674:52:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 5960,
+              "keyType": {
+                "id": 5958,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1682:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1674:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 5959,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1693:7:24",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5963,
+        "src": "1033:696:24"
+      }
+    ],
+    "src": "0:1730:24"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/GenesisCoconsensus.sol",
+    "exportedSymbols": {
+      "GenesisCoconsensus": [
+        5962
+      ]
+    },
+    "id": 5963,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5945,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:24"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis coconsensus contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block. This contract stores the origin metachain id,\n       self metachain id, observer contract addresses, protocore contract\n       addresses. The metachain ids are stored as a linked list so that it\n       can be iterable.",
+        "fullyImplemented": true,
+        "id": 5962,
+        "linearizedBaseContracts": [
+          5962
+        ],
+        "name": "GenesisCoconsensus",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5947,
+            "name": "genesisOriginMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1132:39:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 5946,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1132:7:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5949,
+            "name": "genesisSelfMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1226:37:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 5948,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1226:7:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5953,
+            "name": "genesisMetachainIds",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1330:54:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes32_$",
+              "typeString": "mapping(bytes32 => bytes32)"
+            },
+            "typeName": {
+              "id": 5952,
+              "keyType": {
+                "id": 5950,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1338:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1330:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bytes32_$",
+                "typeString": "mapping(bytes32 => bytes32)"
+              },
+              "valueType": {
+                "id": 5951,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1349:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5957,
+            "name": "genesisObservers",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1508:51:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 5956,
+              "keyType": {
+                "id": 5954,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1516:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1508:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 5955,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1527:7:24",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 5961,
+            "name": "genesisProtocores",
+            "nodeType": "VariableDeclaration",
+            "scope": 5962,
+            "src": "1674:52:24",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+              "typeString": "mapping(bytes32 => address)"
+            },
+            "typeName": {
+              "id": 5960,
+              "keyType": {
+                "id": 5958,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "1682:7:24",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1674:27:24",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_address_$",
+                "typeString": "mapping(bytes32 => address)"
+              },
+              "valueType": {
+                "id": 5959,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1693:7:24",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 5963,
+        "src": "1033:696:24"
+      }
+    ],
+    "src": "0:1730:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.676Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Genesis coconsensus contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block. This contract stores the origin metachain id,       self metachain id, observer contract addresses, protocore contract       addresses. The metachain ids are stored as a linked list so that it       can be iterable."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

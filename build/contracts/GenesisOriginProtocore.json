@@ -1,0 +1,786 @@
+{
+  "contractName": "GenesisOriginProtocore",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisDomainSeparator",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisEpochLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginParentVoteMessageHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginSourceBlockHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginSourceBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginTargetBlockHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginTargetBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisProposedMetablockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisSelfProtocore",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"genesisDomainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisEpochLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginParentVoteMessageHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginSourceBlockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginSourceBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginTargetBlockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginTargetBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisProposedMetablockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisSelfProtocore\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Genesis origin protocore contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisOriginProtocore.sol\":\"GenesisOriginProtocore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisOriginProtocore.sol\":{\"keccak256\":\"0x77947e3391372ddaf4379bec34be6da040c5cf6dbfc500552e5827181db56d1d\",\"urls\":[\"bzz-raw://b83ee16089a328a47bf2a4fbed2502efe170c97af5472bd9d266db2d2a62204e\",\"dweb:/ipfs/QmP7sCospWHjaJq6CUYj99wdNZJ1N1ANUkuat48WtHTSwk\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061019b806100206000396000f3fe608060405234801561001057600080fd5b506004361061009e5760003560e01c80639fa843c2116100665780639fa843c2146100f9578063b0e1084e14610101578063b8a3254d14610109578063c4fec67a14610111578063e7530e7c146101195761009e565b8063044a6d34146100a3578063142aab11146100bd5780633021513d146100c557806355445e06146100cd57806367b47913146100d5575b600080fd5b6100ab610121565b60408051918252519081900360200190f35b6100ab610127565b6100ab61012d565b6100ab610133565b6100dd610139565b604080516001600160a01b039092168252519081900360200190f35b6100ab610148565b6100ab61014e565b6100ab610154565b6100ab61015a565b6100ab610160565b60075481565b60025481565b60015481565b60035481565b6009546001600160a01b031681565b60085481565b60055481565b60045481565b60005481565b6006548156fea265627a7a723158205287c279b1a561d953f68e4bc70244bb55320e30e877d95755a8483b01c7e9c164736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061009e5760003560e01c80639fa843c2116100665780639fa843c2146100f9578063b0e1084e14610101578063b8a3254d14610109578063c4fec67a14610111578063e7530e7c146101195761009e565b8063044a6d34146100a3578063142aab11146100bd5780633021513d146100c557806355445e06146100cd57806367b47913146100d5575b600080fd5b6100ab610121565b60408051918252519081900360200190f35b6100ab610127565b6100ab61012d565b6100ab610133565b6100dd610139565b604080516001600160a01b039092168252519081900360200190f35b6100ab610148565b6100ab61014e565b6100ab610154565b6100ab61015a565b6100ab610160565b60075481565b60025481565b60015481565b60035481565b6009546001600160a01b031681565b60085481565b60055481565b60045481565b60005481565b6006548156fea265627a7a723158205287c279b1a561d953f68e4bc70244bb55320e30e877d95755a8483b01c7e9c164736f6c634300050d0032",
+  "sourceMap": "810:921:46:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;810:921:46;;;;;;;",
+  "deployedSourceMap": "810:921:46:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;810:921:46;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1513:45;;;:::i;:::-;;;;;;;;;;;;;;;;1056;;;:::i;978:33::-;;;:::i;1137:37::-;;;:::i;1693:35::-;;;:::i;:::-;;;;-1:-1:-1;;;;;1693:35:46;;;;;;;;;;;;;;1602:49;;;:::i;1321:45::-;;;:::i;1225:43::-;;;:::i;913:33::-;;;:::i;1417:43::-;;;:::i;1513:45::-;;;;:::o;1056:::-;;;;:::o;978:33::-;;;;:::o;1137:37::-;;;;:::o;1693:35::-;;;-1:-1:-1;;;;;1693:35:46;;:::o;1602:49::-;;;;:::o;1321:45::-;;;;:::o;1225:43::-;;;;:::o;913:33::-;;;;:::o;1417:43::-;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Genesis origin protocore contract is a storage contract that holds\n *        the initial values required by the contract that were written in the\n *        genesis block.\n */\ncontract GenesisOriginProtocore {\n\n    /* Storage */\n\n    /** Metachain id of the origin chain. */\n    bytes32 public genesisMetachainId;\n\n    /** Epoch length. */\n    uint256 public genesisEpochLength;\n\n    /** Proposed metablock height. */\n    uint256 public genesisProposedMetablockHeight;\n\n    /** Domain separator. */\n    bytes32 public genesisDomainSeparator;\n\n    /** Block hash of source checkpoint. */\n    bytes32 public genesisOriginSourceBlockHash;\n\n    /** Block number of source checkpoint. */\n    uint256 public genesisOriginSourceBlockNumber;\n\n    /** Block hash of target checkpoint. */\n    bytes32 public genesisOriginTargetBlockHash;\n\n    /** Block number of target checkpoint. */\n    uint256 public genesisOriginTargetBlockNumber;\n\n    /** Parent vote message hash. */\n    bytes32 public genesisOriginParentVoteMessageHash;\n\n    /** Self protocore address. */\n    address public genesisSelfProtocore;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisOriginProtocore.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisOriginProtocore.sol",
+    "exportedSymbols": {
+      "GenesisOriginProtocore": [
+        11510
+      ]
+    },
+    "id": 11511,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11489,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:46"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis origin protocore contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block.",
+        "fullyImplemented": true,
+        "id": 11510,
+        "linearizedBaseContracts": [
+          11510
+        ],
+        "name": "GenesisOriginProtocore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11491,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "913:33:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11490,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "913:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11493,
+            "name": "genesisEpochLength",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "978:33:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11492,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "978:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11495,
+            "name": "genesisProposedMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1056:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11494,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1056:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11497,
+            "name": "genesisDomainSeparator",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1137:37:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11496,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1137:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11499,
+            "name": "genesisOriginSourceBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1225:43:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11498,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1225:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11501,
+            "name": "genesisOriginSourceBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1321:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11500,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1321:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11503,
+            "name": "genesisOriginTargetBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1417:43:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11502,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1417:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11505,
+            "name": "genesisOriginTargetBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1513:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11504,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1513:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11507,
+            "name": "genesisOriginParentVoteMessageHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1602:49:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11506,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1602:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11509,
+            "name": "genesisSelfProtocore",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1693:35:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11508,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1693:7:46",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11511,
+        "src": "810:921:46"
+      }
+    ],
+    "src": "0:1732:46"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisOriginProtocore.sol",
+    "exportedSymbols": {
+      "GenesisOriginProtocore": [
+        11510
+      ]
+    },
+    "id": 11511,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11489,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:46"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis origin protocore contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block.",
+        "fullyImplemented": true,
+        "id": 11510,
+        "linearizedBaseContracts": [
+          11510
+        ],
+        "name": "GenesisOriginProtocore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11491,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "913:33:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11490,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "913:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11493,
+            "name": "genesisEpochLength",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "978:33:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11492,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "978:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11495,
+            "name": "genesisProposedMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1056:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11494,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1056:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11497,
+            "name": "genesisDomainSeparator",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1137:37:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11496,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1137:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11499,
+            "name": "genesisOriginSourceBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1225:43:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11498,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1225:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11501,
+            "name": "genesisOriginSourceBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1321:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11500,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1321:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11503,
+            "name": "genesisOriginTargetBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1417:43:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11502,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1417:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11505,
+            "name": "genesisOriginTargetBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1513:45:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11504,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1513:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11507,
+            "name": "genesisOriginParentVoteMessageHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1602:49:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11506,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1602:7:46",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11509,
+            "name": "genesisSelfProtocore",
+            "nodeType": "VariableDeclaration",
+            "scope": 11510,
+            "src": "1693:35:46",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 11508,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1693:7:46",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11511,
+        "src": "810:921:46"
+      }
+    ],
+    "src": "0:1732:46"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.743Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Genesis origin protocore contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

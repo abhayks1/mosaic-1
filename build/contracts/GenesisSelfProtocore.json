@@ -1,0 +1,918 @@
+{
+  "contractName": "GenesisSelfProtocore",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliaryAccumulatedGas",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliaryParentVoteMessageHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliarySourceBlockHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliarySourceBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliarySourceTransitionHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliaryTargetBlockHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisAuxiliaryTargetBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisDomainSeparator",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisDynasty",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisEpochLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisProposedMetablockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliaryAccumulatedGas\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliaryParentVoteMessageHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliarySourceBlockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliarySourceBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliarySourceTransitionHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliaryTargetBlockHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisAuxiliaryTargetBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisDomainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisDynasty\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisEpochLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisProposedMetablockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Genesis self protocore contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block. It stores target checkpoint, parent vote message hash,       source transition hash, source dynasty number and source accumulated       gas.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisSelfProtocore.sol\":\"GenesisSelfProtocore\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisSelfProtocore.sol\":{\"keccak256\":\"0xb26e1888be3554bb12a771d0fe92c3748d108759cdf3cd48e81343e6e838764a\",\"urls\":[\"bzz-raw://b314c21364147cb22f2648b431c24b39b6ca7aa87cc5df4116c6686c0761aeb6\",\"dweb:/ipfs/QmNm57ufvLzeTJ29zmaU6cpHLwX95jLgUKWnPvBscYMtQS\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101a8806100206000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c80636e5d1e9c116100715780636e5d1e9c146100fb5780637ccba6cc146101035780638498b7a91461010b578063b7f8e6fa14610113578063b9ab2c751461011b578063c4fec67a14610123576100b4565b8063142aab11146100b957806314c0e380146100d35780631a1e1fce146100db5780633021513d146100e35780633f62f830146100eb57806355445e06146100f3575b600080fd5b6100c161012b565b60408051918252519081900360200190f35b6100c1610131565b6100c1610137565b6100c161013d565b6100c1610143565b6100c1610149565b6100c161014f565b6100c1610155565b6100c161015b565b6100c1610161565b6100c1610167565b6100c161016d565b60025481565b60095481565b60055481565b60015481565b600b5481565b60045481565b600a5481565b60085481565b60075481565b60065481565b60035481565b6000548156fea265627a7a7231582006cac3a30b677426ed4ed53a15af4ad0f0214aadff53065b90e5112f3beb6b1464736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100b45760003560e01c80636e5d1e9c116100715780636e5d1e9c146100fb5780637ccba6cc146101035780638498b7a91461010b578063b7f8e6fa14610113578063b9ab2c751461011b578063c4fec67a14610123576100b4565b8063142aab11146100b957806314c0e380146100d35780631a1e1fce146100db5780633021513d146100e35780633f62f830146100eb57806355445e06146100f3575b600080fd5b6100c161012b565b60408051918252519081900360200190f35b6100c1610131565b6100c1610137565b6100c161013d565b6100c1610143565b6100c1610149565b6100c161014f565b6100c1610155565b6100c161015b565b6100c1610161565b6100c1610167565b6100c161016d565b60025481565b60095481565b60055481565b60015481565b600b5481565b60045481565b600a5481565b60085481565b60075481565b60065481565b60035481565b6000548156fea265627a7a7231582006cac3a30b677426ed4ed53a15af4ad0f0214aadff53065b90e5112f3beb6b1464736f6c634300050d0032",
+  "sourceMap": "957:1096:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;957:1096:47;;;;;;;",
+  "deployedSourceMap": "957:1096:47:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;957:1096:47;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1204:45;;;:::i;:::-;;;;;;;;;;;;;;;;1827:52;;;:::i;1442:46::-;;;:::i;1126:33::-;;;:::i;2005:45::-;;;:::i;1355:37::-;;;:::i;1920:51::-;;;:::i;1736:48::-;;;:::i;1638:46::-;;;:::i;1540:48::-;;;:::i;1290:29::-;;;:::i;1061:33::-;;;:::i;1204:45::-;;;;:::o;1827:52::-;;;;:::o;1442:46::-;;;;:::o;1126:33::-;;;;:::o;2005:45::-;;;;:::o;1355:37::-;;;;:::o;1920:51::-;;;;:::o;1736:48::-;;;;:::o;1638:46::-;;;;:::o;1540:48::-;;;;:::o;1290:29::-;;;;:::o;1061:33::-;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Genesis self protocore contract is a storage contract that holds\n *        the initial values required by the contract that were written in the\n *        genesis block. It stores target checkpoint, parent vote message hash,\n *        source transition hash, source dynasty number and source accumulated\n *        gas.\n */\ncontract GenesisSelfProtocore {\n\n    /* Storage */\n\n    /** Metachain id of the auxiliary chain. */\n    bytes32 public genesisMetachainId;\n\n    /** Epoch length. */\n    uint256 public genesisEpochLength;\n\n    /** Proposed metablock height. */\n    uint256 public genesisProposedMetablockHeight;\n\n    /** Initial dynasty number */\n    uint256 public genesisDynasty;\n\n    /** Domain separator. */\n    bytes32 public genesisDomainSeparator;\n\n    /** Block hash of source checkpoint */\n    bytes32 public genesisAuxiliarySourceBlockHash;\n\n    /** Block number of source checkpoint */\n    uint256 public genesisAuxiliarySourceBlockNumber;\n\n    /** Block hash of target checkpoint */\n    bytes32 public genesisAuxiliaryTargetBlockHash;\n\n    /** Block number of target checkpoint */\n    uint256 public genesisAuxiliaryTargetBlockNumber;\n\n    /** Parent vote message hash */\n    bytes32 public genesisAuxiliaryParentVoteMessageHash;\n\n    /** Source transition hash */\n    bytes32 public genesisAuxiliarySourceTransitionHash;\n\n    /** Accumulated gas */\n    uint256 public genesisAuxiliaryAccumulatedGas;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisSelfProtocore.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisSelfProtocore.sol",
+    "exportedSymbols": {
+      "GenesisSelfProtocore": [
+        11537
+      ]
+    },
+    "id": 11538,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11512,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis self protocore contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block. It stores target checkpoint, parent vote message hash,\n       source transition hash, source dynasty number and source accumulated\n       gas.",
+        "fullyImplemented": true,
+        "id": 11537,
+        "linearizedBaseContracts": [
+          11537
+        ],
+        "name": "GenesisSelfProtocore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11514,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1061:33:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11513,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1061:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11516,
+            "name": "genesisEpochLength",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1126:33:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11515,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1126:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11518,
+            "name": "genesisProposedMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1204:45:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11517,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1204:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11520,
+            "name": "genesisDynasty",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1290:29:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11519,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1290:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11522,
+            "name": "genesisDomainSeparator",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1355:37:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11521,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1355:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11524,
+            "name": "genesisAuxiliarySourceBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1442:46:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11523,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1442:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11526,
+            "name": "genesisAuxiliarySourceBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1540:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11525,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1540:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11528,
+            "name": "genesisAuxiliaryTargetBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1638:46:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11527,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1638:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11530,
+            "name": "genesisAuxiliaryTargetBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1736:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11529,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1736:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11532,
+            "name": "genesisAuxiliaryParentVoteMessageHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1827:52:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11531,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1827:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11534,
+            "name": "genesisAuxiliarySourceTransitionHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1920:51:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11533,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1920:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11536,
+            "name": "genesisAuxiliaryAccumulatedGas",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "2005:45:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11535,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2005:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11538,
+        "src": "957:1096:47"
+      }
+    ],
+    "src": "0:2054:47"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/GenesisSelfProtocore.sol",
+    "exportedSymbols": {
+      "GenesisSelfProtocore": [
+        11537
+      ]
+    },
+    "id": 11538,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11512,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:47"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis self protocore contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block. It stores target checkpoint, parent vote message hash,\n       source transition hash, source dynasty number and source accumulated\n       gas.",
+        "fullyImplemented": true,
+        "id": 11537,
+        "linearizedBaseContracts": [
+          11537
+        ],
+        "name": "GenesisSelfProtocore",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 11514,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1061:33:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11513,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1061:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11516,
+            "name": "genesisEpochLength",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1126:33:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11515,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1126:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11518,
+            "name": "genesisProposedMetablockHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1204:45:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11517,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1204:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11520,
+            "name": "genesisDynasty",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1290:29:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11519,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1290:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11522,
+            "name": "genesisDomainSeparator",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1355:37:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11521,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1355:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11524,
+            "name": "genesisAuxiliarySourceBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1442:46:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11523,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1442:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11526,
+            "name": "genesisAuxiliarySourceBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1540:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11525,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1540:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11528,
+            "name": "genesisAuxiliaryTargetBlockHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1638:46:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11527,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1638:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11530,
+            "name": "genesisAuxiliaryTargetBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1736:48:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11529,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1736:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11532,
+            "name": "genesisAuxiliaryParentVoteMessageHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1827:52:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11531,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1827:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11534,
+            "name": "genesisAuxiliarySourceTransitionHash",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "1920:51:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 11533,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1920:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 11536,
+            "name": "genesisAuxiliaryAccumulatedGas",
+            "nodeType": "VariableDeclaration",
+            "scope": 11537,
+            "src": "2005:45:47",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 11535,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "2005:7:47",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 11538,
+        "src": "957:1096:47"
+      }
+    ],
+    "src": "0:2054:47"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.744Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Genesis self protocore contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block. It stores target checkpoint, parent vote message hash,       source transition hash, source dynasty number and source accumulated       gas."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,2211 @@
+{
+  "contractName": "SpyAnchor",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyConsensus",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyMaxStateRoot",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxStateRoots",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "_consensus",
+          "type": "address"
+        }
+      ],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLatestStateRootBlockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_stateRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchorStateRoot",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_stateRoot\",\"type\":\"bytes32\"}],\"name\":\"anchorStateRoot\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getLatestStateRootBlockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"}],\"name\":\"getStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maxStateRoots\",\"type\":\"uint256\"},{\"internalType\":\"contract ConsensusInterface\",\"name\":\"_consensus\",\"type\":\"address\"}],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyConsensus\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyMaxStateRoot\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"params\":{\"_blockNumber\":\"Block number.\",\"_stateRoot\":\"State root for a block number.\"}},\"getStateRoot(uint256)\":{\"params\":{\"_blockNumber\":\"Block number for which state root is required.\"},\"return\":\"State root for the block number.\"}}},\"userdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"notice\":\"It sets state root for a block number.\"},\"getStateRoot(uint256)\":{\"notice\":\"It returns state root for a block number.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/SpyAnchor.sol\":\"SpyAnchor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/AnchorInterface.sol\":{\"keccak256\":\"0xf08b2f905d5e3a94792d7e44a352f7fabd09188a6915b5c99e2c74fdc0047877\",\"urls\":[\"bzz-raw://d47d0391c458a71da8631ffbdac56233929d429f63114491c310af57335f18a0\",\"dweb:/ipfs/QmT21Rf7aNBJLVWZYdbFBmrrrQFSWJf4mgjs7YGWV8ARsG\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/SpyAnchor.sol\":{\"keccak256\":\"0xa4cc45c4bbb607b0b600ea044166fd1788a2068d4991f7625ddb341089544168\",\"urls\":[\"bzz-raw://6602b2de4cce38ba673e4cdf22f270e995e03510ee961fc13249064733eb6140\",\"dweb:/ipfs/QmTxAdFSaQxH3XWfLsj93BsEB3ifCyvjb6KQsUGe4QUQg7\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610273806100206000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c80635cf12c781161005b5780635cf12c78146100e5578063c380193814610108578063cadbdf0614610125578063f2e552081461012d57610088565b80630c901e751461008d57806329d51c01146100a75780632bb0e488146100af578063396aaac6146100b7575b600080fd5b610095610151565b60408051918252519081900360200190f35b610095610157565b61009561015d565b6100e3600480360360408110156100cd57600080fd5b50803590602001356001600160a01b0316610196565b005b6100e3600480360360408110156100fb57600080fd5b50803590602001356101bd565b6100956004803603602081101561011e57600080fd5b50356101d9565b6100956101eb565b6101356101f1565b604080516001600160a01b039092168252519081900360200190f35b60015481565b60035481565b600060405162461bcd60e51b815260040180806020018281038252603e815260200180610201603e913960400191505060405180910390fd5b600391909155600480546001600160a01b0319166001600160a01b03909216919091179055565b6001829055600281905560009182526005602052604090912055565b60009081526005602052604090205490565b60025481565b6004546001600160a01b03168156fe537079416e63686f723a3a6765744c61746573745374617465526f6f74426c6f636b4865696768742073686f756c64206e6f742062652063616c6c65642ea265627a7a72315820aba7cf4d7622a3d320039b9d6e1fb7e5a2e0e30f3f9e9985026a30282bcc829f64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c80635cf12c781161005b5780635cf12c78146100e5578063c380193814610108578063cadbdf0614610125578063f2e552081461012d57610088565b80630c901e751461008d57806329d51c01146100a75780632bb0e488146100af578063396aaac6146100b7575b600080fd5b610095610151565b60408051918252519081900360200190f35b610095610157565b61009561015d565b6100e3600480360360408110156100cd57600080fd5b50803590602001356001600160a01b0316610196565b005b6100e3600480360360408110156100fb57600080fd5b50803590602001356101bd565b6100956004803603602081101561011e57600080fd5b50356101d9565b6100956101eb565b6101356101f1565b604080516001600160a01b039092168252519081900360200190f35b60015481565b60035481565b600060405162461bcd60e51b815260040180806020018281038252603e815260200180610201603e913960400191505060405180910390fd5b600391909155600480546001600160a01b0319166001600160a01b03909216919091179055565b6001829055600281905560009182526005602052604090912055565b60009081526005602052604090205490565b60025481565b6004546001600160a01b03168156fe537079416e63686f723a3a6765744c61746573745374617465526f6f74426c6f636b4865696768742073686f756c64206e6f742062652063616c6c65642ea265627a7a72315820aba7cf4d7622a3d320039b9d6e1fb7e5a2e0e30f3f9e9985026a30282bcc829f64736f6c634300050d0032",
+  "sourceMap": "766:1419:62:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;766:1419:62;;;;;;;",
+  "deployedSourceMap": "766:1419:62:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;766:1419:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;835:29;;;:::i;:::-;;;;;;;;;;;;;;;;903:30;;;:::i;1229:198::-;;;:::i;1017:206::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1017:206:62;;;;;;-1:-1:-1;;;;;1017:206:62;;:::i;:::-;;1607:238;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1607:238:62;;;;;;;:::i;2060:123::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2060:123:62;;:::i;870:27::-;;;:::i;939:::-;;;:::i;:::-;;;;-1:-1:-1;;;;;939:27:62;;;;;;;;;;;;;;835:29;;;;:::o;903:30::-;;;;:::o;1229:198::-;1317:7;1340:80;;-1:-1:-1;;;1340:80:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1017:206;1140:15;:32;;;;1182:12;:34;;-1:-1:-1;;;;;;1182:34:62;-1:-1:-1;;;;;1182:34:62;;;;;;;;;1017:206::o;1607:238::-;1727:14;:29;;;1766:12;:25;;;-1:-1:-1;1801:24:62;;;:10;:24;;;;;;:37;1607:238::o;2060:123::-;2126:7;2152:24;;;:10;:24;;;;;;;2060:123::o;870:27::-;;;;:::o;939:::-;;;-1:-1:-1;;;;;939:27:62;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../anchor/AnchorInterface.sol\";\nimport \"../../consensus/ConsensusInterface.sol\";\nimport \"../../proxies/MasterCopyNonUpgradable.sol\";\n\ncontract SpyAnchor is MasterCopyNonUpgradable, AnchorInterface{\n\n    uint256 public spyBlockNumber;\n    bytes32 public spyStateRoot;\n    uint256 public spyMaxStateRoot;\n    address public spyConsensus;\n    mapping(uint256 => bytes32) stateRoots;\n\n    function setup(\n        uint256 _maxStateRoots,\n        ConsensusInterface _consensus\n    )\n        external\n    {\n        spyMaxStateRoot = _maxStateRoots;\n        spyConsensus = address(_consensus);\n    }\n\n    function getLatestStateRootBlockHeight()\n        external\n        view\n        returns (uint256)\n    {\n        require(false, \"SpyAnchor::getLatestStateRootBlockHeight should not be called.\");\n    }\n\n    /**\n     * @notice It sets state root for a block number.\n     *\n     * @param _blockNumber Block number.\n     * @param _stateRoot State root for a block number.\n     */\n    function anchorStateRoot(\n        uint256 _blockNumber,\n        bytes32 _stateRoot\n    )\n        external\n    {\n        spyBlockNumber = _blockNumber;\n        spyStateRoot = _stateRoot;\n        stateRoots[_blockNumber] = _stateRoot;\n    }\n\n    /**\n     * @notice It returns state root for a block number.\n     *\n     * @param _blockNumber Block number for which state root is required.\n     *\n     * @return State root for the block number.\n     */\n    function getStateRoot(uint256 _blockNumber) external view returns(bytes32) {\n        return stateRoots[_blockNumber];\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/SpyAnchor.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/SpyAnchor.sol",
+    "exportedSymbols": {
+      "SpyAnchor": [
+        14092
+      ]
+    },
+    "id": 14093,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14009,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:62"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/AnchorInterface.sol",
+        "file": "../../anchor/AnchorInterface.sol",
+        "id": 14010,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 155,
+        "src": "621:42:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+        "file": "../../consensus/ConsensusInterface.sol",
+        "id": 14011,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 5882,
+        "src": "664:48:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 14012,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 12955,
+        "src": "713:51:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14013,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "788:23:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 14014,
+            "nodeType": "InheritanceSpecifier",
+            "src": "788:23:62"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14015,
+              "name": "AnchorInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 154,
+              "src": "813:15:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AnchorInterface_$154",
+                "typeString": "contract AnchorInterface"
+              }
+            },
+            "id": 14016,
+            "nodeType": "InheritanceSpecifier",
+            "src": "813:15:62"
+          }
+        ],
+        "contractDependencies": [
+          154,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14092,
+        "linearizedBaseContracts": [
+          14092,
+          154,
+          12954
+        ],
+        "name": "SpyAnchor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14018,
+            "name": "spyBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "835:29:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14017,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "835:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14020,
+            "name": "spyStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "870:27:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14019,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "870:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14022,
+            "name": "spyMaxStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "903:30:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14021,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "903:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14024,
+            "name": "spyConsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "939:27:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14023,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "939:7:62",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14028,
+            "name": "stateRoots",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "972:38:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 14027,
+              "keyType": {
+                "id": 14025,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "980:7:62",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "972:27:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 14026,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "991:7:62",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 14045,
+              "nodeType": "Block",
+              "src": "1130:93:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14037,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14035,
+                      "name": "spyMaxStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14022,
+                      "src": "1140:15:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14036,
+                      "name": "_maxStateRoots",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14030,
+                      "src": "1158:14:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1140:32:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14038,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1140:32:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14043,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14039,
+                      "name": "spyConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14024,
+                      "src": "1182:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 14041,
+                          "name": "_consensus",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14032,
+                          "src": "1205:10:62",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                            "typeString": "contract ConsensusInterface"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                            "typeString": "contract ConsensusInterface"
+                          }
+                        ],
+                        "id": 14040,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1197:7:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 14042,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1197:19:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1182:34:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14044,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1182:34:62"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14046,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14033,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14030,
+                  "name": "_maxStateRoots",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14046,
+                  "src": "1041:22:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14029,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1041:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14032,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14046,
+                  "src": "1073:29:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14031,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1073:18:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1031:77:62"
+            },
+            "returnParameters": {
+              "id": 14034,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1130:0:62"
+            },
+            "scope": 14092,
+            "src": "1017:206:62",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14056,
+              "nodeType": "Block",
+              "src": "1330:97:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 14052,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1348:5:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "537079416e63686f723a3a6765744c61746573745374617465526f6f74426c6f636b4865696768742073686f756c64206e6f742062652063616c6c65642e",
+                        "id": 14053,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1355:64:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_970f5c0b333f940ae4a1b07580d244ca6ebd397b1e192f99c95e15bf044978e7",
+                          "typeString": "literal_string \"SpyAnchor::getLatestStateRootBlockHeight should not be called.\""
+                        },
+                        "value": "SpyAnchor::getLatestStateRootBlockHeight should not be called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_970f5c0b333f940ae4a1b07580d244ca6ebd397b1e192f99c95e15bf044978e7",
+                          "typeString": "literal_string \"SpyAnchor::getLatestStateRootBlockHeight should not be called.\""
+                        }
+                      ],
+                      "id": 14051,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1340:7:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 14054,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1340:80:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14055,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1340:80:62"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14057,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestStateRootBlockHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14047,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1267:2:62"
+            },
+            "returnParameters": {
+              "id": 14050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14049,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14057,
+                  "src": "1317:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14048,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1317:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1316:9:62"
+            },
+            "scope": 14092,
+            "src": "1229:198:62",
+            "stateMutability": "view",
+            "superFunction": 139,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14078,
+              "nodeType": "Block",
+              "src": "1717:128:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14066,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14064,
+                      "name": "spyBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14018,
+                      "src": "1727:14:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14065,
+                      "name": "_blockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14059,
+                      "src": "1744:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1727:29:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14067,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1727:29:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14070,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14068,
+                      "name": "spyStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14020,
+                      "src": "1766:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14069,
+                      "name": "_stateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14061,
+                      "src": "1781:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1766:25:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14071,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1766:25:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14076,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 14072,
+                        "name": "stateRoots",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14028,
+                        "src": "1801:10:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 14074,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 14073,
+                        "name": "_blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14059,
+                        "src": "1812:12:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1801:24:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14075,
+                      "name": "_stateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14061,
+                      "src": "1828:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1801:37:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14077,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1801:37:62"
+                }
+              ]
+            },
+            "documentation": "@notice It sets state root for a block number.\n     * @param _blockNumber Block number.\n@param _stateRoot State root for a block number.",
+            "id": 14079,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "anchorStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14062,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14059,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14079,
+                  "src": "1641:20:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14058,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1641:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14061,
+                  "name": "_stateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14079,
+                  "src": "1671:18:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14060,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1671:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1631:64:62"
+            },
+            "returnParameters": {
+              "id": 14063,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1717:0:62"
+            },
+            "scope": 14092,
+            "src": "1607:238:62",
+            "stateMutability": "nonpayable",
+            "superFunction": 153,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14090,
+              "nodeType": "Block",
+              "src": "2135:48:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 14086,
+                      "name": "stateRoots",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14028,
+                      "src": "2152:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 14088,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 14087,
+                      "name": "_blockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14081,
+                      "src": "2163:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2152:24:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 14085,
+                  "id": 14089,
+                  "nodeType": "Return",
+                  "src": "2145:31:62"
+                }
+              ]
+            },
+            "documentation": "@notice It returns state root for a block number.\n     * @param _blockNumber Block number for which state root is required.\n     * @return State root for the block number.",
+            "id": 14091,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14082,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14081,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14091,
+                  "src": "2082:20:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14080,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2082:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2081:22:62"
+            },
+            "returnParameters": {
+              "id": 14085,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14084,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14091,
+                  "src": "2126:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14083,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2126:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2125:9:62"
+            },
+            "scope": 14092,
+            "src": "2060:123:62",
+            "stateMutability": "view",
+            "superFunction": 146,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14093,
+        "src": "766:1419:62"
+      }
+    ],
+    "src": "0:2186:62"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/SpyAnchor.sol",
+    "exportedSymbols": {
+      "SpyAnchor": [
+        14092
+      ]
+    },
+    "id": 14093,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14009,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:62"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/AnchorInterface.sol",
+        "file": "../../anchor/AnchorInterface.sol",
+        "id": 14010,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 155,
+        "src": "621:42:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+        "file": "../../consensus/ConsensusInterface.sol",
+        "id": 14011,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 5882,
+        "src": "664:48:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 14012,
+        "nodeType": "ImportDirective",
+        "scope": 14093,
+        "sourceUnit": 12955,
+        "src": "713:51:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14013,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "788:23:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 14014,
+            "nodeType": "InheritanceSpecifier",
+            "src": "788:23:62"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14015,
+              "name": "AnchorInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 154,
+              "src": "813:15:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AnchorInterface_$154",
+                "typeString": "contract AnchorInterface"
+              }
+            },
+            "id": 14016,
+            "nodeType": "InheritanceSpecifier",
+            "src": "813:15:62"
+          }
+        ],
+        "contractDependencies": [
+          154,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14092,
+        "linearizedBaseContracts": [
+          14092,
+          154,
+          12954
+        ],
+        "name": "SpyAnchor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14018,
+            "name": "spyBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "835:29:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14017,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "835:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14020,
+            "name": "spyStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "870:27:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14019,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "870:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14022,
+            "name": "spyMaxStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "903:30:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14021,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "903:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14024,
+            "name": "spyConsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "939:27:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14023,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "939:7:62",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14028,
+            "name": "stateRoots",
+            "nodeType": "VariableDeclaration",
+            "scope": 14092,
+            "src": "972:38:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 14027,
+              "keyType": {
+                "id": 14025,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "980:7:62",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "972:27:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 14026,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "991:7:62",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 14045,
+              "nodeType": "Block",
+              "src": "1130:93:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14037,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14035,
+                      "name": "spyMaxStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14022,
+                      "src": "1140:15:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14036,
+                      "name": "_maxStateRoots",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14030,
+                      "src": "1158:14:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1140:32:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14038,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1140:32:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14043,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14039,
+                      "name": "spyConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14024,
+                      "src": "1182:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 14041,
+                          "name": "_consensus",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 14032,
+                          "src": "1205:10:62",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                            "typeString": "contract ConsensusInterface"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                            "typeString": "contract ConsensusInterface"
+                          }
+                        ],
+                        "id": 14040,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1197:7:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 14042,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1197:19:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1182:34:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14044,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1182:34:62"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14046,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14033,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14030,
+                  "name": "_maxStateRoots",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14046,
+                  "src": "1041:22:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14029,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1041:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14032,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14046,
+                  "src": "1073:29:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14031,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1073:18:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1031:77:62"
+            },
+            "returnParameters": {
+              "id": 14034,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1130:0:62"
+            },
+            "scope": 14092,
+            "src": "1017:206:62",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14056,
+              "nodeType": "Block",
+              "src": "1330:97:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 14052,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1348:5:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "537079416e63686f723a3a6765744c61746573745374617465526f6f74426c6f636b4865696768742073686f756c64206e6f742062652063616c6c65642e",
+                        "id": 14053,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1355:64:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_970f5c0b333f940ae4a1b07580d244ca6ebd397b1e192f99c95e15bf044978e7",
+                          "typeString": "literal_string \"SpyAnchor::getLatestStateRootBlockHeight should not be called.\""
+                        },
+                        "value": "SpyAnchor::getLatestStateRootBlockHeight should not be called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_970f5c0b333f940ae4a1b07580d244ca6ebd397b1e192f99c95e15bf044978e7",
+                          "typeString": "literal_string \"SpyAnchor::getLatestStateRootBlockHeight should not be called.\""
+                        }
+                      ],
+                      "id": 14051,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1340:7:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 14054,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1340:80:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14055,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1340:80:62"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14057,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestStateRootBlockHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14047,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1267:2:62"
+            },
+            "returnParameters": {
+              "id": 14050,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14049,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14057,
+                  "src": "1317:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14048,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1317:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1316:9:62"
+            },
+            "scope": 14092,
+            "src": "1229:198:62",
+            "stateMutability": "view",
+            "superFunction": 139,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14078,
+              "nodeType": "Block",
+              "src": "1717:128:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14066,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14064,
+                      "name": "spyBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14018,
+                      "src": "1727:14:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14065,
+                      "name": "_blockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14059,
+                      "src": "1744:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1727:29:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14067,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1727:29:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14070,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14068,
+                      "name": "spyStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14020,
+                      "src": "1766:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14069,
+                      "name": "_stateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14061,
+                      "src": "1781:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1766:25:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14071,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1766:25:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14076,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 14072,
+                        "name": "stateRoots",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14028,
+                        "src": "1801:10:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 14074,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 14073,
+                        "name": "_blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14059,
+                        "src": "1812:12:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1801:24:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14075,
+                      "name": "_stateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14061,
+                      "src": "1828:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1801:37:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14077,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1801:37:62"
+                }
+              ]
+            },
+            "documentation": "@notice It sets state root for a block number.\n     * @param _blockNumber Block number.\n@param _stateRoot State root for a block number.",
+            "id": 14079,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "anchorStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14062,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14059,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14079,
+                  "src": "1641:20:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14058,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1641:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14061,
+                  "name": "_stateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14079,
+                  "src": "1671:18:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14060,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1671:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1631:64:62"
+            },
+            "returnParameters": {
+              "id": 14063,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1717:0:62"
+            },
+            "scope": 14092,
+            "src": "1607:238:62",
+            "stateMutability": "nonpayable",
+            "superFunction": 153,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14090,
+              "nodeType": "Block",
+              "src": "2135:48:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 14086,
+                      "name": "stateRoots",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14028,
+                      "src": "2152:10:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 14088,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 14087,
+                      "name": "_blockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14081,
+                      "src": "2163:12:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2152:24:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 14085,
+                  "id": 14089,
+                  "nodeType": "Return",
+                  "src": "2145:31:62"
+                }
+              ]
+            },
+            "documentation": "@notice It returns state root for a block number.\n     * @param _blockNumber Block number for which state root is required.\n     * @return State root for the block number.",
+            "id": 14091,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14082,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14081,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14091,
+                  "src": "2082:20:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14080,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2082:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2081:22:62"
+            },
+            "returnParameters": {
+              "id": 14085,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14084,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14091,
+                  "src": "2126:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14083,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2126:7:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2125:9:62"
+            },
+            "scope": 14092,
+            "src": "2060:123:62",
+            "stateMutability": "view",
+            "superFunction": 146,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14093,
+        "src": "766:1419:62"
+      }
+    ],
+    "src": "0:2186:62"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.776Z",
+  "devdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "params": {
+          "_blockNumber": "Block number.",
+          "_stateRoot": "State root for a block number."
+        }
+      },
+      "getStateRoot(uint256)": {
+        "params": {
+          "_blockNumber": "Block number for which state root is required."
+        },
+        "return": "State root for the block number."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "notice": "It sets state root for a block number."
+      },
+      "getStateRoot(uint256)": {
+        "notice": "It returns state root for a block number."
+      }
+    }
+  }
+}

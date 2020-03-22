@@ -1,0 +1,2802 @@
+{
+  "contractName": "Coreputation",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCoconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validators",
+      "outputs": [
+        {
+          "internalType": "enum Coreputation.ValidatorStatus",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reputation",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reputation",
+          "type": "uint256"
+        }
+      ],
+      "name": "upsertValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        }
+      ],
+      "name": "getReputation",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        }
+      ],
+      "name": "isSlashed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getCoconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"getReputation\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"isSlashed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_reputation\",\"type\":\"uint256\"}],\"name\":\"upsertValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"validators\",\"outputs\":[{\"internalType\":\"enum Coreputation.ValidatorStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"reputation\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getCoconsensus()\":{\"return\":\"Coconsensus contract address.\"},\"getReputation(address)\":{\"params\":{\"_validator\":\"An address of a validator. Returns validator reputation.\"}},\"isSlashed(address)\":{\"params\":{\"_validator\":\"An address of a validator. Returns true if the specified address is slashed.\"}},\"upsertValidator(address,uint256)\":{\"details\":\"Validator information is not updated when his status is Slashed.     Validator is marked Deregistered if provided reputation is zero.     Validator is marked Staked, if he has non zero reputation value.     *      Function requires:         - msg.sender should be Coconsensus\",\"params\":{\"_reputation\":\"Validator reputation value.\",\"_validator\":\"Validator address to upsert.\"}}},\"title\":\"Coreputation contract.\"},\"userdoc\":{\"methods\":{\"getCoconsensus()\":{\"notice\":\"Gets the coconsensus contract address.\"},\"getReputation(address)\":{\"notice\":\"Returns reputation of a validator.\"},\"isSlashed(address)\":{\"notice\":\"Check if the validator address is slashed or not.\"},\"upsertValidator(address,uint256)\":{\"notice\":\"Insert or update validator information.\"}},\"notice\":\"Coreputation contract stores validator status and reputation value        for validators.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol\":\"Coreputation\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":{\"keccak256\":\"0xabe9fce2fae63ee9d6186ba03faa248d9d9fe8ef3202218e473dfb8d8ba4df71\",\"urls\":[\"bzz-raw://bb79cb8133c43b7ae5973180717b033a2bc9325cf25cd1a4879c9b805fee999e\",\"dweb:/ipfs/QmbUW7mmQXRJRZTVLLpNDoHZhyw2jiTwumHi92MmGE1wD5\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol\":{\"keccak256\":\"0x44ac30ef79aec2b4a57ab8c0c817b508c640bd591a58e341dfb09068f460124f\",\"urls\":[\"bzz-raw://06ad6395c0d424d40588b98859416be647cf9b86bfd2a1052a3f95e78650ccae\",\"dweb:/ipfs/QmebohhNAg9MkGV75HsDMoNJV2AxCidgUQezwCRWiJfLpL\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600180546001600160a01b031916614d0017905534801561002457600080fd5b50610326806100346000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806323609af71461005c5780635a0738b2146100805780639c89a0e2146100ae578063b799036c146100e6578063fa52c7d814610120575b600080fd5b610064610171565b604080516001600160a01b039092168252519081900360200190f35b6100ac6004803603604081101561009657600080fd5b506001600160a01b038135169060200135610180565b005b6100d4600480360360208110156100c457600080fd5b50356001600160a01b031661024d565b60408051918252519081900360200190f35b61010c600480360360208110156100fc57600080fd5b50356001600160a01b031661026b565b604080519115158252519081900360200190f35b6101466004803603602081101561013657600080fd5b50356001600160a01b031661029d565b6040518083600381111561015657fe5b60ff1681526020018281526020019250505060405180910390f35b6001546001600160a01b031690565b610188610171565b6001600160a01b0316336001600160a01b0316146101d75760405162461bcd60e51b81526004018080602001828103825260358152602001806102bd6035913960400191505060405180910390fd5b6001600160a01b03821660009081526002602052604090206001815460ff16600381111561020157fe5b1461024857600181018290558161022257805460ff19166003178155610248565b6002815460ff16600381111561023457fe5b111561023c57fe5b805460ff191660021781555b505050565b6001600160a01b031660009081526002602052604090206001015490565b600060016001600160a01b03831660009081526002602052604090205460ff16600381111561029657fe5b1492915050565b6002602052600090815260409020805460019091015460ff909116908256fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a723158208b1d3a8a45fe1ac816703266347dc59875772f2b1010ecfd3608c96c9983178764736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806323609af71461005c5780635a0738b2146100805780639c89a0e2146100ae578063b799036c146100e6578063fa52c7d814610120575b600080fd5b610064610171565b604080516001600160a01b039092168252519081900360200190f35b6100ac6004803603604081101561009657600080fd5b506001600160a01b038135169060200135610180565b005b6100d4600480360360208110156100c457600080fd5b50356001600160a01b031661024d565b60408051918252519081900360200190f35b61010c600480360360208110156100fc57600080fd5b50356001600160a01b031661026b565b604080519115158252519081900360200190f35b6101466004803603602081101561013657600080fd5b50356001600160a01b031661029d565b6040518083600381111561015657fe5b60ff1681526020018281526020019250505060405180910390f35b6001546001600160a01b031690565b610188610171565b6001600160a01b0316336001600160a01b0316146101d75760405162461bcd60e51b81526004018080602001828103825260358152602001806102bd6035913960400191505060405180910390fd5b6001600160a01b03821660009081526002602052604090206001815460ff16600381111561020157fe5b1461024857600181018290558161022257805460ff19166003178155610248565b6002815460ff16600381111561023457fe5b111561023c57fe5b805460ff191660021781555b505050565b6001600160a01b031660009081526002602052604090206001015490565b600060016001600160a01b03831660009081526002602052604090205460ff16600381111561029657fe5b1492915050565b6002602052600090815260409020805460019091015460ff909116908256fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a723158208b1d3a8a45fe1ac816703266347dc59875772f2b1010ecfd3608c96c9983178764736f6c634300050d0032",
+  "sourceMap": "865:2556:57:-;;;775:88:19;;;-1:-1:-1;;;;;;775:88:19;820:42;775:88;;;865:2556:57;5:2:-1;;;;30:1;27;20:12;5:2;865:2556:57;;;;;;;",
+  "deployedSourceMap": "865:2556:57:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;865:2556:57;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1248:133:19;;;:::i;:::-;;;;-1:-1:-1;;;;;1248:133:19;;;;;;;;;;;;;;2115:571:57;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;2115:571:57;;;;;;;;:::i;:::-;;2854:160;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2854:160:57;-1:-1:-1;;;;;2854:160:57;;:::i;:::-;;;;;;;;;;;;;;;;3246:173;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3246:173:57;-1:-1:-1;;;;;3246:173:57;;:::i;:::-;;;;;;;;;;;;;;;;;;1513:51;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1513:51:57;-1:-1:-1;;;;;1513:51:57;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1248:133:19;1355:18;;-1:-1:-1;;;;;1355:18:19;1248:133;:::o;2115:571:57:-;976:16:19;:14;:16::i;:::-;-1:-1:-1;;;;;954:39:19;:10;-1:-1:-1;;;;;954:39:19;;933:139;;;;-1:-1:-1;;;933:139:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2288:22:57;;2258:27;2288:22;;;:10;:22;;;;;2340:23;2324:12;;;;:39;;;;;;;;;2320:360;;2379:16;;;:30;;;2427:25;2423:247;;2472:43;;-1:-1:-1;;2472:43:57;2487:28;2472:43;;;2423:247;;;2577:22;2561:12;;;;:38;;;;;;;;;;2554:46;;;;2618:37;;-1:-1:-1;;2618:37:57;2633:22;2618:37;;;2423:247;1083:1:19;2115:571:57;;:::o;2854:160::-;-1:-1:-1;;;;;2974:22:57;2944:7;2974:22;;;:10;:22;;;;;:33;;;;2854:160::o;3246:173::-;3329:4;3389:23;-1:-1:-1;;;;;3356:22:57;;;;;;:10;:22;;;;;:29;;;:56;;;;;;;;;;3246:173;-1:-1:-1;;3246:173:57:o;1513:51::-;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../consensus/CoconsensusModule.sol\";\nimport \"../proxies/MasterCopyNonUpgradable.sol\";\n\n/**\n * @title Coreputation contract.\n *\n * @notice Coreputation contract stores validator status and reputation value\n *         for validators.\n */\ncontract Coreputation is MasterCopyNonUpgradable, CoconsensusModule {\n\n    /** Validator status enum */\n    enum ValidatorStatus {\n\n        /** Undefined as null value */\n        Undefined,\n\n        /** Validator has been slashed and lost stake and earnings */\n        Slashed,\n\n        /** Validator has put up stake and participates in consensus */\n        Staked,\n\n        /** Validator has been deregistered and no longer participates in consensus */\n        Deregistered\n    }\n\n\n    /* Structs */\n\n    struct ValidatorInfo {\n        ValidatorStatus status;\n        uint256 reputation;\n    }\n\n\n    /* Storage */\n\n    /** Validators info */\n    mapping(address => ValidatorInfo) public validators;\n\n\n    /* External functions */\n\n    /**\n     * @notice Insert or update validator information.\n     *\n     * @dev Validator information is not updated when his status is Slashed.\n     *      Validator is marked Deregistered if provided reputation is zero.\n     *      Validator is marked Staked, if he has non zero reputation value.\n     *\n     *      Function requires:\n     *          - msg.sender should be Coconsensus\n     *\n     * @param _validator Validator address to upsert.\n     * @param _reputation Validator reputation value.\n     */\n    function upsertValidator(\n        address _validator,\n        uint256 _reputation\n    )\n        external\n        onlyCoconsensus\n    {\n        ValidatorInfo storage vInfo = validators[_validator];\n        if (vInfo.status != ValidatorStatus.Slashed) {\n            vInfo.reputation = _reputation;\n            if (_reputation == uint256(0)) {\n                vInfo.status = ValidatorStatus.Deregistered;\n            } else {\n                assert(vInfo.status <= ValidatorStatus.Staked);\n                vInfo.status = ValidatorStatus.Staked;\n            }\n        }\n    }\n\n    /**\n     * @notice Returns reputation of a validator.\n     *\n     * @param _validator An address of a validator.\n     * Returns validator reputation.\n     */\n    function getReputation(address _validator)\n        external\n        view\n        returns (uint256)\n    {\n        return validators[_validator].reputation;\n    }\n\n\n    /* Public Functions */\n\n    /**\n     * @notice Check if the validator address is slashed or not.\n     *\n     * @param _validator An address of a validator.\n     * Returns true if the specified address is slashed.\n     */\n    function isSlashed(address _validator)\n        public\n        view\n        returns(bool)\n    {\n        return validators[_validator].status == ValidatorStatus.Slashed;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol",
+    "exportedSymbols": {
+      "Coreputation": [
+        13168
+      ]
+    },
+    "id": 13169,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13059,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:57"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol",
+        "file": "../consensus/CoconsensusModule.sol",
+        "id": 13060,
+        "nodeType": "ImportDirective",
+        "scope": 13169,
+        "sourceUnit": 3813,
+        "src": "621:44:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../proxies/MasterCopyNonUpgradable.sol",
+        "id": 13061,
+        "nodeType": "ImportDirective",
+        "scope": 13169,
+        "sourceUnit": 12955,
+        "src": "666:48:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13062,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "890:23:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 13063,
+            "nodeType": "InheritanceSpecifier",
+            "src": "890:23:57"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13064,
+              "name": "CoconsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3812,
+              "src": "915:17:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusModule_$3812",
+                "typeString": "contract CoconsensusModule"
+              }
+            },
+            "id": 13065,
+            "nodeType": "InheritanceSpecifier",
+            "src": "915:17:57"
+          }
+        ],
+        "contractDependencies": [
+          3812,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Coreputation contract.\n * @notice Coreputation contract stores validator status and reputation value\n        for validators.",
+        "fullyImplemented": true,
+        "id": 13168,
+        "linearizedBaseContracts": [
+          13168,
+          3812,
+          12954
+        ],
+        "name": "Coreputation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Coreputation.ValidatorStatus",
+            "id": 13070,
+            "members": [
+              {
+                "id": 13066,
+                "name": "Undefined",
+                "nodeType": "EnumValue",
+                "src": "1044:9:57"
+              },
+              {
+                "id": 13067,
+                "name": "Slashed",
+                "nodeType": "EnumValue",
+                "src": "1134:7:57"
+              },
+              {
+                "id": 13068,
+                "name": "Staked",
+                "nodeType": "EnumValue",
+                "src": "1224:6:57"
+              },
+              {
+                "id": 13069,
+                "name": "Deregistered",
+                "nodeType": "EnumValue",
+                "src": "1328:12:57"
+              }
+            ],
+            "name": "ValidatorStatus",
+            "nodeType": "EnumDefinition",
+            "src": "973:373:57"
+          },
+          {
+            "canonicalName": "Coreputation.ValidatorInfo",
+            "id": 13075,
+            "members": [
+              {
+                "constant": false,
+                "id": 13072,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 13075,
+                "src": "1403:22:57",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                  "typeString": "enum Coreputation.ValidatorStatus"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 13071,
+                  "name": "ValidatorStatus",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 13070,
+                  "src": "1403:15:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                    "typeString": "enum Coreputation.ValidatorStatus"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13074,
+                "name": "reputation",
+                "nodeType": "VariableDeclaration",
+                "scope": 13075,
+                "src": "1435:18:57",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13073,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1435:7:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ValidatorInfo",
+            "nodeType": "StructDefinition",
+            "scope": 13168,
+            "src": "1372:88:57",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13079,
+            "name": "validators",
+            "nodeType": "VariableDeclaration",
+            "scope": 13168,
+            "src": "1513:51:57",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+              "typeString": "mapping(address => struct Coreputation.ValidatorInfo)"
+            },
+            "typeName": {
+              "id": 13078,
+              "keyType": {
+                "id": 13076,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1521:7:57",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1513:33:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                "typeString": "mapping(address => struct Coreputation.ValidatorInfo)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 13077,
+                "name": "ValidatorInfo",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 13075,
+                "src": "1532:13:57",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                  "typeString": "struct Coreputation.ValidatorInfo"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13137,
+              "nodeType": "Block",
+              "src": "2248:438:57",
+              "statements": [
+                {
+                  "assignments": [
+                    13089
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13089,
+                      "name": "vInfo",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13137,
+                      "src": "2258:27:57",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                        "typeString": "struct Coreputation.ValidatorInfo"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13088,
+                        "name": "ValidatorInfo",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13075,
+                        "src": "2258:13:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13093,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 13090,
+                      "name": "validators",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13079,
+                      "src": "2288:10:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                        "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                      }
+                    },
+                    "id": 13092,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 13091,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13081,
+                      "src": "2299:10:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2288:22:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                      "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2258:52:57"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    },
+                    "id": 13098,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13094,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13089,
+                        "src": "2324:5:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 13095,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "2324:12:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13096,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "2340:15:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 13097,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2340:23:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "2324:39:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 13136,
+                  "nodeType": "IfStatement",
+                  "src": "2320:360:57",
+                  "trueBody": {
+                    "id": 13135,
+                    "nodeType": "Block",
+                    "src": "2365:315:57",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 13103,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 13099,
+                              "name": "vInfo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13089,
+                              "src": "2379:5:57",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                              }
+                            },
+                            "id": 13101,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "reputation",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13074,
+                            "src": "2379:16:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 13102,
+                            "name": "_reputation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13083,
+                            "src": "2398:11:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2379:30:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 13104,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2379:30:57"
+                      },
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 13109,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 13105,
+                            "name": "_reputation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13083,
+                            "src": "2427:11:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "30",
+                                "id": 13107,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "2450:1:57",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                "value": "0"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                }
+                              ],
+                              "id": 13106,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "2442:7:57",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": "uint256"
+                            },
+                            "id": 13108,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "2442:10:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2427:25:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": {
+                          "id": 13133,
+                          "nodeType": "Block",
+                          "src": "2536:134:57",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                      "typeString": "enum Coreputation.ValidatorStatus"
+                                    },
+                                    "id": 13123,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 13119,
+                                        "name": "vInfo",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 13089,
+                                        "src": "2561:5:57",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                        }
+                                      },
+                                      "id": 13120,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "status",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": 13072,
+                                      "src": "2561:12:57",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                        "typeString": "enum Coreputation.ValidatorStatus"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "<=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 13121,
+                                        "name": "ValidatorStatus",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 13070,
+                                        "src": "2577:15:57",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                        }
+                                      },
+                                      "id": 13122,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "Staked",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "2577:22:57",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                        "typeString": "enum Coreputation.ValidatorStatus"
+                                      }
+                                    },
+                                    "src": "2561:38:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  ],
+                                  "id": 13118,
+                                  "name": "assert",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19565,
+                                  "src": "2554:6:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
+                                    "typeString": "function (bool) pure"
+                                  }
+                                },
+                                "id": 13124,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "2554:46:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_tuple$__$",
+                                  "typeString": "tuple()"
+                                }
+                              },
+                              "id": 13125,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2554:46:57"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13131,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13126,
+                                    "name": "vInfo",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13089,
+                                    "src": "2618:5:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                      "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                    }
+                                  },
+                                  "id": 13128,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "status",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 13072,
+                                  "src": "2618:12:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13129,
+                                    "name": "ValidatorStatus",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13070,
+                                    "src": "2633:15:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                      "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                    }
+                                  },
+                                  "id": 13130,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "Staked",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "2633:22:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "src": "2618:37:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                  "typeString": "enum Coreputation.ValidatorStatus"
+                                }
+                              },
+                              "id": 13132,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2618:37:57"
+                            }
+                          ]
+                        },
+                        "id": 13134,
+                        "nodeType": "IfStatement",
+                        "src": "2423:247:57",
+                        "trueBody": {
+                          "id": 13117,
+                          "nodeType": "Block",
+                          "src": "2454:76:57",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13115,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13110,
+                                    "name": "vInfo",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13089,
+                                    "src": "2472:5:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                      "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                    }
+                                  },
+                                  "id": 13112,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "status",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 13072,
+                                  "src": "2472:12:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13113,
+                                    "name": "ValidatorStatus",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13070,
+                                    "src": "2487:15:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                      "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                    }
+                                  },
+                                  "id": 13114,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "Deregistered",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "2487:28:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "src": "2472:43:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                  "typeString": "enum Coreputation.ValidatorStatus"
+                                }
+                              },
+                              "id": 13116,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2472:43:57"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": "@notice Insert or update validator information.\n     * @dev Validator information is not updated when his status is Slashed.\n     Validator is marked Deregistered if provided reputation is zero.\n     Validator is marked Staked, if he has non zero reputation value.\n     *      Function requires:\n         - msg.sender should be Coconsensus\n     * @param _validator Validator address to upsert.\n@param _reputation Validator reputation value.",
+            "id": 13138,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 13086,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 13085,
+                  "name": "onlyCoconsensus",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3801,
+                  "src": "2228:15:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2228:15:57"
+              }
+            ],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13084,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13081,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13138,
+                  "src": "2149:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13080,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2149:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13083,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13138,
+                  "src": "2177:19:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13082,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2177:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2139:63:57"
+            },
+            "returnParameters": {
+              "id": 13087,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2248:0:57"
+            },
+            "scope": 13168,
+            "src": "2115:571:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 13150,
+              "nodeType": "Block",
+              "src": "2957:57:57",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 13145,
+                        "name": "validators",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13079,
+                        "src": "2974:10:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                          "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                        }
+                      },
+                      "id": 13147,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 13146,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13140,
+                        "src": "2985:10:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "2974:22:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                        "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                      }
+                    },
+                    "id": 13148,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "reputation",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 13074,
+                    "src": "2974:33:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 13144,
+                  "id": 13149,
+                  "nodeType": "Return",
+                  "src": "2967:40:57"
+                }
+              ]
+            },
+            "documentation": "@notice Returns reputation of a validator.\n     * @param _validator An address of a validator.\nReturns validator reputation.",
+            "id": 13151,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getReputation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13140,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13151,
+                  "src": "2877:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13139,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2877:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2876:20:57"
+            },
+            "returnParameters": {
+              "id": 13144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13143,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13151,
+                  "src": "2944:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13142,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2944:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2943:9:57"
+            },
+            "scope": 13168,
+            "src": "2854:160:57",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 13166,
+              "nodeType": "Block",
+              "src": "3339:80:57",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    },
+                    "id": 13164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 13158,
+                          "name": "validators",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13079,
+                          "src": "3356:10:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                            "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                          }
+                        },
+                        "id": 13160,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 13159,
+                          "name": "_validator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13153,
+                          "src": "3367:10:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "3356:22:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                          "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                        }
+                      },
+                      "id": 13161,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "3356:29:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13162,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "3389:15:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 13163,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "3389:23:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "3356:56:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13157,
+                  "id": 13165,
+                  "nodeType": "Return",
+                  "src": "3349:63:57"
+                }
+              ]
+            },
+            "documentation": "@notice Check if the validator address is slashed or not.\n     * @param _validator An address of a validator.\nReturns true if the specified address is slashed.",
+            "id": 13167,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isSlashed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13153,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "3265:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3265:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3264:20:57"
+            },
+            "returnParameters": {
+              "id": 13157,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13156,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "3329:4:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13155,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3329:4:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3328:6:57"
+            },
+            "scope": 13168,
+            "src": "3246:173:57",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13169,
+        "src": "865:2556:57"
+      }
+    ],
+    "src": "0:3422:57"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol",
+    "exportedSymbols": {
+      "Coreputation": [
+        13168
+      ]
+    },
+    "id": 13169,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13059,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:57"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol",
+        "file": "../consensus/CoconsensusModule.sol",
+        "id": 13060,
+        "nodeType": "ImportDirective",
+        "scope": 13169,
+        "sourceUnit": 3813,
+        "src": "621:44:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../proxies/MasterCopyNonUpgradable.sol",
+        "id": 13061,
+        "nodeType": "ImportDirective",
+        "scope": 13169,
+        "sourceUnit": 12955,
+        "src": "666:48:57",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13062,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "890:23:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 13063,
+            "nodeType": "InheritanceSpecifier",
+            "src": "890:23:57"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13064,
+              "name": "CoconsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3812,
+              "src": "915:17:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusModule_$3812",
+                "typeString": "contract CoconsensusModule"
+              }
+            },
+            "id": 13065,
+            "nodeType": "InheritanceSpecifier",
+            "src": "915:17:57"
+          }
+        ],
+        "contractDependencies": [
+          3812,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Coreputation contract.\n * @notice Coreputation contract stores validator status and reputation value\n        for validators.",
+        "fullyImplemented": true,
+        "id": 13168,
+        "linearizedBaseContracts": [
+          13168,
+          3812,
+          12954
+        ],
+        "name": "Coreputation",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Coreputation.ValidatorStatus",
+            "id": 13070,
+            "members": [
+              {
+                "id": 13066,
+                "name": "Undefined",
+                "nodeType": "EnumValue",
+                "src": "1044:9:57"
+              },
+              {
+                "id": 13067,
+                "name": "Slashed",
+                "nodeType": "EnumValue",
+                "src": "1134:7:57"
+              },
+              {
+                "id": 13068,
+                "name": "Staked",
+                "nodeType": "EnumValue",
+                "src": "1224:6:57"
+              },
+              {
+                "id": 13069,
+                "name": "Deregistered",
+                "nodeType": "EnumValue",
+                "src": "1328:12:57"
+              }
+            ],
+            "name": "ValidatorStatus",
+            "nodeType": "EnumDefinition",
+            "src": "973:373:57"
+          },
+          {
+            "canonicalName": "Coreputation.ValidatorInfo",
+            "id": 13075,
+            "members": [
+              {
+                "constant": false,
+                "id": 13072,
+                "name": "status",
+                "nodeType": "VariableDeclaration",
+                "scope": 13075,
+                "src": "1403:22:57",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                  "typeString": "enum Coreputation.ValidatorStatus"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 13071,
+                  "name": "ValidatorStatus",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 13070,
+                  "src": "1403:15:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                    "typeString": "enum Coreputation.ValidatorStatus"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13074,
+                "name": "reputation",
+                "nodeType": "VariableDeclaration",
+                "scope": 13075,
+                "src": "1435:18:57",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 13073,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1435:7:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ValidatorInfo",
+            "nodeType": "StructDefinition",
+            "scope": 13168,
+            "src": "1372:88:57",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 13079,
+            "name": "validators",
+            "nodeType": "VariableDeclaration",
+            "scope": 13168,
+            "src": "1513:51:57",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+              "typeString": "mapping(address => struct Coreputation.ValidatorInfo)"
+            },
+            "typeName": {
+              "id": 13078,
+              "keyType": {
+                "id": 13076,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1521:7:57",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1513:33:57",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                "typeString": "mapping(address => struct Coreputation.ValidatorInfo)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 13077,
+                "name": "ValidatorInfo",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 13075,
+                "src": "1532:13:57",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                  "typeString": "struct Coreputation.ValidatorInfo"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13137,
+              "nodeType": "Block",
+              "src": "2248:438:57",
+              "statements": [
+                {
+                  "assignments": [
+                    13089
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 13089,
+                      "name": "vInfo",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 13137,
+                      "src": "2258:27:57",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                        "typeString": "struct Coreputation.ValidatorInfo"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 13088,
+                        "name": "ValidatorInfo",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13075,
+                        "src": "2258:13:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 13093,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 13090,
+                      "name": "validators",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13079,
+                      "src": "2288:10:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                        "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                      }
+                    },
+                    "id": 13092,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 13091,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13081,
+                      "src": "2299:10:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "2288:22:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                      "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2258:52:57"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    },
+                    "id": 13098,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13094,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13089,
+                        "src": "2324:5:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 13095,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "2324:12:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "!=",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13096,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "2340:15:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 13097,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2340:23:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "2324:39:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 13136,
+                  "nodeType": "IfStatement",
+                  "src": "2320:360:57",
+                  "trueBody": {
+                    "id": 13135,
+                    "nodeType": "Block",
+                    "src": "2365:315:57",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 13103,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 13099,
+                              "name": "vInfo",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 13089,
+                              "src": "2379:5:57",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                              }
+                            },
+                            "id": 13101,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "memberName": "reputation",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 13074,
+                            "src": "2379:16:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 13102,
+                            "name": "_reputation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13083,
+                            "src": "2398:11:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2379:30:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 13104,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2379:30:57"
+                      },
+                      {
+                        "condition": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 13109,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 13105,
+                            "name": "_reputation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 13083,
+                            "src": "2427:11:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "==",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "hexValue": "30",
+                                "id": 13107,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "2450:1:57",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                },
+                                "value": "0"
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_rational_0_by_1",
+                                  "typeString": "int_const 0"
+                                }
+                              ],
+                              "id": 13106,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "2442:7:57",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_uint256_$",
+                                "typeString": "type(uint256)"
+                              },
+                              "typeName": "uint256"
+                            },
+                            "id": 13108,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "2442:10:57",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "2427:25:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "falseBody": {
+                          "id": 13133,
+                          "nodeType": "Block",
+                          "src": "2536:134:57",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                      "typeString": "enum Coreputation.ValidatorStatus"
+                                    },
+                                    "id": 13123,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 13119,
+                                        "name": "vInfo",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 13089,
+                                        "src": "2561:5:57",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                        }
+                                      },
+                                      "id": 13120,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "memberName": "status",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": 13072,
+                                      "src": "2561:12:57",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                        "typeString": "enum Coreputation.ValidatorStatus"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "<=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "id": 13121,
+                                        "name": "ValidatorStatus",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 13070,
+                                        "src": "2577:15:57",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                        }
+                                      },
+                                      "id": 13122,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "Staked",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "2577:22:57",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                        "typeString": "enum Coreputation.ValidatorStatus"
+                                      }
+                                    },
+                                    "src": "2561:38:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  ],
+                                  "id": 13118,
+                                  "name": "assert",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 19565,
+                                  "src": "2554:6:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
+                                    "typeString": "function (bool) pure"
+                                  }
+                                },
+                                "id": 13124,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "2554:46:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_tuple$__$",
+                                  "typeString": "tuple()"
+                                }
+                              },
+                              "id": 13125,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2554:46:57"
+                            },
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13131,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13126,
+                                    "name": "vInfo",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13089,
+                                    "src": "2618:5:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                      "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                    }
+                                  },
+                                  "id": 13128,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "status",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 13072,
+                                  "src": "2618:12:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13129,
+                                    "name": "ValidatorStatus",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13070,
+                                    "src": "2633:15:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                      "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                    }
+                                  },
+                                  "id": 13130,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "Staked",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "2633:22:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "src": "2618:37:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                  "typeString": "enum Coreputation.ValidatorStatus"
+                                }
+                              },
+                              "id": 13132,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2618:37:57"
+                            }
+                          ]
+                        },
+                        "id": 13134,
+                        "nodeType": "IfStatement",
+                        "src": "2423:247:57",
+                        "trueBody": {
+                          "id": 13117,
+                          "nodeType": "Block",
+                          "src": "2454:76:57",
+                          "statements": [
+                            {
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 13115,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13110,
+                                    "name": "vInfo",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13089,
+                                    "src": "2472:5:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                                      "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                                    }
+                                  },
+                                  "id": 13112,
+                                  "isConstant": false,
+                                  "isLValue": true,
+                                  "isPure": false,
+                                  "lValueRequested": true,
+                                  "memberName": "status",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": 13072,
+                                  "src": "2472:12:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "nodeType": "Assignment",
+                                "operator": "=",
+                                "rightHandSide": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "id": 13113,
+                                    "name": "ValidatorStatus",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 13070,
+                                    "src": "2487:15:57",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                                      "typeString": "type(enum Coreputation.ValidatorStatus)"
+                                    }
+                                  },
+                                  "id": 13114,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "Deregistered",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "2487:28:57",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                    "typeString": "enum Coreputation.ValidatorStatus"
+                                  }
+                                },
+                                "src": "2472:43:57",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                                  "typeString": "enum Coreputation.ValidatorStatus"
+                                }
+                              },
+                              "id": 13116,
+                              "nodeType": "ExpressionStatement",
+                              "src": "2472:43:57"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": "@notice Insert or update validator information.\n     * @dev Validator information is not updated when his status is Slashed.\n     Validator is marked Deregistered if provided reputation is zero.\n     Validator is marked Staked, if he has non zero reputation value.\n     *      Function requires:\n         - msg.sender should be Coconsensus\n     * @param _validator Validator address to upsert.\n@param _reputation Validator reputation value.",
+            "id": 13138,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 13086,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 13085,
+                  "name": "onlyCoconsensus",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3801,
+                  "src": "2228:15:57",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2228:15:57"
+              }
+            ],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13084,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13081,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13138,
+                  "src": "2149:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13080,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2149:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13083,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13138,
+                  "src": "2177:19:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13082,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2177:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2139:63:57"
+            },
+            "returnParameters": {
+              "id": 13087,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2248:0:57"
+            },
+            "scope": 13168,
+            "src": "2115:571:57",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 13150,
+              "nodeType": "Block",
+              "src": "2957:57:57",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 13145,
+                        "name": "validators",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13079,
+                        "src": "2974:10:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                          "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                        }
+                      },
+                      "id": 13147,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 13146,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13140,
+                        "src": "2985:10:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "2974:22:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                        "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                      }
+                    },
+                    "id": 13148,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "reputation",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 13074,
+                    "src": "2974:33:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 13144,
+                  "id": 13149,
+                  "nodeType": "Return",
+                  "src": "2967:40:57"
+                }
+              ]
+            },
+            "documentation": "@notice Returns reputation of a validator.\n     * @param _validator An address of a validator.\nReturns validator reputation.",
+            "id": 13151,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getReputation",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13141,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13140,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13151,
+                  "src": "2877:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13139,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2877:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2876:20:57"
+            },
+            "returnParameters": {
+              "id": 13144,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13143,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13151,
+                  "src": "2944:7:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13142,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2944:7:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2943:9:57"
+            },
+            "scope": 13168,
+            "src": "2854:160:57",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 13166,
+              "nodeType": "Block",
+              "src": "3339:80:57",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    },
+                    "id": 13164,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "baseExpression": {
+                          "argumentTypes": null,
+                          "id": 13158,
+                          "name": "validators",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13079,
+                          "src": "3356:10:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                            "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                          }
+                        },
+                        "id": 13160,
+                        "indexExpression": {
+                          "argumentTypes": null,
+                          "id": 13159,
+                          "name": "_validator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 13153,
+                          "src": "3367:10:57",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "3356:22:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                          "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                        }
+                      },
+                      "id": 13161,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "3356:29:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 13162,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "3389:15:57",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 13163,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "3389:23:57",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "3356:56:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 13157,
+                  "id": 13165,
+                  "nodeType": "Return",
+                  "src": "3349:63:57"
+                }
+              ]
+            },
+            "documentation": "@notice Check if the validator address is slashed or not.\n     * @param _validator An address of a validator.\nReturns true if the specified address is slashed.",
+            "id": 13167,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isSlashed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13154,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13153,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "3265:18:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13152,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3265:7:57",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3264:20:57"
+            },
+            "returnParameters": {
+              "id": 13157,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13156,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13167,
+                  "src": "3329:4:57",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 13155,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3329:4:57",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3328:6:57"
+            },
+            "scope": 13168,
+            "src": "3246:173:57",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 13169,
+        "src": "865:2556:57"
+      }
+    ],
+    "src": "0:3422:57"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.764Z",
+  "devdoc": {
+    "methods": {
+      "getCoconsensus()": {
+        "return": "Coconsensus contract address."
+      },
+      "getReputation(address)": {
+        "params": {
+          "_validator": "An address of a validator. Returns validator reputation."
+        }
+      },
+      "isSlashed(address)": {
+        "params": {
+          "_validator": "An address of a validator. Returns true if the specified address is slashed."
+        }
+      },
+      "upsertValidator(address,uint256)": {
+        "details": "Validator information is not updated when his status is Slashed.     Validator is marked Deregistered if provided reputation is zero.     Validator is marked Staked, if he has non zero reputation value.     *      Function requires:         - msg.sender should be Coconsensus",
+        "params": {
+          "_reputation": "Validator reputation value.",
+          "_validator": "Validator address to upsert."
+        }
+      }
+    },
+    "title": "Coreputation contract."
+  },
+  "userdoc": {
+    "methods": {
+      "getCoconsensus()": {
+        "notice": "Gets the coconsensus contract address."
+      },
+      "getReputation(address)": {
+        "notice": "Returns reputation of a validator."
+      },
+      "isSlashed(address)": {
+        "notice": "Check if the validator address is slashed or not."
+      },
+      "upsertValidator(address,uint256)": {
+        "notice": "Insert or update validator information."
+      }
+    },
+    "notice": "Coreputation contract stores validator status and reputation value        for validators."
+  }
+}

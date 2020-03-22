@@ -1,0 +1,190 @@
+{
+  "contractName": "CoreStatusEnum",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/core/CoreStatusEnum.sol\":\"CoreStatusEnum\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/core/CoreStatusEnum.sol\":{\"keccak256\":\"0x66f188462746bff2ce6b1a0ce537b5b105c10d19cac54f62824c4eae4197640a\",\"urls\":[\"bzz-raw://1724f3f6390267aaf41aabe1b1077cbd095017e7a0fa5be5cb3f0a65a005c889\",\"dweb:/ipfs/Qmd72WiRvH4Qpto3p6EZ9ikSwFREG5mQqcpkWigJGGpfWc\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158207424c34341558100949d2579268a2013c85ddfb226fa3937eedcf9ebcbe2e66264736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158207424c34341558100949d2579268a2013c85ddfb226fa3937eedcf9ebcbe2e66264736f6c634300050d0032",
+  "sourceMap": "33:470:27:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:470:27;;;;;;;",
+  "deployedSourceMap": "33:470:27:-;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\ncontract CoreStatusEnum {\n    /* Enum and structs */\n\n    /** Enum of Core state machine */\n    enum CoreStatus {\n        // core is undefined.\n        undefined,\n        // core has been terminated.\n        terminated,\n        // core accepts initial set of validators.\n        created,\n        // core has an open kernel without precommitment to a proposal\n        opened,\n        // core has precommitted to a proposal for the open kernel\n        precommitted\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/core/CoreStatusEnum.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/core/CoreStatusEnum.sol",
+    "exportedSymbols": {
+      "CoreStatusEnum": [
+        7669
+      ]
+    },
+    "id": 7670,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7662,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7669,
+        "linearizedBaseContracts": [
+          7669
+        ],
+        "name": "CoreStatusEnum",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoreStatusEnum.CoreStatus",
+            "id": 7668,
+            "members": [
+              {
+                "id": 7663,
+                "name": "undefined",
+                "nodeType": "EnumValue",
+                "src": "185:9:27"
+              },
+              {
+                "id": 7664,
+                "name": "terminated",
+                "nodeType": "EnumValue",
+                "src": "241:10:27"
+              },
+              {
+                "id": 7665,
+                "name": "created",
+                "nodeType": "EnumValue",
+                "src": "312:7:27"
+              },
+              {
+                "id": 7666,
+                "name": "opened",
+                "nodeType": "EnumValue",
+                "src": "400:6:27"
+              },
+              {
+                "id": 7667,
+                "name": "precommitted",
+                "nodeType": "EnumValue",
+                "src": "483:12:27"
+              }
+            ],
+            "name": "CoreStatus",
+            "nodeType": "EnumDefinition",
+            "src": "129:372:27"
+          }
+        ],
+        "scope": 7670,
+        "src": "33:470:27"
+      }
+    ],
+    "src": "0:504:27"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/core/CoreStatusEnum.sol",
+    "exportedSymbols": {
+      "CoreStatusEnum": [
+        7669
+      ]
+    },
+    "id": 7670,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 7662,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:27"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 7669,
+        "linearizedBaseContracts": [
+          7669
+        ],
+        "name": "CoreStatusEnum",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoreStatusEnum.CoreStatus",
+            "id": 7668,
+            "members": [
+              {
+                "id": 7663,
+                "name": "undefined",
+                "nodeType": "EnumValue",
+                "src": "185:9:27"
+              },
+              {
+                "id": 7664,
+                "name": "terminated",
+                "nodeType": "EnumValue",
+                "src": "241:10:27"
+              },
+              {
+                "id": 7665,
+                "name": "created",
+                "nodeType": "EnumValue",
+                "src": "312:7:27"
+              },
+              {
+                "id": 7666,
+                "name": "opened",
+                "nodeType": "EnumValue",
+                "src": "400:6:27"
+              },
+              {
+                "id": 7667,
+                "name": "precommitted",
+                "nodeType": "EnumValue",
+                "src": "483:12:27"
+              }
+            ],
+            "name": "CoreStatus",
+            "nodeType": "EnumDefinition",
+            "src": "129:372:27"
+          }
+        ],
+        "scope": 7670,
+        "src": "33:470:27"
+      }
+    ],
+    "src": "0:504:27"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.695Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

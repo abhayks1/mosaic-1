@@ -1,0 +1,483 @@
+{
+  "contractName": "ConsensusModuleTest",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensus",
+      "outputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "_consensus",
+          "type": "address"
+        }
+      ],
+      "name": "setupConsensusExternal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"consensus\",\"outputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"_consensus\",\"type\":\"address\"}],\"name\":\"setupConsensusExternal\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"setupConsensusExternal(address)\":{\"params\":{\"_consensus\":\"Address of consensus contract.\"}}}},\"userdoc\":{\"methods\":{\"setupConsensusExternal(address)\":{\"notice\":\"This method is created to test setupConsensus method.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus/ConsensusModuleTest.sol\":\"ConsensusModuleTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol\":{\"keccak256\":\"0x7b6a76b998a80813b06bbd950d2037249a15e1d0c9fbba46cfc190c04d643de4\",\"urls\":[\"bzz-raw://ec6aa62754121b74b67ca7693fd60203cfc19487b579a54c7c437feef5d36d7b\",\"dweb:/ipfs/QmQKs1sCtsiFkjw2tjHmToC5ji8CKUUh2WJMqBq2qFsfGf\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus/ConsensusModuleTest.sol\":{\"keccak256\":\"0x0ff28979b8bf922e9bf2f114b9658f67d9b156f4659aa7227c33bfe1bed61a6d\",\"urls\":[\"bzz-raw://e65074d74cdeb91c1eda258ba6d2512b59ed32f72fcd92c74e1fb3cd9dbb93e0\",\"dweb:/ipfs/QmdPTFUic1DqjkbrLwrJRRrEZADXdx5QsdCg1L2XzfGXaE\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101ce806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80632ff83ebb1461003b5780638ef3f76114610063575b600080fd5b6100616004803603602081101561005157600080fd5b50356001600160a01b0316610087565b005b61006b610093565b604080516001600160a01b039092168252519081900360200190f35b610090816100a2565b50565b6000546001600160a01b031681565b6000546001600160a01b0316156100ea5760405162461bcd60e51b81526004018080602001828103825260258152602001806101526025913960400191505060405180910390fd5b6001600160a01b03811661012f5760405162461bcd60e51b81526004018080602001828103825260238152602001806101776023913960400191505060405180910390fd5b600080546001600160a01b0319166001600160a01b039290921691909117905556fe436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2ea265627a7a7231582028edfe708cbca719363f6289c90caae0389444b3a969bb1d6468cea259949ea864736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80632ff83ebb1461003b5780638ef3f76114610063575b600080fd5b6100616004803603602081101561005157600080fd5b50356001600160a01b0316610087565b005b61006b610093565b604080516001600160a01b039092168252519081900360200190f35b610090816100a2565b50565b6000546001600160a01b031681565b6000546001600160a01b0316156100ea5760405162461bcd60e51b81526004018080602001828103825260258152602001806101526025913960400191505060405180910390fd5b6001600160a01b03811661012f5760405162461bcd60e51b81526004018080602001828103825260238152602001806101776023913960400191505060405180910390fd5b600080546001600160a01b0319166001600160a01b039290921691909117905556fe436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2ea265627a7a7231582028edfe708cbca719363f6289c90caae0389444b3a969bb1d6468cea259949ea864736f6c634300050d0032",
+  "sourceMap": "669:332:69:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;669:332:69;;;;;;;",
+  "deployedSourceMap": "669:332:69:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;669:332:69;;;;;;;;;;;;;;;;;;;;;;;;865:133;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;865:133:69;-1:-1:-1;;;;;865:133:69;;:::i;:::-;;756:35:22;;;:::i;:::-;;;;-1:-1:-1;;;;;756:35:22;;;;;;;;;;;;;;865:133:69;949:42;980:10;949:30;:42::i;:::-;865:133;:::o;756:35:22:-;;;-1:-1:-1;;;;;756:35:22;;:::o;925:354::-;1050:1;1028:9;-1:-1:-1;;;;;1028:9:22;1020:32;999:116;;;;-1:-1:-1;;;999:116:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1146:33:22;;1125:115;;;;-1:-1:-1;;;1125:115:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1250:9;:22;;-1:-1:-1;;;;;;1250:22:22;-1:-1:-1;;;;;1250:22:22;;;;;;;;;;925:354::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"../../consensus/ConsensusModule.sol\";\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n\ncontract ConsensusModuleTest is ConsensusModule{\n\n\n    /**\n     * @notice This method is created to test setupConsensus method.\n     * @param _consensus Address of consensus contract.\n     */\n    function setupConsensusExternal(ConsensusInterface _consensus) public\n    {\n        ConsensusModule.setupConsensus(_consensus);\n    }\n\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus/ConsensusModuleTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus/ConsensusModuleTest.sol",
+    "exportedSymbols": {
+      "ConsensusModuleTest": [
+        14708
+      ]
+    },
+    "id": 14709,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14692,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:69"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+        "file": "../../consensus/ConsensusModule.sol",
+        "id": 14693,
+        "nodeType": "ImportDirective",
+        "scope": 14709,
+        "sourceUnit": 5934,
+        "src": "33:45:69",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14694,
+              "name": "ConsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5933,
+              "src": "701:15:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusModule_$5933",
+                "typeString": "contract ConsensusModule"
+              }
+            },
+            "id": 14695,
+            "nodeType": "InheritanceSpecifier",
+            "src": "701:15:69"
+          }
+        ],
+        "contractDependencies": [
+          5933
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14708,
+        "linearizedBaseContracts": [
+          14708,
+          5933
+        ],
+        "name": "ConsensusModuleTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14706,
+              "nodeType": "Block",
+              "src": "939:59:69",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14703,
+                        "name": "_consensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14697,
+                        "src": "980:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 14700,
+                        "name": "ConsensusModule",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5933,
+                        "src": "949:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusModule_$5933_$",
+                          "typeString": "type(contract ConsensusModule)"
+                        }
+                      },
+                      "id": 14702,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupConsensus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5918,
+                      "src": "949:30:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ConsensusInterface_$5881_$returns$__$",
+                        "typeString": "function (contract ConsensusInterface)"
+                      }
+                    },
+                    "id": 14704,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "949:42:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14705,
+                  "nodeType": "ExpressionStatement",
+                  "src": "949:42:69"
+                }
+              ]
+            },
+            "documentation": "@notice This method is created to test setupConsensus method.\n@param _consensus Address of consensus contract.",
+            "id": 14707,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupConsensusExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14697,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14707,
+                  "src": "897:29:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14696,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "897:18:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "896:31:69"
+            },
+            "returnParameters": {
+              "id": 14699,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "939:0:69"
+            },
+            "scope": 14708,
+            "src": "865:133:69",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14709,
+        "src": "669:332:69"
+      }
+    ],
+    "src": "0:1002:69"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus/ConsensusModuleTest.sol",
+    "exportedSymbols": {
+      "ConsensusModuleTest": [
+        14708
+      ]
+    },
+    "id": 14709,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14692,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:69"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+        "file": "../../consensus/ConsensusModule.sol",
+        "id": 14693,
+        "nodeType": "ImportDirective",
+        "scope": 14709,
+        "sourceUnit": 5934,
+        "src": "33:45:69",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14694,
+              "name": "ConsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5933,
+              "src": "701:15:69",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusModule_$5933",
+                "typeString": "contract ConsensusModule"
+              }
+            },
+            "id": 14695,
+            "nodeType": "InheritanceSpecifier",
+            "src": "701:15:69"
+          }
+        ],
+        "contractDependencies": [
+          5933
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14708,
+        "linearizedBaseContracts": [
+          14708,
+          5933
+        ],
+        "name": "ConsensusModuleTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14706,
+              "nodeType": "Block",
+              "src": "939:59:69",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14703,
+                        "name": "_consensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14697,
+                        "src": "980:10:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 14700,
+                        "name": "ConsensusModule",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5933,
+                        "src": "949:15:69",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusModule_$5933_$",
+                          "typeString": "type(contract ConsensusModule)"
+                        }
+                      },
+                      "id": 14702,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupConsensus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5918,
+                      "src": "949:30:69",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ConsensusInterface_$5881_$returns$__$",
+                        "typeString": "function (contract ConsensusInterface)"
+                      }
+                    },
+                    "id": 14704,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "949:42:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14705,
+                  "nodeType": "ExpressionStatement",
+                  "src": "949:42:69"
+                }
+              ]
+            },
+            "documentation": "@notice This method is created to test setupConsensus method.\n@param _consensus Address of consensus contract.",
+            "id": 14707,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupConsensusExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14698,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14697,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14707,
+                  "src": "897:29:69",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14696,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "897:18:69",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "896:31:69"
+            },
+            "returnParameters": {
+              "id": 14699,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "939:0:69"
+            },
+            "scope": 14708,
+            "src": "865:133:69",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14709,
+        "src": "669:332:69"
+      }
+    ],
+    "src": "0:1002:69"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.785Z",
+  "devdoc": {
+    "methods": {
+      "setupConsensusExternal(address)": {
+        "params": {
+          "_consensus": "Address of consensus contract."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "setupConsensusExternal(address)": {
+        "notice": "This method is created to test setupConsensus method."
+      }
+    }
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "contractName": "CoconsensusInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getAnchor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "anchor_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_blockHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "finaliseCheckpoint",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_blockHash\",\"type\":\"bytes32\"}],\"name\":\"finaliseCheckpoint\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"}],\"name\":\"getAnchor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"anchor_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"finaliseCheckpoint(bytes32,uint256,bytes32)\":{\"params\":{\"_blockHash\":\"A block hash of a checkpoint to finalize.\",\"_blockNumber\":\"A block number of a checkpoint to finalize.\",\"_metachainId\":\"A metachain id to finalize a checkpoint.\"}},\"getAnchor(bytes32)\":{\"params\":{\"_metachainId\":\"A metachain id of an anchor to retrieve.\"},\"return\":\"anchor_ An anchor contract's address matching to the                given metachain id.\"}},\"title\":\"Interface of Coconsensus contract.\"},\"userdoc\":{\"methods\":{\"finaliseCheckpoint(bytes32,uint256,bytes32)\":{\"notice\":\"finaliseCheckpoint() function finalises a checkpoint of        a metachain.\"},\"getAnchor(bytes32)\":{\"notice\":\"Gets the anchor address for a metachain id.\"}},\"notice\":\"Specifies Coconsensus external interfaces to be called from        other parts.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":\"CoconsensusInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Interface of Coconsensus contract.\n *\n * @notice Specifies Coconsensus external interfaces to be called from\n *         other parts.\n */\ninterface CoconsensusInterface {\n\n    /* External Functions */\n\n    /**\n     * @notice Gets the anchor address for a metachain id.\n     *\n     * @param _metachainId A metachain id of an anchor to retrieve.\n     *\n     * @return anchor_ An anchor contract's address matching to the\n     *                 given metachain id.\n     */\n    function getAnchor(bytes32 _metachainId) external returns (address anchor_);\n\n    /**\n     * @notice finaliseCheckpoint() function finalises a checkpoint of\n     *         a metachain.\n     *\n     * @param _metachainId A metachain id to finalize a checkpoint.\n     * @param _blockNumber A block number of a checkpoint to finalize.\n     * @param _blockHash A block hash of a checkpoint to finalize.\n     */\n    function finaliseCheckpoint(\n        bytes32 _metachainId,\n        uint256 _blockNumber,\n        bytes32 _blockHash\n    )\n        external;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol",
+    "exportedSymbols": {
+      "CoconsensusInterface": [
+        3778
+      ]
+    },
+    "id": 3779,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3761,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Interface of Coconsensus contract.\n * @notice Specifies Coconsensus external interfaces to be called from\n        other parts.",
+        "fullyImplemented": false,
+        "id": 3778,
+        "linearizedBaseContracts": [
+          3778
+        ],
+        "name": "CoconsensusInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the anchor address for a metachain id.\n     * @param _metachainId A metachain id of an anchor to retrieve.\n     * @return anchor_ An anchor contract's address matching to the\n                given metachain id.",
+            "id": 3768,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3763,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3768,
+                  "src": "1127:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3762,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1127:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1126:22:18"
+            },
+            "returnParameters": {
+              "id": 3767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3766,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3768,
+                  "src": "1167:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1167:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1166:17:18"
+            },
+            "scope": 3778,
+            "src": "1108:76:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice finaliseCheckpoint() function finalises a checkpoint of\n        a metachain.\n     * @param _metachainId A metachain id to finalize a checkpoint.\n@param _blockNumber A block number of a checkpoint to finalize.\n@param _blockHash A block hash of a checkpoint to finalize.",
+            "id": 3777,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "finaliseCheckpoint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3775,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3770,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1555:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3769,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1555:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3772,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1585:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3771,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1585:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3774,
+                  "name": "_blockHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1615:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3773,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1615:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1545:94:18"
+            },
+            "returnParameters": {
+              "id": 3776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1656:0:18"
+            },
+            "scope": 3778,
+            "src": "1518:139:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3779,
+        "src": "772:887:18"
+      }
+    ],
+    "src": "0:1660:18"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol",
+    "exportedSymbols": {
+      "CoconsensusInterface": [
+        3778
+      ]
+    },
+    "id": 3779,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3761,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:18"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Interface of Coconsensus contract.\n * @notice Specifies Coconsensus external interfaces to be called from\n        other parts.",
+        "fullyImplemented": false,
+        "id": 3778,
+        "linearizedBaseContracts": [
+          3778
+        ],
+        "name": "CoconsensusInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the anchor address for a metachain id.\n     * @param _metachainId A metachain id of an anchor to retrieve.\n     * @return anchor_ An anchor contract's address matching to the\n                given metachain id.",
+            "id": 3768,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3763,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3768,
+                  "src": "1127:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3762,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1127:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1126:22:18"
+            },
+            "returnParameters": {
+              "id": 3767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3766,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3768,
+                  "src": "1167:15:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3765,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1167:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1166:17:18"
+            },
+            "scope": 3778,
+            "src": "1108:76:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice finaliseCheckpoint() function finalises a checkpoint of\n        a metachain.\n     * @param _metachainId A metachain id to finalize a checkpoint.\n@param _blockNumber A block number of a checkpoint to finalize.\n@param _blockHash A block hash of a checkpoint to finalize.",
+            "id": 3777,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "finaliseCheckpoint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3775,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3770,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1555:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3769,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1555:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3772,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1585:20:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3771,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1585:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3774,
+                  "name": "_blockHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3777,
+                  "src": "1615:18:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3773,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1615:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1545:94:18"
+            },
+            "returnParameters": {
+              "id": 3776,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1656:0:18"
+            },
+            "scope": 3778,
+            "src": "1518:139:18",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3779,
+        "src": "772:887:18"
+      }
+    ],
+    "src": "0:1660:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.647Z",
+  "devdoc": {
+    "methods": {
+      "finaliseCheckpoint(bytes32,uint256,bytes32)": {
+        "params": {
+          "_blockHash": "A block hash of a checkpoint to finalize.",
+          "_blockNumber": "A block number of a checkpoint to finalize.",
+          "_metachainId": "A metachain id to finalize a checkpoint."
+        }
+      },
+      "getAnchor(bytes32)": {
+        "params": {
+          "_metachainId": "A metachain id of an anchor to retrieve."
+        },
+        "return": "anchor_ An anchor contract's address matching to the                given metachain id."
+      }
+    },
+    "title": "Interface of Coconsensus contract."
+  },
+  "userdoc": {
+    "methods": {
+      "finaliseCheckpoint(bytes32,uint256,bytes32)": {
+        "notice": "finaliseCheckpoint() function finalises a checkpoint of        a metachain."
+      },
+      "getAnchor(bytes32)": {
+        "notice": "Gets the anchor address for a metachain id."
+      }
+    },
+    "notice": "Specifies Coconsensus external interfaces to be called from        other parts."
+  }
+}

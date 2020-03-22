@@ -1,0 +1,522 @@
+{
+  "contractName": "GenesisERC20Cogateway",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisERC20Gateway",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMaxStorageRootItems",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOutboxStorageIndex",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisStateRootProvider",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisUtilityTokenMastercopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"genesisERC20Gateway\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisMaxStorageRootItems\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOutboxStorageIndex\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisStateRootProvider\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisUtilityTokenMastercopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Genesis ERC20 cogateway contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block.\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/erc20-gateway/GenesisERC20Cogateway.sol\":\"GenesisERC20Cogateway\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/erc20-gateway/GenesisERC20Cogateway.sol\":{\"keccak256\":\"0x43a2194087bbb6d9a57f406eba5f62ad6dc6aa949353391ae1ff9331a8f7ef83\",\"urls\":[\"bzz-raw://e69f71ec4acff00647b9d3d672d2c47cce9d15ff882967e27385eab4877d18db\",\"dweb:/ipfs/QmbcMeWpf6WgDuzLcuSGvPfW1tMp8cuC8eyDwcmsoJaBdA\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610157806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80633ad226811461006757806360cf85851461008b57806363630ae0146100a957806373c61ff4146100b1578063c4fec67a146100b9578063ec943dec146100d3575b600080fd5b61006f6100db565b604080516001600160a01b039092168252519081900360200190f35b6100936100ef565b6040805160ff9092168252519081900360200190f35b61006f6100f8565b61006f610107565b6100c1610116565b60408051918252519081900360200190f35b6100c161011c565b60045461010090046001600160a01b031681565b60045460ff1681565b6001546001600160a01b031681565b6002546001600160a01b031681565b60005481565b6003548156fea265627a7a7231582069637f2a04aeb575346b96424801512587f7be0a2d2f54ffa3704220897ff8ee64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80633ad226811461006757806360cf85851461008b57806363630ae0146100a957806373c61ff4146100b1578063c4fec67a146100b9578063ec943dec146100d3575b600080fd5b61006f6100db565b604080516001600160a01b039092168252519081900360200190f35b6100936100ef565b6040805160ff9092168252519081900360200190f35b61006f6100f8565b61006f610107565b6100c1610116565b60408051918252519081900360200190f35b6100c161011c565b60045461010090046001600160a01b031681565b60045460ff1681565b6001546001600160a01b031681565b6002546001600160a01b031681565b60005481565b6003548156fea265627a7a7231582069637f2a04aeb575346b96424801512587f7be0a2d2f54ffa3704220897ff8ee64736f6c634300050d0032",
+  "sourceMap": "807:559:32:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;807:559:32;;;;;;;",
+  "deployedSourceMap": "807:559:32:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;807:559:32;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1319:44;;;:::i;:::-;;;;-1:-1:-1;;;;;1319:44:32;;;;;;;;;;;;;;1230:38;;;:::i;:::-;;;;;;;;;;;;;;;;;;;984:34;;;:::i;1062:39::-;;;:::i;912:33::-;;;:::i;:::-;;;;;;;;;;;;;;;;1150:41;;;:::i;1319:44::-;;;;;;-1:-1:-1;;;;;1319:44:32;;:::o;1230:38::-;;;;;;:::o;984:34::-;;;-1:-1:-1;;;;;984:34:32;;:::o;1062:39::-;;;-1:-1:-1;;;;;1062:39:32;;:::o;912:33::-;;;;:::o;1150:41::-;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n\n/** @title Genesis ERC20 cogateway contract is a storage contract that holds\n *        the initial values required by the contract that were written in the\n *        genesis block.\n */\ncontract GenesisERC20Cogateway {\n\n    /* Storage */\n\n    /** Metachain id of the auxiliary chain. */\n    bytes32 public genesisMetachainId;\n\n    /** ERC20Gateway address */\n    address public genesisERC20Gateway;\n\n    /** StateRootProvider address */\n    address public genesisStateRootProvider;\n\n    /** Max storage roots to be stored */\n    uint256 public genesisMaxStorageRootItems;\n\n    /** Outbox storage index */\n    uint8 public genesisOutboxStorageIndex;\n\n    /** Utility token mastercopy address */\n    address public genesisUtilityTokenMastercopy;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/erc20-gateway/GenesisERC20Cogateway.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/erc20-gateway/GenesisERC20Cogateway.sol",
+    "exportedSymbols": {
+      "GenesisERC20Cogateway": [
+        8731
+      ]
+    },
+    "id": 8732,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8718,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:32"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis ERC20 cogateway contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block.",
+        "fullyImplemented": true,
+        "id": 8731,
+        "linearizedBaseContracts": [
+          8731
+        ],
+        "name": "GenesisERC20Cogateway",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 8720,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "912:33:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 8719,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "912:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8722,
+            "name": "genesisERC20Gateway",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "984:34:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8721,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "984:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8724,
+            "name": "genesisStateRootProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1062:39:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8723,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1062:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8726,
+            "name": "genesisMaxStorageRootItems",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1150:41:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 8725,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1150:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8728,
+            "name": "genesisOutboxStorageIndex",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1230:38:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 8727,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "1230:5:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8730,
+            "name": "genesisUtilityTokenMastercopy",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1319:44:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8729,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1319:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8732,
+        "src": "807:559:32"
+      }
+    ],
+    "src": "0:1367:32"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/erc20-gateway/GenesisERC20Cogateway.sol",
+    "exportedSymbols": {
+      "GenesisERC20Cogateway": [
+        8731
+      ]
+    },
+    "id": 8732,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 8718,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:32"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title Genesis ERC20 cogateway contract is a storage contract that holds\n       the initial values required by the contract that were written in the\n       genesis block.",
+        "fullyImplemented": true,
+        "id": 8731,
+        "linearizedBaseContracts": [
+          8731
+        ],
+        "name": "GenesisERC20Cogateway",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 8720,
+            "name": "genesisMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "912:33:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 8719,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "912:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8722,
+            "name": "genesisERC20Gateway",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "984:34:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8721,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "984:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8724,
+            "name": "genesisStateRootProvider",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1062:39:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8723,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1062:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8726,
+            "name": "genesisMaxStorageRootItems",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1150:41:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 8725,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1150:7:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8728,
+            "name": "genesisOutboxStorageIndex",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1230:38:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 8727,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "1230:5:32",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8730,
+            "name": "genesisUtilityTokenMastercopy",
+            "nodeType": "VariableDeclaration",
+            "scope": 8731,
+            "src": "1319:44:32",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 8729,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1319:7:32",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 8732,
+        "src": "807:559:32"
+      }
+    ],
+    "src": "0:1367:32"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.711Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Genesis ERC20 cogateway contract is a storage contract that holds       the initial values required by the contract that were written in the       genesis block."
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

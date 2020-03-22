@@ -1,0 +1,308 @@
+{
+  "contractName": "ConsensusCogatewayInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_kernelHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "getKernelHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "kernelHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_kernelHeight\",\"type\":\"uint256\"}],\"name\":\"getKernelHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"kernelHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getKernelHash(uint256)\":{\"params\":{\"_kernelHeight\":\"Kernel height.\"},\"return\":\"kernelHash_ Returns the kernel hash.\"}},\"title\":\"An interface for consensus cogateway contract.\"},\"userdoc\":{\"methods\":{\"getKernelHash(uint256)\":{\"notice\":\"Get the kernel hash for a given kernel height.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol\":\"ConsensusCogatewayInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol\":{\"keccak256\":\"0x57b33802000d6fcb63da6df6e48a99344e564da50d14190bf76aafaf4d9e988e\",\"urls\":[\"bzz-raw://92d0cc54e387239f6735e62bae4047a9122a2b83d33a46bc16cb492f46c8621b\",\"dweb:/ipfs/QmTuEndEm77gLDJebxRwEMMxDS3fFRc6LJ3mSQBQc3QvnK\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title An interface for consensus cogateway contract.\n */\ninterface ConsensusCogatewayInterface {\n\n    /* External Functions */\n\n    /**\n     * @notice Get the kernel hash for a given kernel height.\n     *\n     * @param _kernelHeight Kernel height.\n     *\n     * @return kernelHash_ Returns the kernel hash.\n     */\n    function getKernelHash(uint256 _kernelHeight)\n        external\n        returns (bytes32 kernelHash_);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol",
+    "exportedSymbols": {
+      "ConsensusCogatewayInterface": [
+        2502
+      ]
+    },
+    "id": 2503,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2494,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface for consensus cogateway contract.",
+        "fullyImplemented": false,
+        "id": 2502,
+        "linearizedBaseContracts": [
+          2502
+        ],
+        "name": "ConsensusCogatewayInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Get the kernel hash for a given kernel height.\n     * @param _kernelHeight Kernel height.\n     * @return kernelHash_ Returns the kernel hash.",
+            "id": 2501,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2497,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2496,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2501,
+                  "src": "971:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2495,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:23:13"
+            },
+            "returnParameters": {
+              "id": 2500,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2499,
+                  "name": "kernelHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2501,
+                  "src": "1028:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2498,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1028:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1027:21:13"
+            },
+            "scope": 2502,
+            "src": "948:101:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2503,
+        "src": "686:365:13"
+      }
+    ],
+    "src": "0:1052:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol",
+    "exportedSymbols": {
+      "ConsensusCogatewayInterface": [
+        2502
+      ]
+    },
+    "id": 2503,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2494,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:13"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface for consensus cogateway contract.",
+        "fullyImplemented": false,
+        "id": 2502,
+        "linearizedBaseContracts": [
+          2502
+        ],
+        "name": "ConsensusCogatewayInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Get the kernel hash for a given kernel height.\n     * @param _kernelHeight Kernel height.\n     * @return kernelHash_ Returns the kernel hash.",
+            "id": 2501,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2497,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2496,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2501,
+                  "src": "971:21:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2495,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "971:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:23:13"
+            },
+            "returnParameters": {
+              "id": 2500,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2499,
+                  "name": "kernelHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2501,
+                  "src": "1028:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2498,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1028:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1027:21:13"
+            },
+            "scope": 2502,
+            "src": "948:101:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2503,
+        "src": "686:365:13"
+      }
+    ],
+    "src": "0:1052:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.632Z",
+  "devdoc": {
+    "methods": {
+      "getKernelHash(uint256)": {
+        "params": {
+          "_kernelHeight": "Kernel height."
+        },
+        "return": "kernelHash_ Returns the kernel hash."
+      }
+    },
+    "title": "An interface for consensus cogateway contract."
+  },
+  "userdoc": {
+    "methods": {
+      "getKernelHash(uint256)": {
+        "notice": "Get the kernel hash for a given kernel height."
+      }
+    }
+  }
+}

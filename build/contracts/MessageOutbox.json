@@ -1,0 +1,4201 @@
+{
+  "contractName": "MessageOutbox",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "DOMAIN_SEPARATOR_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MESSAGE_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_CHANNEL_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_NAME",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_outbox",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_inbox",
+          "type": "address"
+        }
+      ],
+      "name": "hashChannelIdentifier",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "channelIdentifier_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "messageInbox",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "outboundChannelIdentifier",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "outbox",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "outboxNonces",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_intentHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_sender",
+          "type": "address"
+        }
+      ],
+      "name": "outboxMessageHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "messageHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MESSAGE_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_CHANNEL_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_NAME\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_outbox\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_inbox\",\"type\":\"address\"}],\"name\":\"hashChannelIdentifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"channelIdentifier_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"messageInbox\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"outboundChannelIdentifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"outbox\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_intentHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"outboxMessageHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"messageHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"outboxNonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"hashChannelIdentifier(bytes32,address,address)\":{\"params\":{\"_inbox\":\"Inbox address.\",\"_metachainId\":\"Metachain identifier.\",\"_outbox\":\"Outbox address.\"}},\"outboxMessageHash(bytes32,uint256,uint256,uint256,address)\":{\"params\":{\"_feeGasLimit\":\"Fee gas limit.\",\"_feeGasPrice\":\"Fee gas price.\",\"_intentHash\":\"Intent hash of message.\",\"_nonce\":\"Nonce of sender.\",\"_sender\":\"Sender address.\"},\"return\":\"messageHash_ Message hash.\"}},\"title\":\"MessageOutbox - Contract to declare messages on the origin chain.\"},\"userdoc\":{\"methods\":{\"hashChannelIdentifier(bytes32,address,address)\":{\"notice\":\"Generate channel identifier hash from the input params\"},\"outboxMessageHash(bytes32,uint256,uint256,uint256,address)\":{\"notice\":\"Generate outbox message hash from the input params\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol\":\"MessageOutbox\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageBox.sol\":{\"keccak256\":\"0x927291436edee3b3e08b3621f21ea0f68e71d5f8c3399278524c46fda0e78516\",\"urls\":[\"bzz-raw://8e92a4db303b072fd4d4f9b81dfcdadb136ee57e6c0d1bfb5fb0a75e44d92f06\",\"dweb:/ipfs/QmPcamtsmPWK5zEQq744UvEihszJX1qzQn12v5FmyDbJpR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol\":{\"keccak256\":\"0xd7e7b38166076e1008a01dee9c6aa7484b9806e41d531f0838a237a5947f2e6f\",\"urls\":[\"bzz-raw://b4ef328a798ad3ad196d1df454301772e0d813d0fbb565c8c9ebafe3dea19fb7\",\"dweb:/ipfs/QmYnwUFdPAcWyGochUFjvDxHdzmr46CPUQFxQTQGeT5SDJ\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/version/MosaicVersion.sol\":{\"keccak256\":\"0x67b812c975e8c8425f3165b9d911700927100a0ab5a9153beff48dacdea5575f\",\"urls\":[\"bzz-raw://d142fbfbbf062f87c83108d9d074462d14c744658014dc092b5d1500e60e963e\",\"dweb:/ipfs/QmbcDWi6WTwTSs7BoygUXjosGgzMuM8gxmJu5XQFAyFfaQ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506106df806100206000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c8063ae64028511610071578063ae640285146101a2578063b1c91e211461021f578063b4907ddc1461021f578063d31b596814610227578063f02a0e901461024d578063f732ecff14610255576100b4565b80630e31eb60146100b95780632fe05ad91461010957806346e356b114610111578063523ce24214610119578063965ef01b1461014a5780639f0b7dfe1461016e575b600080fd5b6100f7600480360360a08110156100cf57600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b031661025d565b60408051918252519081900360200190f35b6100f7610279565b6100f7610294565b6101366004803603602081101561012f57600080fd5b50356102af565b604080519115158252519081900360200190f35b6101526102c4565b604080516001600160a01b039092168252519081900360200190f35b6100f76004803603606081101561018457600080fd5b508035906001600160a01b03602082013581169160400135166102d3565b6101aa610492565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101e45781810151838201526020016101cc565b50505050905090810190601f1680156102115780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101aa6104b8565b6100f76004803603602081101561023d57600080fd5b50356001600160a01b03166104d5565b6100f76104e7565b6100f76104ed565b600061026f8686868686600154610508565b9695505050505050565b60405180603661061582396036019050604051809103902081565b60405180606061064b82396060019050604051809103902081565b60006020819052908152604090205460ff1681565b6002546001600160a01b031681565b600080604051808061061560369139604080519182900360360182206020808401919091526001600160a01b03808916848401528716606080850191909152825180850390910181526080909301918290528251920191909120925090508060596105bc8239605901905060405180910390206040518060400160405280600a8152602001694d6f736169632d42757360b01b815250604051806040016040528060018152602001600360fc1b8152508784604051602001808681526020018060200180602001858152602001848152602001838103835287818151815260200191508051906020019080838360005b838110156103db5781810151838201526020016103c3565b50505050905090810190601f1680156104085780820380516001836020036101000a031916815260200191505b50838103825286518152865160209182019188019080838360005b8381101561043b578181015183820152602001610423565b50505050905090810190601f1680156104685780820380516001836020036101000a031916815260200191505b50975050505050505050604051602081830303815290604052805190602001209150509392505050565b6040518060400160405280600a8152602001694d6f736169632d42757360b01b81525081565b604051806040016040528060018152602001600360fc1b81525081565b60036020526000908152604090205481565b60015481565b6040518060596105bc82396059019050604051809103902081565b600080604051808061064b606091396040805191829003606090810183206020808501919091528383019c909c52820199909952608081019790975250505060a08401929092526001600160a01b031660c0808401919091528351808403909101815260e083018452805190850120601960f81b610100840152604d60f81b610101840152610102830191909152610122808301919091528251808303909101815261014290910190915280519101209056fe4d6f736169634d65737361676542757328737472696e67206e616d652c737472696e672076657273696f6e2c62797465733332206d657461636861696e49642c62797465733332206368616e6e656c536570617261746f72294d6f736169634d6573736167654275734368616e6e656c2861646472657373206f7574626f782c206164647265737320696e626f78294d657373616765286279746573333220696e74656e74486173682c75696e74323536206e6f6e63652c75696e743235362066656547617350726963652c75696e74323536206665654761734c696d69742c616464726573732073656e64657229a265627a7a72315820e538051bfd16edbb26888ffdc41be8d5372262440856b3a3b8c772eae4b6b06e64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100b45760003560e01c8063ae64028511610071578063ae640285146101a2578063b1c91e211461021f578063b4907ddc1461021f578063d31b596814610227578063f02a0e901461024d578063f732ecff14610255576100b4565b80630e31eb60146100b95780632fe05ad91461010957806346e356b114610111578063523ce24214610119578063965ef01b1461014a5780639f0b7dfe1461016e575b600080fd5b6100f7600480360360a08110156100cf57600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b031661025d565b60408051918252519081900360200190f35b6100f7610279565b6100f7610294565b6101366004803603602081101561012f57600080fd5b50356102af565b604080519115158252519081900360200190f35b6101526102c4565b604080516001600160a01b039092168252519081900360200190f35b6100f76004803603606081101561018457600080fd5b508035906001600160a01b03602082013581169160400135166102d3565b6101aa610492565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101e45781810151838201526020016101cc565b50505050905090810190601f1680156102115780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6101aa6104b8565b6100f76004803603602081101561023d57600080fd5b50356001600160a01b03166104d5565b6100f76104e7565b6100f76104ed565b600061026f8686868686600154610508565b9695505050505050565b60405180603661061582396036019050604051809103902081565b60405180606061064b82396060019050604051809103902081565b60006020819052908152604090205460ff1681565b6002546001600160a01b031681565b600080604051808061061560369139604080519182900360360182206020808401919091526001600160a01b03808916848401528716606080850191909152825180850390910181526080909301918290528251920191909120925090508060596105bc8239605901905060405180910390206040518060400160405280600a8152602001694d6f736169632d42757360b01b815250604051806040016040528060018152602001600360fc1b8152508784604051602001808681526020018060200180602001858152602001848152602001838103835287818151815260200191508051906020019080838360005b838110156103db5781810151838201526020016103c3565b50505050905090810190601f1680156104085780820380516001836020036101000a031916815260200191505b50838103825286518152865160209182019188019080838360005b8381101561043b578181015183820152602001610423565b50505050905090810190601f1680156104685780820380516001836020036101000a031916815260200191505b50975050505050505050604051602081830303815290604052805190602001209150509392505050565b6040518060400160405280600a8152602001694d6f736169632d42757360b01b81525081565b604051806040016040528060018152602001600360fc1b81525081565b60036020526000908152604090205481565b60015481565b6040518060596105bc82396059019050604051809103902081565b600080604051808061064b606091396040805191829003606090810183206020808501919091528383019c909c52820199909952608081019790975250505060a08401929092526001600160a01b031660c0808401919091528351808403909101815260e083018452805190850120601960f81b610100840152604d60f81b610101840152610102830191909152610122808301919091528251808303909101815261014290910190915280519101209056fe4d6f736169634d65737361676542757328737472696e67206e616d652c737472696e672076657273696f6e2c62797465733332206d657461636861696e49642c62797465733332206368616e6e656c536570617261746f72294d6f736169634d6573736167654275734368616e6e656c2861646472657373206f7574626f782c206164647265737320696e626f78294d657373616765286279746573333220696e74656e74486173682c75696e74323536206e6f6e63652c75696e743235362066656547617350726963652c75696e74323536206665654761734c696d69742c616464726573732073656e64657229a265627a7a72315820e538051bfd16edbb26888ffdc41be8d5372262440856b3a3b8c772eae4b6b06e64736f6c634300050d0032",
+  "sourceMap": "733:3768:40:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;733:3768:40;;;;;;;",
+  "deployedSourceMap": "733:3768:40:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;733:3768:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1638:465;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;1638:465:40;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1638:465:40;;:::i;:::-;;;;;;;;;;;;;;;;859:128:37;;;:::i;1488:166::-;;;:::i;972:38:40:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;972:38:40;;:::i;:::-;;;;;;;;;;;;;;;;;;1136:27;;;:::i;:::-;;;;-1:-1:-1;;;;;1136:27:40;;;;;;;;;;;;;;1899:694:37;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1899:694:37;;;-1:-1:-1;;;;;1899:694:37;;;;;;;;;;;;:::i;1289:63::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1289:63:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1395:57;;;:::i;1218:47:40:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1218:47:40;-1:-1:-1;;;;;1218:47:40;;:::i;1056:40::-;;;:::i;1054:172:37:-;;;:::i;1638:465:40:-;1856:20;1907:189;1943:11;1968:6;1988:12;2014;2040:7;2061:25;;1907:22;:189::i;:::-;1892:204;1638:465;-1:-1:-1;;;;;;1638:465:40:o;859:128:37:-;906:81;;;;;;;;;;;;;;;;;;859:128;:::o;1488:166::-;1531:123;;;;;;;;;;;;;;;;;;1488:166;:::o;972:38:40:-;;;;;;;;;;;;;;;;:::o;1136:27::-;;;-1:-1:-1;;;;;1136:27:40;;:::o;1899:694:37:-;2060:26;2102:24;906:81;;;;;;;;;;;;;;;;;;;2152:111;;;;;;;;-1:-1:-1;;;;;2152:111:37;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;2152:111:37;;;;;;;;2129:144;;;;;;;;;-1:-1:-1;2152:111:37;-1:-1:-1;2152:111:37;1110:116;;2152:111;1110:116;;;;;;;;;;;;2411:25;;;;;;;;;;;;;-1:-1:-1;;;2411:25:37;;;2458:28;;;;;;;;;;;;;-1:-1:-1;;;2458:28:37;;;2508:12;2542:16;2328:248;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2328:248:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2328:248:37;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2328:248:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;2328:248:37;;;2305:281;;;;;;2284:302;;1899:694;;;;;;:::o;1289:63::-;;;;;;;;;;;;;;-1:-1:-1;;;1289:63:37;;;;:::o;1395:57::-;;;;;;;;;;;;;;-1:-1:-1;;;1395:57:37;;;;:::o;1218:47:40:-;;;;;;;;;;;;;:::o;1056:40::-;;;;:::o;1054:172:37:-;1110:116;;;;;;;;;;;;;;;;;;1054:172;:::o;3010:788::-;3258:20;3294:24;1531:123;;;;;;;;;;;;;;;;;;;;;3344:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;3344:196:37;;;;;;;-1:-1:-1;;;;;3344:196:37;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;3344:196:37;;;;;3321:229;;;;;;-1:-1:-1;;;3599:182:37;;;;-1:-1:-1;;;3599:182:37;;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;3599:182:37;;;;;;;3576:215;;;;;;3010:788::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"./MessageBox.sol\";\n\n/**\n * @title MessageOutbox - Contract to declare messages on the origin chain.\n */\ncontract MessageOutbox is MessageBox {\n\n    /* Variables */\n\n    // TODO: If we want to revert, may be the value will change to MessageBoxEnum.(still to think on this)\n    /** Mapping to indicate that message hash exists in outbox. */\n    mapping(bytes32 => bool) public outbox;\n\n    /** Outbound channel identifier */\n    bytes32 public outboundChannelIdentifier;\n\n    /** Message inbox address */\n    address public messageInbox;\n\n    /** Mapping of message sender and nonce. */\n    mapping(address => uint256) public outboxNonces;\n\n\n    /* External Functions. */\n\n    /**\n     * @notice Generate outbox message hash from the input params\n     * @param _intentHash Intent hash of message.\n     * @param _nonce Nonce of sender.\n     * @param _feeGasPrice Fee gas price.\n     * @param _feeGasLimit Fee gas limit.\n     * @param _sender Sender address.\n     * @return messageHash_ Message hash.\n     */\n    function outboxMessageHash(\n        bytes32 _intentHash,\n        uint256 _nonce,\n        uint256 _feeGasPrice,\n        uint256 _feeGasLimit,\n        address _sender\n    )\n        external\n        view\n        returns (bytes32 messageHash_)\n    {\n        messageHash_ = MessageBox.hashMessage(\n            _intentHash,\n            _nonce,\n            _feeGasPrice,\n            _feeGasLimit,\n            _sender,\n            outboundChannelIdentifier\n        );\n    }\n\n\n    /* Internal Functions */\n\n    /**\n     * @notice Setup message outbox.\n     *\n     * @param _metachainId Metachain identifier.\n     * @param _messageInbox MessageInbox contract address.\n     *\n     * \\pre The function can be called only once.\n     * \\pre `_metachainId` must not be zero.\n     * \\pre `_messageInbox` address must not be zero.\n     *\n     * \\post Sets `messageInbox` storage variable with `_messageInbox`.\n     * \\post Sets `outboundChannelIdentifier` storage variable.\n     *       `outboundChannelIdentifier` is calculated by\n     *       MessageBox.hashChannelIdentifier method.\n     */\n    function setupMessageOutbox(\n        bytes32 _metachainId,\n        address _messageInbox\n    )\n        internal\n    {\n        require(\n            outboundChannelIdentifier == bytes32(0),\n            \"Message outbox is already setup.\"\n        );\n\n        require(\n            _metachainId != bytes32(0),\n            \"Metachain id is 0.\"\n        );\n\n        require(\n            _messageInbox != address(0),\n            \"Message inbox address is 0.\"\n        );\n\n        messageInbox = _messageInbox;\n\n        outboundChannelIdentifier = MessageBox.hashChannelIdentifier(\n            _metachainId,\n            address(this),\n            messageInbox\n        );\n    }\n\n    /**\n     * @notice Declare a new message. This will update the outbox value to\n     *         `true` for the given message hash.\n     *\n     * @dev Function requires:\n     *          - message should not exists in outbox\n     *\n     * @param _intentHash Intent hash of message.\n     * @param _nonce Nonce of sender account.\n     * @param _feeGasPrice Fee gas price.\n     * @param _feeGasLimit Fee gas limit.\n     * @param _sender Sender address.\n     * @return messageHash_ Message hash\n     */\n    function declareMessage(\n        bytes32 _intentHash,\n        uint256 _nonce,\n        uint256 _feeGasPrice,\n        uint256 _feeGasLimit,\n        address _sender\n    )\n        internal\n        returns (bytes32 messageHash_)\n    {\n        messageHash_ = MessageBox.hashMessage(\n            _intentHash,\n            _nonce,\n            _feeGasPrice,\n            _feeGasLimit,\n            _sender,\n            outboundChannelIdentifier\n        );\n\n        require(\n            outbox[messageHash_] == false,\n            \"Message already exists in the outbox.\"\n        );\n\n        outbox[messageHash_] = true;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol",
+    "exportedSymbols": {
+      "MessageOutbox": [
+        10875
+      ]
+    },
+    "id": 10876,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10738,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:40"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageBox.sol",
+        "file": "./MessageBox.sol",
+        "id": 10739,
+        "nodeType": "ImportDirective",
+        "scope": 10876,
+        "sourceUnit": 10510,
+        "src": "621:26:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10740,
+              "name": "MessageBox",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10509,
+              "src": "759:10:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MessageBox_$10509",
+                "typeString": "contract MessageBox"
+              }
+            },
+            "id": 10741,
+            "nodeType": "InheritanceSpecifier",
+            "src": "759:10:40"
+          }
+        ],
+        "contractDependencies": [
+          10509,
+          18876
+        ],
+        "contractKind": "contract",
+        "documentation": "@title MessageOutbox - Contract to declare messages on the origin chain.",
+        "fullyImplemented": true,
+        "id": 10875,
+        "linearizedBaseContracts": [
+          10875,
+          10509,
+          18876
+        ],
+        "name": "MessageOutbox",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10745,
+            "name": "outbox",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "972:38:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 10744,
+              "keyType": {
+                "id": 10742,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "980:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "972:24:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 10743,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "991:4:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10747,
+            "name": "outboundChannelIdentifier",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1056:40:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 10746,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1056:7:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10749,
+            "name": "messageInbox",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1136:27:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 10748,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1136:7:40",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10753,
+            "name": "outboxNonces",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1218:47:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 10752,
+              "keyType": {
+                "id": 10750,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1226:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1218:27:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 10751,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1237:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10780,
+              "nodeType": "Block",
+              "src": "1882:221:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10778,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10768,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10766,
+                      "src": "1892:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10771,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10755,
+                          "src": "1943:11:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10772,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10757,
+                          "src": "1968:6:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10773,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10759,
+                          "src": "1988:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10774,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10761,
+                          "src": "2014:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10775,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10763,
+                          "src": "2040:7:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10776,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "2061:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10769,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "1907:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10770,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10508,
+                        "src": "1907:22:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$_t_bytes32_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address,bytes32) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10777,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1907:189:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1892:204:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10779,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1892:204:40"
+                }
+              ]
+            },
+            "documentation": "@notice Generate outbox message hash from the input params\n@param _intentHash Intent hash of message.\n@param _nonce Nonce of sender.\n@param _feeGasPrice Fee gas price.\n@param _feeGasLimit Fee gas limit.\n@param _sender Sender address.\n@return messageHash_ Message hash.",
+            "id": 10781,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "outboxMessageHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10755,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1674:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10754,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1674:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10757,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1703:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10756,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1703:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10759,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1727:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1727:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10761,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1757:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10760,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1757:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10763,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1787:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1787:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1664:144:40"
+            },
+            "returnParameters": {
+              "id": 10767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10766,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1856:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10765,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1856:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1855:22:40"
+            },
+            "scope": 10875,
+            "src": "1638:465:40",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10830,
+              "nodeType": "Block",
+              "src": "2835:548:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 10793,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10789,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "2866:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10791,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2903:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10790,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "2895:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_bytes32_$",
+                              "typeString": "type(bytes32)"
+                            },
+                            "typeName": "bytes32"
+                          },
+                          "id": 10792,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2895:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "2866:39:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d657373616765206f7574626f7820697320616c72656164792073657475702e",
+                        "id": 10794,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2919:34:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4bd1d2dad7950aaf65d0f58107cc56259107463135616f59f5b2fabd866c94fc",
+                          "typeString": "literal_string \"Message outbox is already setup.\""
+                        },
+                        "value": "Message outbox is already setup."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4bd1d2dad7950aaf65d0f58107cc56259107463135616f59f5b2fabd866c94fc",
+                          "typeString": "literal_string \"Message outbox is already setup.\""
+                        }
+                      ],
+                      "id": 10788,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "2845:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10795,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2845:118:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10796,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2845:118:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 10802,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10798,
+                          "name": "_metachainId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10783,
+                          "src": "2995:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10800,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3019:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10799,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3011:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_bytes32_$",
+                              "typeString": "type(bytes32)"
+                            },
+                            "typeName": "bytes32"
+                          },
+                          "id": 10801,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3011:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "2995:26:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d657461636861696e20696420697320302e",
+                        "id": 10803,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3035:20:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_15e37dc9c04ad5f1981d4a8155514826703e2c706fe70af3a47b4dd146ff5a93",
+                          "typeString": "literal_string \"Metachain id is 0.\""
+                        },
+                        "value": "Metachain id is 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_15e37dc9c04ad5f1981d4a8155514826703e2c706fe70af3a47b4dd146ff5a93",
+                          "typeString": "literal_string \"Metachain id is 0.\""
+                        }
+                      ],
+                      "id": 10797,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "2974:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2974:91:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10805,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2974:91:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 10811,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10807,
+                          "name": "_messageInbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10785,
+                          "src": "3097:13:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10809,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3122:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10808,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3114:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 10810,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3114:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "3097:27:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d65737361676520696e626f78206164647265737320697320302e",
+                        "id": 10812,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3138:29:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0215c1841a3d9f7b9c812219424a25579465ffed662fdac67f96d6b28b5ce08c",
+                          "typeString": "literal_string \"Message inbox address is 0.\""
+                        },
+                        "value": "Message inbox address is 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0215c1841a3d9f7b9c812219424a25579465ffed662fdac67f96d6b28b5ce08c",
+                          "typeString": "literal_string \"Message inbox address is 0.\""
+                        }
+                      ],
+                      "id": 10806,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "3076:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10813,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3076:101:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10814,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3076:101:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10817,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10815,
+                      "name": "messageInbox",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10749,
+                      "src": "3188:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10816,
+                      "name": "_messageInbox",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10785,
+                      "src": "3203:13:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "3188:28:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10818,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3188:28:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10828,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10819,
+                      "name": "outboundChannelIdentifier",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10747,
+                      "src": "3227:25:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10822,
+                          "name": "_metachainId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10783,
+                          "src": "3301:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 10824,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19654,
+                              "src": "3335:4:40",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                                "typeString": "contract MessageOutbox"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                                "typeString": "contract MessageOutbox"
+                              }
+                            ],
+                            "id": 10823,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3327:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 10825,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3327:13:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10826,
+                          "name": "messageInbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10749,
+                          "src": "3354:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10820,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "3255:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10821,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashChannelIdentifier",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10460,
+                        "src": "3255:32:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_address_$_t_address_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,address,address) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10827,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "3255:121:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "3227:149:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10829,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3227:149:40"
+                }
+              ]
+            },
+            "documentation": "@notice Setup message outbox.\n     * @param _metachainId Metachain identifier.\n@param _messageInbox MessageInbox contract address.\n     * \\pre The function can be called only once.\n\\pre `_metachainId` must not be zero.\n\\pre `_messageInbox` address must not be zero.\n     * \\post Sets `messageInbox` storage variable with `_messageInbox`.\n\\post Sets `outboundChannelIdentifier` storage variable.\n      `outboundChannelIdentifier` is calculated by\n      MessageBox.hashChannelIdentifier method.",
+            "id": 10831,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupMessageOutbox",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10783,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10831,
+                  "src": "2756:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10782,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2756:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10785,
+                  "name": "_messageInbox",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10831,
+                  "src": "2786:21:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10784,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2786:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2746:67:40"
+            },
+            "returnParameters": {
+              "id": 10787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2835:0:40"
+            },
+            "scope": 10875,
+            "src": "2719:664:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 10873,
+              "nodeType": "Block",
+              "src": "4116:383:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10856,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10846,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10844,
+                      "src": "4126:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10849,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10833,
+                          "src": "4177:11:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10850,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10835,
+                          "src": "4202:6:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10851,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10837,
+                          "src": "4222:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10852,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10839,
+                          "src": "4248:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10853,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10841,
+                          "src": "4274:7:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10854,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "4295:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10847,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "4141:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10848,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10508,
+                        "src": "4141:22:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$_t_bytes32_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address,bytes32) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10855,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "4141:189:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "4126:204:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10857,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4126:204:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 10863,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 10859,
+                            "name": "outbox",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10745,
+                            "src": "4362:6:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                              "typeString": "mapping(bytes32 => bool)"
+                            }
+                          },
+                          "id": 10861,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 10860,
+                            "name": "messageHash_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10844,
+                            "src": "4369:12:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "4362:20:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 10862,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "4386:5:40",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "4362:29:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d65737361676520616c72656164792065786973747320696e20746865206f7574626f782e",
+                        "id": 10864,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "4405:39:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c90d10e80152b41dc41c18c02a07494dd0bca1e59e91eef709bd27dd4159e0e1",
+                          "typeString": "literal_string \"Message already exists in the outbox.\""
+                        },
+                        "value": "Message already exists in the outbox."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c90d10e80152b41dc41c18c02a07494dd0bca1e59e91eef709bd27dd4159e0e1",
+                          "typeString": "literal_string \"Message already exists in the outbox.\""
+                        }
+                      ],
+                      "id": 10858,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "4341:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10865,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4341:113:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10866,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4341:113:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10871,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 10867,
+                        "name": "outbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10745,
+                        "src": "4465:6:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                          "typeString": "mapping(bytes32 => bool)"
+                        }
+                      },
+                      "id": 10869,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 10868,
+                        "name": "messageHash_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10844,
+                        "src": "4472:12:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "4465:20:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 10870,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "4488:4:40",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "4465:27:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 10872,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4465:27:40"
+                }
+              ]
+            },
+            "documentation": "@notice Declare a new message. This will update the outbox value to\n        `true` for the given message hash.\n     * @dev Function requires:\n         - message should not exists in outbox\n     * @param _intentHash Intent hash of message.\n@param _nonce Nonce of sender account.\n@param _feeGasPrice Fee gas price.\n@param _feeGasLimit Fee gas limit.\n@param _sender Sender address.\n@return messageHash_ Message hash",
+            "id": 10874,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareMessage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10833,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3921:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10832,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3921:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10835,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3950:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10834,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3950:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10837,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3974:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10836,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3974:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10839,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4004:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10838,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4004:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10841,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4034:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4034:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3911:144:40"
+            },
+            "returnParameters": {
+              "id": 10845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10844,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4090:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10843,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4090:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4089:22:40"
+            },
+            "scope": 10875,
+            "src": "3888:611:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 10876,
+        "src": "733:3768:40"
+      }
+    ],
+    "src": "0:4502:40"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol",
+    "exportedSymbols": {
+      "MessageOutbox": [
+        10875
+      ]
+    },
+    "id": 10876,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 10738,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:40"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageBox.sol",
+        "file": "./MessageBox.sol",
+        "id": 10739,
+        "nodeType": "ImportDirective",
+        "scope": 10876,
+        "sourceUnit": 10510,
+        "src": "621:26:40",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 10740,
+              "name": "MessageBox",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10509,
+              "src": "759:10:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MessageBox_$10509",
+                "typeString": "contract MessageBox"
+              }
+            },
+            "id": 10741,
+            "nodeType": "InheritanceSpecifier",
+            "src": "759:10:40"
+          }
+        ],
+        "contractDependencies": [
+          10509,
+          18876
+        ],
+        "contractKind": "contract",
+        "documentation": "@title MessageOutbox - Contract to declare messages on the origin chain.",
+        "fullyImplemented": true,
+        "id": 10875,
+        "linearizedBaseContracts": [
+          10875,
+          10509,
+          18876
+        ],
+        "name": "MessageOutbox",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 10745,
+            "name": "outbox",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "972:38:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+              "typeString": "mapping(bytes32 => bool)"
+            },
+            "typeName": {
+              "id": 10744,
+              "keyType": {
+                "id": 10742,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "980:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "972:24:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                "typeString": "mapping(bytes32 => bool)"
+              },
+              "valueType": {
+                "id": 10743,
+                "name": "bool",
+                "nodeType": "ElementaryTypeName",
+                "src": "991:4:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10747,
+            "name": "outboundChannelIdentifier",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1056:40:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 10746,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1056:7:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10749,
+            "name": "messageInbox",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1136:27:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 10748,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1136:7:40",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10753,
+            "name": "outboxNonces",
+            "nodeType": "VariableDeclaration",
+            "scope": 10875,
+            "src": "1218:47:40",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 10752,
+              "keyType": {
+                "id": 10750,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "1226:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "1218:27:40",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 10751,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "1237:7:40",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 10780,
+              "nodeType": "Block",
+              "src": "1882:221:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10778,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10768,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10766,
+                      "src": "1892:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10771,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10755,
+                          "src": "1943:11:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10772,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10757,
+                          "src": "1968:6:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10773,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10759,
+                          "src": "1988:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10774,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10761,
+                          "src": "2014:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10775,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10763,
+                          "src": "2040:7:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10776,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "2061:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10769,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "1907:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10770,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10508,
+                        "src": "1907:22:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$_t_bytes32_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address,bytes32) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10777,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1907:189:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1892:204:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10779,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1892:204:40"
+                }
+              ]
+            },
+            "documentation": "@notice Generate outbox message hash from the input params\n@param _intentHash Intent hash of message.\n@param _nonce Nonce of sender.\n@param _feeGasPrice Fee gas price.\n@param _feeGasLimit Fee gas limit.\n@param _sender Sender address.\n@return messageHash_ Message hash.",
+            "id": 10781,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "outboxMessageHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10764,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10755,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1674:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10754,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1674:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10757,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1703:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10756,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1703:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10759,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1727:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10758,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1727:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10761,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1757:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10760,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1757:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10763,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1787:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10762,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1787:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1664:144:40"
+            },
+            "returnParameters": {
+              "id": 10767,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10766,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10781,
+                  "src": "1856:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10765,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1856:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1855:22:40"
+            },
+            "scope": 10875,
+            "src": "1638:465:40",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 10830,
+              "nodeType": "Block",
+              "src": "2835:548:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 10793,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10789,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "2866:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10791,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "2903:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10790,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "2895:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_bytes32_$",
+                              "typeString": "type(bytes32)"
+                            },
+                            "typeName": "bytes32"
+                          },
+                          "id": 10792,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2895:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "2866:39:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d657373616765206f7574626f7820697320616c72656164792073657475702e",
+                        "id": 10794,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2919:34:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4bd1d2dad7950aaf65d0f58107cc56259107463135616f59f5b2fabd866c94fc",
+                          "typeString": "literal_string \"Message outbox is already setup.\""
+                        },
+                        "value": "Message outbox is already setup."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4bd1d2dad7950aaf65d0f58107cc56259107463135616f59f5b2fabd866c94fc",
+                          "typeString": "literal_string \"Message outbox is already setup.\""
+                        }
+                      ],
+                      "id": 10788,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "2845:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10795,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2845:118:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10796,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2845:118:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        "id": 10802,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10798,
+                          "name": "_metachainId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10783,
+                          "src": "2995:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10800,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3019:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10799,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3011:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_bytes32_$",
+                              "typeString": "type(bytes32)"
+                            },
+                            "typeName": "bytes32"
+                          },
+                          "id": 10801,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3011:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        "src": "2995:26:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d657461636861696e20696420697320302e",
+                        "id": 10803,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3035:20:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_15e37dc9c04ad5f1981d4a8155514826703e2c706fe70af3a47b4dd146ff5a93",
+                          "typeString": "literal_string \"Metachain id is 0.\""
+                        },
+                        "value": "Metachain id is 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_15e37dc9c04ad5f1981d4a8155514826703e2c706fe70af3a47b4dd146ff5a93",
+                          "typeString": "literal_string \"Metachain id is 0.\""
+                        }
+                      ],
+                      "id": 10797,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "2974:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2974:91:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10805,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2974:91:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 10811,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 10807,
+                          "name": "_messageInbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10785,
+                          "src": "3097:13:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 10809,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "3122:1:40",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 10808,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3114:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 10810,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3114:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "3097:27:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d65737361676520696e626f78206164647265737320697320302e",
+                        "id": 10812,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "3138:29:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_0215c1841a3d9f7b9c812219424a25579465ffed662fdac67f96d6b28b5ce08c",
+                          "typeString": "literal_string \"Message inbox address is 0.\""
+                        },
+                        "value": "Message inbox address is 0."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_0215c1841a3d9f7b9c812219424a25579465ffed662fdac67f96d6b28b5ce08c",
+                          "typeString": "literal_string \"Message inbox address is 0.\""
+                        }
+                      ],
+                      "id": 10806,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "3076:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10813,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3076:101:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10814,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3076:101:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10817,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10815,
+                      "name": "messageInbox",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10749,
+                      "src": "3188:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 10816,
+                      "name": "_messageInbox",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10785,
+                      "src": "3203:13:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "3188:28:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 10818,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3188:28:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10828,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10819,
+                      "name": "outboundChannelIdentifier",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10747,
+                      "src": "3227:25:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10822,
+                          "name": "_metachainId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10783,
+                          "src": "3301:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 10824,
+                              "name": "this",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 19654,
+                              "src": "3335:4:40",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                                "typeString": "contract MessageOutbox"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                                "typeString": "contract MessageOutbox"
+                              }
+                            ],
+                            "id": 10823,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "3327:7:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 10825,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "3327:13:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10826,
+                          "name": "messageInbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10749,
+                          "src": "3354:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10820,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "3255:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10821,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashChannelIdentifier",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10460,
+                        "src": "3255:32:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_address_$_t_address_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,address,address) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10827,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "3255:121:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "3227:149:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10829,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3227:149:40"
+                }
+              ]
+            },
+            "documentation": "@notice Setup message outbox.\n     * @param _metachainId Metachain identifier.\n@param _messageInbox MessageInbox contract address.\n     * \\pre The function can be called only once.\n\\pre `_metachainId` must not be zero.\n\\pre `_messageInbox` address must not be zero.\n     * \\post Sets `messageInbox` storage variable with `_messageInbox`.\n\\post Sets `outboundChannelIdentifier` storage variable.\n      `outboundChannelIdentifier` is calculated by\n      MessageBox.hashChannelIdentifier method.",
+            "id": 10831,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupMessageOutbox",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10783,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10831,
+                  "src": "2756:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10782,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2756:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10785,
+                  "name": "_messageInbox",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10831,
+                  "src": "2786:21:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10784,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2786:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2746:67:40"
+            },
+            "returnParameters": {
+              "id": 10787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2835:0:40"
+            },
+            "scope": 10875,
+            "src": "2719:664:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 10873,
+              "nodeType": "Block",
+              "src": "4116:383:40",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10856,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 10846,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10844,
+                      "src": "4126:12:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 10849,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10833,
+                          "src": "4177:11:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10850,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10835,
+                          "src": "4202:6:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10851,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10837,
+                          "src": "4222:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10852,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10839,
+                          "src": "4248:12:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10853,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10841,
+                          "src": "4274:7:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 10854,
+                          "name": "outboundChannelIdentifier",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10747,
+                          "src": "4295:25:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 10847,
+                          "name": "MessageBox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10509,
+                          "src": "4141:10:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageBox_$10509_$",
+                            "typeString": "type(contract MessageBox)"
+                          }
+                        },
+                        "id": 10848,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hashMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10508,
+                        "src": "4141:22:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$_t_bytes32_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address,bytes32) pure returns (bytes32)"
+                        }
+                      },
+                      "id": 10855,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "4141:189:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "4126:204:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 10857,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4126:204:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 10863,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "baseExpression": {
+                            "argumentTypes": null,
+                            "id": 10859,
+                            "name": "outbox",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10745,
+                            "src": "4362:6:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                              "typeString": "mapping(bytes32 => bool)"
+                            }
+                          },
+                          "id": 10861,
+                          "indexExpression": {
+                            "argumentTypes": null,
+                            "id": 10860,
+                            "name": "messageHash_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 10844,
+                            "src": "4369:12:40",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bytes32",
+                              "typeString": "bytes32"
+                            }
+                          },
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "IndexAccess",
+                          "src": "4362:20:40",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 10862,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "4386:5:40",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        },
+                        "src": "4362:29:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4d65737361676520616c72656164792065786973747320696e20746865206f7574626f782e",
+                        "id": 10864,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "4405:39:40",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c90d10e80152b41dc41c18c02a07494dd0bca1e59e91eef709bd27dd4159e0e1",
+                          "typeString": "literal_string \"Message already exists in the outbox.\""
+                        },
+                        "value": "Message already exists in the outbox."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_c90d10e80152b41dc41c18c02a07494dd0bca1e59e91eef709bd27dd4159e0e1",
+                          "typeString": "literal_string \"Message already exists in the outbox.\""
+                        }
+                      ],
+                      "id": 10858,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "4341:7:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 10865,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4341:113:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 10866,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4341:113:40"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 10871,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 10867,
+                        "name": "outbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10745,
+                        "src": "4465:6:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_bytes32_$_t_bool_$",
+                          "typeString": "mapping(bytes32 => bool)"
+                        }
+                      },
+                      "id": 10869,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 10868,
+                        "name": "messageHash_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10844,
+                        "src": "4472:12:40",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "4465:20:40",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 10870,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "4488:4:40",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "4465:27:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 10872,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4465:27:40"
+                }
+              ]
+            },
+            "documentation": "@notice Declare a new message. This will update the outbox value to\n        `true` for the given message hash.\n     * @dev Function requires:\n         - message should not exists in outbox\n     * @param _intentHash Intent hash of message.\n@param _nonce Nonce of sender account.\n@param _feeGasPrice Fee gas price.\n@param _feeGasLimit Fee gas limit.\n@param _sender Sender address.\n@return messageHash_ Message hash",
+            "id": 10874,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareMessage",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 10842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10833,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3921:19:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10832,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3921:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10835,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3950:14:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10834,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3950:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10837,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "3974:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10836,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3974:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10839,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4004:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10838,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4004:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 10841,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4034:15:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 10840,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4034:7:40",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3911:144:40"
+            },
+            "returnParameters": {
+              "id": 10845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10844,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 10874,
+                  "src": "4090:20:40",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 10843,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4090:7:40",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4089:22:40"
+            },
+            "scope": 10875,
+            "src": "3888:611:40",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 10876,
+        "src": "733:3768:40"
+      }
+    ],
+    "src": "0:4502:40"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.734Z",
+  "devdoc": {
+    "methods": {
+      "hashChannelIdentifier(bytes32,address,address)": {
+        "params": {
+          "_inbox": "Inbox address.",
+          "_metachainId": "Metachain identifier.",
+          "_outbox": "Outbox address."
+        }
+      },
+      "outboxMessageHash(bytes32,uint256,uint256,uint256,address)": {
+        "params": {
+          "_feeGasLimit": "Fee gas limit.",
+          "_feeGasPrice": "Fee gas price.",
+          "_intentHash": "Intent hash of message.",
+          "_nonce": "Nonce of sender.",
+          "_sender": "Sender address."
+        },
+        "return": "messageHash_ Message hash."
+      }
+    },
+    "title": "MessageOutbox - Contract to declare messages on the origin chain."
+  },
+  "userdoc": {
+    "methods": {
+      "hashChannelIdentifier(bytes32,address,address)": {
+        "notice": "Generate channel identifier hash from the input params"
+      },
+      "outboxMessageHash(bytes32,uint256,uint256,uint256,address)": {
+        "notice": "Generate outbox message hash from the input params"
+      }
+    }
+  }
+}

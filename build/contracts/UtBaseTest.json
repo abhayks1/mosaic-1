@@ -1,0 +1,1858 @@
+{
+  "contractName": "UtBaseTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "_coconsensus",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_initialTokenSupply",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Approval",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "Transfer",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "TOKEN_DECIMALS",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "TOKEN_NAME",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "TOKEN_SYMBOL",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "allowance_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_spender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "approve",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success_",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "balance_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "burnFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "coconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensusCogateway",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "tokenDecimals_",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisTotalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getTotalTokenSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_beneficiary",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "tokenName_",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "tokenSymbol_",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "totalSupply",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalTokenSupply_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success_",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_from",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "transferFrom",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "success_",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "unwrap",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "wrap",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_consensusCogateway",
+          "type": "address"
+        }
+      ],
+      "name": "setConsensusCogateway",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCoconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getConsensusCogateway",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"_coconsensus\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_initialTokenSupply\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"TOKEN_DECIMALS\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"TOKEN_NAME\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"TOKEN_SYMBOL\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"allowance_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success_\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"balance_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"coconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"consensusCogateway\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"tokenDecimals_\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisTotalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getCoconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getConsensusCogateway\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getTotalTokenSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenName_\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_consensusCogateway\",\"type\":\"address\"}],\"name\":\"setConsensusCogateway\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"tokenSymbol_\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"totalTokenSupply_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success_\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"success_\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"unwrap\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"wrap\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"allowance(address,address)\":{\"params\":{\"_owner\":\"Address of the owner account.\",\"_spender\":\"Address of the spender account.\"},\"return\":\"allowance_ Remaining allowance for the spender to spend from                   owner's account.\"},\"approve(address,uint256)\":{\"details\":\"Allows _spender address to withdraw from function caller's account,     multiple times up to the _value amount, if this function is called     again it overwrites the current allowance with _value.\",\"params\":{\"_spender\":\"Address authorized to spend from the function caller's                 address.\",\"_value\":\"Amount up to which spender is authorized to spend.\"},\"return\":\"bool `true` for a successful approval, `false` otherwise.\"},\"balanceOf(address)\":{\"params\":{\"_owner\":\"Address of the owner account.\"},\"return\":\"balance_ Account balance of the owner account.\"},\"burn(uint256)\":{\"params\":{\"_value\":\"The amount that will be burnt.     * \\\\pre msg.value should be non-zero. \\\\pre Caller must have atleast `_value` amount of ERC20 UtBase tokens.     * \\\\post Decreases total token supply of the token by `_value` amount. \\\\post Decreases caller's ERC20 UtBase token balance by `_value` amount.     \"}},\"burnFrom(address,uint256)\":{\"params\":{\"_account\":\"The account whose tokens will be burnt.\",\"_value\":\"The amount that will be burnt.     * \\\\pre `_account` must approve `_value` amount to the caller     * \\\\post Decreases total token supply of the token by `_value` amount. \\\\post Decreases `_account` ERC20 UtBase token balance by      `_value` amount.\"}},\"constructor\":{\"params\":{\"_coconsensus\":\"Coconsensus contract address.\",\"_initialTokenSupply\":\"Initial token supply.\"}},\"decimals()\":{\"return\":\"tokenDecimals Decimals of the token.\"},\"getCoconsensus()\":{\"return\":\"Coconsensus contract address.\"},\"getConsensusCogateway()\":{\"return\":\"ConsensusCogateway contract address.\"},\"getTotalTokenSupply()\":{\"return\":\"Token token supply.\"},\"mint(address,uint256)\":{\"params\":{\"_amount\":\"Amount of UtBase tokens to be minted.     * \\\\pre Caller must be Consensus cogateway contract.     * \\\\post Increases total token supply by `_amount `. \\\\post Increase ERC20 UtBase token balance of the beneficiary      by `_amount`. \\\\post It satisfies all post conditions of UtBase::unwrapInternal().     *\",\"_beneficiary\":\"Beneficairy address which will receive base coin.\"}},\"name()\":{\"return\":\"tokenName_ Name of the token.\"},\"setConsensusCogateway(address)\":{\"params\":{\"_consensusCogateway\":\"Consensus cogateway contract address.\"}},\"symbol()\":{\"return\":\"tokenSymbol_ Symbol of the token.\"},\"totalSupply()\":{\"details\":\"Get totalTokenSupply as view so that child cannot edit.\",\"return\":\"totalTokenSupply_ Total token supply.\"},\"transfer(address,uint256)\":{\"details\":\"Fires the transfer event, reverts if _from account does not have     enough tokens to transfer.\",\"params\":{\"_to\":\"Address to which tokens are transferred.\",\"_value\":\"Amount of tokens to be transferred.\"},\"return\":\"success_ `true` for a successful transfer, `false` otherwise.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Allows a contract to transfer tokens on behalf of _from address     to _to address, the function caller has to be pre-authorized for     multiple transfers up to the total of _value amount by the _from     address.\",\"params\":{\"_from\":\"Address from which tokens are transferred.\",\"_to\":\"Address to which tokens are transferred.\",\"_value\":\"Amount of tokens transferred.\"},\"return\":\"success_ `true` for a successful transfer, `false` otherwise.\"},\"unwrap(uint256)\":{\"details\":\"This contract's base coin balance must always be greater than      amount.\",\"params\":{\"_amount\":\"Amount of ERC20 UtBase token to convert to base coin.     * \\\\pre Satisfies all conditions of UtBase::unwrapInternal.     * \\\\post Satisfies all conditions of UtBase::unwrapInternal.     \"}},\"wrap()\":{\"details\":\"The ERC20 OST balance of contract should always be greater than the     received payable amount.     * \\\\pre msg.value should be non-zero. \\\\pre UtBase ERC20 token balance must be greater than     amount to be wrapped.     * \\\\post Increases ERC20 UtBase token balance of the caller by `msg.value`       amount. \\\\post Decreases ERC20 UtBase token balance of the UtBase contract by      `msg.value` amount.\"}},\"title\":\"UtBaseTest contract.\"},\"userdoc\":{\"methods\":{\"allowance(address,address)\":{\"notice\":\"Public function to get the allowance.\"},\"approve(address,uint256)\":{\"notice\":\"Public function to approve an account for transfer.\"},\"balanceOf(address)\":{\"notice\":\"Get the balance of an account.\"},\"burn(uint256)\":{\"notice\":\"It allows to burn UtBase tokens for an account.\"},\"burnFrom(address,uint256)\":{\"notice\":\"It allows to burn tokens of the spender.\"},\"constructor\":\"UtBaseTest constructor.\",\"decimals()\":{\"notice\":\"Public function to get the decimals of the token.\"},\"getCoconsensus()\":{\"notice\":\"Gets the coconsensus contract address.\"},\"getConsensusCogateway()\":{\"notice\":\"Gets the consensus cogateway contract address.\"},\"getTotalTokenSupply()\":{\"notice\":\"Gets total token supply.\"},\"mint(address,uint256)\":{\"notice\":\"Mints the ERC20 token for the beneficiary address and        unwraps its to base coin.\"},\"name()\":{\"notice\":\"Public function to get the name of the token.\"},\"setConsensusCogateway(address)\":{\"notice\":\"It is used for testing purpose.\"},\"setup()\":{\"notice\":\"Initializes the UtBase contract.     * \\\\pre Can be called only once by consensus cogateway contract     * \\\\post Sets the `tokenSymbol` storage variable with `TOKEN_SYMBOL`      constant value. \\\\post Sets the `tokenName` storage variable with `TOKEN_NAME`      constant value. \\\\post Sets the `tokenDecimals` storage variable with `TOKEN_DECIMALS`      constant value. \\\\post Sets the `totalTokenSupply` storage variable to genesis total      supply value. \\\\post Adds the balance for the (self) contract address with genesis      total supply value.     \"},\"symbol()\":{\"notice\":\"Public function to get the symbol of the token.\"},\"totalSupply()\":{\"notice\":\"Public function to get the total supply of the tokens.\"},\"transfer(address,uint256)\":{\"notice\":\"Public function to transfer the token.\"},\"transferFrom(address,address,uint256)\":{\"notice\":\"Public function transferFrom.\"},\"unwrap(uint256)\":{\"notice\":\"Unwrap converts ERC20 UtBase to base coin.\"},\"wrap()\":{\"notice\":\"Wrap converts base coin to ERC20 UtBase.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/ut_base/UtBaseTest.sol\":\"UtBaseTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol\":{\"keccak256\":\"0x66811f01b3f1cdb2bbbc6e0d9921c3989ec3f43544c5f68c11ea99fa9bfe0953\",\"urls\":[\"bzz-raw://9a2e4f5f704bcc883d892e5c8746119c88771c16e5ea662d53515207a2d37462\",\"dweb:/ipfs/QmWqv2PzyGA21rSNrzFNTqE6hxZDap2BvEoiB3Y7FrsHxo\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":{\"keccak256\":\"0xabe9fce2fae63ee9d6186ba03faa248d9d9fe8ef3202218e473dfb8d8ba4df71\",\"urls\":[\"bzz-raw://bb79cb8133c43b7ae5973180717b033a2bc9325cf25cd1a4879c9b805fee999e\",\"dweb:/ipfs/QmbUW7mmQXRJRZTVLLpNDoHZhyw2jiTwumHi92MmGE1wD5\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/GenesisUtBase.sol\":{\"keccak256\":\"0x80ee47422414a2d8532e615882ce0086b76ecfd1e94f3a99b8314e7c389cc473\",\"urls\":[\"bzz-raw://f0495f85bb24b45d62b55d73e37c9f9dc22325e1a910c870aa30aea9709e1179\",\"dweb:/ipfs/QmX23UkrN2xJPkk5bX2EJ65UDmTRkyEjwKcWtpM3NGZ49S\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/UtBase.sol\":{\"keccak256\":\"0xc3d7025e1a9dfe511c9b6361c0a8c3e0b44c9740bd24424b2d4a8e83c6886b11\",\"urls\":[\"bzz-raw://c1e653c835c282c0c1f5c988a12da2a63aec29833645c30360d675c61dff55de\",\"dweb:/ipfs/QmQprBm89SBM96wic4nAQuPQksMt74iZyFZ2zEyB8C9kbe\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/ut_base/UtBaseTest.sol\":{\"keccak256\":\"0xecbcf5a4957749ffd715075f57db43366e950472ccdbde1a3cec82e0f5497855\",\"urls\":[\"bzz-raw://4af6ef19e1f185212f52e15033724b3663132de0e588ad0d3c111a5cb7ae1679\",\"dweb:/ipfs/Qmc8U7TqD8omJz7qSLY7jFPERErxjPiwA2mBYNjNZaHqou\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/utility-token/ERC20Token.sol\":{\"keccak256\":\"0x40c1ab835ee753226957710b2d13355a5336968866e16b1471eba9407f6eaf1d\",\"urls\":[\"bzz-raw://783914cc85be91f0ed36d77752c3c9ebbf514ab53d9e46b759aa871ba8cb6e87\",\"dweb:/ipfs/QmbvunUajnm2qeiuRSxVgitynVCYXyGfsge5BwVnb9pUJ7\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b\",\"urls\":[\"bzz-raw://1eb493553b27efd46c231a836a83ce50d215639feb97b4aac9f301d0fd034ff5\",\"dweb:/ipfs/QmbMdvSXcqGKxeeYvzF3VrWpoHQyVzMXBhzhAokF2Gdymv\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600880546001600160a01b0319908116614d001790915560098054909116614d0217905534801561003457600080fd5b506040516110b33803806110b38339818101604052604081101561005757600080fd5b508051602090910151600155600a80546001600160a01b0319166001600160a01b03909216919091179055611022806100916000396000f3fe6080604052600436106101665760003560e01c806342966c68116100d1578063a032006f1161008a578063d46eb11911610064578063d46eb119146104ed578063dd62ed3e146104f5578063de0e9a3e14610530578063de36948d1461055a57610166565b8063a032006f1461048a578063a9059cbb1461049f578063ba0bba40146104d857610166565b806342966c68146103b55780635b7f415c146103df57806370a08231146103f457806379cc679014610427578063890059fd1461046057806395d89b411461047557610166565b80631d6c90a9116101235780631d6c90a9146102b357806323609af7146102c857806323b872dd146102f95780632a9053181461033c578063313ce5671461035157806340c10f191461037c57610166565b8063047087cc1461016b57806306fdde0314610192578063095ea7b31461021c57806318160ddd1461016b57806318821400146102695780631a3fcafa1461027e575b600080fd5b34801561017757600080fd5b5061018061056f565b60408051918252519081900360200190f35b34801561019e57600080fd5b506101a7610576565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101e15781810151838201526020016101c9565b50505050905090810190601f16801561020e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561022857600080fd5b506102556004803603604081101561023f57600080fd5b506001600160a01b038135169060200135610609565b604080519115158252519081900360200190f35b34801561027557600080fd5b506101a761066f565b34801561028a57600080fd5b506102b1600480360360208110156102a157600080fd5b50356001600160a01b0316610691565b005b3480156102bf57600080fd5b506101806106b3565b3480156102d457600080fd5b506102dd6106b9565b604080516001600160a01b039092168252519081900360200190f35b34801561030557600080fd5b506102556004803603606081101561031c57600080fd5b506001600160a01b038135811691602081013590911690604001356106c8565b34801561034857600080fd5b506101a7610733565b34801561035d57600080fd5b50610366610751565b6040805160ff9092168252519081900360200190f35b34801561038857600080fd5b506102b16004803603604081101561039f57600080fd5b506001600160a01b03813516906020013561075a565b3480156103c157600080fd5b506102b1600480360360208110156103d857600080fd5b50356107c9565b3480156103eb57600080fd5b506103666107d6565b34801561040057600080fd5b506101806004803603602081101561041757600080fd5b50356001600160a01b03166107db565b34801561043357600080fd5b506102b16004803603604081101561044a57600080fd5b506001600160a01b0381351690602001356107f6565b34801561046c57600080fd5b506102dd610800565b34801561048157600080fd5b506101a761080f565b34801561049657600080fd5b506102dd610870565b3480156104ab57600080fd5b50610255600480360360408110156104c257600080fd5b506001600160a01b03813516906020013561087f565b3480156104e457600080fd5b506102b1610893565b6102b16109a8565b34801561050157600080fd5b506101806004803603604081101561051857600080fd5b506001600160a01b0381358116916020013516610a0f565b34801561053c57600080fd5b506102b16004803603602081101561055357600080fd5b5035610a3a565b34801561056657600080fd5b506102dd610a44565b6005545b90565b60028054604080516020601f60001961010060018716150201909416859004938401819004810282018101909252828152606093909290918301828280156105ff5780601f106105d4576101008083540402835291602001916105ff565b820191906000526020600020905b8154815290600101906020018083116105e257829003601f168201915b5050505050905090565b3360008181526007602090815260408083206001600160a01b038716808552908352818420869055815186815291519394909390927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925928290030190a350600192915050565b6040518060400160405280600681526020016555744261736560d01b81525081565b600b80546001600160a01b0319166001600160a01b0392909216919091179055565b60015481565b600a546001600160a01b031690565b6001600160a01b03831660009081526007602090815260408083203384529091528120546106fc908363ffffffff610a5316565b6001600160a01b038516600090815260076020908152604080832033845290915290205561072b848484610a68565b949350505050565b604051806040016040528060028152602001612aa160f11b81525081565b60045460ff1690565b610762610a44565b6001600160a01b0316336001600160a01b0316146107b15760405162461bcd60e51b815260040180806020018281038252603d815260200180610f34603d913960400191505060405180910390fd5b6107bb8282610b27565b6107c58282610c19565b5050565b6107d33382610cca565b50565b601281565b6001600160a01b031660009081526006602052604090205490565b6107c58282610da5565b600b546001600160a01b031681565b60038054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156105ff5780601f106105d4576101008083540402835291602001916105ff565b600a546001600160a01b031681565b600061088c338484610a68565b9392505050565b61089b6106b9565b6001600160a01b0316336001600160a01b0316146108ea5760405162461bcd60e51b8152600401808060200182810382526035815260200180610f716035913960400191505060405180910390fd5b600554156109295760405162461bcd60e51b8152600401808060200182810382526027815260200180610fa66027913960400191505060405180910390fd5b604080518082019091526002808252612aa160f11b602090920191825261095291600391610e79565b506040805180820190915260068082526555744261736560d01b602090920191825261098091600291610e79565b506004805460ff19166012179055600154600581905530600090815260066020526040902055565b3433816109e65760405162461bcd60e51b8152600401808060200182810382526022815260200180610f126022913960400191505060405180910390fd5b306000908152600660205260409020548211156109ff57fe5b610a0a308284610a68565b505050565b6001600160a01b03918216600090815260076020908152604080832093909416825291909152205490565b6107d33382610c19565b600b546001600160a01b031690565b600082821115610a6257600080fd5b50900390565b6001600160a01b038316600090815260066020526040812054610a91908363ffffffff610a5316565b6001600160a01b038086166000908152600660205260408082209390935590851681522054610ac6908363ffffffff610e6716565b6001600160a01b0380851660008181526006602090815260409182902094909455805186815290519193928816927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a35060019392505050565b6001600160a01b038216610b82576040805162461bcd60e51b815260206004820152601f60248201527f45524332303a206d696e7420746f20746865207a65726f206164647265737300604482015290519081900360640190fd5b600554610b95908263ffffffff610e6716565b6005556001600160a01b038216600090815260066020526040902054610bc1908263ffffffff610e6716565b6001600160a01b03831660008181526006602090815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b6001600160a01b038216600090815260066020526040902054811115610c7e576040805162461bcd60e51b815260206004820152601560248201527424b739bab33334b1b4b2b73a103130b630b731b29760591b604482015290519081900360640190fd5b80471015610c8857fe5b610c93823083610a68565b506040516001600160a01b0383169082156108fc029083906000818181858888f19350505050158015610a0a573d6000803e3d6000fd5b6001600160a01b038216610d0f5760405162461bcd60e51b8152600401808060200182810382526021815260200180610fcd6021913960400191505060405180910390fd5b600554610d22908263ffffffff610a5316565b6005556001600160a01b038216600090815260066020526040902054610d4e908263ffffffff610a5316565b6001600160a01b0383166000818152600660209081526040808320949094558351858152935191937fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef929081900390910190a35050565b6001600160a01b0382166000908152600760209081526040808320338452909152902054610dd9908263ffffffff610a5316565b6001600160a01b0383166000908152600760209081526040808320338452909152902055610e078282610cca565b6001600160a01b0382166000818152600760209081526040808320338085529083529281902054815190815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35050565b60008282018381101561088c57600080fd5b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610eba57805160ff1916838001178555610ee7565b82800160010185558215610ee7579182015b82811115610ee7578251825591602001919060010190610ecc565b50610ef3929150610ef7565b5090565b61057391905b80821115610ef35760008155600101610efd56fe50617961626c6520616d6f756e742073686f756c64206e6f74206265207a65726f2e4f6e6c792074686520636f6e73656e73757320636f6761746577617920636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e55746261736520636f6e747261637420697320616c726561647920696e697469616c697a65642e45524332303a206275726e2066726f6d20746865207a65726f2061646472657373a265627a7a72315820a39d204bc6541195b25b2b06392a9af8f5425fe3c1c0c3a4c2faba592565be8764736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052600436106101665760003560e01c806342966c68116100d1578063a032006f1161008a578063d46eb11911610064578063d46eb119146104ed578063dd62ed3e146104f5578063de0e9a3e14610530578063de36948d1461055a57610166565b8063a032006f1461048a578063a9059cbb1461049f578063ba0bba40146104d857610166565b806342966c68146103b55780635b7f415c146103df57806370a08231146103f457806379cc679014610427578063890059fd1461046057806395d89b411461047557610166565b80631d6c90a9116101235780631d6c90a9146102b357806323609af7146102c857806323b872dd146102f95780632a9053181461033c578063313ce5671461035157806340c10f191461037c57610166565b8063047087cc1461016b57806306fdde0314610192578063095ea7b31461021c57806318160ddd1461016b57806318821400146102695780631a3fcafa1461027e575b600080fd5b34801561017757600080fd5b5061018061056f565b60408051918252519081900360200190f35b34801561019e57600080fd5b506101a7610576565b6040805160208082528351818301528351919283929083019185019080838360005b838110156101e15781810151838201526020016101c9565b50505050905090810190601f16801561020e5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561022857600080fd5b506102556004803603604081101561023f57600080fd5b506001600160a01b038135169060200135610609565b604080519115158252519081900360200190f35b34801561027557600080fd5b506101a761066f565b34801561028a57600080fd5b506102b1600480360360208110156102a157600080fd5b50356001600160a01b0316610691565b005b3480156102bf57600080fd5b506101806106b3565b3480156102d457600080fd5b506102dd6106b9565b604080516001600160a01b039092168252519081900360200190f35b34801561030557600080fd5b506102556004803603606081101561031c57600080fd5b506001600160a01b038135811691602081013590911690604001356106c8565b34801561034857600080fd5b506101a7610733565b34801561035d57600080fd5b50610366610751565b6040805160ff9092168252519081900360200190f35b34801561038857600080fd5b506102b16004803603604081101561039f57600080fd5b506001600160a01b03813516906020013561075a565b3480156103c157600080fd5b506102b1600480360360208110156103d857600080fd5b50356107c9565b3480156103eb57600080fd5b506103666107d6565b34801561040057600080fd5b506101806004803603602081101561041757600080fd5b50356001600160a01b03166107db565b34801561043357600080fd5b506102b16004803603604081101561044a57600080fd5b506001600160a01b0381351690602001356107f6565b34801561046c57600080fd5b506102dd610800565b34801561048157600080fd5b506101a761080f565b34801561049657600080fd5b506102dd610870565b3480156104ab57600080fd5b50610255600480360360408110156104c257600080fd5b506001600160a01b03813516906020013561087f565b3480156104e457600080fd5b506102b1610893565b6102b16109a8565b34801561050157600080fd5b506101806004803603604081101561051857600080fd5b506001600160a01b0381358116916020013516610a0f565b34801561053c57600080fd5b506102b16004803603602081101561055357600080fd5b5035610a3a565b34801561056657600080fd5b506102dd610a44565b6005545b90565b60028054604080516020601f60001961010060018716150201909416859004938401819004810282018101909252828152606093909290918301828280156105ff5780601f106105d4576101008083540402835291602001916105ff565b820191906000526020600020905b8154815290600101906020018083116105e257829003601f168201915b5050505050905090565b3360008181526007602090815260408083206001600160a01b038716808552908352818420869055815186815291519394909390927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925928290030190a350600192915050565b6040518060400160405280600681526020016555744261736560d01b81525081565b600b80546001600160a01b0319166001600160a01b0392909216919091179055565b60015481565b600a546001600160a01b031690565b6001600160a01b03831660009081526007602090815260408083203384529091528120546106fc908363ffffffff610a5316565b6001600160a01b038516600090815260076020908152604080832033845290915290205561072b848484610a68565b949350505050565b604051806040016040528060028152602001612aa160f11b81525081565b60045460ff1690565b610762610a44565b6001600160a01b0316336001600160a01b0316146107b15760405162461bcd60e51b815260040180806020018281038252603d815260200180610f34603d913960400191505060405180910390fd5b6107bb8282610b27565b6107c58282610c19565b5050565b6107d33382610cca565b50565b601281565b6001600160a01b031660009081526006602052604090205490565b6107c58282610da5565b600b546001600160a01b031681565b60038054604080516020601f60026000196101006001881615020190951694909404938401819004810282018101909252828152606093909290918301828280156105ff5780601f106105d4576101008083540402835291602001916105ff565b600a546001600160a01b031681565b600061088c338484610a68565b9392505050565b61089b6106b9565b6001600160a01b0316336001600160a01b0316146108ea5760405162461bcd60e51b8152600401808060200182810382526035815260200180610f716035913960400191505060405180910390fd5b600554156109295760405162461bcd60e51b8152600401808060200182810382526027815260200180610fa66027913960400191505060405180910390fd5b604080518082019091526002808252612aa160f11b602090920191825261095291600391610e79565b506040805180820190915260068082526555744261736560d01b602090920191825261098091600291610e79565b506004805460ff19166012179055600154600581905530600090815260066020526040902055565b3433816109e65760405162461bcd60e51b8152600401808060200182810382526022815260200180610f126022913960400191505060405180910390fd5b306000908152600660205260409020548211156109ff57fe5b610a0a308284610a68565b505050565b6001600160a01b03918216600090815260076020908152604080832093909416825291909152205490565b6107d33382610c19565b600b546001600160a01b031690565b600082821115610a6257600080fd5b50900390565b6001600160a01b038316600090815260066020526040812054610a91908363ffffffff610a5316565b6001600160a01b038086166000908152600660205260408082209390935590851681522054610ac6908363ffffffff610e6716565b6001600160a01b0380851660008181526006602090815260409182902094909455805186815290519193928816927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef92918290030190a35060019392505050565b6001600160a01b038216610b82576040805162461bcd60e51b815260206004820152601f60248201527f45524332303a206d696e7420746f20746865207a65726f206164647265737300604482015290519081900360640190fd5b600554610b95908263ffffffff610e6716565b6005556001600160a01b038216600090815260066020526040902054610bc1908263ffffffff610e6716565b6001600160a01b03831660008181526006602090815260408083209490945583518581529351929391927fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9281900390910190a35050565b6001600160a01b038216600090815260066020526040902054811115610c7e576040805162461bcd60e51b815260206004820152601560248201527424b739bab33334b1b4b2b73a103130b630b731b29760591b604482015290519081900360640190fd5b80471015610c8857fe5b610c93823083610a68565b506040516001600160a01b0383169082156108fc029083906000818181858888f19350505050158015610a0a573d6000803e3d6000fd5b6001600160a01b038216610d0f5760405162461bcd60e51b8152600401808060200182810382526021815260200180610fcd6021913960400191505060405180910390fd5b600554610d22908263ffffffff610a5316565b6005556001600160a01b038216600090815260066020526040902054610d4e908263ffffffff610a5316565b6001600160a01b0383166000818152600660209081526040808320949094558351858152935191937fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef929081900390910190a35050565b6001600160a01b0382166000908152600760209081526040808320338452909152902054610dd9908263ffffffff610a5316565b6001600160a01b0383166000908152600760209081526040808320338452909152902055610e078282610cca565b6001600160a01b0382166000818152600760209081526040808320338085529083529281902054815190815290519293927f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925929181900390910190a35050565b60008282018381101561088c57600080fd5b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f10610eba57805160ff1916838001178555610ee7565b82800160010185558215610ee7579182015b82811115610ee7578251825591602001919060010190610ecc565b50610ef3929150610ef7565b5090565b61057391905b80821115610ef35760008155600101610efd56fe50617961626c6520616d6f756e742073686f756c64206e6f74206265207a65726f2e4f6e6c792074686520636f6e73656e73757320636f6761746577617920636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e55746261736520636f6e747261637420697320616c726561647920696e697469616c697a65642e45524332303a206275726e2066726f6d20746865207a65726f2061646472657373a265627a7a72315820a39d204bc6541195b25b2b06392a9af8f5425fe3c1c0c3a4c2faba592565be8764736f6c634300050d0032",
+  "sourceMap": "695:1343:96:-;;;775:88:19;;;-1:-1:-1;;;;;;775:88:19;;;820:42;775:88;;;;1346::45;;;;;;1391:42;1346:88;;;1042:188:96;5:2:-1;;;;30:1;27;20:12;5:2;1042:188:96;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1042:188:96;;;;;;;1147:18;:40;1197:11;:26;;-1:-1:-1;;;;;;1197:26:96;-1:-1:-1;;;;;1197:26:96;;;;;;;;;695:1343;;;-1:-1:-1;695:1343:96;;",
+  "deployedSourceMap": "695:1343:96:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7025:100:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;7025:100:45;;;:::i;:::-;;;;;;;;;;;;;;;;1509:102:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1509:102:99;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1509:102:99;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5292:240;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5292:240:99;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;5292:240:99;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;1143:44:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1143:44:45;;;:::i;1402:126:96:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1402:126:96;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1402:126:96;-1:-1:-1;;;;;1402:126:96;;:::i;:::-;;771:33:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;771:33:43;;;:::i;1685:104:96:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1685:104:96;;;:::i;:::-;;;;-1:-1:-1;;;;;1685:104:96;;;;;;;;;;;;;;4437:263:99;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4437:263:99;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;4437:263:99;;;;;;;;;;;;;;;;;:::i;1072:42:45:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1072:42:45;;;:::i;2008:110:99:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2008:110:99;;;:::i;:::-;;;;;;;;;;;;;;;;;;;3877:227:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3877:227:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;3877:227:45;;;;;;;;:::i;5985:93::-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;5985:93:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5985:93:45;;:::i;1219:41::-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1219:41:45;;;:::i;2313:118:99:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2313:118:99;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2313:118:99;-1:-1:-1;;;;;2313:118:99;;:::i;6527:117:45:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;6527:117:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;6527:117:45;;;;;;;;:::i;797:33:96:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;797:33:96;;;:::i;1752:110:99:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1752:110:99;;;:::i;751:39:96:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;751:39:96;;;:::i;3682:166:99:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3682:166:99;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;3682:166:99;;;;;;;;:::i;2372:917:45:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2372:917:45;;;:::i;5201:346::-;;;:::i;3096:180:99:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;3096:180:99;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;3096:180:99;;;;;;;;;;:::i;4519:120:45:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;4519:120:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;4519:120:45;;:::i;1932:104:96:-;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1932:104:96;;;:::i;7025:100:45:-;7102:16;;7025:100;;:::o;1509:102:99:-;1595:9;1582:22;;;;;;;-1:-1:-1;;1582:22:99;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1546:24;;1582:22;;1595:9;;1582:22;;1595:9;1582:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1509:102;:::o;5292:240::-;5415:10;5375:13;5404:22;;;:10;:22;;;;;;;;-1:-1:-1;;;;;5404:32:99;;;;;;;;;;;:41;;;5461:38;;;;;;;5375:13;;5404:32;;5415:10;;5461:38;;;;;;;;-1:-1:-1;5521:4:99;;5292:240;-1:-1:-1;;5292:240:99:o;1143:44:45:-;;;;;;;;;;;;;;-1:-1:-1;;;1143:44:45;;;;:::o;1402:126:96:-;1481:18;:40;;-1:-1:-1;;;;;;1481:40:96;-1:-1:-1;;;;;1481:40:96;;;;;;;;;;1402:126::o;771:33:43:-;;;;:::o;1685:104:96:-;1771:11;;-1:-1:-1;;;;;1771:11:96;1685:104;:::o;4437:263:99:-;-1:-1:-1;;;;;4596:17:99;;4535:13;4596:17;;;:10;:17;;;;;;;;4614:10;4596:29;;;;;;;;:41;;4630:6;4596:41;:33;:41;:::i;:::-;-1:-1:-1;;;;;4564:17:99;;;;;;:10;:17;;;;;;;;4582:10;4564:29;;;;;;;:73;4658:35;4575:5;4681:3;4686:6;4658:15;:35::i;:::-;4647:46;4437:263;-1:-1:-1;;;;4437:263:99:o;1072:42:45:-;;;;;;;;;;;;;;-1:-1:-1;;;1072:42:45;;;;:::o;2008:110:99:-;2098:13;;;;;2008:110::o;3877:227:45:-;1546:23;:21;:23::i;:::-;-1:-1:-1;;;;;1532:37:45;:10;-1:-1:-1;;;;;1532:37:45;;1511:145;;;;-1:-1:-1;;;1511:145:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4022:28;4028:12;4042:7;4022:5;:28::i;:::-;4060:37;4075:12;4089:7;4060:14;:37::i;:::-;3877:227;;:::o;5985:93::-;6046:25;6052:10;6064:6;6046:5;:25::i;:::-;5985:93;:::o;1219:41::-;1258:2;1219:41;:::o;2313:118:99:-;-1:-1:-1;;;;;2408:16:99;2369;2408;;;:8;:16;;;;;;;2313:118::o;6527:117:45:-;6610:27;6620:8;6630:6;6610:9;:27::i;797:33:96:-;;;-1:-1:-1;;;;;797:33:96;;:::o;1752:110:99:-;1844:11;1829:26;;;;;;;;-1:-1:-1;;1829:26:99;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1791;;1829;;1844:11;;1829:26;;1844:11;1829:26;;;;;;;;;;;;;;;;;;;;;;;;751:39:96;;;-1:-1:-1;;;;;751:39:96;;:::o;3682:166:99:-;3761:13;3801:40;3817:10;3829:3;3834:6;3801:15;:40::i;:::-;3790:51;3682:166;-1:-1:-1;;;3682:166:99:o;2372:917:45:-;976:16:19;:14;:16::i;:::-;-1:-1:-1;;;;;954:39:19;:10;-1:-1:-1;;;;;954:39:19;;933:139;;;;-1:-1:-1;;;933:139:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2465:16:45;;:30;2444:116;;;;-1:-1:-1;;;2444:116:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2585:12;;;;;;;;;;;;;-1:-1:-1;;;2585:12:45;;;;;;;2571:26;;:11;;:26;:::i;:::-;-1:-1:-1;2619:10:45;;;;;;;;;;;;;-1:-1:-1;;;2619:10:45;;;;;;;2607:22;;:9;;:22;:::i;:::-;-1:-1:-1;2639:13:45;:30;;-1:-1:-1;;2639:30:45;1258:2;2639:30;;;;2698:18;2679:16;:37;;;3255:4;2639:13;3238:23;;;:8;:23;;;;;:44;2372:917::o;5201:346::-;5281:9;5318:10;5360;5339:91;;;;-1:-1:-1;;;5339:91:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;5465:4;5448:23;;;;:8;:23;;;;;;:33;-1:-1:-1;5448:33:45;5441:41;;;;5493:47;5517:4;5524:7;5533:6;5493:15;:47::i;:::-;;5201:346;;:::o;3096:180:99:-;-1:-1:-1;;;;;3241:18:99;;;3194;3241;;;:10;:18;;;;;;;;:28;;;;;;;;;;;;;3096:180::o;4519:120:45:-;4597:35;4612:10;4624:7;4597:14;:35::i;1932:104:96:-;2011:18;;-1:-1:-1;;;;;2011:18:96;1932:104;:::o;1205:145:106:-;1263:7;1295:1;1290;:6;;1282:15;;;;;;-1:-1:-1;1319:5:106;;;1205:145::o;6058:568:99:-;-1:-1:-1;;;;;6471:15:99;;6161:13;6471:15;;;:8;:15;;;;;;:27;;6491:6;6471:27;:19;:27;:::i;:::-;-1:-1:-1;;;;;6453:15:99;;;;;;;:8;:15;;;;;;:45;;;;6524:13;;;;;;;:25;;6542:6;6524:25;:17;:25;:::i;:::-;-1:-1:-1;;;;;6508:13:99;;;;;;;:8;:13;;;;;;;;;:41;;;;6565:28;;;;;;;6508:13;;6565:28;;;;;;;;;;;;;-1:-1:-1;6615:4:99;;6058:568;-1:-1:-1;;;6058:568:99:o;7037:313::-;-1:-1:-1;;;;;7113:22:99;;7105:66;;;;;-1:-1:-1;;;7105:66:99;;;;;;;;;;;;;;;;;;;;;;;;;;;;7201:16;;:28;;7222:6;7201:28;:20;:28;:::i;:::-;7182:16;:47;-1:-1:-1;;;;;7260:18:99;;;;;;:8;:18;;;;;;:30;;7283:6;7260:30;:22;:30;:::i;:::-;-1:-1:-1;;;;;7239:18:99;;;;;;:8;:18;;;;;;;;:51;;;;7305:38;;;;;;;7239:18;;;;7305:38;;;;;;;;;;7037:313;;:::o;7802:388:45:-;-1:-1:-1;;;;;7958:22:45;;;;;;:8;:22;;;;;;7947:33;;;7926:101;;;;;-1:-1:-1;;;7926:101:45;;;;;;;;;;;;-1:-1:-1;;;7926:101:45;;;;;;;;;;;;;;;8070:7;8045:21;:32;;8038:40;;;;8089:53;8105:12;8127:4;8134:7;8089:15;:53::i;:::-;-1:-1:-1;8153:30:45;;-1:-1:-1;;;;;8153:21:45;;;:30;;;;;8175:7;;8153:30;;;;8175:7;8153:21;:30;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;7642:315:99;-1:-1:-1;;;;;7718:22:99;;7710:68;;;;-1:-1:-1;;;7710:68:99;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;7808:16;;:28;;7829:6;7808:28;:20;:28;:::i;:::-;7789:16;:47;-1:-1:-1;;;;;7867:18:99;;;;;;:8;:18;;;;;;:30;;7890:6;7867:30;:22;:30;:::i;:::-;-1:-1:-1;;;;;7846:18:99;;;;;;:8;:18;;;;;;;;:51;;;;7912:38;;;;;;;7846:18;;7912:38;;;;;;;;;;;7642:315;;:::o;8433:292::-;-1:-1:-1;;;;;8540:20:99;;;;;;:10;:20;;;;;;;;8561:10;8540:32;;;;;;;;:66;;8590:6;8540:66;:36;:66;:::i;:::-;-1:-1:-1;;;;;8505:20:99;;;;;;:10;:20;;;;;;;;8526:10;8505:32;;;;;;;:101;8616:23;8516:8;8632:6;8616:5;:23::i;:::-;-1:-1:-1;;;;;8654:64:99;;8685:20;;;;:10;:20;;;;;;;;8673:10;8685:32;;;;;;;;;;;8654:64;;;;;;;8673:10;;8654:64;;;;;;;;;;;;8433:292;;:::o;1431:145:106:-;1489:7;1520:5;;;1543:6;;;;1535:15;;;;;695:1343:96;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;695:1343:96;;;-1:-1:-1;695:1343:96;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"./../../most/UtBase.sol\";\n\n/**\n * @title UtBaseTest contract.\n */\ncontract UtBaseTest is UtBase {\n\n    /* Storage */\n\n    CoconsensusInterface public coconsensus;\n\n    address public consensusCogateway;\n\n\n    /* Special Functions */\n\n    /**\n     * @notice UtBaseTest constructor.\n     *\n     * @param _coconsensus Coconsensus contract address.\n     * @param _initialTokenSupply Initial token supply.\n     */\n    constructor(CoconsensusInterface _coconsensus, uint256 _initialTokenSupply)\n        public\n    {\n        genesisTotalSupply = _initialTokenSupply;\n        coconsensus = _coconsensus;\n    }\n\n\n    /* External Functions */\n\n    /**\n     * @notice It is used for testing purpose.\n     * @param _consensusCogateway Consensus cogateway contract address.\n     */\n    function setConsensusCogateway(address _consensusCogateway) external {\n        consensusCogateway = _consensusCogateway;\n    }\n\n\n    /* Public Functions */\n\n    /**\n     * @notice Gets the coconsensus contract address.\n     *\n     * @return Coconsensus contract address.\n     */\n    function getCoconsensus() public view returns (CoconsensusInterface) {\n        return coconsensus;\n    }\n\n    /**\n     * @notice Gets the consensus cogateway contract address.\n     *\n     * @return ConsensusCogateway contract address.\n     */\n    function getConsensusCogateway() public view returns(address) {\n        return consensusCogateway;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/ut_base/UtBaseTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/ut_base/UtBaseTest.sol",
+    "exportedSymbols": {
+      "UtBaseTest": [
+        17838
+      ]
+    },
+    "id": 17839,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17788,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:96"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/UtBase.sol",
+        "file": "./../../most/UtBase.sol",
+        "id": 17789,
+        "nodeType": "ImportDirective",
+        "scope": 17839,
+        "sourceUnit": 11488,
+        "src": "621:33:96",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17790,
+              "name": "UtBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11487,
+              "src": "718:6:96",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UtBase_$11487",
+                "typeString": "contract UtBase"
+              }
+            },
+            "id": 17791,
+            "nodeType": "InheritanceSpecifier",
+            "src": "718:6:96"
+          }
+        ],
+        "contractDependencies": [
+          83,
+          3812,
+          11231,
+          11487,
+          12954,
+          18313
+        ],
+        "contractKind": "contract",
+        "documentation": "@title UtBaseTest contract.",
+        "fullyImplemented": true,
+        "id": 17838,
+        "linearizedBaseContracts": [
+          17838,
+          11487,
+          3812,
+          18313,
+          83,
+          11231,
+          12954
+        ],
+        "name": "UtBaseTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17793,
+            "name": "coconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 17838,
+            "src": "751:39:96",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+              "typeString": "contract CoconsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 17792,
+              "name": "CoconsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3778,
+              "src": "751:20:96",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                "typeString": "contract CoconsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17795,
+            "name": "consensusCogateway",
+            "nodeType": "VariableDeclaration",
+            "scope": 17838,
+            "src": "797:33:96",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 17794,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "797:7:96",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17810,
+              "nodeType": "Block",
+              "src": "1137:93:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17802,
+                      "name": "genesisTotalSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11230,
+                      "src": "1147:18:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17803,
+                      "name": "_initialTokenSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17799,
+                      "src": "1168:19:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1147:40:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17805,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1147:40:96"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17808,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17806,
+                      "name": "coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17793,
+                      "src": "1197:11:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17807,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17797,
+                      "src": "1211:12:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "src": "1197:26:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "id": 17809,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1197:26:96"
+                }
+              ]
+            },
+            "documentation": "@notice UtBaseTest constructor.\n     * @param _coconsensus Coconsensus contract address.\n@param _initialTokenSupply Initial token supply.",
+            "id": 17811,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17797,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17811,
+                  "src": "1054:33:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17796,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1054:20:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17799,
+                  "name": "_initialTokenSupply",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17811,
+                  "src": "1089:27:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17798,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1053:64:96"
+            },
+            "returnParameters": {
+              "id": 17801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1137:0:96"
+            },
+            "scope": 17838,
+            "src": "1042:188:96",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17820,
+              "nodeType": "Block",
+              "src": "1471:57:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17818,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17816,
+                      "name": "consensusCogateway",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17795,
+                      "src": "1481:18:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17817,
+                      "name": "_consensusCogateway",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17813,
+                      "src": "1502:19:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1481:40:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 17819,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1481:40:96"
+                }
+              ]
+            },
+            "documentation": "@notice It is used for testing purpose.\n@param _consensusCogateway Consensus cogateway contract address.",
+            "id": 17821,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConsensusCogateway",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17814,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17813,
+                  "name": "_consensusCogateway",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17821,
+                  "src": "1433:27:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17812,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1433:7:96",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1432:29:96"
+            },
+            "returnParameters": {
+              "id": 17815,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1471:0:96"
+            },
+            "scope": 17838,
+            "src": "1402:126:96",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17828,
+              "nodeType": "Block",
+              "src": "1754:35:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17826,
+                    "name": "coconsensus",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17793,
+                    "src": "1771:11:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 17825,
+                  "id": 17827,
+                  "nodeType": "Return",
+                  "src": "1764:18:96"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the coconsensus contract address.\n     * @return Coconsensus contract address.",
+            "id": 17829,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17822,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1708:2:96"
+            },
+            "returnParameters": {
+              "id": 17825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17824,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17829,
+                  "src": "1732:20:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17823,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1732:20:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1731:22:96"
+            },
+            "scope": 17838,
+            "src": "1685:104:96",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17836,
+              "nodeType": "Block",
+              "src": "1994:42:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17834,
+                    "name": "consensusCogateway",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17795,
+                    "src": "2011:18:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 17833,
+                  "id": 17835,
+                  "nodeType": "Return",
+                  "src": "2004:25:96"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the consensus cogateway contract address.\n     * @return ConsensusCogateway contract address.",
+            "id": 17837,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getConsensusCogateway",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17830,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1962:2:96"
+            },
+            "returnParameters": {
+              "id": 17833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17832,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17837,
+                  "src": "1985:7:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17831,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1985:7:96",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1984:9:96"
+            },
+            "scope": 17838,
+            "src": "1932:104:96",
+            "stateMutability": "view",
+            "superFunction": 11438,
+            "visibility": "public"
+          }
+        ],
+        "scope": 17839,
+        "src": "695:1343:96"
+      }
+    ],
+    "src": "0:2039:96"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/ut_base/UtBaseTest.sol",
+    "exportedSymbols": {
+      "UtBaseTest": [
+        17838
+      ]
+    },
+    "id": 17839,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17788,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:96"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/UtBase.sol",
+        "file": "./../../most/UtBase.sol",
+        "id": 17789,
+        "nodeType": "ImportDirective",
+        "scope": 17839,
+        "sourceUnit": 11488,
+        "src": "621:33:96",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17790,
+              "name": "UtBase",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 11487,
+              "src": "718:6:96",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UtBase_$11487",
+                "typeString": "contract UtBase"
+              }
+            },
+            "id": 17791,
+            "nodeType": "InheritanceSpecifier",
+            "src": "718:6:96"
+          }
+        ],
+        "contractDependencies": [
+          83,
+          3812,
+          11231,
+          11487,
+          12954,
+          18313
+        ],
+        "contractKind": "contract",
+        "documentation": "@title UtBaseTest contract.",
+        "fullyImplemented": true,
+        "id": 17838,
+        "linearizedBaseContracts": [
+          17838,
+          11487,
+          3812,
+          18313,
+          83,
+          11231,
+          12954
+        ],
+        "name": "UtBaseTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17793,
+            "name": "coconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 17838,
+            "src": "751:39:96",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+              "typeString": "contract CoconsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 17792,
+              "name": "CoconsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3778,
+              "src": "751:20:96",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                "typeString": "contract CoconsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17795,
+            "name": "consensusCogateway",
+            "nodeType": "VariableDeclaration",
+            "scope": 17838,
+            "src": "797:33:96",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 17794,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "797:7:96",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17810,
+              "nodeType": "Block",
+              "src": "1137:93:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17804,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17802,
+                      "name": "genesisTotalSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 11230,
+                      "src": "1147:18:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17803,
+                      "name": "_initialTokenSupply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17799,
+                      "src": "1168:19:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1147:40:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17805,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1147:40:96"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17808,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17806,
+                      "name": "coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17793,
+                      "src": "1197:11:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17807,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17797,
+                      "src": "1211:12:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "src": "1197:26:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "id": 17809,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1197:26:96"
+                }
+              ]
+            },
+            "documentation": "@notice UtBaseTest constructor.\n     * @param _coconsensus Coconsensus contract address.\n@param _initialTokenSupply Initial token supply.",
+            "id": 17811,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17797,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17811,
+                  "src": "1054:33:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17796,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1054:20:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17799,
+                  "name": "_initialTokenSupply",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17811,
+                  "src": "1089:27:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17798,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1089:7:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1053:64:96"
+            },
+            "returnParameters": {
+              "id": 17801,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1137:0:96"
+            },
+            "scope": 17838,
+            "src": "1042:188:96",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17820,
+              "nodeType": "Block",
+              "src": "1471:57:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17818,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17816,
+                      "name": "consensusCogateway",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17795,
+                      "src": "1481:18:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17817,
+                      "name": "_consensusCogateway",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17813,
+                      "src": "1502:19:96",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1481:40:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 17819,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1481:40:96"
+                }
+              ]
+            },
+            "documentation": "@notice It is used for testing purpose.\n@param _consensusCogateway Consensus cogateway contract address.",
+            "id": 17821,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConsensusCogateway",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17814,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17813,
+                  "name": "_consensusCogateway",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17821,
+                  "src": "1433:27:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17812,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1433:7:96",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1432:29:96"
+            },
+            "returnParameters": {
+              "id": 17815,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1471:0:96"
+            },
+            "scope": 17838,
+            "src": "1402:126:96",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17828,
+              "nodeType": "Block",
+              "src": "1754:35:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17826,
+                    "name": "coconsensus",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17793,
+                    "src": "1771:11:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 17825,
+                  "id": 17827,
+                  "nodeType": "Return",
+                  "src": "1764:18:96"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the coconsensus contract address.\n     * @return Coconsensus contract address.",
+            "id": 17829,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17822,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1708:2:96"
+            },
+            "returnParameters": {
+              "id": 17825,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17824,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17829,
+                  "src": "1732:20:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17823,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1732:20:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1731:22:96"
+            },
+            "scope": 17838,
+            "src": "1685:104:96",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17836,
+              "nodeType": "Block",
+              "src": "1994:42:96",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17834,
+                    "name": "consensusCogateway",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17795,
+                    "src": "2011:18:96",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 17833,
+                  "id": 17835,
+                  "nodeType": "Return",
+                  "src": "2004:25:96"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the consensus cogateway contract address.\n     * @return ConsensusCogateway contract address.",
+            "id": 17837,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getConsensusCogateway",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17830,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1962:2:96"
+            },
+            "returnParameters": {
+              "id": 17833,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17832,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17837,
+                  "src": "1985:7:96",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17831,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1985:7:96",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1984:9:96"
+            },
+            "scope": 17838,
+            "src": "1932:104:96",
+            "stateMutability": "view",
+            "superFunction": 11438,
+            "visibility": "public"
+          }
+        ],
+        "scope": 17839,
+        "src": "695:1343:96"
+      }
+    ],
+    "src": "0:2039:96"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.829Z",
+  "devdoc": {
+    "methods": {
+      "allowance(address,address)": {
+        "params": {
+          "_owner": "Address of the owner account.",
+          "_spender": "Address of the spender account."
+        },
+        "return": "allowance_ Remaining allowance for the spender to spend from                   owner's account."
+      },
+      "approve(address,uint256)": {
+        "details": "Allows _spender address to withdraw from function caller's account,     multiple times up to the _value amount, if this function is called     again it overwrites the current allowance with _value.",
+        "params": {
+          "_spender": "Address authorized to spend from the function caller's                 address.",
+          "_value": "Amount up to which spender is authorized to spend."
+        },
+        "return": "bool `true` for a successful approval, `false` otherwise."
+      },
+      "balanceOf(address)": {
+        "params": {
+          "_owner": "Address of the owner account."
+        },
+        "return": "balance_ Account balance of the owner account."
+      },
+      "burn(uint256)": {
+        "params": {
+          "_value": "The amount that will be burnt.     * \\pre msg.value should be non-zero. \\pre Caller must have atleast `_value` amount of ERC20 UtBase tokens.     * \\post Decreases total token supply of the token by `_value` amount. \\post Decreases caller's ERC20 UtBase token balance by `_value` amount.     "
+        }
+      },
+      "burnFrom(address,uint256)": {
+        "params": {
+          "_account": "The account whose tokens will be burnt.",
+          "_value": "The amount that will be burnt.     * \\pre `_account` must approve `_value` amount to the caller     * \\post Decreases total token supply of the token by `_value` amount. \\post Decreases `_account` ERC20 UtBase token balance by      `_value` amount."
+        }
+      },
+      "constructor": {
+        "params": {
+          "_coconsensus": "Coconsensus contract address.",
+          "_initialTokenSupply": "Initial token supply."
+        }
+      },
+      "decimals()": {
+        "return": "tokenDecimals Decimals of the token."
+      },
+      "getCoconsensus()": {
+        "return": "Coconsensus contract address."
+      },
+      "getConsensusCogateway()": {
+        "return": "ConsensusCogateway contract address."
+      },
+      "getTotalTokenSupply()": {
+        "return": "Token token supply."
+      },
+      "mint(address,uint256)": {
+        "params": {
+          "_amount": "Amount of UtBase tokens to be minted.     * \\pre Caller must be Consensus cogateway contract.     * \\post Increases total token supply by `_amount `. \\post Increase ERC20 UtBase token balance of the beneficiary      by `_amount`. \\post It satisfies all post conditions of UtBase::unwrapInternal().     *",
+          "_beneficiary": "Beneficairy address which will receive base coin."
+        }
+      },
+      "name()": {
+        "return": "tokenName_ Name of the token."
+      },
+      "setConsensusCogateway(address)": {
+        "params": {
+          "_consensusCogateway": "Consensus cogateway contract address."
+        }
+      },
+      "symbol()": {
+        "return": "tokenSymbol_ Symbol of the token."
+      },
+      "totalSupply()": {
+        "details": "Get totalTokenSupply as view so that child cannot edit.",
+        "return": "totalTokenSupply_ Total token supply."
+      },
+      "transfer(address,uint256)": {
+        "details": "Fires the transfer event, reverts if _from account does not have     enough tokens to transfer.",
+        "params": {
+          "_to": "Address to which tokens are transferred.",
+          "_value": "Amount of tokens to be transferred."
+        },
+        "return": "success_ `true` for a successful transfer, `false` otherwise."
+      },
+      "transferFrom(address,address,uint256)": {
+        "details": "Allows a contract to transfer tokens on behalf of _from address     to _to address, the function caller has to be pre-authorized for     multiple transfers up to the total of _value amount by the _from     address.",
+        "params": {
+          "_from": "Address from which tokens are transferred.",
+          "_to": "Address to which tokens are transferred.",
+          "_value": "Amount of tokens transferred."
+        },
+        "return": "success_ `true` for a successful transfer, `false` otherwise."
+      },
+      "unwrap(uint256)": {
+        "details": "This contract's base coin balance must always be greater than      amount.",
+        "params": {
+          "_amount": "Amount of ERC20 UtBase token to convert to base coin.     * \\pre Satisfies all conditions of UtBase::unwrapInternal.     * \\post Satisfies all conditions of UtBase::unwrapInternal.     "
+        }
+      },
+      "wrap()": {
+        "details": "The ERC20 OST balance of contract should always be greater than the     received payable amount.     * \\pre msg.value should be non-zero. \\pre UtBase ERC20 token balance must be greater than     amount to be wrapped.     * \\post Increases ERC20 UtBase token balance of the caller by `msg.value`       amount. \\post Decreases ERC20 UtBase token balance of the UtBase contract by      `msg.value` amount."
+      }
+    },
+    "title": "UtBaseTest contract."
+  },
+  "userdoc": {
+    "methods": {
+      "allowance(address,address)": {
+        "notice": "Public function to get the allowance."
+      },
+      "approve(address,uint256)": {
+        "notice": "Public function to approve an account for transfer."
+      },
+      "balanceOf(address)": {
+        "notice": "Get the balance of an account."
+      },
+      "burn(uint256)": {
+        "notice": "It allows to burn UtBase tokens for an account."
+      },
+      "burnFrom(address,uint256)": {
+        "notice": "It allows to burn tokens of the spender."
+      },
+      "constructor": "UtBaseTest constructor.",
+      "decimals()": {
+        "notice": "Public function to get the decimals of the token."
+      },
+      "getCoconsensus()": {
+        "notice": "Gets the coconsensus contract address."
+      },
+      "getConsensusCogateway()": {
+        "notice": "Gets the consensus cogateway contract address."
+      },
+      "getTotalTokenSupply()": {
+        "notice": "Gets total token supply."
+      },
+      "mint(address,uint256)": {
+        "notice": "Mints the ERC20 token for the beneficiary address and        unwraps its to base coin."
+      },
+      "name()": {
+        "notice": "Public function to get the name of the token."
+      },
+      "setConsensusCogateway(address)": {
+        "notice": "It is used for testing purpose."
+      },
+      "setup()": {
+        "notice": "Initializes the UtBase contract.     * \\pre Can be called only once by consensus cogateway contract     * \\post Sets the `tokenSymbol` storage variable with `TOKEN_SYMBOL`      constant value. \\post Sets the `tokenName` storage variable with `TOKEN_NAME`      constant value. \\post Sets the `tokenDecimals` storage variable with `TOKEN_DECIMALS`      constant value. \\post Sets the `totalTokenSupply` storage variable to genesis total      supply value. \\post Adds the balance for the (self) contract address with genesis      total supply value.     "
+      },
+      "symbol()": {
+        "notice": "Public function to get the symbol of the token."
+      },
+      "totalSupply()": {
+        "notice": "Public function to get the total supply of the tokens."
+      },
+      "transfer(address,uint256)": {
+        "notice": "Public function to transfer the token."
+      },
+      "transferFrom(address,address,uint256)": {
+        "notice": "Public function transferFrom."
+      },
+      "unwrap(uint256)": {
+        "notice": "Unwrap converts ERC20 UtBase to base coin."
+      },
+      "wrap()": {
+        "notice": "Wrap converts base coin to ERC20 UtBase."
+      }
+    }
+  }
+}

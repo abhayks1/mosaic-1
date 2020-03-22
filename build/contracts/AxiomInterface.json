@@ -1,0 +1,1008 @@
+{
+  "contractName": "AxiomInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "newCore",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "newCommittee",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_coreSetupData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_consensusGatewaySetupData",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployMetachainProxies",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "core_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "consensusGateway_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_anchorSetupData",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployAnchor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "anchor_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_anchorSetupData\",\"type\":\"bytes\"}],\"name\":\"deployAnchor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"anchor_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_coreSetupData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_consensusGatewaySetupData\",\"type\":\"bytes\"}],\"name\":\"deployMetachainProxies\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"core_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusGateway_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"newCommittee\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"newCore\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"deployAnchor(bytes)\":{\"params\":{\"_anchorSetupData\":\"Setup data for anchor contract.\"},\"return\":\"anchor_ Address of anchor contract.\"},\"deployMetachainProxies(bytes,bytes)\":{\"params\":{\"_consensusGatewaySetupData\":\"Setup data for consensus gateway contract.\",\"_coreSetupData\":\"Setup data for core contract.\"},\"return\":\"core_ Address of core contract.consensusGateway_ Address of consensus gateway contract.\"},\"newCommittee(bytes)\":{\"params\":{\"_data\":\"Setup function call data.\"},\"return\":\"Deployed contract address.\"},\"newCore(bytes)\":{\"params\":{\"_data\":\"Setup function call data.\"},\"return\":\"Deployed contract address.\"}}},\"userdoc\":{\"methods\":{\"deployAnchor(bytes)\":{\"notice\":\"Deploys anchor contract.\"},\"deployMetachainProxies(bytes,bytes)\":{\"notice\":\"Deploys metachain proxies. Only consensus can call this function.\"},\"newCommittee(bytes)\":{\"notice\":\"Deploy Committee proxy contract. This can be called only by consensus        contract.\"},\"newCore(bytes)\":{\"notice\":\"Deploy Core proxy contract. This can be called only by consensus        contract.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol\":\"AxiomInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol\":{\"keccak256\":\"0x485cd0c45569dee79c715bc85684ae8e7d32972567b5881b0e2e46c890f83891\",\"urls\":[\"bzz-raw://fba31d86e8098335a04d782eb96feac2eb7c9abb28a05f0ec45a738f990db627\",\"dweb:/ipfs/QmXiZ6PC8rnTcroKbhjSg12FzoA2gsKSiGvmuDWeWSCbbE\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\ninterface AxiomInterface {\n\n    /**\n     * @notice Deploy Core proxy contract. This can be called only by consensus\n     *         contract.\n     * @param _data Setup function call data.\n     * @return Deployed contract address.\n     */\n    function newCore(\n        bytes calldata _data\n    )\n        external\n        returns (address);\n\n    /**\n     * @notice Deploy Committee proxy contract. This can be called only by consensus\n     *         contract.\n     * @param _data Setup function call data.\n     * @return Deployed contract address.\n     */\n    function newCommittee(\n        bytes calldata _data\n    )\n        external\n        returns (address);\n\n    /**\n     * @notice Deploys metachain proxies. Only consensus can call this function.\n     *\n     * @param _coreSetupData Setup data for core contract.\n     * @param _consensusGatewaySetupData Setup data for consensus gateway contract.\n     *\n     * @return core_ Address of core contract.\n     * @return consensusGateway_ Address of consensus gateway contract.\n     */\n    function deployMetachainProxies(\n        bytes calldata _coreSetupData,\n        bytes calldata _consensusGatewaySetupData\n    )\n        external\n        returns(address core_, address consensusGateway_);\n\n    /**\n     * @notice Deploys anchor contract.\n     *\n     * @param _anchorSetupData Setup data for anchor contract.\n     *\n     * @return anchor_ Address of anchor contract.\n     */\n    function deployAnchor(bytes calldata _anchorSetupData)\n        external\n        returns(address anchor_);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol",
+    "exportedSymbols": {
+      "AxiomInterface": [
+        785
+      ]
+    },
+    "id": 786,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 752,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:8"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 785,
+        "linearizedBaseContracts": [
+          785
+        ],
+        "name": "AxiomInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Deploy Core proxy contract. This can be called only by consensus\n        contract.\n@param _data Setup function call data.\n@return Deployed contract address.",
+            "id": 759,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newCore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 755,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 754,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 759,
+                  "src": "300:20:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 753,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "290:36:8"
+            },
+            "returnParameters": {
+              "id": 758,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 757,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 759,
+                  "src": "361:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 756,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "361:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "360:9:8"
+            },
+            "scope": 785,
+            "src": "274:96:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploy Committee proxy contract. This can be called only by consensus\n        contract.\n@param _data Setup function call data.\n@return Deployed contract address.",
+            "id": 766,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 762,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 761,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 766,
+                  "src": "621:20:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 760,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "611:36:8"
+            },
+            "returnParameters": {
+              "id": 765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 764,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 766,
+                  "src": "682:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 763,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "682:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "681:9:8"
+            },
+            "scope": 785,
+            "src": "590:101:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploys metachain proxies. Only consensus can call this function.\n     * @param _coreSetupData Setup data for core contract.\n@param _consensusGatewaySetupData Setup data for consensus gateway contract.\n     * @return core_ Address of core contract.\n@return consensusGateway_ Address of consensus gateway contract.",
+            "id": 777,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployMetachainProxies",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 771,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 768,
+                  "name": "_coreSetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1111:29:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 767,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 770,
+                  "name": "_consensusGatewaySetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1150:41:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 769,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1150:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1101:96:8"
+            },
+            "returnParameters": {
+              "id": 776,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 773,
+                  "name": "core_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1231:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1231:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 775,
+                  "name": "consensusGateway_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1246:25:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 774,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1246:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1230:42:8"
+            },
+            "scope": 785,
+            "src": "1070:203:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploys anchor contract.\n     * @param _anchorSetupData Setup data for anchor contract.\n     * @return anchor_ Address of anchor contract.",
+            "id": 784,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 779,
+                  "name": "_anchorSetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 784,
+                  "src": "1485:31:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 778,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1485:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1484:33:8"
+            },
+            "returnParameters": {
+              "id": 783,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 782,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 784,
+                  "src": "1551:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 781,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1551:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1550:17:8"
+            },
+            "scope": 785,
+            "src": "1463:105:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 786,
+        "src": "33:1537:8"
+      }
+    ],
+    "src": "0:1571:8"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol",
+    "exportedSymbols": {
+      "AxiomInterface": [
+        785
+      ]
+    },
+    "id": 786,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 752,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:8"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 785,
+        "linearizedBaseContracts": [
+          785
+        ],
+        "name": "AxiomInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Deploy Core proxy contract. This can be called only by consensus\n        contract.\n@param _data Setup function call data.\n@return Deployed contract address.",
+            "id": 759,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newCore",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 755,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 754,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 759,
+                  "src": "300:20:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 753,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "290:36:8"
+            },
+            "returnParameters": {
+              "id": 758,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 757,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 759,
+                  "src": "361:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 756,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "361:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "360:9:8"
+            },
+            "scope": 785,
+            "src": "274:96:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploy Committee proxy contract. This can be called only by consensus\n        contract.\n@param _data Setup function call data.\n@return Deployed contract address.",
+            "id": 766,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "newCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 762,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 761,
+                  "name": "_data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 766,
+                  "src": "621:20:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 760,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "621:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "611:36:8"
+            },
+            "returnParameters": {
+              "id": 765,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 764,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 766,
+                  "src": "682:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 763,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "682:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "681:9:8"
+            },
+            "scope": 785,
+            "src": "590:101:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploys metachain proxies. Only consensus can call this function.\n     * @param _coreSetupData Setup data for core contract.\n@param _consensusGatewaySetupData Setup data for consensus gateway contract.\n     * @return core_ Address of core contract.\n@return consensusGateway_ Address of consensus gateway contract.",
+            "id": 777,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployMetachainProxies",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 771,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 768,
+                  "name": "_coreSetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1111:29:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 767,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 770,
+                  "name": "_consensusGatewaySetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1150:41:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 769,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1150:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1101:96:8"
+            },
+            "returnParameters": {
+              "id": 776,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 773,
+                  "name": "core_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1231:13:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 772,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1231:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 775,
+                  "name": "consensusGateway_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 777,
+                  "src": "1246:25:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 774,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1246:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1230:42:8"
+            },
+            "scope": 785,
+            "src": "1070:203:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Deploys anchor contract.\n     * @param _anchorSetupData Setup data for anchor contract.\n     * @return anchor_ Address of anchor contract.",
+            "id": 784,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployAnchor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 780,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 779,
+                  "name": "_anchorSetupData",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 784,
+                  "src": "1485:31:8",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 778,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1485:5:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1484:33:8"
+            },
+            "returnParameters": {
+              "id": 783,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 782,
+                  "name": "anchor_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 784,
+                  "src": "1551:15:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 781,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1551:7:8",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1550:17:8"
+            },
+            "scope": 785,
+            "src": "1463:105:8",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 786,
+        "src": "33:1537:8"
+      }
+    ],
+    "src": "0:1571:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.602Z",
+  "devdoc": {
+    "methods": {
+      "deployAnchor(bytes)": {
+        "params": {
+          "_anchorSetupData": "Setup data for anchor contract."
+        },
+        "return": "anchor_ Address of anchor contract."
+      },
+      "deployMetachainProxies(bytes,bytes)": {
+        "params": {
+          "_consensusGatewaySetupData": "Setup data for consensus gateway contract.",
+          "_coreSetupData": "Setup data for core contract."
+        },
+        "return": "core_ Address of core contract.consensusGateway_ Address of consensus gateway contract."
+      },
+      "newCommittee(bytes)": {
+        "params": {
+          "_data": "Setup function call data."
+        },
+        "return": "Deployed contract address."
+      },
+      "newCore(bytes)": {
+        "params": {
+          "_data": "Setup function call data."
+        },
+        "return": "Deployed contract address."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "deployAnchor(bytes)": {
+        "notice": "Deploys anchor contract."
+      },
+      "deployMetachainProxies(bytes,bytes)": {
+        "notice": "Deploys metachain proxies. Only consensus can call this function."
+      },
+      "newCommittee(bytes)": {
+        "notice": "Deploy Committee proxy contract. This can be called only by consensus        contract."
+      },
+      "newCore(bytes)": {
+        "notice": "Deploy Core proxy contract. This can be called only by consensus        contract."
+      }
+    }
+  }
+}

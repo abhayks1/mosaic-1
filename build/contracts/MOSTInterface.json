@@ -1,0 +1,650 @@
+{
+  "contractName": "MOSTInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_beneficiary",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "burnFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"burn(uint256)\":{\"params\":{\"_amount\":\"Amount in atto.\"}},\"burnFrom(address,uint256)\":{\"params\":{\"_account\":\"Address of account for which the tokens will be burned.\",\"_amount\":\"Amount in atto.\"}},\"mint(address,uint256)\":{\"params\":{\"_amount\":\"Amount in wei.\",\"_beneficiary\":\"Address of beneficiary where tokens are minted.\"}}}},\"userdoc\":{\"methods\":{\"burn(uint256)\":{\"notice\":\"Burns the given amount(in atto) by msg.sender.\"},\"burnFrom(address,uint256)\":{\"notice\":\"Burns the given amount(in atto) of the given account.\"},\"mint(address,uint256)\":{\"notice\":\"Mints the given amount of token to beneficiary.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/MOSTInterface.sol\":\"MOSTInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol\":{\"keccak256\":\"0x66811f01b3f1cdb2bbbc6e0d9921c3989ec3f43544c5f68c11ea99fa9bfe0953\",\"urls\":[\"bzz-raw://9a2e4f5f704bcc883d892e5c8746119c88771c16e5ea662d53515207a2d37462\",\"dweb:/ipfs/QmWqv2PzyGA21rSNrzFNTqE6hxZDap2BvEoiB3Y7FrsHxo\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/MOSTInterface.sol\":{\"keccak256\":\"0x94acb74b3cf3a5bb5e9bd24bf1a87f3b10ea9580f52a210d75e6f8e4b1f3d1f2\",\"urls\":[\"bzz-raw://7b9bc1fdd033aa7363629a8499d95cdb0d9b86bc0d5e487a44ee6ea6af26ff28\",\"dweb:/ipfs/QmczApRQFCKxqtuNKAKPAYe663nnNVxt9BxNwDJLAwMSCs\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../ERC20I.sol\";\n\ninterface MOSTInterface {\n\n    /**\n     * Mints the given amount of token to beneficiary.\n     *\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n     * @param _amount Amount in wei.\n     */\n    function mint(\n        address _beneficiary,\n        uint256 _amount\n    )\n        external;\n\n    /**\n     * Burns the given amount(in atto) by msg.sender.\n     *\n     * @param _amount Amount in atto.\n     */\n    function burn(uint256 _amount)\n        external;\n\n    /**\n     * Burns the given amount(in atto) of the given account.\n     *\n     * @param _account Address of account for which the tokens will be burned.\n     * @param _amount Amount in atto.\n     */\n    function burnFrom(address _account, uint256 _amount)\n        external;\n\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/MOSTInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/MOSTInterface.sol",
+    "exportedSymbols": {
+      "MOSTInterface": [
+        11254
+      ]
+    },
+    "id": 11255,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11233,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:44"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol",
+        "file": "../ERC20I.sol",
+        "id": 11234,
+        "nodeType": "ImportDirective",
+        "scope": 11255,
+        "sourceUnit": 84,
+        "src": "621:23:44",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 11254,
+        "linearizedBaseContracts": [
+          11254
+        ],
+        "name": "MOSTInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "Mints the given amount of token to beneficiary.\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n@param _amount Amount in wei.",
+            "id": 11241,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11236,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11241,
+                  "src": "890:20:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11238,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11241,
+                  "src": "920:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11237,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "920:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "880:61:44"
+            },
+            "returnParameters": {
+              "id": 11240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:44"
+            },
+            "scope": 11254,
+            "src": "867:92:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Burns the given amount(in atto) by msg.sender.\n     * @param _amount Amount in atto.",
+            "id": 11246,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11244,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11243,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11246,
+                  "src": "1094:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11242,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1094:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1093:17:44"
+            },
+            "returnParameters": {
+              "id": 11245,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1127:0:44"
+            },
+            "scope": 11254,
+            "src": "1080:48:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Burns the given amount(in atto) of the given account.\n     * @param _account Address of account for which the tokens will be burned.\n@param _amount Amount in atto.",
+            "id": 11253,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11251,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11248,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11253,
+                  "src": "1353:16:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11247,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11250,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11253,
+                  "src": "1371:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11249,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1371:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:35:44"
+            },
+            "returnParameters": {
+              "id": 11252,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1404:0:44"
+            },
+            "scope": 11254,
+            "src": "1335:70:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11255,
+        "src": "646:762:44"
+      }
+    ],
+    "src": "0:1409:44"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/most/MOSTInterface.sol",
+    "exportedSymbols": {
+      "MOSTInterface": [
+        11254
+      ]
+    },
+    "id": 11255,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11233,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:44"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/ERC20I.sol",
+        "file": "../ERC20I.sol",
+        "id": 11234,
+        "nodeType": "ImportDirective",
+        "scope": 11255,
+        "sourceUnit": 84,
+        "src": "621:23:44",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 11254,
+        "linearizedBaseContracts": [
+          11254
+        ],
+        "name": "MOSTInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "Mints the given amount of token to beneficiary.\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n@param _amount Amount in wei.",
+            "id": 11241,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11239,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11236,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11241,
+                  "src": "890:20:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11235,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11238,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11241,
+                  "src": "920:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11237,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "920:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "880:61:44"
+            },
+            "returnParameters": {
+              "id": 11240,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "958:0:44"
+            },
+            "scope": 11254,
+            "src": "867:92:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Burns the given amount(in atto) by msg.sender.\n     * @param _amount Amount in atto.",
+            "id": 11246,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11244,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11243,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11246,
+                  "src": "1094:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11242,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1094:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1093:17:44"
+            },
+            "returnParameters": {
+              "id": 11245,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1127:0:44"
+            },
+            "scope": 11254,
+            "src": "1080:48:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Burns the given amount(in atto) of the given account.\n     * @param _account Address of account for which the tokens will be burned.\n@param _amount Amount in atto.",
+            "id": 11253,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11251,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11248,
+                  "name": "_account",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11253,
+                  "src": "1353:16:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 11247,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1353:7:44",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 11250,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11253,
+                  "src": "1371:15:44",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11249,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1371:7:44",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1352:35:44"
+            },
+            "returnParameters": {
+              "id": 11252,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1404:0:44"
+            },
+            "scope": 11254,
+            "src": "1335:70:44",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11255,
+        "src": "646:762:44"
+      }
+    ],
+    "src": "0:1409:44"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.740Z",
+  "devdoc": {
+    "methods": {
+      "burn(uint256)": {
+        "params": {
+          "_amount": "Amount in atto."
+        }
+      },
+      "burnFrom(address,uint256)": {
+        "params": {
+          "_account": "Address of account for which the tokens will be burned.",
+          "_amount": "Amount in atto."
+        }
+      },
+      "mint(address,uint256)": {
+        "params": {
+          "_amount": "Amount in wei.",
+          "_beneficiary": "Address of beneficiary where tokens are minted."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "burn(uint256)": {
+        "notice": "Burns the given amount(in atto) by msg.sender."
+      },
+      "burnFrom(address,uint256)": {
+        "notice": "Burns the given amount(in atto) of the given account."
+      },
+      "mint(address,uint256)": {
+        "notice": "Mints the given amount of token to beneficiary."
+      }
+    }
+  }
+}

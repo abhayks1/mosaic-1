@@ -1,0 +1,1081 @@
+{
+  "contractName": "ConsensusCogatewaySpy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyKernelHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "testKernelHashes",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_kernelHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_kernelHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "setKernelHash",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_kernelHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "getKernelHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "kernelHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_kernelHeight\",\"type\":\"uint256\"}],\"name\":\"getKernelHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"kernelHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_kernelHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_kernelHeight\",\"type\":\"uint256\"}],\"name\":\"setKernelHash\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyKernelHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"testKernelHashes\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{\"getKernelHash(uint256)\":{\"notice\":\"Get the kernel hash for a given kernel height. For testing only.\"},\"setKernelHash(bytes32,uint256)\":{\"notice\":\"Set the kernel hash for a given kernel height. For testing only.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/ConsensusCogatewaySpy.sol\":\"ConsensusCogatewaySpy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol\":{\"keccak256\":\"0x57b33802000d6fcb63da6df6e48a99344e564da50d14190bf76aafaf4d9e988e\",\"urls\":[\"bzz-raw://92d0cc54e387239f6735e62bae4047a9122a2b83d33a46bc16cb492f46c8621b\",\"dweb:/ipfs/QmTuEndEm77gLDJebxRwEMMxDS3fFRc6LJ3mSQBQc3QvnK\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/ConsensusCogatewaySpy.sol\":{\"keccak256\":\"0x59929e1f45dc44adf0cd7f828edd9c684de84b4a6615300032a28e3ff5dfe83d\",\"urls\":[\"bzz-raw://deb7ee55020b4b75c4461403f372071f6a0c4852317d0dfe0aa9450c36b20728\",\"dweb:/ipfs/QmPp1nbqAAe7kM5EMbQXLEnvvRJEoNqddaDaWgmSvoug5t\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061012e806100206000396000f3fe6080604052348015600f57600080fd5b506004361060465760003560e01c806342bb501214604b578063777b1ac314606d5780639d9ea0f5146085578063a85e8b4614609f575b600080fd5b606b60048036036040811015605f57600080fd5b508035906020013560b9565b005b607360ca565b60408051918252519081900360200190f35b607360048036036020811015609957600080fd5b503560d0565b60736004803603602081101560b357600080fd5b503560e7565b600090815260208190526040902055565b60015481565b600181905560009081526020819052604090205490565b6000602081905290815260409020548156fea265627a7a723158208c8cce295b06c507c71e1e0917162e549e66750e4fe5ddd3553994719e752d9d64736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060465760003560e01c806342bb501214604b578063777b1ac314606d5780639d9ea0f5146085578063a85e8b4614609f575b600080fd5b606b60048036036040811015605f57600080fd5b508035906020013560b9565b005b607360ca565b60408051918252519081900360200190f35b607360048036036020811015609957600080fd5b503560d0565b60736004803603602081101560b357600080fd5b503560e7565b600090815260208190526040902055565b60015481565b600181905560009081526020819052604090205490565b6000602081905290815260409020548156fea265627a7a723158208c8cce295b06c507c71e1e0917162e549e66750e4fe5ddd3553994719e752d9d64736f6c634300050d0032",
+  "sourceMap": "688:737:74:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;688:737:74;;;;;;;",
+  "deployedSourceMap": "688:737:74:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;688:737:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;948:172;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;948:172:74;;;;;;;:::i;:::-;;815:30;;;:::i;:::-;;;;;;;;;;;;;;;;1222:201;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1222:201:74;;:::i;757:51::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;757:51:74;;:::i;948:172::-;1068:16;:31;;;;;;;;;;:45;948:172::o;815:30::-;;;;:::o;1222:201::-;1337:15;:31;;;1302:19;1385:31;;;;;;;;;;;;1222:201::o;757:51::-;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../consensus-gateway/ConsensusCogatewayInterface.sol\";\n\ncontract ConsensusCogatewaySpy is ConsensusCogatewayInterface {\n\n    mapping(uint256 => bytes32) public testKernelHashes;\n\n    uint256 public spyKernelHeight;\n\n    /**\n     * @notice Set the kernel hash for a given kernel height. For testing only.\n     */\n    function setKernelHash(\n        bytes32 _kernelHash,\n        uint256 _kernelHeight\n    )\n        external\n    {\n        testKernelHashes[_kernelHeight] = _kernelHash;\n    }\n\n    /**\n     * @notice Get the kernel hash for a given kernel height. For testing only.\n     */\n    function getKernelHash(uint256 _kernelHeight)\n        external\n        returns (bytes32 kernelHash_)\n    {\n        spyKernelHeight = _kernelHeight;\n        return testKernelHashes[_kernelHeight];\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/ConsensusCogatewaySpy.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/ConsensusCogatewaySpy.sol",
+    "exportedSymbols": {
+      "ConsensusCogatewaySpy": [
+        15489
+      ]
+    },
+    "id": 15490,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15449,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:74"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol",
+        "file": "../../consensus-gateway/ConsensusCogatewayInterface.sol",
+        "id": 15450,
+        "nodeType": "ImportDirective",
+        "scope": 15490,
+        "sourceUnit": 2503,
+        "src": "621:65:74",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15451,
+              "name": "ConsensusCogatewayInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2502,
+              "src": "722:27:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusCogatewayInterface_$2502",
+                "typeString": "contract ConsensusCogatewayInterface"
+              }
+            },
+            "id": 15452,
+            "nodeType": "InheritanceSpecifier",
+            "src": "722:27:74"
+          }
+        ],
+        "contractDependencies": [
+          2502
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15489,
+        "linearizedBaseContracts": [
+          15489,
+          2502
+        ],
+        "name": "ConsensusCogatewaySpy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15456,
+            "name": "testKernelHashes",
+            "nodeType": "VariableDeclaration",
+            "scope": 15489,
+            "src": "757:51:74",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 15455,
+              "keyType": {
+                "id": 15453,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "765:7:74",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "757:27:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 15454,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "776:7:74",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15458,
+            "name": "spyKernelHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 15489,
+            "src": "815:30:74",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15457,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "815:7:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15471,
+              "nodeType": "Block",
+              "src": "1058:62:74",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 15465,
+                        "name": "testKernelHashes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15456,
+                        "src": "1068:16:74",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 15467,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 15466,
+                        "name": "_kernelHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15462,
+                        "src": "1085:13:74",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1068:31:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15468,
+                      "name": "_kernelHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15460,
+                      "src": "1102:11:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1068:45:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 15470,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1068:45:74"
+                }
+              ]
+            },
+            "documentation": "@notice Set the kernel hash for a given kernel height. For testing only.",
+            "id": 15472,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15463,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15460,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15472,
+                  "src": "980:19:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15459,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "980:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15462,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15472,
+                  "src": "1009:21:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15461,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1009:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:66:74"
+            },
+            "returnParameters": {
+              "id": 15464,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1058:0:74"
+            },
+            "scope": 15489,
+            "src": "948:172:74",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 15487,
+              "nodeType": "Block",
+              "src": "1327:96:74",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15481,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15479,
+                      "name": "spyKernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15458,
+                      "src": "1337:15:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15480,
+                      "name": "_kernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15474,
+                      "src": "1355:13:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1337:31:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15482,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1337:31:74"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 15483,
+                      "name": "testKernelHashes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15456,
+                      "src": "1385:16:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 15485,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 15484,
+                      "name": "_kernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15474,
+                      "src": "1402:13:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1385:31:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 15478,
+                  "id": 15486,
+                  "nodeType": "Return",
+                  "src": "1378:38:74"
+                }
+              ]
+            },
+            "documentation": "@notice Get the kernel hash for a given kernel height. For testing only.",
+            "id": 15488,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15474,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15488,
+                  "src": "1245:21:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15473,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1245:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1244:23:74"
+            },
+            "returnParameters": {
+              "id": 15478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15477,
+                  "name": "kernelHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15488,
+                  "src": "1302:19:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15476,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1302:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1301:21:74"
+            },
+            "scope": 15489,
+            "src": "1222:201:74",
+            "stateMutability": "nonpayable",
+            "superFunction": 2501,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15490,
+        "src": "688:737:74"
+      }
+    ],
+    "src": "0:1426:74"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/ConsensusCogatewaySpy.sol",
+    "exportedSymbols": {
+      "ConsensusCogatewaySpy": [
+        15489
+      ]
+    },
+    "id": 15490,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15449,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:74"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusCogatewayInterface.sol",
+        "file": "../../consensus-gateway/ConsensusCogatewayInterface.sol",
+        "id": 15450,
+        "nodeType": "ImportDirective",
+        "scope": 15490,
+        "sourceUnit": 2503,
+        "src": "621:65:74",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15451,
+              "name": "ConsensusCogatewayInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2502,
+              "src": "722:27:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusCogatewayInterface_$2502",
+                "typeString": "contract ConsensusCogatewayInterface"
+              }
+            },
+            "id": 15452,
+            "nodeType": "InheritanceSpecifier",
+            "src": "722:27:74"
+          }
+        ],
+        "contractDependencies": [
+          2502
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15489,
+        "linearizedBaseContracts": [
+          15489,
+          2502
+        ],
+        "name": "ConsensusCogatewaySpy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15456,
+            "name": "testKernelHashes",
+            "nodeType": "VariableDeclaration",
+            "scope": 15489,
+            "src": "757:51:74",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+              "typeString": "mapping(uint256 => bytes32)"
+            },
+            "typeName": {
+              "id": 15455,
+              "keyType": {
+                "id": 15453,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "765:7:74",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "757:27:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                "typeString": "mapping(uint256 => bytes32)"
+              },
+              "valueType": {
+                "id": 15454,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "776:7:74",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15458,
+            "name": "spyKernelHeight",
+            "nodeType": "VariableDeclaration",
+            "scope": 15489,
+            "src": "815:30:74",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15457,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "815:7:74",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15471,
+              "nodeType": "Block",
+              "src": "1058:62:74",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 15465,
+                        "name": "testKernelHashes",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15456,
+                        "src": "1068:16:74",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                          "typeString": "mapping(uint256 => bytes32)"
+                        }
+                      },
+                      "id": 15467,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 15466,
+                        "name": "_kernelHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15462,
+                        "src": "1085:13:74",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "1068:31:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15468,
+                      "name": "_kernelHash",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15460,
+                      "src": "1102:11:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1068:45:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 15470,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1068:45:74"
+                }
+              ]
+            },
+            "documentation": "@notice Set the kernel hash for a given kernel height. For testing only.",
+            "id": 15472,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15463,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15460,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15472,
+                  "src": "980:19:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15459,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "980:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15462,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15472,
+                  "src": "1009:21:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15461,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1009:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "970:66:74"
+            },
+            "returnParameters": {
+              "id": 15464,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1058:0:74"
+            },
+            "scope": 15489,
+            "src": "948:172:74",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 15487,
+              "nodeType": "Block",
+              "src": "1327:96:74",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15481,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15479,
+                      "name": "spyKernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15458,
+                      "src": "1337:15:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15480,
+                      "name": "_kernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15474,
+                      "src": "1355:13:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1337:31:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15482,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1337:31:74"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 15483,
+                      "name": "testKernelHashes",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15456,
+                      "src": "1385:16:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_bytes32_$",
+                        "typeString": "mapping(uint256 => bytes32)"
+                      }
+                    },
+                    "id": 15485,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 15484,
+                      "name": "_kernelHeight",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15474,
+                      "src": "1402:13:74",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1385:31:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 15478,
+                  "id": 15486,
+                  "nodeType": "Return",
+                  "src": "1378:38:74"
+                }
+              ]
+            },
+            "documentation": "@notice Get the kernel hash for a given kernel height. For testing only.",
+            "id": 15488,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getKernelHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15475,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15474,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15488,
+                  "src": "1245:21:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15473,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1245:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1244:23:74"
+            },
+            "returnParameters": {
+              "id": 15478,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15477,
+                  "name": "kernelHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15488,
+                  "src": "1302:19:74",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15476,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1302:7:74",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1301:21:74"
+            },
+            "scope": 15489,
+            "src": "1222:201:74",
+            "stateMutability": "nonpayable",
+            "superFunction": 2501,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15490,
+        "src": "688:737:74"
+      }
+    ],
+    "src": "0:1426:74"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.794Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {
+      "getKernelHash(uint256)": {
+        "notice": "Get the kernel hash for a given kernel height. For testing only."
+      },
+      "setKernelHash(bytes32,uint256)": {
+        "notice": "Set the kernel hash for a given kernel height. For testing only."
+      }
+    }
+  }
+}

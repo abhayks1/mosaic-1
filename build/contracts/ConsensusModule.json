@@ -1,0 +1,1572 @@
+{
+  "contractName": "ConsensusModule",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensus",
+      "outputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"consensus\",\"outputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol\":\"ConsensusModule\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol\":{\"keccak256\":\"0x7b6a76b998a80813b06bbd950d2037249a15e1d0c9fbba46cfc190c04d643de4\",\"urls\":[\"bzz-raw://ec6aa62754121b74b67ca7693fd60203cfc19487b579a54c7c437feef5d36d7b\",\"dweb:/ipfs/QmQKs1sCtsiFkjw2tjHmToC5ji8CKUUh2WJMqBq2qFsfGf\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b5060938061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c80638ef3f76114602d575b600080fd5b6033604f565b604080516001600160a01b039092168252519081900360200190f35b6000546001600160a01b03168156fea265627a7a7231582014d25424dcc906967ecf418dd2afe2081a55347d9395472ac6fbe1fb62aa6b9e64736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c80638ef3f76114602d575b600080fd5b6033604f565b604080516001600160a01b039092168252519081900360200190f35b6000546001600160a01b03168156fea265627a7a7231582014d25424dcc906967ecf418dd2afe2081a55347d9395472ac6fbe1fb62aa6b9e64736f6c634300050d0032",
+  "sourceMap": "657:818:22:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;657:818:22;;;;;;;",
+  "deployedSourceMap": "657:818:22:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;657:818:22;;;;;;;;;;;;;;;;;;;756:35;;;:::i;:::-;;;;-1:-1:-1;;;;;756:35:22;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;756:35:22;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"./ConsensusInterface.sol\";\n\ncontract ConsensusModule {\n\n    /** Consensus contract for which this committee was formed. */\n    ConsensusInterface public consensus;\n\n    /**\n     * @notice It sets address for consensus contract.\n     * @param _consensus Address of consensus contract.\n     */\n    function setupConsensus(ConsensusInterface _consensus) internal {\n        require(\n            address(consensus) == address(0),\n            \"Consensus address is already present.\"\n        );\n        require(\n            address(_consensus) != address(0),\n            \"Consensus address must not be null.\"\n        );\n        consensus = _consensus;\n    }\n\n    modifier onlyConsensus()\n    {\n        require(\n            msg.sender == address(consensus),\n            \"Only the consensus contract can call this function.\"\n        );\n\n        _;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+    "exportedSymbols": {
+      "ConsensusModule": [
+        5933
+      ]
+    },
+    "id": 5934,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5883,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:22"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+        "file": "./ConsensusInterface.sol",
+        "id": 5884,
+        "nodeType": "ImportDirective",
+        "scope": 5934,
+        "sourceUnit": 5882,
+        "src": "621:34:22",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5933,
+        "linearizedBaseContracts": [
+          5933
+        ],
+        "name": "ConsensusModule",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5886,
+            "name": "consensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 5933,
+            "src": "756:35:22",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+              "typeString": "contract ConsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5885,
+              "name": "ConsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5881,
+              "src": "756:18:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                "typeString": "contract ConsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5917,
+              "nodeType": "Block",
+              "src": "989:290:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5898,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5893,
+                              "name": "consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5886,
+                              "src": "1028:9:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5892,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1020:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5894,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1020:18:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 5896,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1050:1:22",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 5895,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1042:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5897,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1042:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1020:32:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e",
+                        "id": 5899,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1066:39:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_3333dd6688b9b6cc42129d7f22da93db18c698c0d021e094964434fd38e35957",
+                          "typeString": "literal_string \"Consensus address is already present.\""
+                        },
+                        "value": "Consensus address is already present."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_3333dd6688b9b6cc42129d7f22da93db18c698c0d021e094964434fd38e35957",
+                          "typeString": "literal_string \"Consensus address is already present.\""
+                        }
+                      ],
+                      "id": 5891,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "999:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5900,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "999:116:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5901,
+                  "nodeType": "ExpressionStatement",
+                  "src": "999:116:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5909,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5904,
+                              "name": "_consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5888,
+                              "src": "1154:10:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5903,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1146:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5905,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1146:19:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 5907,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1177:1:22",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 5906,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1169:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5908,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1169:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1146:33:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e",
+                        "id": 5910,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1193:37:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b7e969277be63ebec24a1f12b7650812275d1a2ba11a99e7cb92b1b00f561ab6",
+                          "typeString": "literal_string \"Consensus address must not be null.\""
+                        },
+                        "value": "Consensus address must not be null."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b7e969277be63ebec24a1f12b7650812275d1a2ba11a99e7cb92b1b00f561ab6",
+                          "typeString": "literal_string \"Consensus address must not be null.\""
+                        }
+                      ],
+                      "id": 5902,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1125:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5911,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1125:115:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5912,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1125:115:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5915,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5913,
+                      "name": "consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5886,
+                      "src": "1250:9:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5914,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5888,
+                      "src": "1262:10:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "src": "1250:22:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "id": 5916,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1250:22:22"
+                }
+              ]
+            },
+            "documentation": "@notice It sets address for consensus contract.\n@param _consensus Address of consensus contract.",
+            "id": 5918,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupConsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5888,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "949:29:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5887,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "949:18:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "948:31:22"
+            },
+            "returnParameters": {
+              "id": 5890,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "989:0:22"
+            },
+            "scope": 5933,
+            "src": "925:354:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5931,
+              "nodeType": "Block",
+              "src": "1314:159:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5926,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 5921,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19576,
+                            "src": "1345:3:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 5922,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1345:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5924,
+                              "name": "consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5886,
+                              "src": "1367:9:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5923,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1359:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5925,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1359:18:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1345:32:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e",
+                        "id": 5927,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1391:53:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d05be089b6d6368c97fdfd9e7dde9d93da4ef52cb0a650ebe2cedae43787c4c7",
+                          "typeString": "literal_string \"Only the consensus contract can call this function.\""
+                        },
+                        "value": "Only the consensus contract can call this function."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d05be089b6d6368c97fdfd9e7dde9d93da4ef52cb0a650ebe2cedae43787c4c7",
+                          "typeString": "literal_string \"Only the consensus contract can call this function.\""
+                        }
+                      ],
+                      "id": 5920,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1324:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5928,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1324:130:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5929,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1324:130:22"
+                },
+                {
+                  "id": 5930,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1465:1:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5932,
+            "name": "onlyConsensus",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5919,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1307:2:22"
+            },
+            "src": "1285:188:22",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5934,
+        "src": "657:818:22"
+      }
+    ],
+    "src": "0:1476:22"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+    "exportedSymbols": {
+      "ConsensusModule": [
+        5933
+      ]
+    },
+    "id": 5934,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5883,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:22"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol",
+        "file": "./ConsensusInterface.sol",
+        "id": 5884,
+        "nodeType": "ImportDirective",
+        "scope": 5934,
+        "sourceUnit": 5882,
+        "src": "621:34:22",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5933,
+        "linearizedBaseContracts": [
+          5933
+        ],
+        "name": "ConsensusModule",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 5886,
+            "name": "consensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 5933,
+            "src": "756:35:22",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+              "typeString": "contract ConsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 5885,
+              "name": "ConsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5881,
+              "src": "756:18:22",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                "typeString": "contract ConsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 5917,
+              "nodeType": "Block",
+              "src": "989:290:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5898,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5893,
+                              "name": "consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5886,
+                              "src": "1028:9:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5892,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1020:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5894,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1020:18:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 5896,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1050:1:22",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 5895,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1042:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5897,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1042:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1020:32:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e",
+                        "id": 5899,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1066:39:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_3333dd6688b9b6cc42129d7f22da93db18c698c0d021e094964434fd38e35957",
+                          "typeString": "literal_string \"Consensus address is already present.\""
+                        },
+                        "value": "Consensus address is already present."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_3333dd6688b9b6cc42129d7f22da93db18c698c0d021e094964434fd38e35957",
+                          "typeString": "literal_string \"Consensus address is already present.\""
+                        }
+                      ],
+                      "id": 5891,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "999:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5900,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "999:116:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5901,
+                  "nodeType": "ExpressionStatement",
+                  "src": "999:116:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5909,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5904,
+                              "name": "_consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5888,
+                              "src": "1154:10:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5903,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1146:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5905,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1146:19:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "!=",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "hexValue": "30",
+                              "id": 5907,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "number",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "1177:1:22",
+                              "subdenomination": null,
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              },
+                              "value": "0"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_rational_0_by_1",
+                                "typeString": "int_const 0"
+                              }
+                            ],
+                            "id": 5906,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1169:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5908,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1169:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "src": "1146:33:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e",
+                        "id": 5910,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1193:37:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_b7e969277be63ebec24a1f12b7650812275d1a2ba11a99e7cb92b1b00f561ab6",
+                          "typeString": "literal_string \"Consensus address must not be null.\""
+                        },
+                        "value": "Consensus address must not be null."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_b7e969277be63ebec24a1f12b7650812275d1a2ba11a99e7cb92b1b00f561ab6",
+                          "typeString": "literal_string \"Consensus address must not be null.\""
+                        }
+                      ],
+                      "id": 5902,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1125:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5911,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1125:115:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5912,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1125:115:22"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 5915,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 5913,
+                      "name": "consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5886,
+                      "src": "1250:9:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 5914,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5888,
+                      "src": "1262:10:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "src": "1250:22:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "id": 5916,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1250:22:22"
+                }
+              ]
+            },
+            "documentation": "@notice It sets address for consensus contract.\n@param _consensus Address of consensus contract.",
+            "id": 5918,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupConsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 5889,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 5888,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 5918,
+                  "src": "949:29:22",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 5887,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "949:18:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "948:31:22"
+            },
+            "returnParameters": {
+              "id": 5890,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "989:0:22"
+            },
+            "scope": 5933,
+            "src": "925:354:22",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 5931,
+              "nodeType": "Block",
+              "src": "1314:159:22",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 5926,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 5921,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19576,
+                            "src": "1345:3:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 5922,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "1345:10:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "id": 5924,
+                              "name": "consensus",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 5886,
+                              "src": "1367:9:22",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                                "typeString": "contract ConsensusInterface"
+                              }
+                            ],
+                            "id": 5923,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "1359:7:22",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 5925,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "1359:18:22",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "1345:32:22",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e",
+                        "id": 5927,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1391:53:22",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d05be089b6d6368c97fdfd9e7dde9d93da4ef52cb0a650ebe2cedae43787c4c7",
+                          "typeString": "literal_string \"Only the consensus contract can call this function.\""
+                        },
+                        "value": "Only the consensus contract can call this function."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d05be089b6d6368c97fdfd9e7dde9d93da4ef52cb0a650ebe2cedae43787c4c7",
+                          "typeString": "literal_string \"Only the consensus contract can call this function.\""
+                        }
+                      ],
+                      "id": 5920,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1324:7:22",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 5928,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1324:130:22",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 5929,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1324:130:22"
+                },
+                {
+                  "id": 5930,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1465:1:22"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 5932,
+            "name": "onlyConsensus",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 5919,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1307:2:22"
+            },
+            "src": "1285:188:22",
+            "visibility": "internal"
+          }
+        ],
+        "scope": 5934,
+        "src": "657:818:22"
+      }
+    ],
+    "src": "0:1476:22"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.675Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

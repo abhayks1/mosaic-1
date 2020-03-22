@@ -1,0 +1,1579 @@
+{
+  "contractName": "MessageOutboxDouble",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "DOMAIN_SEPARATOR_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MESSAGE_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_CHANNEL_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_NAME",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_TYPEHASH",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MMB_DOMAIN_SEPARATOR_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_outbox",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_inbox",
+          "type": "address"
+        }
+      ],
+      "name": "hashChannelIdentifier",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "channelIdentifier_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "messageInbox",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "outboundChannelIdentifier",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "outbox",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_intentHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_sender",
+          "type": "address"
+        }
+      ],
+      "name": "outboxMessageHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "messageHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "outboxNonces",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_messageInbox",
+          "type": "address"
+        }
+      ],
+      "name": "setupMessageOutboxExternal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_intentHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_nonce",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_sender",
+          "type": "address"
+        }
+      ],
+      "name": "declareMessageExternal",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "messageHash_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"DOMAIN_SEPARATOR_VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MESSAGE_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_CHANNEL_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_NAME\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"MMB_DOMAIN_SEPARATOR_VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_intentHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"declareMessageExternal\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"messageHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_outbox\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_inbox\",\"type\":\"address\"}],\"name\":\"hashChannelIdentifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"channelIdentifier_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"pure\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"messageInbox\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"outboundChannelIdentifier\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"outbox\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_intentHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_nonce\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasLimit\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"}],\"name\":\"outboxMessageHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"messageHash_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"outboxNonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_messageInbox\",\"type\":\"address\"}],\"name\":\"setupMessageOutboxExternal\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"hashChannelIdentifier(bytes32,address,address)\":{\"params\":{\"_inbox\":\"Inbox address.\",\"_metachainId\":\"Metachain identifier.\",\"_outbox\":\"Outbox address.\"}},\"outboxMessageHash(bytes32,uint256,uint256,uint256,address)\":{\"params\":{\"_feeGasLimit\":\"Fee gas limit.\",\"_feeGasPrice\":\"Fee gas price.\",\"_intentHash\":\"Intent hash of message.\",\"_nonce\":\"Nonce of sender.\",\"_sender\":\"Sender address.\"},\"return\":\"messageHash_ Message hash.\"}},\"title\":\"MessageOutboxDouble contract.\"},\"userdoc\":{\"methods\":{\"declareMessageExternal(bytes32,uint256,uint256,uint256,address)\":{\"notice\":\"It is used to test MessageOutbox::declareMessage().\"},\"hashChannelIdentifier(bytes32,address,address)\":{\"notice\":\"Generate channel identifier hash from the input params\"},\"outboxMessageHash(bytes32,uint256,uint256,uint256,address)\":{\"notice\":\"Generate outbox message hash from the input params\"},\"setupMessageOutboxExternal(bytes32,address)\":{\"notice\":\"It is used to test MessageOutbox::setupMessageOutbox().\"}},\"notice\":\"It is used for testing MessageOutbox contract.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/message-bus/MessageOutboxDouble.sol\":\"MessageOutboxDouble\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageBox.sol\":{\"keccak256\":\"0x927291436edee3b3e08b3621f21ea0f68e71d5f8c3399278524c46fda0e78516\",\"urls\":[\"bzz-raw://8e92a4db303b072fd4d4f9b81dfcdadb136ee57e6c0d1bfb5fb0a75e44d92f06\",\"dweb:/ipfs/QmPcamtsmPWK5zEQq744UvEihszJX1qzQn12v5FmyDbJpR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol\":{\"keccak256\":\"0xd7e7b38166076e1008a01dee9c6aa7484b9806e41d531f0838a237a5947f2e6f\",\"urls\":[\"bzz-raw://b4ef328a798ad3ad196d1df454301772e0d813d0fbb565c8c9ebafe3dea19fb7\",\"dweb:/ipfs/QmYnwUFdPAcWyGochUFjvDxHdzmr46CPUQFxQTQGeT5SDJ\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/message-bus/MessageOutboxDouble.sol\":{\"keccak256\":\"0xec3d6c47a347d1d24e30c958626ea82a6aec464ce1cac788da8891ce46640382\",\"urls\":[\"bzz-raw://2a66161d0d0cfd59d9edc5d7bf5e632864ac451a75dcb7c32b2ea126abf7d1fd\",\"dweb:/ipfs/QmeTVAEsxw5is87NHApPZJFH8z3iba2i5JhpBgGUeJfQH5\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/version/MosaicVersion.sol\":{\"keccak256\":\"0x67b812c975e8c8425f3165b9d911700927100a0ab5a9153beff48dacdea5575f\",\"urls\":[\"bzz-raw://d142fbfbbf062f87c83108d9d074462d14c744658014dc092b5d1500e60e963e\",\"dweb:/ipfs/QmbcDWi6WTwTSs7BoygUXjosGgzMuM8gxmJu5XQFAyFfaQ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610975806100206000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c80639f0b7dfe1161008c578063b4907ddc11610066578063b4907ddc146102c1578063d31b5968146102c9578063f02a0e90146102ef578063f732ecff146102f7576100ea565b80639f0b7dfe14610210578063ae64028514610244578063b1c91e21146102c1576100ea565b80633117a9cf116100c85780633117a9cf1461018557806346e356b1146101b3578063523ce242146101bb578063965ef01b146101ec576100ea565b80630e31eb60146100ef5780631ca948091461013f5780632fe05ad91461017d575b600080fd5b61012d600480360360a081101561010557600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b03166102ff565b60408051918252519081900360200190f35b61012d600480360360a081101561015557600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b031661031b565b61012d61032a565b6101b16004803603604081101561019b57600080fd5b50803590602001356001600160a01b0316610345565b005b61012d610353565b6101d8600480360360208110156101d157600080fd5b503561036e565b604080519115158252519081900360200190f35b6101f4610383565b604080516001600160a01b039092168252519081900360200190f35b61012d6004803603606081101561022657600080fd5b508035906001600160a01b0360208201358116916040013516610392565b61024c610551565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561028657818101518382015260200161026e565b50505050905090810190601f1680156102b35780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61024c610577565b61012d600480360360208110156102df57600080fd5b50356001600160a01b0316610594565b61012d6105a6565b61012d6105ac565b600061031186868686866001546105c7565b9695505050505050565b6000610311868686868661067a565b60405180603661088682396036019050604051809103902081565b61034f82826106ff565b5050565b6040518060606108bc82396060019050604051809103902081565b60006020819052908152604090205460ff1681565b6002546001600160a01b031681565b600080604051808061088660369139604080519182900360360182206020808401919091526001600160a01b038089168484015287166060808501919091528251808503909101815260809093019182905282519201919091209250905080605961082d8239605901905060405180910390206040518060400160405280600a8152602001694d6f736169632d42757360b01b815250604051806040016040528060018152602001600360fc1b8152508784604051602001808681526020018060200180602001858152602001848152602001838103835287818151815260200191508051906020019080838360005b8381101561049a578181015183820152602001610482565b50505050905090810190601f1680156104c75780820380516001836020036101000a031916815260200191505b50838103825286518152865160209182019188019080838360005b838110156104fa5781810151838201526020016104e2565b50505050905090810190601f1680156105275780820380516001836020036101000a031916815260200191505b50975050505050505050604051602081830303815290604052805190602001209150509392505050565b6040518060400160405280600a8152602001694d6f736169632d42757360b01b81525081565b604051806040016040528060018152602001600360fc1b81525081565b60036020526000908152604090205481565b60015481565b60405180605961082d82396059019050604051809103902081565b60008060405180806108bc606091396040805191829003606090810183206020808501919091528383019c909c52820199909952608081019790975250505060a08401929092526001600160a01b031660c0808401919091528351808403909101815260e083018452805190850120601960f81b610100840152604d60f81b6101018401526101028301919091526101228083019190915282518083039091018152610142909101909152805191012090565b600061068c86868686866001546105c7565b60008181526020819052604090205490915060ff16156106dd5760405162461bcd60e51b815260040180806020018281038252602581526020018061091c6025913960400191505060405180910390fd5b6000818152602081905260409020805460ff1916600117905595945050505050565b60015415610754576040805162461bcd60e51b815260206004820181905260248201527f4d657373616765206f7574626f7820697320616c72656164792073657475702e604482015290519081900360640190fd5b8161079b576040805162461bcd60e51b815260206004820152601260248201527126b2ba30b1b430b4b71034b21034b990181760711b604482015290519081900360640190fd5b6001600160a01b0381166107f6576040805162461bcd60e51b815260206004820152601b60248201527f4d65737361676520696e626f78206164647265737320697320302e0000000000604482015290519081900360640190fd5b600280546001600160a01b0319166001600160a01b038381169190911791829055610825918491309116610392565b600155505056fe4d6f736169634d65737361676542757328737472696e67206e616d652c737472696e672076657273696f6e2c62797465733332206d657461636861696e49642c62797465733332206368616e6e656c536570617261746f72294d6f736169634d6573736167654275734368616e6e656c2861646472657373206f7574626f782c206164647265737320696e626f78294d657373616765286279746573333220696e74656e74486173682c75696e74323536206e6f6e63652c75696e743235362066656547617350726963652c75696e74323536206665654761734c696d69742c616464726573732073656e646572294d65737361676520616c72656164792065786973747320696e20746865206f7574626f782ea265627a7a72315820908c7e88be68cfad2f90bb9481ab5c93b75f700e6c7aab7c9fd41791750bb73064736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100ea5760003560e01c80639f0b7dfe1161008c578063b4907ddc11610066578063b4907ddc146102c1578063d31b5968146102c9578063f02a0e90146102ef578063f732ecff146102f7576100ea565b80639f0b7dfe14610210578063ae64028514610244578063b1c91e21146102c1576100ea565b80633117a9cf116100c85780633117a9cf1461018557806346e356b1146101b3578063523ce242146101bb578063965ef01b146101ec576100ea565b80630e31eb60146100ef5780631ca948091461013f5780632fe05ad91461017d575b600080fd5b61012d600480360360a081101561010557600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b03166102ff565b60408051918252519081900360200190f35b61012d600480360360a081101561015557600080fd5b50803590602081013590604081013590606081013590608001356001600160a01b031661031b565b61012d61032a565b6101b16004803603604081101561019b57600080fd5b50803590602001356001600160a01b0316610345565b005b61012d610353565b6101d8600480360360208110156101d157600080fd5b503561036e565b604080519115158252519081900360200190f35b6101f4610383565b604080516001600160a01b039092168252519081900360200190f35b61012d6004803603606081101561022657600080fd5b508035906001600160a01b0360208201358116916040013516610392565b61024c610551565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561028657818101518382015260200161026e565b50505050905090810190601f1680156102b35780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b61024c610577565b61012d600480360360208110156102df57600080fd5b50356001600160a01b0316610594565b61012d6105a6565b61012d6105ac565b600061031186868686866001546105c7565b9695505050505050565b6000610311868686868661067a565b60405180603661088682396036019050604051809103902081565b61034f82826106ff565b5050565b6040518060606108bc82396060019050604051809103902081565b60006020819052908152604090205460ff1681565b6002546001600160a01b031681565b600080604051808061088660369139604080519182900360360182206020808401919091526001600160a01b038089168484015287166060808501919091528251808503909101815260809093019182905282519201919091209250905080605961082d8239605901905060405180910390206040518060400160405280600a8152602001694d6f736169632d42757360b01b815250604051806040016040528060018152602001600360fc1b8152508784604051602001808681526020018060200180602001858152602001848152602001838103835287818151815260200191508051906020019080838360005b8381101561049a578181015183820152602001610482565b50505050905090810190601f1680156104c75780820380516001836020036101000a031916815260200191505b50838103825286518152865160209182019188019080838360005b838110156104fa5781810151838201526020016104e2565b50505050905090810190601f1680156105275780820380516001836020036101000a031916815260200191505b50975050505050505050604051602081830303815290604052805190602001209150509392505050565b6040518060400160405280600a8152602001694d6f736169632d42757360b01b81525081565b604051806040016040528060018152602001600360fc1b81525081565b60036020526000908152604090205481565b60015481565b60405180605961082d82396059019050604051809103902081565b60008060405180806108bc606091396040805191829003606090810183206020808501919091528383019c909c52820199909952608081019790975250505060a08401929092526001600160a01b031660c0808401919091528351808403909101815260e083018452805190850120601960f81b610100840152604d60f81b6101018401526101028301919091526101228083019190915282518083039091018152610142909101909152805191012090565b600061068c86868686866001546105c7565b60008181526020819052604090205490915060ff16156106dd5760405162461bcd60e51b815260040180806020018281038252602581526020018061091c6025913960400191505060405180910390fd5b6000818152602081905260409020805460ff1916600117905595945050505050565b60015415610754576040805162461bcd60e51b815260206004820181905260248201527f4d657373616765206f7574626f7820697320616c72656164792073657475702e604482015290519081900360640190fd5b8161079b576040805162461bcd60e51b815260206004820152601260248201527126b2ba30b1b430b4b71034b21034b990181760711b604482015290519081900360640190fd5b6001600160a01b0381166107f6576040805162461bcd60e51b815260206004820152601b60248201527f4d65737361676520696e626f78206164647265737320697320302e0000000000604482015290519081900360640190fd5b600280546001600160a01b0319166001600160a01b038381169190911791829055610825918491309116610392565b600155505056fe4d6f736169634d65737361676542757328737472696e67206e616d652c737472696e672076657273696f6e2c62797465733332206d657461636861696e49642c62797465733332206368616e6e656c536570617261746f72294d6f736169634d6573736167654275734368616e6e656c2861646472657373206f7574626f782c206164647265737320696e626f78294d657373616765286279746573333220696e74656e74486173682c75696e74323536206e6f6e63652c75696e743235362066656547617350726963652c75696e74323536206665654761734c696d69742c616464726573732073656e646572294d65737361676520616c72656164792065786973747320696e20746865206f7574626f782ea265627a7a72315820908c7e88be68cfad2f90bb9481ab5c93b75f700e6c7aab7c9fd41791750bb73064736f6c634300050d0032",
+  "sourceMap": "777:887:83:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;777:887:83;;;;;;;",
+  "deployedSourceMap": "777:887:83:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;777:887:83;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1638:465:40;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;1638:465:40;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1638:465:40;;:::i;:::-;;;;;;;;;;;;;;;;1238:424:83;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;1238:424:83;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1238:424:83;;:::i;859:128:37:-;;;:::i;947:202:83:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;947:202:83;;;;;;-1:-1:-1;;;;;947:202:83;;:::i;:::-;;1488:166:37;;;:::i;972:38:40:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;972:38:40;;:::i;:::-;;;;;;;;;;;;;;;;;;1136:27;;;:::i;:::-;;;;-1:-1:-1;;;;;1136:27:40;;;;;;;;;;;;;;1899:694:37;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1899:694:37;;;-1:-1:-1;;;;;1899:694:37;;;;;;;;;;;;:::i;1289:63::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1289:63:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1395:57;;;:::i;1218:47:40:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1218:47:40;-1:-1:-1;;;;;1218:47:40;;:::i;1056:40::-;;;:::i;1054:172:37:-;;;:::i;1638:465:40:-;1856:20;1907:189;1943:11;1968:6;1988:12;2014;2040:7;2061:25;;1907:22;:189::i;:::-;1892:204;1638:465;-1:-1:-1;;;;;;1638:465:40:o;1238:424:83:-;1448:20;1499:156;1541:11;1566:6;1586:12;1612;1638:7;1499:28;:156::i;859:128:37:-;906:81;;;;;;;;;;;;;;;;;;859:128;:::o;947:202:83:-;1081:61;1114:12;1128:13;1081:32;:61::i;:::-;947:202;;:::o;1488:166:37:-;1531:123;;;;;;;;;;;;;;;;;;1488:166;:::o;972:38:40:-;;;;;;;;;;;;;;;;:::o;1136:27::-;;;-1:-1:-1;;;;;1136:27:40;;:::o;1899:694:37:-;2060:26;2102:24;906:81;;;;;;;;;;;;;;;;;;;2152:111;;;;;;;;-1:-1:-1;;;;;2152:111:37;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;2152:111:37;;;;;;;;2129:144;;;;;;;;;-1:-1:-1;2152:111:37;-1:-1:-1;2152:111:37;1110:116;;2152:111;1110:116;;;;;;;;;;;;2411:25;;;;;;;;;;;;;-1:-1:-1;;;2411:25:37;;;2458:28;;;;;;;;;;;;;-1:-1:-1;;;2458:28:37;;;2508:12;2542:16;2328:248;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2328:248:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;2328:248:37;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2328:248:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;2328:248:37;;;2305:281;;;;;;2284:302;;1899:694;;;;;;:::o;1289:63::-;;;;;;;;;;;;;;-1:-1:-1;;;1289:63:37;;;;:::o;1395:57::-;;;;;;;;;;;;;;-1:-1:-1;;;1395:57:37;;;;:::o;1218:47:40:-;;;;;;;;;;;;;:::o;1056:40::-;;;;:::o;1054:172:37:-;1110:116;;;;;;;;;;;;;;;;;;1054:172;:::o;3010:788::-;3258:20;3294:24;1531:123;;;;;;;;;;;;;;;;;;;;;3344:196;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;3344:196:37;;;;;;;-1:-1:-1;;;;;3344:196:37;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;3344:196:37;;;;;3321:229;;;;;;-1:-1:-1;;;3599:182:37;;;;-1:-1:-1;;;3599:182:37;;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;3599:182:37;;;;;;;3576:215;;;;;;3010:788::o;3888:611:40:-;4090:20;4141:189;4177:11;4202:6;4222:12;4248;4274:7;4295:25;;4141:22;:189::i;:::-;4362:6;:20;;;;;;;;;;;4126:204;;-1:-1:-1;4362:20:40;;:29;4341:113;;;;-1:-1:-1;;;4341:113:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4465:6;:20;;;;;;;;;;:27;;-1:-1:-1;;4465:27:40;4488:4;4465:27;;;4472:12;3888:611;-1:-1:-1;;;;;3888:611:40:o;2719:664::-;2866:25;;:39;2845:118;;;;;-1:-1:-1;;;2845:118:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2995:26;2974:91;;;;;-1:-1:-1;;;2974:91:40;;;;;;;;;;;;-1:-1:-1;;;2974:91:40;;;;;;;;;;;;;;;-1:-1:-1;;;;;3097:27:40;;3076:101;;;;;-1:-1:-1;;;3076:101:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;3188:12;:28;;-1:-1:-1;;;;;;3188:28:40;-1:-1:-1;;;;;3188:28:40;;;;;;;;;;;3255:121;;3301:12;;3335:4;;3354:12;3255:32;:121::i;:::-;3227:25;:149;-1:-1:-1;;2719:664:40:o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../message-bus/MessageOutbox.sol\";\n\n/**\n * @title MessageOutboxDouble contract.\n *\n * @notice It is used for testing MessageOutbox contract.\n */\ncontract MessageOutboxDouble is MessageOutbox {\n\n    /* External Functions */\n\n    /**\n     * @notice It is used to test MessageOutbox::setupMessageOutbox().\n     */\n    function setupMessageOutboxExternal(\n        bytes32 _metachainId,\n        address _messageInbox\n    )\n        external\n    {\n        MessageOutbox.setupMessageOutbox(_metachainId, _messageInbox);\n    }\n\n    /**\n     * @notice It is used to test MessageOutbox::declareMessage().\n     */\n    function declareMessageExternal(\n        bytes32 _intentHash,\n        uint256 _nonce,\n        uint256 _feeGasPrice,\n        uint256 _feeGasLimit,\n        address _sender\n    )\n        external\n        returns (bytes32 messageHash_)\n    {\n        messageHash_ = MessageOutbox.declareMessage(\n            _intentHash,\n            _nonce,\n            _feeGasPrice,\n            _feeGasLimit,\n            _sender\n        );\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/message-bus/MessageOutboxDouble.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/message-bus/MessageOutboxDouble.sol",
+    "exportedSymbols": {
+      "MessageOutboxDouble": [
+        16309
+      ]
+    },
+    "id": 16310,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16263,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:83"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol",
+        "file": "../../message-bus/MessageOutbox.sol",
+        "id": 16264,
+        "nodeType": "ImportDirective",
+        "scope": 16310,
+        "sourceUnit": 10876,
+        "src": "621:45:83",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16265,
+              "name": "MessageOutbox",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10875,
+              "src": "809:13:83",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                "typeString": "contract MessageOutbox"
+              }
+            },
+            "id": 16266,
+            "nodeType": "InheritanceSpecifier",
+            "src": "809:13:83"
+          }
+        ],
+        "contractDependencies": [
+          10509,
+          10875,
+          18876
+        ],
+        "contractKind": "contract",
+        "documentation": "@title MessageOutboxDouble contract.\n * @notice It is used for testing MessageOutbox contract.",
+        "fullyImplemented": true,
+        "id": 16309,
+        "linearizedBaseContracts": [
+          16309,
+          10875,
+          10509,
+          18876
+        ],
+        "name": "MessageOutboxDouble",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 16280,
+              "nodeType": "Block",
+              "src": "1071:78:83",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 16276,
+                        "name": "_metachainId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16268,
+                        "src": "1114:12:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 16277,
+                        "name": "_messageInbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16270,
+                        "src": "1128:13:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 16273,
+                        "name": "MessageOutbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10875,
+                        "src": "1081:13:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_MessageOutbox_$10875_$",
+                          "typeString": "type(contract MessageOutbox)"
+                        }
+                      },
+                      "id": 16275,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupMessageOutbox",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10831,
+                      "src": "1081:32:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
+                        "typeString": "function (bytes32,address)"
+                      }
+                    },
+                    "id": 16278,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1081:61:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 16279,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1081:61:83"
+                }
+              ]
+            },
+            "documentation": "@notice It is used to test MessageOutbox::setupMessageOutbox().",
+            "id": 16281,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupMessageOutboxExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16271,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16268,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16281,
+                  "src": "992:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16267,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "992:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16270,
+                  "name": "_messageInbox",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16281,
+                  "src": "1022:21:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16269,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1022:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "982:67:83"
+            },
+            "returnParameters": {
+              "id": 16272,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1071:0:83"
+            },
+            "scope": 16309,
+            "src": "947:202:83",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 16307,
+              "nodeType": "Block",
+              "src": "1474:188:83",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 16305,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 16296,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16294,
+                      "src": "1484:12:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 16299,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16283,
+                          "src": "1541:11:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16300,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16285,
+                          "src": "1566:6:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16301,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16287,
+                          "src": "1586:12:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16302,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16289,
+                          "src": "1612:12:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16303,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16291,
+                          "src": "1638:7:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 16297,
+                          "name": "MessageOutbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10875,
+                          "src": "1499:13:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageOutbox_$10875_$",
+                            "typeString": "type(contract MessageOutbox)"
+                          }
+                        },
+                        "id": 16298,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "declareMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10874,
+                        "src": "1499:28:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address) returns (bytes32)"
+                        }
+                      },
+                      "id": 16304,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1499:156:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1484:171:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 16306,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1484:171:83"
+                }
+              ]
+            },
+            "documentation": "@notice It is used to test MessageOutbox::declareMessage().",
+            "id": 16308,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareMessageExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16283,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1279:19:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16282,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16285,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1308:14:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16284,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1308:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16287,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1332:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16286,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1332:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16289,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1362:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16288,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16291,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1392:15:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16290,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1392:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1269:144:83"
+            },
+            "returnParameters": {
+              "id": 16295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16294,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1448:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16293,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1448:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1447:22:83"
+            },
+            "scope": 16309,
+            "src": "1238:424:83",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 16310,
+        "src": "777:887:83"
+      }
+    ],
+    "src": "0:1665:83"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/message-bus/MessageOutboxDouble.sol",
+    "exportedSymbols": {
+      "MessageOutboxDouble": [
+        16309
+      ]
+    },
+    "id": 16310,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 16263,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:83"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/MessageOutbox.sol",
+        "file": "../../message-bus/MessageOutbox.sol",
+        "id": 16264,
+        "nodeType": "ImportDirective",
+        "scope": 16310,
+        "sourceUnit": 10876,
+        "src": "621:45:83",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 16265,
+              "name": "MessageOutbox",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 10875,
+              "src": "809:13:83",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MessageOutbox_$10875",
+                "typeString": "contract MessageOutbox"
+              }
+            },
+            "id": 16266,
+            "nodeType": "InheritanceSpecifier",
+            "src": "809:13:83"
+          }
+        ],
+        "contractDependencies": [
+          10509,
+          10875,
+          18876
+        ],
+        "contractKind": "contract",
+        "documentation": "@title MessageOutboxDouble contract.\n * @notice It is used for testing MessageOutbox contract.",
+        "fullyImplemented": true,
+        "id": 16309,
+        "linearizedBaseContracts": [
+          16309,
+          10875,
+          10509,
+          18876
+        ],
+        "name": "MessageOutboxDouble",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 16280,
+              "nodeType": "Block",
+              "src": "1071:78:83",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 16276,
+                        "name": "_metachainId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16268,
+                        "src": "1114:12:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 16277,
+                        "name": "_messageInbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 16270,
+                        "src": "1128:13:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 16273,
+                        "name": "MessageOutbox",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 10875,
+                        "src": "1081:13:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_MessageOutbox_$10875_$",
+                          "typeString": "type(contract MessageOutbox)"
+                        }
+                      },
+                      "id": 16275,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupMessageOutbox",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10831,
+                      "src": "1081:32:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
+                        "typeString": "function (bytes32,address)"
+                      }
+                    },
+                    "id": 16278,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1081:61:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 16279,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1081:61:83"
+                }
+              ]
+            },
+            "documentation": "@notice It is used to test MessageOutbox::setupMessageOutbox().",
+            "id": 16281,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupMessageOutboxExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16271,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16268,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16281,
+                  "src": "992:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16267,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "992:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16270,
+                  "name": "_messageInbox",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16281,
+                  "src": "1022:21:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16269,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1022:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "982:67:83"
+            },
+            "returnParameters": {
+              "id": 16272,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1071:0:83"
+            },
+            "scope": 16309,
+            "src": "947:202:83",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 16307,
+              "nodeType": "Block",
+              "src": "1474:188:83",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 16305,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 16296,
+                      "name": "messageHash_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16294,
+                      "src": "1484:12:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 16299,
+                          "name": "_intentHash",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16283,
+                          "src": "1541:11:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16300,
+                          "name": "_nonce",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16285,
+                          "src": "1566:6:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16301,
+                          "name": "_feeGasPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16287,
+                          "src": "1586:12:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16302,
+                          "name": "_feeGasLimit",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16289,
+                          "src": "1612:12:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 16303,
+                          "name": "_sender",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 16291,
+                          "src": "1638:7:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 16297,
+                          "name": "MessageOutbox",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 10875,
+                          "src": "1499:13:83",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_contract$_MessageOutbox_$10875_$",
+                            "typeString": "type(contract MessageOutbox)"
+                          }
+                        },
+                        "id": 16298,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "declareMessage",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 10874,
+                        "src": "1499:28:83",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_uint256_$_t_uint256_$_t_uint256_$_t_address_$returns$_t_bytes32_$",
+                          "typeString": "function (bytes32,uint256,uint256,uint256,address) returns (bytes32)"
+                        }
+                      },
+                      "id": 16304,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1499:156:83",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1484:171:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 16306,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1484:171:83"
+                }
+              ]
+            },
+            "documentation": "@notice It is used to test MessageOutbox::declareMessage().",
+            "id": 16308,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareMessageExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 16292,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16283,
+                  "name": "_intentHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1279:19:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16282,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16285,
+                  "name": "_nonce",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1308:14:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16284,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1308:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16287,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1332:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16286,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1332:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16289,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1362:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 16288,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1362:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16291,
+                  "name": "_sender",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1392:15:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 16290,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1392:7:83",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1269:144:83"
+            },
+            "returnParameters": {
+              "id": 16295,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 16294,
+                  "name": "messageHash_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 16308,
+                  "src": "1448:20:83",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 16293,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1448:7:83",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1447:22:83"
+            },
+            "scope": 16309,
+            "src": "1238:424:83",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 16310,
+        "src": "777:887:83"
+      }
+    ],
+    "src": "0:1665:83"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.809Z",
+  "devdoc": {
+    "methods": {
+      "hashChannelIdentifier(bytes32,address,address)": {
+        "params": {
+          "_inbox": "Inbox address.",
+          "_metachainId": "Metachain identifier.",
+          "_outbox": "Outbox address."
+        }
+      },
+      "outboxMessageHash(bytes32,uint256,uint256,uint256,address)": {
+        "params": {
+          "_feeGasLimit": "Fee gas limit.",
+          "_feeGasPrice": "Fee gas price.",
+          "_intentHash": "Intent hash of message.",
+          "_nonce": "Nonce of sender.",
+          "_sender": "Sender address."
+        },
+        "return": "messageHash_ Message hash."
+      }
+    },
+    "title": "MessageOutboxDouble contract."
+  },
+  "userdoc": {
+    "methods": {
+      "declareMessageExternal(bytes32,uint256,uint256,uint256,address)": {
+        "notice": "It is used to test MessageOutbox::declareMessage()."
+      },
+      "hashChannelIdentifier(bytes32,address,address)": {
+        "notice": "Generate channel identifier hash from the input params"
+      },
+      "outboxMessageHash(bytes32,uint256,uint256,uint256,address)": {
+        "notice": "Generate outbox message hash from the input params"
+      },
+      "setupMessageOutboxExternal(bytes32,address)": {
+        "notice": "It is used to test MessageOutbox::setupMessageOutbox()."
+      }
+    },
+    "notice": "It is used for testing MessageOutbox contract."
+  }
+}

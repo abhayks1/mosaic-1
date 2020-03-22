@@ -1,0 +1,1433 @@
+{
+  "contractName": "OriginObserverTest",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_stateRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "StateRootAvailable",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_stateRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchorStateRoot",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMaxStateRootLimitCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLatestStateRootBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "blockNumber_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "stateRoot_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "testCoconsensus",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_genesisOriginBlockNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_genesisOriginStateRoot",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_genesisMaxStateRootLimitCount",
+          "type": "uint256"
+        }
+      ],
+      "name": "setGenesisStorageVariables",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_coconsensus",
+          "type": "address"
+        }
+      ],
+      "name": "setCoconsensus",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCoconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_stateRoot\",\"type\":\"bytes32\"}],\"name\":\"StateRootAvailable\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_stateRoot\",\"type\":\"bytes32\"}],\"name\":\"anchorStateRoot\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisMaxStateRootLimitCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getCoconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getLatestStateRootBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"}],\"name\":\"getStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"stateRoot_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_coconsensus\",\"type\":\"address\"}],\"name\":\"setCoconsensus\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_genesisOriginBlockNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_genesisOriginStateRoot\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"_genesisMaxStateRootLimitCount\",\"type\":\"uint256\"}],\"name\":\"setGenesisStorageVariables\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"testCoconsensus\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"details\":\"Function requires:         - Only coconsensus contract address can call this function.\",\"params\":{\"_blockNumber\":\"Block number for which state root needs to                     update.\",\"_stateRoot\":\"State root of input block number.\"}},\"getLatestStateRootBlockNumber()\":{\"return\":\"uint256 Block number of the latest anchored state root.\"},\"getStateRoot(uint256)\":{\"params\":{\"_blockNumber\":\"The block number for which the state root is needed.\"},\"return\":\"bytes32 State root of the given number.\"},\"setup()\":{\"details\":\"This can be called by anyone only once. The check in StateRootProvider::setup     ensures this in its circular buffer setup. Another check is provided by     StateRootProvider::anchorStateRootInternal can be only called once for a given block     number and has to be increasing.\"}}},\"userdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"notice\":\"Anchor the state root for an (increasing) block number.\"},\"getLatestStateRootBlockNumber()\":{\"notice\":\"Gets the block number of latest anchored state root.\"},\"getStateRoot(uint256)\":{\"notice\":\"Get the state root for the given block number.\"},\"setup()\":{\"notice\":\"Setup function for origin observer contract.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/OriginObserverTest.sol\":\"OriginObserverTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol\":{\"keccak256\":\"0x8e06480153083f18a53eec3f89f014c922b4e2ae76f1ef216a37b8513dec324a\",\"urls\":[\"bzz-raw://3407016779714639dc7c1dfd6e9289b49f8349fe50b08c56c31b0459ebd0b33e\",\"dweb:/ipfs/QmQZe9Lm3KyEGzfVQC6xwDNHX9VkY59p7NMpYK8ASzsLqK\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/OriginObserver.sol\":{\"keccak256\":\"0x10ab35770fb3d6ba3c1c51da7c2acbbcc6cb54e087c328341af3850f127606ab\",\"urls\":[\"bzz-raw://c094356d3c929d45981f53e4464ebeb027d6ac7b17b4144ff960694c948545ac\",\"dweb:/ipfs/QmcCKuhc2GKq6yYeoVBC9bEJicKCm8BagLTKKpTmphjuT6\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/StateRootProvider.sol\":{\"keccak256\":\"0xa87d1314d59cb0d362e8e76e742575bc98d77620cd965c6b0bdce14dba1ab195\",\"urls\":[\"bzz-raw://6b5e0705a7e3a45af926d47f27cc53070d9932c9494d619c44a553ff85c67bc2\",\"dweb:/ipfs/QmYYr2PsJnA7tfYs4ZkY4gSJUkNv6dVrt9CXvNv7iygSfW\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":{\"keccak256\":\"0xabe9fce2fae63ee9d6186ba03faa248d9d9fe8ef3202218e473dfb8d8ba4df71\",\"urls\":[\"bzz-raw://bb79cb8133c43b7ae5973180717b033a2bc9325cf25cd1a4879c9b805fee999e\",\"dweb:/ipfs/QmbUW7mmQXRJRZTVLLpNDoHZhyw2jiTwumHi92MmGE1wD5\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol\":{\"keccak256\":\"0xa9d4af0caacd760200028696a0e489ba170568fcfae0fc90d93aab1af88e8734\",\"urls\":[\"bzz-raw://7eead9e2e268db6f8144820c293e944420017df2c3caa65f3ce55cb27f3784f7\",\"dweb:/ipfs/QmNnLSJZXR7KLZ9SCTzWsyS8Z7DW4peaaf1f3b76rAJziV\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/OriginObserverTest.sol\":{\"keccak256\":\"0x17467ec08bf52c378199770f80118029767c00572973fd41cc582e52c321e3c6\",\"urls\":[\"bzz-raw://77f4d603e308d26d016604a9c00a014f3a66c66fd64359eb466c0597e1808ff7\",\"dweb:/ipfs/QmWQ3rYSiuo5oYsw3SScx5rVjphexdmr12wZJosHYtWtqz\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b\",\"urls\":[\"bzz-raw://1eb493553b27efd46c231a836a83ce50d215639feb97b4aac9f301d0fd034ff5\",\"dweb:/ipfs/QmbMdvSXcqGKxeeYvzF3VrWpoHQyVzMXBhzhAokF2Gdymv\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600480546001600160a01b031916614d0017905534801561002457600080fd5b5061063c806100346000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c8063691601951161007157806369160195146101215780636e47aff41461012957806372760bdf146101315780638764085114610157578063ba0bba4014610180578063c380193814610188576100a9565b80631db48326146100ae5780631f949509146100d257806323609af7146100ec5780635cf12c78146100f45780635e3703bd14610119575b600080fd5b6100b66101a5565b604080516001600160a01b039092168252519081900360200190f35b6100da6101b4565b60408051918252519081900360200190f35b6100b66101ba565b6101176004803603604081101561010a57600080fd5b50803590602001356101ca565b005b6100da61022f565b6100da61023e565b6100da610244565b6101176004803603602081101561014757600080fd5b50356001600160a01b031661024a565b6101176004803603606081101561016d57600080fd5b508035906020810135906040013561026c565b61011761027a565b6100da6004803603602081101561019e57600080fd5b5035610295565b6008546001600160a01b031681565b60035481565b6008546001600160a01b03165b90565b6101d26101ba565b6001600160a01b0316336001600160a01b0316146102215760405162461bcd60e51b815260040180806020018281038252603581526020018061050e6035913960400191505060405180910390fd5b61022b82826102a7565b5050565b60006102396103ad565b905090565b60015481565b60025481565b600880546001600160a01b0319166001600160a01b0392909216919091179055565b600192909255600255600355565b6102856003546103ce565b6102936001546002546102a7565b565b60009081526007602052604090205490565b806102f9576040805162461bcd60e51b815260206004820152601c60248201527f537461746520726f6f74206d757374206e6f74206265207a65726f2e00000000604482015290519081900360640190fd5b6103016103ad565b821161033e5760405162461bcd60e51b81526004018080602001828103825260518152602001806105436051913960600191505060405180910390fd5b6000828152600760205260408120829055610358836103da565b600081815260076020908152604080832092909255815186815290810185905281519293507f0a57f5c610ae4bcec0e406f2d350ddffa2fb3628fed5da3d7dac3a3c1cdb66c2929081900390910190a1505050565b60006005600654815481106103be57fe5b9060005260206000200154905090565b6103d781610421565b50565b60006103e46104ab565b6005600654815481106103f357fe5b906000526020600020015490508160056006548154811061041057fe5b600091825260209091200155919050565b600081116104605760405162461bcd60e51b815260040180806020018281038252604d8152602001806105bb604d913960600191505060405180910390fd5b6005541561049f5760405162461bcd60e51b81526004018080602001828103825260278152602001806105946027913960400191505060405180910390fd5b8061022b6005826104c6565b60068054600101908190556005541415610293576000600655565b8154818355818111156104ea576000838152602090206104ea9181019083016104ef565b505050565b6101c791905b8082111561050957600081556001016104f5565b509056fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e476976656e20626c6f636b206e756d626572206973206c6f776572206f7220657175616c20746f206869676865737420616e63686f72656420737461746520726f6f7420626c6f636b206e756d6265722e43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a7231582083fc8468a203c62b4d1559810211e68dbc2b073da0627d392626a23faa99d02e64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a95760003560e01c8063691601951161007157806369160195146101215780636e47aff41461012957806372760bdf146101315780638764085114610157578063ba0bba4014610180578063c380193814610188576100a9565b80631db48326146100ae5780631f949509146100d257806323609af7146100ec5780635cf12c78146100f45780635e3703bd14610119575b600080fd5b6100b66101a5565b604080516001600160a01b039092168252519081900360200190f35b6100da6101b4565b60408051918252519081900360200190f35b6100b66101ba565b6101176004803603604081101561010a57600080fd5b50803590602001356101ca565b005b6100da61022f565b6100da61023e565b6100da610244565b6101176004803603602081101561014757600080fd5b50356001600160a01b031661024a565b6101176004803603606081101561016d57600080fd5b508035906020810135906040013561026c565b61011761027a565b6100da6004803603602081101561019e57600080fd5b5035610295565b6008546001600160a01b031681565b60035481565b6008546001600160a01b03165b90565b6101d26101ba565b6001600160a01b0316336001600160a01b0316146102215760405162461bcd60e51b815260040180806020018281038252603581526020018061050e6035913960400191505060405180910390fd5b61022b82826102a7565b5050565b60006102396103ad565b905090565b60015481565b60025481565b600880546001600160a01b0319166001600160a01b0392909216919091179055565b600192909255600255600355565b6102856003546103ce565b6102936001546002546102a7565b565b60009081526007602052604090205490565b806102f9576040805162461bcd60e51b815260206004820152601c60248201527f537461746520726f6f74206d757374206e6f74206265207a65726f2e00000000604482015290519081900360640190fd5b6103016103ad565b821161033e5760405162461bcd60e51b81526004018080602001828103825260518152602001806105436051913960600191505060405180910390fd5b6000828152600760205260408120829055610358836103da565b600081815260076020908152604080832092909255815186815290810185905281519293507f0a57f5c610ae4bcec0e406f2d350ddffa2fb3628fed5da3d7dac3a3c1cdb66c2929081900390910190a1505050565b60006005600654815481106103be57fe5b9060005260206000200154905090565b6103d781610421565b50565b60006103e46104ab565b6005600654815481106103f357fe5b906000526020600020015490508160056006548154811061041057fe5b600091825260209091200155919050565b600081116104605760405162461bcd60e51b815260040180806020018281038252604d8152602001806105bb604d913960600191505060405180910390fd5b6005541561049f5760405162461bcd60e51b81526004018080602001828103825260278152602001806105946027913960400191505060405180910390fd5b8061022b6005826104c6565b60068054600101908190556005541415610293576000600655565b8154818355818111156104ea576000838152602090206104ea9181019083016104ef565b505050565b6101c791905b8082111561050957600081556001016104f5565b509056fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e476976656e20626c6f636b206e756d626572206973206c6f776572206f7220657175616c20746f206869676865737420616e63686f72656420737461746520726f6f7420626c6f636b206e756d6265722e43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a7231582083fc8468a203c62b4d1559810211e68dbc2b073da0627d392626a23faa99d02e64736f6c634300050d0032",
+  "sourceMap": "664:726:61:-;;;775:88:19;;;-1:-1:-1;;;;;;775:88:19;820:42;775:88;;;664:726:61;5:2:-1;;;;30:1;27;20:12;5:2;664:726:61;;;;;;;",
+  "deployedSourceMap": "664:726:61:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;664:726:61;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;717:30;;;:::i;:::-;;;;-1:-1:-1;;;;;717:30:61;;;;;;;;;;;;;;1157:44:3;;;:::i;:::-;;;;;;;;;;;;;;;;1258:130:61;;;:::i;2285:218:5:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2285:218:5;;;;;;;:::i;:::-;;1667:171:6;;;:::i;964:39:3:-;;;:::i;1040:37::-;;;:::i;1152:100:61:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1152:100:61;-1:-1:-1;;;;;1152:100:61;;:::i;754:392::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;754:392:61;;;;;;;;;;;;:::i;1707:198:5:-;;;:::i;1316:183:6:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1316:183:6;;:::i;717:30:61:-;;;-1:-1:-1;;;;;717:30:61;;:::o;1157:44:3:-;;;;:::o;1258:130:61:-;1365:15;;-1:-1:-1;;;;;1365:15:61;1258:130;;:::o;2285:218:5:-;976:16:19;:14;:16::i;:::-;-1:-1:-1;;;;;954:39:19;:10;-1:-1:-1;;;;;954:39:19;;933:139;;;;-1:-1:-1;;;933:139:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2429:67:5;2471:12;2485:10;2429:41;:67::i;:::-;2285:218;;:::o;1667:171:6:-;1755:20;1806:25;:23;:25::i;:::-;1791:40;;1667:171;:::o;964:39:3:-;;;;:::o;1040:37::-;;;;:::o;1152:100:61:-;1215:15;:30;;-1:-1:-1;;;;;;1215:30:61;-1:-1:-1;;;;;1215:30:61;;;;;;;;;;1152:100::o;754:392::-;957:24;:52;;;;1019:22;:48;1077:29;:62;754:392::o;1707:198:5:-;1743:54;1767:29;;1743:23;:54::i;:::-;1807:91;1849:24;;1875:22;;1807:41;:91::i;:::-;1707:198::o;1316:183:6:-;1421:18;1468:24;;;:10;:24;;;;;;;1316:183::o;2642:740::-;2829:24;2808:99;;;;;-1:-1:-1;;;2808:99:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;3001:25;:23;:25::i;:::-;2986:12;:40;2965:168;;;;-1:-1:-1;;;2965:168:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3144:24;;;;:10;:24;;;;;:37;;;3225:38;3155:12;3225:24;:38::i;:::-;3280:35;;;;:10;:35;;;;;;;;3273:42;;;;3331:44;;;;;;;;;;;;;3191:72;;-1:-1:-1;3331:44:6;;;;;;;;;;;2642:740;;;:::o;3134:90:34:-;3172:13;3205:5;3211;;3205:12;;;;;;;;;;;;;;;;3197:20;;3134:90;:::o;2083:126:6:-;2167:35;2187:14;2167:19;:35::i;:::-;2083:126;:::o;2667:306:34:-;2714:24;2750:11;:9;:11::i;:::-;2924:5;2930;;2924:12;;;;;;;;;;;;;;;;2905:31;;2961:5;2946;2952;;2946:12;;;;;;;;;;;;;;;;;:20;2667:306;;-1:-1:-1;2667:306:34:o;1840:361::-;1941:1;1929:9;:13;1908:137;;;;-1:-1:-1;;;1908:137:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2077:5;:12;:17;2056:103;;;;-1:-1:-1;;;2056:103:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2185:9;2170:24;:5;2185:9;2170:24;:::i;3495:123::-;3534:5;:7;;;;;;;;3564:5;:12;3555:21;3551:61;;;3600:1;3592:5;:9;3495:123::o;664:726:61:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../anchor/OriginObserver.sol\";\n\ncontract OriginObserverTest is OriginObserver {\n\n    address public testCoconsensus;\n\n    function setGenesisStorageVariables(\n        uint256 _genesisOriginBlockNumber,\n        bytes32 _genesisOriginStateRoot,\n        uint256 _genesisMaxStateRootLimitCount\n    )\n        public\n    {\n        genesisOriginBlockNumber = _genesisOriginBlockNumber;\n        genesisOriginStateRoot = _genesisOriginStateRoot;\n        genesisMaxStateRootLimitCount = _genesisMaxStateRootLimitCount;\n    }\n\n    function setCoconsensus(address _coconsensus) public {\n        testCoconsensus = _coconsensus;\n    }\n\n    function getCoconsensus() public view returns (CoconsensusInterface) {\n        return CoconsensusInterface(testCoconsensus);\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/OriginObserverTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/OriginObserverTest.sol",
+    "exportedSymbols": {
+      "OriginObserverTest": [
+        14007
+      ]
+    },
+    "id": 14008,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13959,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:61"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/OriginObserver.sol",
+        "file": "../../anchor/OriginObserver.sol",
+        "id": 13960,
+        "nodeType": "ImportDirective",
+        "scope": 14008,
+        "sourceUnit": 226,
+        "src": "621:41:61",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13961,
+              "name": "OriginObserver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 225,
+              "src": "695:14:61",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OriginObserver_$225",
+                "typeString": "contract OriginObserver"
+              }
+            },
+            "id": 13962,
+            "nodeType": "InheritanceSpecifier",
+            "src": "695:14:61"
+          }
+        ],
+        "contractDependencies": [
+          163,
+          225,
+          330,
+          3812,
+          8873,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14007,
+        "linearizedBaseContracts": [
+          14007,
+          225,
+          330,
+          8873,
+          3812,
+          163,
+          12954
+        ],
+        "name": "OriginObserverTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13964,
+            "name": "testCoconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14007,
+            "src": "717:30:61",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13963,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "717:7:61",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13985,
+              "nodeType": "Block",
+              "src": "947:199:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13975,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13973,
+                      "name": "genesisOriginBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 158,
+                      "src": "957:24:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13974,
+                      "name": "_genesisOriginBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13966,
+                      "src": "984:25:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "957:52:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13976,
+                  "nodeType": "ExpressionStatement",
+                  "src": "957:52:61"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13977,
+                      "name": "genesisOriginStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 160,
+                      "src": "1019:22:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13978,
+                      "name": "_genesisOriginStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13968,
+                      "src": "1044:23:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1019:48:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 13980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1019:48:61"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13983,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13981,
+                      "name": "genesisMaxStateRootLimitCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 162,
+                      "src": "1077:29:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13982,
+                      "name": "_genesisMaxStateRootLimitCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13970,
+                      "src": "1109:30:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1077:62:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13984,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1077:62:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13986,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGenesisStorageVariables",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13971,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13966,
+                  "name": "_genesisOriginBlockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "799:33:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13965,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "799:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13968,
+                  "name": "_genesisOriginStateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "842:31:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13967,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "842:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13970,
+                  "name": "_genesisMaxStateRootLimitCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "883:38:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13969,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "883:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "789:138:61"
+            },
+            "returnParameters": {
+              "id": 13972,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "947:0:61"
+            },
+            "scope": 14007,
+            "src": "754:392:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13995,
+              "nodeType": "Block",
+              "src": "1205:47:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13993,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13991,
+                      "name": "testCoconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13964,
+                      "src": "1215:15:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13992,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13988,
+                      "src": "1233:12:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1215:30:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 13994,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1215:30:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13996,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13989,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13988,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13996,
+                  "src": "1176:20:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13987,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1176:7:61",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1175:22:61"
+            },
+            "returnParameters": {
+              "id": 13990,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1205:0:61"
+            },
+            "scope": 14007,
+            "src": "1152:100:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14005,
+              "nodeType": "Block",
+              "src": "1327:61:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14002,
+                        "name": "testCoconsensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13964,
+                        "src": "1365:15:61",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14001,
+                      "name": "CoconsensusInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3778,
+                      "src": "1344:20:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_CoconsensusInterface_$3778_$",
+                        "typeString": "type(contract CoconsensusInterface)"
+                      }
+                    },
+                    "id": 14003,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1344:37:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 14000,
+                  "id": 14004,
+                  "nodeType": "Return",
+                  "src": "1337:44:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14006,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13997,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1281:2:61"
+            },
+            "returnParameters": {
+              "id": 14000,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13999,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14006,
+                  "src": "1305:20:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 13998,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1305:20:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1304:22:61"
+            },
+            "scope": 14007,
+            "src": "1258:130:61",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14008,
+        "src": "664:726:61"
+      }
+    ],
+    "src": "0:1391:61"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/anchor/OriginObserverTest.sol",
+    "exportedSymbols": {
+      "OriginObserverTest": [
+        14007
+      ]
+    },
+    "id": 14008,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13959,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:61"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/OriginObserver.sol",
+        "file": "../../anchor/OriginObserver.sol",
+        "id": 13960,
+        "nodeType": "ImportDirective",
+        "scope": 14008,
+        "sourceUnit": 226,
+        "src": "621:41:61",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 13961,
+              "name": "OriginObserver",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 225,
+              "src": "695:14:61",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_OriginObserver_$225",
+                "typeString": "contract OriginObserver"
+              }
+            },
+            "id": 13962,
+            "nodeType": "InheritanceSpecifier",
+            "src": "695:14:61"
+          }
+        ],
+        "contractDependencies": [
+          163,
+          225,
+          330,
+          3812,
+          8873,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14007,
+        "linearizedBaseContracts": [
+          14007,
+          225,
+          330,
+          8873,
+          3812,
+          163,
+          12954
+        ],
+        "name": "OriginObserverTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 13964,
+            "name": "testCoconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14007,
+            "src": "717:30:61",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 13963,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "717:7:61",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13985,
+              "nodeType": "Block",
+              "src": "947:199:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13975,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13973,
+                      "name": "genesisOriginBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 158,
+                      "src": "957:24:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13974,
+                      "name": "_genesisOriginBlockNumber",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13966,
+                      "src": "984:25:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "957:52:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13976,
+                  "nodeType": "ExpressionStatement",
+                  "src": "957:52:61"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13979,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13977,
+                      "name": "genesisOriginStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 160,
+                      "src": "1019:22:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13978,
+                      "name": "_genesisOriginStateRoot",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13968,
+                      "src": "1044:23:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1019:48:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 13980,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1019:48:61"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13983,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13981,
+                      "name": "genesisMaxStateRootLimitCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 162,
+                      "src": "1077:29:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13982,
+                      "name": "_genesisMaxStateRootLimitCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13970,
+                      "src": "1109:30:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1077:62:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 13984,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1077:62:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13986,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setGenesisStorageVariables",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13971,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13966,
+                  "name": "_genesisOriginBlockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "799:33:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13965,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "799:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13968,
+                  "name": "_genesisOriginStateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "842:31:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 13967,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "842:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13970,
+                  "name": "_genesisMaxStateRootLimitCount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13986,
+                  "src": "883:38:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13969,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "883:7:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "789:138:61"
+            },
+            "returnParameters": {
+              "id": 13972,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "947:0:61"
+            },
+            "scope": 14007,
+            "src": "754:392:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 13995,
+              "nodeType": "Block",
+              "src": "1205:47:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 13993,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 13991,
+                      "name": "testCoconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13964,
+                      "src": "1215:15:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 13992,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13988,
+                      "src": "1233:12:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1215:30:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 13994,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1215:30:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 13996,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13989,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13988,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13996,
+                  "src": "1176:20:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13987,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1176:7:61",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1175:22:61"
+            },
+            "returnParameters": {
+              "id": 13990,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1205:0:61"
+            },
+            "scope": 14007,
+            "src": "1152:100:61",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14005,
+              "nodeType": "Block",
+              "src": "1327:61:61",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14002,
+                        "name": "testCoconsensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13964,
+                        "src": "1365:15:61",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14001,
+                      "name": "CoconsensusInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3778,
+                      "src": "1344:20:61",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_CoconsensusInterface_$3778_$",
+                        "typeString": "type(contract CoconsensusInterface)"
+                      }
+                    },
+                    "id": 14003,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1344:37:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 14000,
+                  "id": 14004,
+                  "nodeType": "Return",
+                  "src": "1337:44:61"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14006,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13997,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1281:2:61"
+            },
+            "returnParameters": {
+              "id": 14000,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13999,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14006,
+                  "src": "1305:20:61",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 13998,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1305:20:61",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1304:22:61"
+            },
+            "scope": 14007,
+            "src": "1258:130:61",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14008,
+        "src": "664:726:61"
+      }
+    ],
+    "src": "0:1391:61"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.774Z",
+  "devdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "details": "Function requires:         - Only coconsensus contract address can call this function.",
+        "params": {
+          "_blockNumber": "Block number for which state root needs to                     update.",
+          "_stateRoot": "State root of input block number."
+        }
+      },
+      "getLatestStateRootBlockNumber()": {
+        "return": "uint256 Block number of the latest anchored state root."
+      },
+      "getStateRoot(uint256)": {
+        "params": {
+          "_blockNumber": "The block number for which the state root is needed."
+        },
+        "return": "bytes32 State root of the given number."
+      },
+      "setup()": {
+        "details": "This can be called by anyone only once. The check in StateRootProvider::setup     ensures this in its circular buffer setup. Another check is provided by     StateRootProvider::anchorStateRootInternal can be only called once for a given block     number and has to be increasing."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "notice": "Anchor the state root for an (increasing) block number."
+      },
+      "getLatestStateRootBlockNumber()": {
+        "notice": "Gets the block number of latest anchored state root."
+      },
+      "getStateRoot(uint256)": {
+        "notice": "Get the state root for the given block number."
+      },
+      "setup()": {
+        "notice": "Setup function for origin observer contract."
+      }
+    }
+  }
+}

@@ -1,0 +1,1298 @@
+{
+  "contractName": "Anchor",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_stateRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "StateRootAvailable",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensus",
+      "outputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLatestStateRootBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "blockNumber_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "getStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "stateRoot_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxStateRoots",
+          "type": "uint256"
+        },
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "_consensus",
+          "type": "address"
+        }
+      ],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockNumber",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_stateRoot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "anchorStateRoot",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_stateRoot\",\"type\":\"bytes32\"}],\"name\":\"StateRootAvailable\",\"type\":\"event\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_stateRoot\",\"type\":\"bytes32\"}],\"name\":\"anchorStateRoot\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"consensus\",\"outputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getLatestStateRootBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"blockNumber_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockNumber\",\"type\":\"uint256\"}],\"name\":\"getStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"stateRoot_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maxStateRoots\",\"type\":\"uint256\"},{\"internalType\":\"contract ConsensusInterface\",\"name\":\"_consensus\",\"type\":\"address\"}],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"details\":\"Function requires:         - Only consensus contract address can call this function.\",\"params\":{\"_blockNumber\":\"Block number for which state root needs to                     update.\",\"_stateRoot\":\"State root of input block number.\"}},\"getLatestStateRootBlockNumber()\":{\"return\":\"uint256 Block number of the latest anchored state root.\"},\"getStateRoot(uint256)\":{\"params\":{\"_blockNumber\":\"The block number for which the state root is needed.\"},\"return\":\"bytes32 State root of the given number.\"},\"setup(uint256,address)\":{\"details\":\"This function must be called only once. This check is done in setupConsensus     function of ConsensusModule.\",\"params\":{\"_consensus\":\"A consensus contract  address.\",\"_maxStateRoots\":\"The max number of state roots to store in the                      circular buffer.\"}}},\"title\":\"Anchor contract to store the state roots.\"},\"userdoc\":{\"methods\":{\"anchorStateRoot(uint256,bytes32)\":{\"notice\":\"Anchor the state root for an (increasing) block number.\"},\"getLatestStateRootBlockNumber()\":{\"notice\":\"Gets the block number of latest anchored state root.\"},\"getStateRoot(uint256)\":{\"notice\":\"Get the state root for the given block number.\"},\"setup(uint256,address)\":{\"notice\":\"Setup function for anchor.\"}},\"notice\":\"Anchor stores auxiliary chain's state roots. This contract is a consensus module        and the anchoring of the state root can only be done be consensus contract.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol\":\"Anchor\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol\":{\"keccak256\":\"0xef1a8230489dd9853fa21cc36c33deaccd47acc3ce6bc93d079a4c26214bd86d\",\"urls\":[\"bzz-raw://cdef6aae9b593adb5e29e3ddfcba0d8ed40469452ed41c4530d04ff17ee902b7\",\"dweb:/ipfs/QmdnrbYYGqTvuRUrvpkKoJXdXHcPUccrfmu7pWp7LMYwT1\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/StateRootProvider.sol\":{\"keccak256\":\"0xa87d1314d59cb0d362e8e76e742575bc98d77620cd965c6b0bdce14dba1ab195\",\"urls\":[\"bzz-raw://6b5e0705a7e3a45af926d47f27cc53070d9932c9494d619c44a553ff85c67bc2\",\"dweb:/ipfs/QmYYr2PsJnA7tfYs4ZkY4gSJUkNv6dVrt9CXvNv7iygSfW\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol\":{\"keccak256\":\"0x7b6a76b998a80813b06bbd950d2037249a15e1d0c9fbba46cfc190c04d643de4\",\"urls\":[\"bzz-raw://ec6aa62754121b74b67ca7693fd60203cfc19487b579a54c7c437feef5d36d7b\",\"dweb:/ipfs/QmQKs1sCtsiFkjw2tjHmToC5ji8CKUUh2WJMqBq2qFsfGf\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol\":{\"keccak256\":\"0xa9d4af0caacd760200028696a0e489ba170568fcfae0fc90d93aab1af88e8734\",\"urls\":[\"bzz-raw://7eead9e2e268db6f8144820c293e944420017df2c3caa65f3ce55cb27f3784f7\",\"dweb:/ipfs/QmNnLSJZXR7KLZ9SCTzWsyS8Z7DW4peaaf1f3b76rAJziV\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b\",\"urls\":[\"bzz-raw://1eb493553b27efd46c231a836a83ce50d215639feb97b4aac9f301d0fd034ff5\",\"dweb:/ipfs/QmbMdvSXcqGKxeeYvzF3VrWpoHQyVzMXBhzhAokF2Gdymv\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061062f806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c8063396aaac61461005c5780635cf12c781461008a5780635e3703bd146100ad5780638ef3f761146100c7578063c3801938146100eb575b600080fd5b6100886004803603604081101561007257600080fd5b50803590602001356001600160a01b0316610108565b005b610088600480360360408110156100a057600080fd5b508035906020013561011e565b6100b5610171565b60408051918252519081900360200190f35b6100cf610180565b604080516001600160a01b039092168252519081900360200190f35b6100b56004803603602081101561010157600080fd5b503561018f565b610111816101a1565b61011a82610250565b5050565b6001546001600160a01b031633146101675760405162461bcd60e51b81526004018080602001828103825260338152602001806105546033913960400191505060405180910390fd5b61011a828261025c565b600061017b610362565b905090565b6001546001600160a01b031681565b60009081526004602052604090205490565b6001546001600160a01b0316156101e95760405162461bcd60e51b81526004018080602001828103825260258152602001806104bb6025913960400191505060405180910390fd5b6001600160a01b03811661022e5760405162461bcd60e51b81526004018080602001828103825260238152602001806105316023913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b61025981610383565b50565b806102ae576040805162461bcd60e51b815260206004820152601c60248201527f537461746520726f6f74206d757374206e6f74206265207a65726f2e00000000604482015290519081900360640190fd5b6102b6610362565b82116102f35760405162461bcd60e51b81526004018080602001828103825260518152602001806104e06051913960600191505060405180910390fd5b600082815260046020526040812082905561030d8361040d565b600081815260046020908152604080832092909255815186815290810185905281519293507f0a57f5c610ae4bcec0e406f2d350ddffa2fb3628fed5da3d7dac3a3c1cdb66c2929081900390910190a1505050565b600060026003548154811061037357fe5b9060005260206000200154905090565b600081116103c25760405162461bcd60e51b815260040180806020018281038252604d8152602001806105ae604d913960600191505060405180910390fd5b600254156104015760405162461bcd60e51b81526004018080602001828103825260278152602001806105876027913960400191505060405180910390fd5b8061011a600282610470565b6000610417610454565b60026003548154811061042657fe5b906000526020600020015490508160026003548154811061044357fe5b600091825260209091200155919050565b6003805460010190819055600254141561046e5760006003555b565b81548183558181111561049457600083815260209020610494918101908301610499565b505050565b6104b791905b808211156104b3576000815560010161049f565b5090565b9056fe436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e476976656e20626c6f636b206e756d626572206973206c6f776572206f7220657175616c20746f206869676865737420616e63686f72656420737461746520726f6f7420626c6f636b206e756d6265722e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a7231582082383c7f50128ffe86a5a650e777b6e34ca9b8443d35fdff778adae9cae4ad8364736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c8063396aaac61461005c5780635cf12c781461008a5780635e3703bd146100ad5780638ef3f761146100c7578063c3801938146100eb575b600080fd5b6100886004803603604081101561007257600080fd5b50803590602001356001600160a01b0316610108565b005b610088600480360360408110156100a057600080fd5b508035906020013561011e565b6100b5610171565b60408051918252519081900360200190f35b6100cf610180565b604080516001600160a01b039092168252519081900360200190f35b6100b56004803603602081101561010157600080fd5b503561018f565b610111816101a1565b61011a82610250565b5050565b6001546001600160a01b031633146101675760405162461bcd60e51b81526004018080602001828103825260338152602001806105546033913960400191505060405180910390fd5b61011a828261025c565b600061017b610362565b905090565b6001546001600160a01b031681565b60009081526004602052604090205490565b6001546001600160a01b0316156101e95760405162461bcd60e51b81526004018080602001828103825260258152602001806104bb6025913960400191505060405180910390fd5b6001600160a01b03811661022e5760405162461bcd60e51b81526004018080602001828103825260238152602001806105316023913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b61025981610383565b50565b806102ae576040805162461bcd60e51b815260206004820152601c60248201527f537461746520726f6f74206d757374206e6f74206265207a65726f2e00000000604482015290519081900360640190fd5b6102b6610362565b82116102f35760405162461bcd60e51b81526004018080602001828103825260518152602001806104e06051913960600191505060405180910390fd5b600082815260046020526040812082905561030d8361040d565b600081815260046020908152604080832092909255815186815290810185905281519293507f0a57f5c610ae4bcec0e406f2d350ddffa2fb3628fed5da3d7dac3a3c1cdb66c2929081900390910190a1505050565b600060026003548154811061037357fe5b9060005260206000200154905090565b600081116103c25760405162461bcd60e51b815260040180806020018281038252604d8152602001806105ae604d913960600191505060405180910390fd5b600254156104015760405162461bcd60e51b81526004018080602001828103825260278152602001806105876027913960400191505060405180910390fd5b8061011a600282610470565b6000610417610454565b60026003548154811061042657fe5b906000526020600020015490508160026003548154811061044357fe5b600091825260209091200155919050565b6003805460010190819055600254141561046e5760006003555b565b81548183558181111561049457600083815260209020610494918101908301610499565b505050565b6104b791905b808211156104b3576000815560010161049f565b5090565b9056fe436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e476976656e20626c6f636b206e756d626572206973206c6f776572206f7220657175616c20746f206869676865737420616e63686f72656420737461746520726f6f7420626c6f636b206e756d6265722e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a7231582082383c7f50128ffe86a5a650e777b6e34ca9b8443d35fdff778adae9cae4ad8364736f6c634300050d0032",
+  "sourceMap": "998:1312:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;998:1312:1;;;;;;;",
+  "deployedSourceMap": "998:1312:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;998:1312:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1493:221;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1493:221:1;;;;;;-1:-1:-1;;;;;1493:221:1;;:::i;:::-;;2092:216;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2092:216:1;;;;;;;:::i;1667:171:6:-;;;:::i;:::-;;;;;;;;;;;;;;;;756:35:22;;;:::i;:::-;;;;-1:-1:-1;;;;;756:35:22;;;;;;;;;;;;;;1316:183:6;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1316:183:6;;:::i;1493:221:1:-;1616:42;1647:10;1616:30;:42::i;:::-;1668:39;1692:14;1668:23;:39::i;:::-;1493:221;;:::o;2092:216::-;1367:9:22;;-1:-1:-1;;;;;1367:9:22;1345:10;:32;1324:130;;;;-1:-1:-1;;;1324:130:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2234:67:1;2276:12;2290:10;2234:41;:67::i;1667:171:6:-;1755:20;1806:25;:23;:25::i;:::-;1791:40;;1667:171;:::o;756:35:22:-;;;-1:-1:-1;;;;;756:35:22;;:::o;1316:183:6:-;1421:18;1468:24;;;:10;:24;;;;;;;1316:183::o;925:354:22:-;1028:9;;-1:-1:-1;;;;;1028:9:22;1020:32;999:116;;;;-1:-1:-1;;;999:116:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1146:33:22;;1125:115;;;;-1:-1:-1;;;1125:115:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1250:9;:22;;-1:-1:-1;;;;;;1250:22:22;-1:-1:-1;;;;;1250:22:22;;;;;;;;;;925:354::o;2083:126:6:-;2167:35;2187:14;2167:19;:35::i;:::-;2083:126;:::o;2642:740::-;2829:24;2808:99;;;;;-1:-1:-1;;;2808:99:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;3001:25;:23;:25::i;:::-;2986:12;:40;2965:168;;;;-1:-1:-1;;;2965:168:6;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;3144:24;;;;:10;:24;;;;;:37;;;3225:38;3155:12;3225:24;:38::i;:::-;3280:35;;;;:10;:35;;;;;;;;3273:42;;;;3331:44;;;;;;;;;;;;;3191:72;;-1:-1:-1;3331:44:6;;;;;;;;;;;2642:740;;;:::o;3134:90:34:-;3172:13;3205:5;3211;;3205:12;;;;;;;;;;;;;;;;3197:20;;3134:90;:::o;1840:361::-;1941:1;1929:9;:13;1908:137;;;;-1:-1:-1;;;1908:137:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2077:5;:12;:17;2056:103;;;;-1:-1:-1;;;2056:103:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2185:9;2170:24;:5;2185:9;2170:24;:::i;2667:306::-;2714:24;2750:11;:9;:11::i;:::-;2924:5;2930;;2924:12;;;;;;;;;;;;;;;;2905:31;;2961:5;2946;2952;;2946:12;;;;;;;;;;;;;;;;;:20;2667:306;;-1:-1:-1;2667:306:34:o;3495:123::-;3534:5;:7;;;;;;;;3564:5;:12;3555:21;3551:61;;;3600:1;3592:5;:9;3551:61;3495:123::o;998:1312:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../anchor/StateRootProvider.sol\";\nimport \"../consensus/ConsensusModule.sol\";\nimport \"../proxies/MasterCopyNonUpgradable.sol\";\n\n/**\n * @title Anchor contract to store the state roots.\n *\n * @notice Anchor stores auxiliary chain's state roots. This contract is a consensus module\n *         and the anchoring of the state root can only be done be consensus contract.\n */\ncontract Anchor is MasterCopyNonUpgradable, ConsensusModule, StateRootProvider {\n\n    /* External Functions */\n\n    /**\n     * @notice Setup function for anchor.\n     *\n     * @dev This function must be called only once. This check is done in setupConsensus\n     *      function of ConsensusModule.\n     *\n     * @param _maxStateRoots The max number of state roots to store in the\n     *                       circular buffer.\n     * @param _consensus A consensus contract  address.\n     */\n    function setup(\n        uint256 _maxStateRoots,\n        ConsensusInterface _consensus\n    )\n        external\n    {\n        ConsensusModule.setupConsensus(_consensus);\n        StateRootProvider.setup(_maxStateRoots);\n    }\n\n    /**\n     * @notice Anchor the state root for an (increasing) block number.\n     *\n     * @dev  Function requires:\n     *          - Only consensus contract address can call this function.\n     *\n     * @param _blockNumber Block number for which state root needs to\n     *                      update.\n     * @param _stateRoot State root of input block number.\n     */\n    function anchorStateRoot(\n        uint256 _blockNumber,\n        bytes32 _stateRoot\n    )\n        external\n        onlyConsensus\n    {\n        StateRootProvider.anchorStateRootInternal(_blockNumber, _stateRoot);\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol",
+    "exportedSymbols": {
+      "Anchor": [
+        132
+      ]
+    },
+    "id": 133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 85,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/StateRootProvider.sol",
+        "file": "../anchor/StateRootProvider.sol",
+        "id": 86,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 331,
+        "src": "621:41:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+        "file": "../consensus/ConsensusModule.sol",
+        "id": 87,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 5934,
+        "src": "663:42:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../proxies/MasterCopyNonUpgradable.sol",
+        "id": 88,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 12955,
+        "src": "706:48:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 89,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "1017:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 90,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1017:23:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 91,
+              "name": "ConsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5933,
+              "src": "1042:15:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusModule_$5933",
+                "typeString": "contract ConsensusModule"
+              }
+            },
+            "id": 92,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1042:15:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 93,
+              "name": "StateRootProvider",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 330,
+              "src": "1059:17:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StateRootProvider_$330",
+                "typeString": "contract StateRootProvider"
+              }
+            },
+            "id": 94,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1059:17:1"
+          }
+        ],
+        "contractDependencies": [
+          330,
+          5933,
+          8873,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Anchor contract to store the state roots.\n * @notice Anchor stores auxiliary chain's state roots. This contract is a consensus module\n        and the anchoring of the state root can only be done be consensus contract.",
+        "fullyImplemented": true,
+        "id": 132,
+        "linearizedBaseContracts": [
+          132,
+          330,
+          8873,
+          5933,
+          12954
+        ],
+        "name": "Anchor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "1606:108:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 104,
+                        "name": "_consensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 98,
+                        "src": "1647:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 101,
+                        "name": "ConsensusModule",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5933,
+                        "src": "1616:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusModule_$5933_$",
+                          "typeString": "type(contract ConsensusModule)"
+                        }
+                      },
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupConsensus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5918,
+                      "src": "1616:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ConsensusInterface_$5881_$returns$__$",
+                        "typeString": "function (contract ConsensusInterface)"
+                      }
+                    },
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1616:42:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1616:42:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "_maxStateRoots",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 96,
+                        "src": "1692:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 107,
+                        "name": "StateRootProvider",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "1668:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_StateRootProvider_$330_$",
+                          "typeString": "type(contract StateRootProvider)"
+                        }
+                      },
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setup",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 280,
+                      "src": "1668:23:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 111,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1668:39:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 112,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1668:39:1"
+                }
+              ]
+            },
+            "documentation": "@notice Setup function for anchor.\n     * @dev This function must be called only once. This check is done in setupConsensus\n     function of ConsensusModule.\n     * @param _maxStateRoots The max number of state roots to store in the\n                      circular buffer.\n@param _consensus A consensus contract  address.",
+            "id": 114,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 96,
+                  "name": "_maxStateRoots",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "1517:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 95,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1517:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 98,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "1549:29:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 97,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1549:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1507:77:1"
+            },
+            "returnParameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1606:0:1"
+            },
+            "scope": 132,
+            "src": "1493:221:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 130,
+              "nodeType": "Block",
+              "src": "2224:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 116,
+                        "src": "2276:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 127,
+                        "name": "_stateRoot",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 118,
+                        "src": "2290:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 123,
+                        "name": "StateRootProvider",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "2234:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_StateRootProvider_$330_$",
+                          "typeString": "type(contract StateRootProvider)"
+                        }
+                      },
+                      "id": 125,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "anchorStateRootInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 329,
+                      "src": "2234:41:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (uint256,bytes32)"
+                      }
+                    },
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2234:67:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2234:67:1"
+                }
+              ]
+            },
+            "documentation": "@notice Anchor the state root for an (increasing) block number.\n     * @dev  Function requires:\n         - Only consensus contract address can call this function.\n     * @param _blockNumber Block number for which state root needs to\n                     update.\n@param _stateRoot State root of input block number.",
+            "id": 131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 121,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 120,
+                  "name": "onlyConsensus",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5932,
+                  "src": "2206:13:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2206:13:1"
+              }
+            ],
+            "name": "anchorStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "2126:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2126:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_stateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "2156:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2156:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2116:64:1"
+            },
+            "returnParameters": {
+              "id": 122,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2224:0:1"
+            },
+            "scope": 132,
+            "src": "2092:216:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 133,
+        "src": "998:1312:1"
+      }
+    ],
+    "src": "0:2311:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol",
+    "exportedSymbols": {
+      "Anchor": [
+        132
+      ]
+    },
+    "id": 133,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 85,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:1"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/StateRootProvider.sol",
+        "file": "../anchor/StateRootProvider.sol",
+        "id": 86,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 331,
+        "src": "621:41:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol",
+        "file": "../consensus/ConsensusModule.sol",
+        "id": 87,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 5934,
+        "src": "663:42:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../proxies/MasterCopyNonUpgradable.sol",
+        "id": 88,
+        "nodeType": "ImportDirective",
+        "scope": 133,
+        "sourceUnit": 12955,
+        "src": "706:48:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 89,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "1017:23:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 90,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1017:23:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 91,
+              "name": "ConsensusModule",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5933,
+              "src": "1042:15:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusModule_$5933",
+                "typeString": "contract ConsensusModule"
+              }
+            },
+            "id": 92,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1042:15:1"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 93,
+              "name": "StateRootProvider",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 330,
+              "src": "1059:17:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_StateRootProvider_$330",
+                "typeString": "contract StateRootProvider"
+              }
+            },
+            "id": 94,
+            "nodeType": "InheritanceSpecifier",
+            "src": "1059:17:1"
+          }
+        ],
+        "contractDependencies": [
+          330,
+          5933,
+          8873,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Anchor contract to store the state roots.\n * @notice Anchor stores auxiliary chain's state roots. This contract is a consensus module\n        and the anchoring of the state root can only be done be consensus contract.",
+        "fullyImplemented": true,
+        "id": 132,
+        "linearizedBaseContracts": [
+          132,
+          330,
+          8873,
+          5933,
+          12954
+        ],
+        "name": "Anchor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 113,
+              "nodeType": "Block",
+              "src": "1606:108:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 104,
+                        "name": "_consensus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 98,
+                        "src": "1647:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                          "typeString": "contract ConsensusInterface"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 101,
+                        "name": "ConsensusModule",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 5933,
+                        "src": "1616:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ConsensusModule_$5933_$",
+                          "typeString": "type(contract ConsensusModule)"
+                        }
+                      },
+                      "id": 103,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupConsensus",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 5918,
+                      "src": "1616:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_ConsensusInterface_$5881_$returns$__$",
+                        "typeString": "function (contract ConsensusInterface)"
+                      }
+                    },
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1616:42:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1616:42:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 110,
+                        "name": "_maxStateRoots",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 96,
+                        "src": "1692:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 107,
+                        "name": "StateRootProvider",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "1668:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_StateRootProvider_$330_$",
+                          "typeString": "type(contract StateRootProvider)"
+                        }
+                      },
+                      "id": 109,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setup",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 280,
+                      "src": "1668:23:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 111,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1668:39:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 112,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1668:39:1"
+                }
+              ]
+            },
+            "documentation": "@notice Setup function for anchor.\n     * @dev This function must be called only once. This check is done in setupConsensus\n     function of ConsensusModule.\n     * @param _maxStateRoots The max number of state roots to store in the\n                      circular buffer.\n@param _consensus A consensus contract  address.",
+            "id": 114,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 96,
+                  "name": "_maxStateRoots",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "1517:22:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 95,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1517:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 98,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 114,
+                  "src": "1549:29:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 97,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1549:18:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1507:77:1"
+            },
+            "returnParameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1606:0:1"
+            },
+            "scope": 132,
+            "src": "1493:221:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 130,
+              "nodeType": "Block",
+              "src": "2224:84:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 126,
+                        "name": "_blockNumber",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 116,
+                        "src": "2276:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 127,
+                        "name": "_stateRoot",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 118,
+                        "src": "2290:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 123,
+                        "name": "StateRootProvider",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 330,
+                        "src": "2234:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_StateRootProvider_$330_$",
+                          "typeString": "type(contract StateRootProvider)"
+                        }
+                      },
+                      "id": 125,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "anchorStateRootInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 329,
+                      "src": "2234:41:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_bytes32_$returns$__$",
+                        "typeString": "function (uint256,bytes32)"
+                      }
+                    },
+                    "id": 128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2234:67:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 129,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2234:67:1"
+                }
+              ]
+            },
+            "documentation": "@notice Anchor the state root for an (increasing) block number.\n     * @dev  Function requires:\n         - Only consensus contract address can call this function.\n     * @param _blockNumber Block number for which state root needs to\n                     update.\n@param _stateRoot State root of input block number.",
+            "id": 131,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 121,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 120,
+                  "name": "onlyConsensus",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 5932,
+                  "src": "2206:13:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "2206:13:1"
+              }
+            ],
+            "name": "anchorStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 116,
+                  "name": "_blockNumber",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "2126:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 115,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2126:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 118,
+                  "name": "_stateRoot",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 131,
+                  "src": "2156:18:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2156:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2116:64:1"
+            },
+            "returnParameters": {
+              "id": 122,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2224:0:1"
+            },
+            "scope": 132,
+            "src": "2092:216:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 133,
+        "src": "998:1312:1"
+      }
+    ],
+    "src": "0:2311:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.589Z",
+  "devdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "details": "Function requires:         - Only consensus contract address can call this function.",
+        "params": {
+          "_blockNumber": "Block number for which state root needs to                     update.",
+          "_stateRoot": "State root of input block number."
+        }
+      },
+      "getLatestStateRootBlockNumber()": {
+        "return": "uint256 Block number of the latest anchored state root."
+      },
+      "getStateRoot(uint256)": {
+        "params": {
+          "_blockNumber": "The block number for which the state root is needed."
+        },
+        "return": "bytes32 State root of the given number."
+      },
+      "setup(uint256,address)": {
+        "details": "This function must be called only once. This check is done in setupConsensus     function of ConsensusModule.",
+        "params": {
+          "_consensus": "A consensus contract  address.",
+          "_maxStateRoots": "The max number of state roots to store in the                      circular buffer."
+        }
+      }
+    },
+    "title": "Anchor contract to store the state roots."
+  },
+  "userdoc": {
+    "methods": {
+      "anchorStateRoot(uint256,bytes32)": {
+        "notice": "Anchor the state root for an (increasing) block number."
+      },
+      "getLatestStateRootBlockNumber()": {
+        "notice": "Gets the block number of latest anchored state root."
+      },
+      "getStateRoot(uint256)": {
+        "notice": "Get the state root for the given block number."
+      },
+      "setup(uint256,address)": {
+        "notice": "Setup function for anchor."
+      }
+    },
+    "notice": "Anchor stores auxiliary chain's state roots. This contract is a consensus module        and the anchoring of the state root can only be done be consensus contract."
+  }
+}

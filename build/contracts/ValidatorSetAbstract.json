@@ -1,0 +1,812 @@
+{
+  "contractName": "ValidatorSetAbstract",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "inValidatorSet",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "inForwardValidatorSet",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "forwardValidatorSetCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"forwardValidatorSetCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"inForwardValidatorSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"inValidatorSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"forwardValidatorSetCount(uint256)\":{\"params\":{\"_height\":\"A metablock height.     * \\\\pre _height must be less than the active height.\"},\"return\":\"Returns a count of forward validators for the given metablock        height.\"},\"inForwardValidatorSet(address,uint256)\":{\"params\":{\"_height\":\"A metablock height.\",\"_validator\":\"A validator's address to check.\"},\"return\":\"Returns true if a validator is in the forward validator set        for the given metablock height, otherwise false.\"},\"inValidatorSet(address,uint256)\":{\"params\":{\"_height\":\"A metablock height.\",\"_validator\":\"A validator's address to check.\"},\"return\":\"Returns true if a validator is in the validator set        for the given metablock height, otherwise false.\"}},\"title\":\"ValidatorSetAbstract abstract contract specifies a validator       set abstract interfaces.\"},\"userdoc\":{\"methods\":{\"forwardValidatorSetCount(uint256)\":{\"notice\":\"forwardValidatorSetCount() function returns a count of validators        included in a forward validator set for the given metablock        height.\"},\"inForwardValidatorSet(address,uint256)\":{\"notice\":\"inForwardValidatorSet() function checks if a validator is in        forward validator set for the given height.\"},\"inValidatorSet(address,uint256)\":{\"notice\":\"inValidatorSet() function checks if a validator is in        validator set for the given height.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol\":\"ValidatorSetAbstract\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol\":{\"keccak256\":\"0x0aa1d85ab2758942bc9590f22352a14b3fdb4fe81ea896ef8548bfa58a3435b1\",\"urls\":[\"bzz-raw://c0758b2fa9e268d696edf472f6a358098835a6770268cd4636c0a2caa47b1b89\",\"dweb:/ipfs/QmVzNLU9V7zMYNcHP2Z5GHxZchKeXtRxbCJnP76BbSUfMq\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title ValidatorSetAbstract abstract contract specifies a validator\n *        set abstract interfaces.\n */\ncontract ValidatorSetAbstract {\n\n    /* Public Functions */\n\n    /**\n     * @notice inValidatorSet() function checks if a validator is in\n     *         validator set for the given height.\n     *\n     * @param _validator A validator's address to check.\n     * @param _height A metablock height.\n     *\n     * @return Returns true if a validator is in the validator set\n     *         for the given metablock height, otherwise false.\n     */\n    function inValidatorSet(address _validator, uint256 _height)\n        public\n        view\n        returns (bool);\n\n    /**\n     * @notice inForwardValidatorSet() function checks if a validator is in\n     *         forward validator set for the given height.\n     *\n     * @param _validator A validator's address to check.\n     * @param _height A metablock height.\n     *\n     * @return Returns true if a validator is in the forward validator set\n     *         for the given metablock height, otherwise false.\n     */\n    function inForwardValidatorSet(address _validator, uint256 _height)\n        public\n        view\n        returns (bool);\n\n    /**\n     * @notice forwardValidatorSetCount() function returns a count of validators\n     *         included in a forward validator set for the given metablock\n     *         height.\n     *\n     * @param _height A metablock height.\n     *\n     * \\pre _height must be less than the active height.\n     *\n     * @return Returns a count of forward validators for the given metablock\n     *         height.\n     */\n    function forwardValidatorSetCount(uint256 _height)\n        public\n        view\n        returns (uint256);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol",
+    "exportedSymbols": {
+      "ValidatorSetAbstract": [
+        18870
+      ]
+    },
+    "id": 18871,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18844,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:103"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ValidatorSetAbstract abstract contract specifies a validator\n       set abstract interfaces.",
+        "fullyImplemented": false,
+        "id": 18870,
+        "linearizedBaseContracts": [
+          18870
+        ],
+        "name": "ValidatorSetAbstract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice inValidatorSet() function checks if a validator is in\n        validator set for the given height.\n     * @param _validator A validator's address to check.\n@param _height A metablock height.\n     * @return Returns true if a validator is in the validator set\n        for the given metablock height, otherwise false.",
+            "id": 18853,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "inValidatorSet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18849,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18846,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1204:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18845,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1204:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18848,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1224:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18847,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1224:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1203:37:103"
+            },
+            "returnParameters": {
+              "id": 18852,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18851,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1286:4:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 18850,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1286:4:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1285:6:103"
+            },
+            "scope": 18870,
+            "src": "1180:112:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice inForwardValidatorSet() function checks if a validator is in\n        forward validator set for the given height.\n     * @param _validator A validator's address to check.\n@param _height A metablock height.\n     * @return Returns true if a validator is in the forward validator set\n        for the given metablock height, otherwise false.",
+            "id": 18862,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "inForwardValidatorSet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18858,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18855,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1732:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18854,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1732:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18857,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1752:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18856,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1752:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1731:37:103"
+            },
+            "returnParameters": {
+              "id": 18861,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18860,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1814:4:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 18859,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:4:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1813:6:103"
+            },
+            "scope": 18870,
+            "src": "1701:119:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice forwardValidatorSetCount() function returns a count of validators\n        included in a forward validator set for the given metablock\n        height.\n     * @param _height A metablock height.\n     * \\pre _height must be less than the active height.\n     * @return Returns a count of forward validators for the given metablock\n        height.",
+            "id": 18869,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "forwardValidatorSetCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18865,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18864,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18869,
+                  "src": "2275:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18863,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2275:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2274:17:103"
+            },
+            "returnParameters": {
+              "id": 18868,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18867,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18869,
+                  "src": "2337:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18866,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2337:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2336:9:103"
+            },
+            "scope": 18870,
+            "src": "2241:105:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18871,
+        "src": "735:1613:103"
+      }
+    ],
+    "src": "0:2349:103"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol",
+    "exportedSymbols": {
+      "ValidatorSetAbstract": [
+        18870
+      ]
+    },
+    "id": 18871,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 18844,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:103"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ValidatorSetAbstract abstract contract specifies a validator\n       set abstract interfaces.",
+        "fullyImplemented": false,
+        "id": 18870,
+        "linearizedBaseContracts": [
+          18870
+        ],
+        "name": "ValidatorSetAbstract",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice inValidatorSet() function checks if a validator is in\n        validator set for the given height.\n     * @param _validator A validator's address to check.\n@param _height A metablock height.\n     * @return Returns true if a validator is in the validator set\n        for the given metablock height, otherwise false.",
+            "id": 18853,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "inValidatorSet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18849,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18846,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1204:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18845,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1204:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18848,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1224:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18847,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1224:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1203:37:103"
+            },
+            "returnParameters": {
+              "id": 18852,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18851,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18853,
+                  "src": "1286:4:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 18850,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1286:4:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1285:6:103"
+            },
+            "scope": 18870,
+            "src": "1180:112:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice inForwardValidatorSet() function checks if a validator is in\n        forward validator set for the given height.\n     * @param _validator A validator's address to check.\n@param _height A metablock height.\n     * @return Returns true if a validator is in the forward validator set\n        for the given metablock height, otherwise false.",
+            "id": 18862,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "inForwardValidatorSet",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18858,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18855,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1732:18:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 18854,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1732:7:103",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 18857,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1752:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18856,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1752:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1731:37:103"
+            },
+            "returnParameters": {
+              "id": 18861,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18860,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18862,
+                  "src": "1814:4:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 18859,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1814:4:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1813:6:103"
+            },
+            "scope": 18870,
+            "src": "1701:119:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": null,
+            "documentation": "@notice forwardValidatorSetCount() function returns a count of validators\n        included in a forward validator set for the given metablock\n        height.\n     * @param _height A metablock height.\n     * \\pre _height must be less than the active height.\n     * @return Returns a count of forward validators for the given metablock\n        height.",
+            "id": 18869,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "forwardValidatorSetCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 18865,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18864,
+                  "name": "_height",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18869,
+                  "src": "2275:15:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18863,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2275:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2274:17:103"
+            },
+            "returnParameters": {
+              "id": 18868,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 18867,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 18869,
+                  "src": "2337:7:103",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 18866,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2337:7:103",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2336:9:103"
+            },
+            "scope": 18870,
+            "src": "2241:105:103",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 18871,
+        "src": "735:1613:103"
+      }
+    ],
+    "src": "0:2349:103"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.842Z",
+  "devdoc": {
+    "methods": {
+      "forwardValidatorSetCount(uint256)": {
+        "params": {
+          "_height": "A metablock height.     * \\pre _height must be less than the active height."
+        },
+        "return": "Returns a count of forward validators for the given metablock        height."
+      },
+      "inForwardValidatorSet(address,uint256)": {
+        "params": {
+          "_height": "A metablock height.",
+          "_validator": "A validator's address to check."
+        },
+        "return": "Returns true if a validator is in the forward validator set        for the given metablock height, otherwise false."
+      },
+      "inValidatorSet(address,uint256)": {
+        "params": {
+          "_height": "A metablock height.",
+          "_validator": "A validator's address to check."
+        },
+        "return": "Returns true if a validator is in the validator set        for the given metablock height, otherwise false."
+      }
+    },
+    "title": "ValidatorSetAbstract abstract contract specifies a validator       set abstract interfaces."
+  },
+  "userdoc": {
+    "methods": {
+      "forwardValidatorSetCount(uint256)": {
+        "notice": "forwardValidatorSetCount() function returns a count of validators        included in a forward validator set for the given metablock        height."
+      },
+      "inForwardValidatorSet(address,uint256)": {
+        "notice": "inForwardValidatorSet() function checks if a validator is in        forward validator set for the given height."
+      },
+      "inValidatorSet(address,uint256)": {
+        "notice": "inValidatorSet() function checks if a validator is in        validator set for the given height."
+      }
+    }
+  }
+}

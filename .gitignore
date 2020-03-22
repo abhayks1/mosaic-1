@@ -15,9 +15,6 @@ node_modules
 dist/contracts.json
 dist/*
 
-# Do not track builds
-build/
-
 # LaTeX auxiliary files
 *.aux
 *.log

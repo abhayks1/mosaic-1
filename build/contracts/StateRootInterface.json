@@ -1,0 +1,437 @@
+{
+  "contractName": "StateRootInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getLatestStateRootBlockHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "height_",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_blockHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "getStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "stateRoot_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getLatestStateRootBlockHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"height_\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_blockHeight\",\"type\":\"uint256\"}],\"name\":\"getStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"stateRoot_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getLatestStateRootBlockHeight()\":{\"return\":\"height_ Block height of the latest committed state root.\"},\"getStateRoot(uint256)\":{\"params\":{\"_blockHeight\":\"The block height for which the state root is fetched.\"},\"return\":\"bytes32 State root at the given height.\"}},\"title\":\"An interface to an get state root. \"},\"userdoc\":{\"methods\":{\"getLatestStateRootBlockHeight()\":{\"notice\":\"Gets the block number of latest committed state root.\"},\"getStateRoot(uint256)\":{\"notice\":\"Get the state root for the given block height.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/StateRootInterface.sol\":\"StateRootInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/StateRootInterface.sol\":{\"keccak256\":\"0x608d1a23dc2c9b3c9b3b14a8792710b8e180001e93fb5c2541b8ac0d8d211592\",\"urls\":[\"bzz-raw://5a6daebf2096689a844b311cdd4ff8a6af57a8170d4d2093d31c47f17d9ace1f\",\"dweb:/ipfs/QmaMPVMmqdZu9AsaNpqK8W2q1nFYXnFDJDYWiNMvxPE9Wt\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/** @title An interface to an get state root. */\ninterface StateRootInterface {\n\n    /**\n     * @notice Gets the block number of latest committed state root.\n     * @return height_ Block height of the latest committed state root.\n     */\n    function getLatestStateRootBlockHeight()\n        external\n        view\n        returns (uint256 height_);\n\n    /**\n     * @notice Get the state root for the given block height.\n     * @param _blockHeight The block height for which the state root is fetched.\n     * @return bytes32 State root at the given height.\n     */\n    function getStateRoot(uint256 _blockHeight)\n        external\n        view\n        returns (bytes32 stateRoot_);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/StateRootInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/StateRootInterface.sol",
+    "exportedSymbols": {
+      "StateRootInterface": [
+        11226
+      ]
+    },
+    "id": 11227,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11213,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:42"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface to an get state root. ",
+        "fullyImplemented": false,
+        "id": 11226,
+        "linearizedBaseContracts": [
+          11226
+        ],
+        "name": "StateRootInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the block number of latest committed state root.\n@return height_ Block height of the latest committed state root.",
+            "id": 11218,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestStateRootBlockHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11214,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "901:2:42"
+            },
+            "returnParameters": {
+              "id": 11217,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11216,
+                  "name": "height_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11218,
+                  "src": "951:15:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11215,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "950:17:42"
+            },
+            "scope": 11226,
+            "src": "863:105:42",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get the state root for the given block height.\n@param _blockHeight The block height for which the state root is fetched.\n@return bytes32 State root at the given height.",
+            "id": 11225,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11220,
+                  "name": "_blockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11225,
+                  "src": "1210:20:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11219,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1210:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1209:22:42"
+            },
+            "returnParameters": {
+              "id": 11224,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11223,
+                  "name": "stateRoot_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11225,
+                  "src": "1279:18:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11222,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1278:20:42"
+            },
+            "scope": 11226,
+            "src": "1188:111:42",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11227,
+        "src": "670:631:42"
+      }
+    ],
+    "src": "0:1302:42"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/message-bus/StateRootInterface.sol",
+    "exportedSymbols": {
+      "StateRootInterface": [
+        11226
+      ]
+    },
+    "id": 11227,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 11213,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:42"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title An interface to an get state root. ",
+        "fullyImplemented": false,
+        "id": 11226,
+        "linearizedBaseContracts": [
+          11226
+        ],
+        "name": "StateRootInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Gets the block number of latest committed state root.\n@return height_ Block height of the latest committed state root.",
+            "id": 11218,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestStateRootBlockHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11214,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "901:2:42"
+            },
+            "returnParameters": {
+              "id": 11217,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11216,
+                  "name": "height_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11218,
+                  "src": "951:15:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11215,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "951:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "950:17:42"
+            },
+            "scope": 11226,
+            "src": "863:105:42",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Get the state root for the given block height.\n@param _blockHeight The block height for which the state root is fetched.\n@return bytes32 State root at the given height.",
+            "id": 11225,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getStateRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11220,
+                  "name": "_blockHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11225,
+                  "src": "1210:20:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 11219,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1210:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1209:22:42"
+            },
+            "returnParameters": {
+              "id": 11224,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11223,
+                  "name": "stateRoot_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 11225,
+                  "src": "1279:18:42",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 11222,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:42",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1278:20:42"
+            },
+            "scope": 11226,
+            "src": "1188:111:42",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 11227,
+        "src": "670:631:42"
+      }
+    ],
+    "src": "0:1302:42"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.739Z",
+  "devdoc": {
+    "methods": {
+      "getLatestStateRootBlockHeight()": {
+        "return": "height_ Block height of the latest committed state root."
+      },
+      "getStateRoot(uint256)": {
+        "params": {
+          "_blockHeight": "The block height for which the state root is fetched."
+        },
+        "return": "bytes32 State root at the given height."
+      }
+    },
+    "title": "An interface to an get state root. "
+  },
+  "userdoc": {
+    "methods": {
+      "getLatestStateRootBlockHeight()": {
+        "notice": "Gets the block number of latest committed state root."
+      },
+      "getStateRoot(uint256)": {
+        "notice": "Get the state root for the given block height."
+      }
+    }
+  }
+}

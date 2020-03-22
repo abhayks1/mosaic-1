@@ -1,0 +1,1845 @@
+{
+  "contractName": "UtBaseConfirmDepositSpy",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "amounts",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "beneficiaries",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "valueToken",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "valueTokenAddress_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "_beneficiary",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "burn",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "burnFrom",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"amounts\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"beneficiaries\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"burnFrom\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"valueToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"valueTokenAddress_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"mint(address,uint256)\":{\"params\":{\"_amount\":\"Amount in wei.\",\"_beneficiary\":\"Address of beneficiary where tokens are minted.\"}},\"valueToken()\":{\"return\":\"valueTokenAddress_ Value token address.\"}},\"title\":\"UtBase spy contract to test ConsensusCogateway::confirmDeposit.\"},\"userdoc\":{\"methods\":{\"burn(uint256)\":{\"notice\":\"Implemented to satisfy the interface definition.\"},\"burnFrom(address,uint256)\":{\"notice\":\"Implemented to satisfy the interface definition.\"},\"mint(address,uint256)\":{\"notice\":\"Used for unit testing of ConsensusCogateway::confirmDeposit.\"},\"valueToken()\":{\"notice\":\"It provides address of value token.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/token/UtBaseConfirmDepositSpy.sol\":\"UtBaseConfirmDepositSpy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/token/UtBaseConfirmDepositSpy.sol\":{\"keccak256\":\"0x658b47663ec6481096e2cda75059e04caa38a1643a1b0047e74c52dc2d883f62\",\"urls\":[\"bzz-raw://5ee61d3e9830415ec9c3c5d3ca6dfef7460048c210c53e18a725d8a873c7b91c\",\"dweb:/ipfs/QmSufiw7FySuyAYTeU8axSV1q3e62Y2zUBWqRCVqoqM8Tj\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/utility-token/UtilityTokenInterface.sol\":{\"keccak256\":\"0x40e7b2c069cd9af8a2dc92728b5ee66a76d768aa77bbd36bea4f461a2a6198df\",\"urls\":[\"bzz-raw://4ad0c808199fbbb40a459fc46a781ffbde0fff8913baea405fd9075c5ffd7396\",\"dweb:/ipfs/QmUiYsgKb3U7jR2p8sz2Qc1ZXQdjHpZXYBsadW3AzE3GW6\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061030c806100206000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806340c10f191461006757806342966c681461009557806345f0a44f146100b257806379cc6790146100e1578063efeb5e581461010d578063effff82f14610146575b600080fd5b6100936004803603604081101561007d57600080fd5b506001600160a01b03813516906020013561014e565b005b610093600480360360208110156100ab57600080fd5b50356101cd565b6100cf600480360360208110156100c857600080fd5b5035610204565b60408051918252519081900360200190f35b610093600480360360408110156100f757600080fd5b506001600160a01b038135169060200135610222565b61012a6004803603602081101561012357600080fd5b5035610259565b604080516001600160a01b039092168252519081900360200190f35b61012a610280565b60008054600180820183557f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56390910180546001600160a01b0319166001600160a01b039590951694909417909355825480840184559290527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf690910155565b60405162461bcd60e51b81526004018080602001828103825260218152602001806102866021913960400191505060405180910390fd5b6001818154811061021157fe5b600091825260209091200154905081565b60405162461bcd60e51b81526004018080602001828103825260318152602001806102a76031913960400191505060405180910390fd5b6000818154811061026657fe5b6000918252602090912001546001600160a01b0316905081565b60019056fe54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642e54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642066726f6d20756e69742074657374732ea265627a7a7231582027cef98a687806598e5d7f68d42458c9ae3b00cd565c0af284830c18e070e1b264736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806340c10f191461006757806342966c681461009557806345f0a44f146100b257806379cc6790146100e1578063efeb5e581461010d578063effff82f14610146575b600080fd5b6100936004803603604081101561007d57600080fd5b506001600160a01b03813516906020013561014e565b005b610093600480360360208110156100ab57600080fd5b50356101cd565b6100cf600480360360208110156100c857600080fd5b5035610204565b60408051918252519081900360200190f35b610093600480360360408110156100f757600080fd5b506001600160a01b038135169060200135610222565b61012a6004803603602081101561012357600080fd5b5035610259565b604080516001600160a01b039092168252519081900360200190f35b61012a610280565b60008054600180820183557f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e56390910180546001600160a01b0319166001600160a01b039590951694909417909355825480840184559290527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf690910155565b60405162461bcd60e51b81526004018080602001828103825260218152602001806102866021913960400191505060405180910390fd5b6001818154811061021157fe5b600091825260209091200154905081565b60405162461bcd60e51b81526004018080602001828103825260318152602001806102a76031913960400191505060405180910390fd5b6000818154811061026657fe5b6000918252602090912001546001600160a01b0316905081565b60019056fe54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642e54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642066726f6d20756e69742074657374732ea265627a7a7231582027cef98a687806598e5d7f68d42458c9ae3b00cd565c0af284830c18e070e1b264736f6c634300050d0032",
+  "sourceMap": "760:1299:94:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;760:1299:94;;;;;;;",
+  "deployedSourceMap": "760:1299:94:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;760:1299:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1447:184;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;1447:184:94;;;;;;;;:::i;:::-;;1717:112;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1717:112:94;;:::i;880:24::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;880:24:94;;:::i;:::-;;;;;;;;;;;;;;;;1915:141;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;1915:141:94;;;;;;;;:::i;844:30::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;844:30:94;;:::i;:::-;;;;-1:-1:-1;;;;;844:30:94;;;;;;;;;;;;;;1072:158;;;:::i;1447:184::-;1561:13;27:10:-1;;39:1;23:18;;;45:23;;1561:32:94;;;;;;-1:-1:-1;;;;;;1561:32:94;-1:-1:-1;;;;;1561:32:94;;;;;;;;;;;27:10:-1;;23:18;;;45:23;;1603:21:94;;;;;;;;1447:184::o;1717:112::-;1771:51;;-1:-1:-1;;;1771:51:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;880:24;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;880:24:94;:::o;1915:141::-;1982:67;;-1:-1:-1;;;1982:67:94;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;844:30;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;844:30:94;;-1:-1:-1;844:30:94;:::o;1072:158::-;1221:1;;1072:158::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../utility-token/UtilityTokenInterface.sol\";\n\n/**\n * @title UtBase spy contract to test ConsensusCogateway::confirmDeposit.\n */\ncontract UtBaseConfirmDepositSpy is UtilityTokenInterface {\n\n    /* Storage */\n\n    address[] public beneficiaries;\n    uint256[] public amounts;\n\n\n    /* External Functions. */\n\n    /**\n     * @notice It provides address of value token.\n     *\n     * @return valueTokenAddress_ Value token address.\n     */\n    function valueToken()\n        external\n        returns (\n            address valueTokenAddress_\n        )\n    {\n        valueTokenAddress_ = address(1);\n    }\n\n    /**\n     * @notice Used for unit testing of ConsensusCogateway::confirmDeposit.\n     *\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n     * @param _amount Amount in wei.\n     */\n    function mint(\n        address payable _beneficiary,\n        uint256 _amount\n    )\n        external\n    {\n        beneficiaries.push(_beneficiary);\n        amounts.push(_amount);\n    }\n\n    /**\n     * @notice Implemented to satisfy the interface definition.\n     */\n    function burn(uint256)\n        external\n    {\n        require(false, \"This method should not be called.\");\n    }\n\n    /**\n     * @notice Implemented to satisfy the interface definition.\n     */\n    function burnFrom(address, uint256)\n        external\n    {\n        require(false, \"This method should not be called from unit tests.\");\n    }\n\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/token/UtBaseConfirmDepositSpy.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/token/UtBaseConfirmDepositSpy.sol",
+    "exportedSymbols": {
+      "UtBaseConfirmDepositSpy": [
+        17760
+      ]
+    },
+    "id": 17761,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17694,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:94"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/utility-token/UtilityTokenInterface.sol",
+        "file": "../../utility-token/UtilityTokenInterface.sol",
+        "id": 17695,
+        "nodeType": "ImportDirective",
+        "scope": 17761,
+        "sourceUnit": 18475,
+        "src": "621:55:94",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17696,
+              "name": "UtilityTokenInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18474,
+              "src": "796:21:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UtilityTokenInterface_$18474",
+                "typeString": "contract UtilityTokenInterface"
+              }
+            },
+            "id": 17697,
+            "nodeType": "InheritanceSpecifier",
+            "src": "796:21:94"
+          }
+        ],
+        "contractDependencies": [
+          18474
+        ],
+        "contractKind": "contract",
+        "documentation": "@title UtBase spy contract to test ConsensusCogateway::confirmDeposit.",
+        "fullyImplemented": true,
+        "id": 17760,
+        "linearizedBaseContracts": [
+          17760,
+          18474
+        ],
+        "name": "UtBaseConfirmDepositSpy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17700,
+            "name": "beneficiaries",
+            "nodeType": "VariableDeclaration",
+            "scope": 17760,
+            "src": "844:30:94",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 17698,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "844:7:94",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 17699,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "844:9:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17703,
+            "name": "amounts",
+            "nodeType": "VariableDeclaration",
+            "scope": 17760,
+            "src": "880:24:94",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 17701,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "880:7:94",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 17702,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "880:9:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17714,
+              "nodeType": "Block",
+              "src": "1182:48:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17712,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17708,
+                      "name": "valueTokenAddress_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17706,
+                      "src": "1192:18:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 17710,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1221:1:94",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          }
+                        ],
+                        "id": 17709,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1213:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 17711,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1213:10:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1192:31:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 17713,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1192:31:94"
+                }
+              ]
+            },
+            "documentation": "@notice It provides address of value token.\n     * @return valueTokenAddress_ Value token address.",
+            "id": 17715,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "valueToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17704,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1091:2:94"
+            },
+            "returnParameters": {
+              "id": 17707,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17706,
+                  "name": "valueTokenAddress_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17715,
+                  "src": "1141:26:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1141:7:94",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1127:50:94"
+            },
+            "scope": 17760,
+            "src": "1072:158:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18454,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17734,
+              "nodeType": "Block",
+              "src": "1551:80:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17725,
+                        "name": "_beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17717,
+                        "src": "1580:12:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17722,
+                        "name": "beneficiaries",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17700,
+                        "src": "1561:13:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 17724,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1561:18:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 17726,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1561:32:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17727,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1561:32:94"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17731,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17719,
+                        "src": "1616:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17728,
+                        "name": "amounts",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17703,
+                        "src": "1603:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                          "typeString": "uint256[] storage ref"
+                        }
+                      },
+                      "id": 17730,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1603:12:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 17732,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1603:21:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17733,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1603:21:94"
+                }
+              ]
+            },
+            "documentation": "@notice Used for unit testing of ConsensusCogateway::confirmDeposit.\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n@param _amount Amount in wei.",
+            "id": 17735,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17717,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17735,
+                  "src": "1470:28:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 17716,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1470:15:94",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17719,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17735,
+                  "src": "1508:15:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17718,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1508:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1460:69:94"
+            },
+            "returnParameters": {
+              "id": 17721,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1551:0:94"
+            },
+            "scope": 17760,
+            "src": "1447:184:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18461,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17745,
+              "nodeType": "Block",
+              "src": "1761:68:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 17741,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1779:5:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642e",
+                        "id": 17742,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1786:35:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4fac61e29d98273cf61d7dce1e9985bfa236b049cf9e4bd2d55697389da7eb55",
+                          "typeString": "literal_string \"This method should not be called.\""
+                        },
+                        "value": "This method should not be called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4fac61e29d98273cf61d7dce1e9985bfa236b049cf9e4bd2d55697389da7eb55",
+                          "typeString": "literal_string \"This method should not be called.\""
+                        }
+                      ],
+                      "id": 17740,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1771:7:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 17743,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1771:51:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17744,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1771:51:94"
+                }
+              ]
+            },
+            "documentation": "@notice Implemented to satisfy the interface definition.",
+            "id": 17746,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17737,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17746,
+                  "src": "1731:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17736,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1731:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1730:9:94"
+            },
+            "returnParameters": {
+              "id": 17739,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1761:0:94"
+            },
+            "scope": 17760,
+            "src": "1717:112:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18466,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17758,
+              "nodeType": "Block",
+              "src": "1972:84:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 17754,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1990:5:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642066726f6d20756e69742074657374732e",
+                        "id": 17755,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1997:51:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_fb1394a4ae1fe5dd925ecaef62854e64ae0ec6c328c1a87b9aacfbb1c6a28f56",
+                          "typeString": "literal_string \"This method should not be called from unit tests.\""
+                        },
+                        "value": "This method should not be called from unit tests."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_fb1394a4ae1fe5dd925ecaef62854e64ae0ec6c328c1a87b9aacfbb1c6a28f56",
+                          "typeString": "literal_string \"This method should not be called from unit tests.\""
+                        }
+                      ],
+                      "id": 17753,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1982:7:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 17756,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1982:67:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17757,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1982:67:94"
+                }
+              ]
+            },
+            "documentation": "@notice Implemented to satisfy the interface definition.",
+            "id": 17759,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17748,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17759,
+                  "src": "1933:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1933:7:94",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17750,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17759,
+                  "src": "1942:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17749,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1942:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1932:18:94"
+            },
+            "returnParameters": {
+              "id": 17752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1972:0:94"
+            },
+            "scope": 17760,
+            "src": "1915:141:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18473,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17761,
+        "src": "760:1299:94"
+      }
+    ],
+    "src": "0:2060:94"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/token/UtBaseConfirmDepositSpy.sol",
+    "exportedSymbols": {
+      "UtBaseConfirmDepositSpy": [
+        17760
+      ]
+    },
+    "id": 17761,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17694,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:94"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/utility-token/UtilityTokenInterface.sol",
+        "file": "../../utility-token/UtilityTokenInterface.sol",
+        "id": 17695,
+        "nodeType": "ImportDirective",
+        "scope": 17761,
+        "sourceUnit": 18475,
+        "src": "621:55:94",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17696,
+              "name": "UtilityTokenInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18474,
+              "src": "796:21:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_UtilityTokenInterface_$18474",
+                "typeString": "contract UtilityTokenInterface"
+              }
+            },
+            "id": 17697,
+            "nodeType": "InheritanceSpecifier",
+            "src": "796:21:94"
+          }
+        ],
+        "contractDependencies": [
+          18474
+        ],
+        "contractKind": "contract",
+        "documentation": "@title UtBase spy contract to test ConsensusCogateway::confirmDeposit.",
+        "fullyImplemented": true,
+        "id": 17760,
+        "linearizedBaseContracts": [
+          17760,
+          18474
+        ],
+        "name": "UtBaseConfirmDepositSpy",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17700,
+            "name": "beneficiaries",
+            "nodeType": "VariableDeclaration",
+            "scope": 17760,
+            "src": "844:30:94",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 17698,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "844:7:94",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 17699,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "844:9:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 17703,
+            "name": "amounts",
+            "nodeType": "VariableDeclaration",
+            "scope": 17760,
+            "src": "880:24:94",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+              "typeString": "uint256[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 17701,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "880:7:94",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "id": 17702,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "880:9:94",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                "typeString": "uint256[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17714,
+              "nodeType": "Block",
+              "src": "1182:48:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17712,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17708,
+                      "name": "valueTokenAddress_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17706,
+                      "src": "1192:18:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "31",
+                          "id": 17710,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1221:1:94",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          }
+                        ],
+                        "id": 17709,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1213:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 17711,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1213:10:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "1192:31:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 17713,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1192:31:94"
+                }
+              ]
+            },
+            "documentation": "@notice It provides address of value token.\n     * @return valueTokenAddress_ Value token address.",
+            "id": 17715,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "valueToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17704,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1091:2:94"
+            },
+            "returnParameters": {
+              "id": 17707,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17706,
+                  "name": "valueTokenAddress_",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17715,
+                  "src": "1141:26:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17705,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1141:7:94",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1127:50:94"
+            },
+            "scope": 17760,
+            "src": "1072:158:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18454,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17734,
+              "nodeType": "Block",
+              "src": "1551:80:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17725,
+                        "name": "_beneficiary",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17717,
+                        "src": "1580:12:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17722,
+                        "name": "beneficiaries",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17700,
+                        "src": "1561:13:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_address_$dyn_storage",
+                          "typeString": "address[] storage ref"
+                        }
+                      },
+                      "id": 17724,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1561:18:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_address_$returns$_t_uint256_$",
+                        "typeString": "function (address) returns (uint256)"
+                      }
+                    },
+                    "id": 17726,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1561:32:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17727,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1561:32:94"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17731,
+                        "name": "_amount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17719,
+                        "src": "1616:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17728,
+                        "name": "amounts",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17703,
+                        "src": "1603:7:94",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_uint256_$dyn_storage",
+                          "typeString": "uint256[] storage ref"
+                        }
+                      },
+                      "id": 17730,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1603:12:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) returns (uint256)"
+                      }
+                    },
+                    "id": 17732,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1603:21:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17733,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1603:21:94"
+                }
+              ]
+            },
+            "documentation": "@notice Used for unit testing of ConsensusCogateway::confirmDeposit.\n     * @param _beneficiary Address of beneficiary where tokens are minted.\n@param _amount Amount in wei.",
+            "id": 17735,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mint",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17717,
+                  "name": "_beneficiary",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17735,
+                  "src": "1470:28:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "typeName": {
+                    "id": 17716,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1470:15:94",
+                    "stateMutability": "payable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17719,
+                  "name": "_amount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17735,
+                  "src": "1508:15:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17718,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1508:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1460:69:94"
+            },
+            "returnParameters": {
+              "id": 17721,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1551:0:94"
+            },
+            "scope": 17760,
+            "src": "1447:184:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18461,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17745,
+              "nodeType": "Block",
+              "src": "1761:68:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 17741,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1779:5:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642e",
+                        "id": 17742,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1786:35:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_4fac61e29d98273cf61d7dce1e9985bfa236b049cf9e4bd2d55697389da7eb55",
+                          "typeString": "literal_string \"This method should not be called.\""
+                        },
+                        "value": "This method should not be called."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_4fac61e29d98273cf61d7dce1e9985bfa236b049cf9e4bd2d55697389da7eb55",
+                          "typeString": "literal_string \"This method should not be called.\""
+                        }
+                      ],
+                      "id": 17740,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1771:7:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 17743,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1771:51:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17744,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1771:51:94"
+                }
+              ]
+            },
+            "documentation": "@notice Implemented to satisfy the interface definition.",
+            "id": 17746,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burn",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17737,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17746,
+                  "src": "1731:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17736,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1731:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1730:9:94"
+            },
+            "returnParameters": {
+              "id": 17739,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1761:0:94"
+            },
+            "scope": 17760,
+            "src": "1717:112:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18466,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17758,
+              "nodeType": "Block",
+              "src": "1972:84:94",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 17754,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1990:5:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686973206d6574686f642073686f756c64206e6f742062652063616c6c65642066726f6d20756e69742074657374732e",
+                        "id": 17755,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1997:51:94",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_fb1394a4ae1fe5dd925ecaef62854e64ae0ec6c328c1a87b9aacfbb1c6a28f56",
+                          "typeString": "literal_string \"This method should not be called from unit tests.\""
+                        },
+                        "value": "This method should not be called from unit tests."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_fb1394a4ae1fe5dd925ecaef62854e64ae0ec6c328c1a87b9aacfbb1c6a28f56",
+                          "typeString": "literal_string \"This method should not be called from unit tests.\""
+                        }
+                      ],
+                      "id": 17753,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "1982:7:94",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 17756,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1982:67:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17757,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1982:67:94"
+                }
+              ]
+            },
+            "documentation": "@notice Implemented to satisfy the interface definition.",
+            "id": 17759,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "burnFrom",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17751,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17748,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17759,
+                  "src": "1933:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17747,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1933:7:94",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17750,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17759,
+                  "src": "1942:7:94",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17749,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1942:7:94",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1932:18:94"
+            },
+            "returnParameters": {
+              "id": 17752,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1972:0:94"
+            },
+            "scope": 17760,
+            "src": "1915:141:94",
+            "stateMutability": "nonpayable",
+            "superFunction": 18473,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17761,
+        "src": "760:1299:94"
+      }
+    ],
+    "src": "0:2060:94"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.828Z",
+  "devdoc": {
+    "methods": {
+      "mint(address,uint256)": {
+        "params": {
+          "_amount": "Amount in wei.",
+          "_beneficiary": "Address of beneficiary where tokens are minted."
+        }
+      },
+      "valueToken()": {
+        "return": "valueTokenAddress_ Value token address."
+      }
+    },
+    "title": "UtBase spy contract to test ConsensusCogateway::confirmDeposit."
+  },
+  "userdoc": {
+    "methods": {
+      "burn(uint256)": {
+        "notice": "Implemented to satisfy the interface definition."
+      },
+      "burnFrom(address,uint256)": {
+        "notice": "Implemented to satisfy the interface definition."
+      },
+      "mint(address,uint256)": {
+        "notice": "Used for unit testing of ConsensusCogateway::confirmDeposit."
+      },
+      "valueToken()": {
+        "notice": "It provides address of value token."
+      }
+    }
+  }
+}

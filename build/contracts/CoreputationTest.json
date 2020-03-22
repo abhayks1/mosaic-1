@@ -1,0 +1,1439 @@
+{
+  "contractName": "CoreputationTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "_coconsensus",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "coconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        }
+      ],
+      "name": "getReputation",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        }
+      ],
+      "name": "isSlashed",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reputation",
+          "type": "uint256"
+        }
+      ],
+      "name": "upsertValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validators",
+      "outputs": [
+        {
+          "internalType": "enum Coreputation.ValidatorStatus",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reputation",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        }
+      ],
+      "name": "setValidatorSlashed",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCoconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"_coconsensus\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"coconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getCoconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"getReputation\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"isSlashed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"}],\"name\":\"setValidatorSlashed\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_reputation\",\"type\":\"uint256\"}],\"name\":\"upsertValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"validators\",\"outputs\":[{\"internalType\":\"enum Coreputation.ValidatorStatus\",\"name\":\"status\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"reputation\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getReputation(address)\":{\"params\":{\"_validator\":\"An address of a validator. Returns validator reputation.\"}},\"isSlashed(address)\":{\"params\":{\"_validator\":\"An address of a validator. Returns true if the specified address is slashed.\"}},\"upsertValidator(address,uint256)\":{\"details\":\"Validator information is not updated when his status is Slashed.     Validator is marked Deregistered if provided reputation is zero.     Validator is marked Staked, if he has non zero reputation value.     *      Function requires:         - msg.sender should be Coconsensus\",\"params\":{\"_reputation\":\"Validator reputation value.\",\"_validator\":\"Validator address to upsert.\"}}},\"title\":\"CoreputationTest contract.\"},\"userdoc\":{\"methods\":{\"getReputation(address)\":{\"notice\":\"Returns reputation of a validator.\"},\"isSlashed(address)\":{\"notice\":\"Check if the validator address is slashed or not.\"},\"upsertValidator(address,uint256)\":{\"notice\":\"Insert or update validator information.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/reputation/CoreputationTest.sol\":\"CoreputationTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":{\"keccak256\":\"0xabe9fce2fae63ee9d6186ba03faa248d9d9fe8ef3202218e473dfb8d8ba4df71\",\"urls\":[\"bzz-raw://bb79cb8133c43b7ae5973180717b033a2bc9325cf25cd1a4879c9b805fee999e\",\"dweb:/ipfs/QmbUW7mmQXRJRZTVLLpNDoHZhyw2jiTwumHi92MmGE1wD5\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol\":{\"keccak256\":\"0x44ac30ef79aec2b4a57ab8c0c817b508c640bd591a58e341dfb09068f460124f\",\"urls\":[\"bzz-raw://06ad6395c0d424d40588b98859416be647cf9b86bfd2a1052a3f95e78650ccae\",\"dweb:/ipfs/QmebohhNAg9MkGV75HsDMoNJV2AxCidgUQezwCRWiJfLpL\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/reputation/CoreputationTest.sol\":{\"keccak256\":\"0x2807ff9e942dac76f5bc712bfb36d0272fd65968f68709016839d1d55e8b3627\",\"urls\":[\"bzz-raw://a18d016489484fc1d56f30f568307784a3535c9022bc02fdc407d2bd37903bf6\",\"dweb:/ipfs/QmRzrQDyf6tQb59Mms6TZJLvrPuoLcSbF8wYAtNjbbd2rU\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600180546001600160a01b031916614d0017905534801561002457600080fd5b506040516104283803806104288339818101604052602081101561004757600080fd5b5051600380546001600160a01b0319166001600160a01b039092169190911790556103b1806100776000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80639c89a0e21161005b5780639c89a0e2146100fa578063a032006f14610132578063b799036c1461013a578063fa52c7d8146101745761007d565b806323609af7146100825780635a0738b2146100a6578063773feeaf146100d4575b600080fd5b61008a6101c5565b604080516001600160a01b039092168252519081900360200190f35b6100d2600480360360408110156100bc57600080fd5b506001600160a01b0381351690602001356101d4565b005b6100d2600480360360208110156100ea57600080fd5b50356001600160a01b03166102a1565b6101206004803603602081101561011057600080fd5b50356001600160a01b03166102c9565b60408051918252519081900360200190f35b61008a6102e7565b6101606004803603602081101561015057600080fd5b50356001600160a01b03166102f6565b604080519115158252519081900360200190f35b61019a6004803603602081101561018a57600080fd5b50356001600160a01b0316610328565b604051808360038111156101aa57fe5b60ff1681526020018281526020019250505060405180910390f35b6003546001600160a01b031690565b6101dc6101c5565b6001600160a01b0316336001600160a01b03161461022b5760405162461bcd60e51b81526004018080602001828103825260358152602001806103486035913960400191505060405180910390fd5b6001600160a01b03821660009081526002602052604090206001815460ff16600381111561025557fe5b1461029c57600181018290558161027657805460ff1916600317815561029c565b6002815460ff16600381111561028857fe5b111561029057fe5b805460ff191660021781555b505050565b6001600160a01b03166000908152600260205260408120805460ff1916600190811782550155565b6001600160a01b031660009081526002602052604090206001015490565b6003546001600160a01b031681565b600060016001600160a01b03831660009081526002602052604090205460ff16600381111561032157fe5b1492915050565b6002602052600090815260409020805460019091015460ff909116908256fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a723158206af8c1938d2156114b80d773012e96fb9f3a40698af33f917e4f85670744ff7164736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80639c89a0e21161005b5780639c89a0e2146100fa578063a032006f14610132578063b799036c1461013a578063fa52c7d8146101745761007d565b806323609af7146100825780635a0738b2146100a6578063773feeaf146100d4575b600080fd5b61008a6101c5565b604080516001600160a01b039092168252519081900360200190f35b6100d2600480360360408110156100bc57600080fd5b506001600160a01b0381351690602001356101d4565b005b6100d2600480360360208110156100ea57600080fd5b50356001600160a01b03166102a1565b6101206004803603602081101561011057600080fd5b50356001600160a01b03166102c9565b60408051918252519081900360200190f35b61008a6102e7565b6101606004803603602081101561015057600080fd5b50356001600160a01b03166102f6565b604080519115158252519081900360200190f35b61019a6004803603602081101561018a57600080fd5b50356001600160a01b0316610328565b604051808360038111156101aa57fe5b60ff1681526020018281526020019250505060405180910390f35b6003546001600160a01b031690565b6101dc6101c5565b6001600160a01b0316336001600160a01b03161461022b5760405162461bcd60e51b81526004018080602001828103825260358152602001806103486035913960400191505060405180910390fd5b6001600160a01b03821660009081526002602052604090206001815460ff16600381111561025557fe5b1461029c57600181018290558161027657805460ff1916600317815561029c565b6002815460ff16600381111561028857fe5b111561029057fe5b805460ff191660021781555b505050565b6001600160a01b03166000908152600260205260408120805460ff1916600190811782550155565b6001600160a01b031660009081526002602052604090206001015490565b6003546001600160a01b031681565b600060016001600160a01b03831660009081526002602052604090205460ff16600381111561032157fe5b1492915050565b6002602052600090815260409020805460019091015460ff909116908256fe4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a723158206af8c1938d2156114b80d773012e96fb9f3a40698af33f917e4f85670744ff7164736f6c634300050d0032",
+  "sourceMap": "711:667:91:-;;;775:88:19;;;-1:-1:-1;;;;;;775:88:19;820:42;775:88;;;836:123:91;5:2:-1;;;;30:1;27;20:12;5:2;836:123:91;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;836:123:91;926:11;:26;;-1:-1:-1;;;;;;926:26:91;-1:-1:-1;;;;;926:26:91;;;;;;;;;711:667;;;-1:-1:-1;711:667:91;;",
+  "deployedSourceMap": "711:667:91:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;711:667:91;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1272:104;;;:::i;:::-;;;;-1:-1:-1;;;;;1272:104:91;;;;;;;;;;;;;;2115:571:57;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;2115:571:57;;;;;;;;:::i;:::-;;996:240:91;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;996:240:91;-1:-1:-1;;;;;996:240:91;;:::i;2854:160:57:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2854:160:57;-1:-1:-1;;;;;2854:160:57;;:::i;:::-;;;;;;;;;;;;;;;;760:39:91;;;:::i;3246:173:57:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;3246:173:57;-1:-1:-1;;;;;3246:173:57;;:::i;:::-;;;;;;;;;;;;;;;;;;1513:51;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1513:51:57;-1:-1:-1;;;;;1513:51:57;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1272:104:91;1358:11;;-1:-1:-1;;;;;1358:11:91;1272:104;:::o;2115:571:57:-;976:16:19;:14;:16::i;:::-;-1:-1:-1;;;;;954:39:19;:10;-1:-1:-1;;;;;954:39:19;;933:139;;;;-1:-1:-1;;;933:139:19;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2288:22:57;;2258:27;2288:22;;;:10;:22;;;;;2340:23;2324:12;;;;:39;;;;;;;;;2320:360;;2379:16;;;:30;;;2427:25;2423:247;;2472:43;;-1:-1:-1;;2472:43:57;2487:28;2472:43;;;2423:247;;;2577:22;2561:12;;;;:38;;;;;;;;;;2554:46;;;;2618:37;;-1:-1:-1;;2618:37:57;2633:22;2618:37;;;2423:247;1083:1:19;2115:571:57;;:::o;996:240:91:-;-1:-1:-1;;;;;1120:22:91;1090:27;1120:22;;;:10;:22;;;;;1152:38;;-1:-1:-1;;1152:38:91;1167:23;1152:38;;;;;1200:16;:29;996:240::o;2854:160:57:-;-1:-1:-1;;;;;2974:22:57;2944:7;2974:22;;;:10;:22;;;;;:33;;;;2854:160::o;760:39:91:-;;;-1:-1:-1;;;;;760:39:91;;:::o;3246:173:57:-;3329:4;3389:23;-1:-1:-1;;;;;3356:22:57;;;;;;:10;:22;;;;;:29;;;:56;;;;;;;;;;3246:173;-1:-1:-1;;3246:173:57:o;1513:51::-;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../reputation/Coreputation.sol\";\n\n/**\n * @title CoreputationTest contract.\n */\ncontract CoreputationTest is Coreputation {\n\n    CoconsensusInterface public coconsensus;\n\n\n    /* Special Functions */\n\n    constructor(\n        CoconsensusInterface _coconsensus\n    )\n        public\n    {\n        coconsensus = _coconsensus;\n    }\n\n\n    /* External Functions */\n\n    function setValidatorSlashed(\n        address _validator\n    )\n        external\n    {\n        ValidatorInfo storage vInfo = validators[_validator];\n        vInfo.status = ValidatorStatus.Slashed;\n        vInfo.reputation = uint256(0);\n    }\n\n\n     /* Public Functions */\n\n    function getCoconsensus() public view returns (CoconsensusInterface) {\n        return coconsensus;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/reputation/CoreputationTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/reputation/CoreputationTest.sol",
+    "exportedSymbols": {
+      "CoreputationTest": [
+        17489
+      ]
+    },
+    "id": 17490,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17438,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:91"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol",
+        "file": "../../reputation/Coreputation.sol",
+        "id": 17439,
+        "nodeType": "ImportDirective",
+        "scope": 17490,
+        "sourceUnit": 13169,
+        "src": "621:43:91",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17440,
+              "name": "Coreputation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13168,
+              "src": "740:12:91",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Coreputation_$13168",
+                "typeString": "contract Coreputation"
+              }
+            },
+            "id": 17441,
+            "nodeType": "InheritanceSpecifier",
+            "src": "740:12:91"
+          }
+        ],
+        "contractDependencies": [
+          3812,
+          12954,
+          13168
+        ],
+        "contractKind": "contract",
+        "documentation": "@title CoreputationTest contract.",
+        "fullyImplemented": true,
+        "id": 17489,
+        "linearizedBaseContracts": [
+          17489,
+          13168,
+          3812,
+          12954
+        ],
+        "name": "CoreputationTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17443,
+            "name": "coconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 17489,
+            "src": "760:39:91",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+              "typeString": "contract CoconsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 17442,
+              "name": "CoconsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3778,
+              "src": "760:20:91",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                "typeString": "contract CoconsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17452,
+              "nodeType": "Block",
+              "src": "916:43:91",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17450,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17448,
+                      "name": "coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17443,
+                      "src": "926:11:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17449,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17445,
+                      "src": "940:12:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "src": "926:26:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "id": 17451,
+                  "nodeType": "ExpressionStatement",
+                  "src": "926:26:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17453,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17446,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17445,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17453,
+                  "src": "857:33:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17444,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "857:20:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "847:49:91"
+            },
+            "returnParameters": {
+              "id": 17447,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "916:0:91"
+            },
+            "scope": 17489,
+            "src": "836:123:91",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17479,
+              "nodeType": "Block",
+              "src": "1080:156:91",
+              "statements": [
+                {
+                  "assignments": [
+                    17459
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 17459,
+                      "name": "vInfo",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 17479,
+                      "src": "1090:27:91",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                        "typeString": "struct Coreputation.ValidatorInfo"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 17458,
+                        "name": "ValidatorInfo",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13075,
+                        "src": "1090:13:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 17463,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 17460,
+                      "name": "validators",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13079,
+                      "src": "1120:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                        "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                      }
+                    },
+                    "id": 17462,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 17461,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17455,
+                      "src": "1131:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1120:22:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                      "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1090:52:91"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17464,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17459,
+                        "src": "1152:5:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 17466,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "1152:12:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17467,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "1167:15:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 17468,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1167:23:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "1152:38:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    }
+                  },
+                  "id": 17470,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1152:38:91"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17477,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17471,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17459,
+                        "src": "1200:5:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 17473,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "reputation",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13074,
+                      "src": "1200:16:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 17475,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1227:1:91",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 17474,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1219:7:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": "uint256"
+                      },
+                      "id": 17476,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1219:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1200:29:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17478,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1200:29:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17480,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setValidatorSlashed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17456,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17455,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17480,
+                  "src": "1034:18:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17454,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1034:7:91",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1024:34:91"
+            },
+            "returnParameters": {
+              "id": 17457,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1080:0:91"
+            },
+            "scope": 17489,
+            "src": "996:240:91",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17487,
+              "nodeType": "Block",
+              "src": "1341:35:91",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17485,
+                    "name": "coconsensus",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17443,
+                    "src": "1358:11:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 17484,
+                  "id": 17486,
+                  "nodeType": "Return",
+                  "src": "1351:18:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17488,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17481,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1295:2:91"
+            },
+            "returnParameters": {
+              "id": 17484,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17483,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17488,
+                  "src": "1319:20:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17482,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1319:20:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1318:22:91"
+            },
+            "scope": 17489,
+            "src": "1272:104:91",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          }
+        ],
+        "scope": 17490,
+        "src": "711:667:91"
+      }
+    ],
+    "src": "0:1379:91"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/reputation/CoreputationTest.sol",
+    "exportedSymbols": {
+      "CoreputationTest": [
+        17489
+      ]
+    },
+    "id": 17490,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17438,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:91"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/Coreputation.sol",
+        "file": "../../reputation/Coreputation.sol",
+        "id": 17439,
+        "nodeType": "ImportDirective",
+        "scope": 17490,
+        "sourceUnit": 13169,
+        "src": "621:43:91",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17440,
+              "name": "Coreputation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 13168,
+              "src": "740:12:91",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Coreputation_$13168",
+                "typeString": "contract Coreputation"
+              }
+            },
+            "id": 17441,
+            "nodeType": "InheritanceSpecifier",
+            "src": "740:12:91"
+          }
+        ],
+        "contractDependencies": [
+          3812,
+          12954,
+          13168
+        ],
+        "contractKind": "contract",
+        "documentation": "@title CoreputationTest contract.",
+        "fullyImplemented": true,
+        "id": 17489,
+        "linearizedBaseContracts": [
+          17489,
+          13168,
+          3812,
+          12954
+        ],
+        "name": "CoreputationTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 17443,
+            "name": "coconsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 17489,
+            "src": "760:39:91",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+              "typeString": "contract CoconsensusInterface"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 17442,
+              "name": "CoconsensusInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3778,
+              "src": "760:20:91",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                "typeString": "contract CoconsensusInterface"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17452,
+              "nodeType": "Block",
+              "src": "916:43:91",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17450,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 17448,
+                      "name": "coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17443,
+                      "src": "926:11:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 17449,
+                      "name": "_coconsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17445,
+                      "src": "940:12:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                        "typeString": "contract CoconsensusInterface"
+                      }
+                    },
+                    "src": "926:26:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "id": 17451,
+                  "nodeType": "ExpressionStatement",
+                  "src": "926:26:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17453,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17446,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17445,
+                  "name": "_coconsensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17453,
+                  "src": "857:33:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17444,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "857:20:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "847:49:91"
+            },
+            "returnParameters": {
+              "id": 17447,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "916:0:91"
+            },
+            "scope": 17489,
+            "src": "836:123:91",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 17479,
+              "nodeType": "Block",
+              "src": "1080:156:91",
+              "statements": [
+                {
+                  "assignments": [
+                    17459
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 17459,
+                      "name": "vInfo",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 17479,
+                      "src": "1090:27:91",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                        "typeString": "struct Coreputation.ValidatorInfo"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 17458,
+                        "name": "ValidatorInfo",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 13075,
+                        "src": "1090:13:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 17463,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 17460,
+                      "name": "validators",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 13079,
+                      "src": "1120:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_address_$_t_struct$_ValidatorInfo_$13075_storage_$",
+                        "typeString": "mapping(address => struct Coreputation.ValidatorInfo storage ref)"
+                      }
+                    },
+                    "id": 17462,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 17461,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 17455,
+                      "src": "1131:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1120:22:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage",
+                      "typeString": "struct Coreputation.ValidatorInfo storage ref"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1090:52:91"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17469,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17464,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17459,
+                        "src": "1152:5:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 17466,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "status",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13072,
+                      "src": "1152:12:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17467,
+                        "name": "ValidatorStatus",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 13070,
+                        "src": "1167:15:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ValidatorStatus_$13070_$",
+                          "typeString": "type(enum Coreputation.ValidatorStatus)"
+                        }
+                      },
+                      "id": 17468,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "Slashed",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1167:23:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                        "typeString": "enum Coreputation.ValidatorStatus"
+                      }
+                    },
+                    "src": "1152:38:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ValidatorStatus_$13070",
+                      "typeString": "enum Coreputation.ValidatorStatus"
+                    }
+                  },
+                  "id": 17470,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1152:38:91"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17477,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17471,
+                        "name": "vInfo",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17459,
+                        "src": "1200:5:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_ValidatorInfo_$13075_storage_ptr",
+                          "typeString": "struct Coreputation.ValidatorInfo storage pointer"
+                        }
+                      },
+                      "id": 17473,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "reputation",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 13074,
+                      "src": "1200:16:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 17475,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "1227:1:91",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 17474,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "1219:7:91",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_uint256_$",
+                          "typeString": "type(uint256)"
+                        },
+                        "typeName": "uint256"
+                      },
+                      "id": 17476,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1219:10:91",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1200:29:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 17478,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1200:29:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17480,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setValidatorSlashed",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17456,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17455,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17480,
+                  "src": "1034:18:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17454,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1034:7:91",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1024:34:91"
+            },
+            "returnParameters": {
+              "id": 17457,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1080:0:91"
+            },
+            "scope": 17489,
+            "src": "996:240:91",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17487,
+              "nodeType": "Block",
+              "src": "1341:35:91",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 17485,
+                    "name": "coconsensus",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 17443,
+                    "src": "1358:11:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 17484,
+                  "id": 17486,
+                  "nodeType": "Return",
+                  "src": "1351:18:91"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17488,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17481,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1295:2:91"
+            },
+            "returnParameters": {
+              "id": 17484,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17483,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17488,
+                  "src": "1319:20:91",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 17482,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1319:20:91",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1318:22:91"
+            },
+            "scope": 17489,
+            "src": "1272:104:91",
+            "stateMutability": "view",
+            "superFunction": 3811,
+            "visibility": "public"
+          }
+        ],
+        "scope": 17490,
+        "src": "711:667:91"
+      }
+    ],
+    "src": "0:1379:91"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.825Z",
+  "devdoc": {
+    "methods": {
+      "getReputation(address)": {
+        "params": {
+          "_validator": "An address of a validator. Returns validator reputation."
+        }
+      },
+      "isSlashed(address)": {
+        "params": {
+          "_validator": "An address of a validator. Returns true if the specified address is slashed."
+        }
+      },
+      "upsertValidator(address,uint256)": {
+        "details": "Validator information is not updated when his status is Slashed.     Validator is marked Deregistered if provided reputation is zero.     Validator is marked Staked, if he has non zero reputation value.     *      Function requires:         - msg.sender should be Coconsensus",
+        "params": {
+          "_reputation": "Validator reputation value.",
+          "_validator": "Validator address to upsert."
+        }
+      }
+    },
+    "title": "CoreputationTest contract."
+  },
+  "userdoc": {
+    "methods": {
+      "getReputation(address)": {
+        "notice": "Returns reputation of a validator."
+      },
+      "isSlashed(address)": {
+        "notice": "Check if the validator address is slashed or not."
+      },
+      "upsertValidator(address,uint256)": {
+        "notice": "Insert or update validator information."
+      }
+    }
+  }
+}

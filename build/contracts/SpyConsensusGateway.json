@@ -1,0 +1,1104 @@
+{
+  "contractName": "SpyConsensusGateway",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyCore",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyFeeGasLimit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyFeeGasPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_core",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_feeGasLimit",
+          "type": "uint256"
+        }
+      ],
+      "name": "declareOpenKernel",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_core\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_feeGasLimit\",\"type\":\"uint256\"}],\"name\":\"declareOpenKernel\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyCore\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyFeeGasLimit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyFeeGasPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/SpyConsensusGateway.sol\":\"SpyConsensusGateway\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayInterface.sol\":{\"keccak256\":\"0x8d9b64edcb090d7c7966da96cd55e51d5ce7db6d0ac5440baa25d806dea7e04e\",\"urls\":[\"bzz-raw://36e0e3eb9dfc853f1c3a2363d255de0163822cda3315dfdc5424465d205c2b18\",\"dweb:/ipfs/QmacfBvRD3144S54dphDi8KUAorEdceRcm4DZFMWMsXLjs\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/SpyConsensusGateway.sol\":{\"keccak256\":\"0xfe7f1dfdec77a37fdfb49974467de7eb84f4f0f8d317b824a35816c134f5fba8\",\"urls\":[\"bzz-raw://0d6af6c028e24c7c771d4923ee92638160540770115efa61f18cfa9ef711ac57\",\"dweb:/ipfs/QmYrnLVQHVYtNtnxFZWBs3jULJxF2TiW35T7JfJ4a8hKn8\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061015c806100206000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c806322cd65801461005c578063b823e51d14610076578063ba0bba401461007e578063e5acd28014610088578063ecafbcaf146100ba575b600080fd5b6100646100de565b60408051918252519081900360200190f35b6100646100e4565b6100866100ea565b005b6100646004803603606081101561009e57600080fd5b506001600160a01b0381351690602081013590604001356100ec565b6100c2610118565b604080516001600160a01b039092168252519081900360200190f35b60025481565b60035481565b565b600180546001600160a01b0319166001600160a01b039490941693909317909255600255600355600090565b6001546001600160a01b03168156fea265627a7a72315820e30460c1e8e1ae4f6ea053bc3e01b450cfb6069f883a4cf53c564742b8e865b164736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c806322cd65801461005c578063b823e51d14610076578063ba0bba401461007e578063e5acd28014610088578063ecafbcaf146100ba575b600080fd5b6100646100de565b60408051918252519081900360200190f35b6100646100e4565b6100866100ea565b005b6100646004803603606081101561009e57600080fd5b506001600160a01b0381351690602081013590604001356100ec565b6100c2610118565b604080516001600160a01b039092168252519081900360200190f35b60025481565b60035481565b565b600180546001600160a01b0319166001600160a01b039490941693909317909255600255600355600090565b6001546001600160a01b03168156fea265627a7a72315820e30460c1e8e1ae4f6ea053bc3e01b450cfb6069f883a4cf53c564742b8e865b164736f6c634300050d0032",
+  "sourceMap": "738:523:78:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;738:523:78;;;;;;;",
+  "deployedSourceMap": "738:523:78:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;738:523:78;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;856:29;;;:::i;:::-;;;;;;;;;;;;;;;;891;;;:::i;927:53::-;;;:::i;:::-;;986:273;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;986:273:78;;;;;;;;;;;;;:::i;828:22::-;;;:::i;:::-;;;;-1:-1:-1;;;;;828:22:78;;;;;;;;;;;;;;856:29;;;;:::o;891:::-;;;;:::o;927:53::-;:::o;986:273::-;1159:7;:15;;-1:-1:-1;;;;;;1159:15:78;-1:-1:-1;;;;;1159:15:78;;;;;;;;;;;1184:14;:29;1223:14;:29;-1:-1:-1;;986:273:78:o;828:22::-;;;-1:-1:-1;;;;;828:22:78;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../proxies/MasterCopyNonUpgradable.sol\";\nimport \"../../consensus-gateway/ConsensusGatewayInterface.sol\";\n\ncontract SpyConsensusGateway is MasterCopyNonUpgradable, ConsensusGatewayInterface {\n\n    address public spyCore;\n    uint256 public spyFeeGasPrice;\n    uint256 public spyFeeGasLimit;\n\n    function setup() public {\n        // do nothing\n    }\n\n    function declareOpenKernel(\n        address _core,\n        uint256 _feeGasPrice,\n        uint256 _feeGasLimit\n    )\n        external\n        returns (bytes32)\n    {\n        spyCore = _core;\n        spyFeeGasPrice = _feeGasPrice;\n        spyFeeGasLimit = _feeGasLimit;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/SpyConsensusGateway.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/SpyConsensusGateway.sol",
+    "exportedSymbols": {
+      "SpyConsensusGateway": [
+        15660
+      ]
+    },
+    "id": 15661,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15619,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:78"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 15620,
+        "nodeType": "ImportDirective",
+        "scope": 15661,
+        "sourceUnit": 12955,
+        "src": "621:51:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayInterface.sol",
+        "file": "../../consensus-gateway/ConsensusGatewayInterface.sol",
+        "id": 15621,
+        "nodeType": "ImportDirective",
+        "scope": 15661,
+        "sourceUnit": 3019,
+        "src": "673:63:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15622,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "770:23:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 15623,
+            "nodeType": "InheritanceSpecifier",
+            "src": "770:23:78"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15624,
+              "name": "ConsensusGatewayInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3018,
+              "src": "795:25:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusGatewayInterface_$3018",
+                "typeString": "contract ConsensusGatewayInterface"
+              }
+            },
+            "id": 15625,
+            "nodeType": "InheritanceSpecifier",
+            "src": "795:25:78"
+          }
+        ],
+        "contractDependencies": [
+          3018,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15660,
+        "linearizedBaseContracts": [
+          15660,
+          3018,
+          12954
+        ],
+        "name": "SpyConsensusGateway",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15627,
+            "name": "spyCore",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "828:22:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 15626,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "828:7:78",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15629,
+            "name": "spyFeeGasPrice",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "856:29:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15628,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "856:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15631,
+            "name": "spyFeeGasLimit",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "891:29:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15630,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "891:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15634,
+              "nodeType": "Block",
+              "src": "951:29:78",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 15635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15632,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "941:2:78"
+            },
+            "returnParameters": {
+              "id": 15633,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "951:0:78"
+            },
+            "scope": 15660,
+            "src": "927:53:78",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15658,
+              "nodeType": "Block",
+              "src": "1149:110:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15648,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15646,
+                      "name": "spyCore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15627,
+                      "src": "1159:7:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15647,
+                      "name": "_core",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15637,
+                      "src": "1169:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1159:15:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 15649,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1159:15:78"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15652,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15650,
+                      "name": "spyFeeGasPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15629,
+                      "src": "1184:14:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15651,
+                      "name": "_feeGasPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15639,
+                      "src": "1201:12:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1184:29:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15653,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1184:29:78"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15656,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15654,
+                      "name": "spyFeeGasLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15631,
+                      "src": "1223:14:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15655,
+                      "name": "_feeGasLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15641,
+                      "src": "1240:12:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1223:29:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15657,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1223:29:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15659,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareOpenKernel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15642,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15637,
+                  "name": "_core",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1022:13:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15636,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1022:7:78",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15639,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1045:20:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15638,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1045:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15641,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1075:20:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15640,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1075:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1012:89:78"
+            },
+            "returnParameters": {
+              "id": 15645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15644,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1136:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15643,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1136:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1135:9:78"
+            },
+            "scope": 15660,
+            "src": "986:273:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 3017,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15661,
+        "src": "738:523:78"
+      }
+    ],
+    "src": "0:1262:78"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/consensus_gateway/SpyConsensusGateway.sol",
+    "exportedSymbols": {
+      "SpyConsensusGateway": [
+        15660
+      ]
+    },
+    "id": 15661,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 15619,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:78"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 15620,
+        "nodeType": "ImportDirective",
+        "scope": 15661,
+        "sourceUnit": 12955,
+        "src": "621:51:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus-gateway/ConsensusGatewayInterface.sol",
+        "file": "../../consensus-gateway/ConsensusGatewayInterface.sol",
+        "id": 15621,
+        "nodeType": "ImportDirective",
+        "scope": 15661,
+        "sourceUnit": 3019,
+        "src": "673:63:78",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15622,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "770:23:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 15623,
+            "nodeType": "InheritanceSpecifier",
+            "src": "770:23:78"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 15624,
+              "name": "ConsensusGatewayInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3018,
+              "src": "795:25:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsensusGatewayInterface_$3018",
+                "typeString": "contract ConsensusGatewayInterface"
+              }
+            },
+            "id": 15625,
+            "nodeType": "InheritanceSpecifier",
+            "src": "795:25:78"
+          }
+        ],
+        "contractDependencies": [
+          3018,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15660,
+        "linearizedBaseContracts": [
+          15660,
+          3018,
+          12954
+        ],
+        "name": "SpyConsensusGateway",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 15627,
+            "name": "spyCore",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "828:22:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 15626,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "828:7:78",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15629,
+            "name": "spyFeeGasPrice",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "856:29:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15628,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "856:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15631,
+            "name": "spyFeeGasLimit",
+            "nodeType": "VariableDeclaration",
+            "scope": 15660,
+            "src": "891:29:78",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 15630,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "891:7:78",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15634,
+              "nodeType": "Block",
+              "src": "951:29:78",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 15635,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15632,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "941:2:78"
+            },
+            "returnParameters": {
+              "id": 15633,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "951:0:78"
+            },
+            "scope": 15660,
+            "src": "927:53:78",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 15658,
+              "nodeType": "Block",
+              "src": "1149:110:78",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15648,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15646,
+                      "name": "spyCore",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15627,
+                      "src": "1159:7:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15647,
+                      "name": "_core",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15637,
+                      "src": "1169:5:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1159:15:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 15649,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1159:15:78"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15652,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15650,
+                      "name": "spyFeeGasPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15629,
+                      "src": "1184:14:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15651,
+                      "name": "_feeGasPrice",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15639,
+                      "src": "1201:12:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1184:29:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15653,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1184:29:78"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 15656,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 15654,
+                      "name": "spyFeeGasLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15631,
+                      "src": "1223:14:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 15655,
+                      "name": "_feeGasLimit",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 15641,
+                      "src": "1240:12:78",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1223:29:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 15657,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1223:29:78"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 15659,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "declareOpenKernel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 15642,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15637,
+                  "name": "_core",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1022:13:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 15636,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1022:7:78",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15639,
+                  "name": "_feeGasPrice",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1045:20:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15638,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1045:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 15641,
+                  "name": "_feeGasLimit",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1075:20:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 15640,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1075:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1012:89:78"
+            },
+            "returnParameters": {
+              "id": 15645,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 15644,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 15659,
+                  "src": "1136:7:78",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 15643,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1136:7:78",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1135:9:78"
+            },
+            "scope": 15660,
+            "src": "986:273:78",
+            "stateMutability": "nonpayable",
+            "superFunction": 3017,
+            "visibility": "external"
+          }
+        ],
+        "scope": 15661,
+        "src": "738:523:78"
+      }
+    ],
+    "src": "0:1262:78"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.799Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

@@ -1,0 +1,1705 @@
+{
+  "contractName": "ValidatorSetDouble",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "MAX_FUTURE_END_HEIGHT",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "SENTINEL_VALIDATORS",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "forwardValidatorSetCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "inForwardValidatorSet",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "inValidatorSet",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validatorBeginHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validatorEndHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_height",
+          "type": "uint256"
+        }
+      ],
+      "name": "validatorSetCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "validators",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_activeHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "setupValidatorSetDouble",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_beginHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "insertValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_endHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "removeValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_nextHeight",
+          "type": "uint256"
+        }
+      ],
+      "name": "incrementActiveHeight",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"MAX_FUTURE_END_HEIGHT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"SENTINEL_VALIDATORS\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"forwardValidatorSetCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"inForwardValidatorSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"inValidatorSet\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_nextHeight\",\"type\":\"uint256\"}],\"name\":\"incrementActiveHeight\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_beginHeight\",\"type\":\"uint256\"}],\"name\":\"insertValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_endHeight\",\"type\":\"uint256\"}],\"name\":\"removeValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_activeHeight\",\"type\":\"uint256\"}],\"name\":\"setupValidatorSetDouble\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"validatorBeginHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"validatorEndHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_height\",\"type\":\"uint256\"}],\"name\":\"validatorSetCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"validators\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"forwardValidatorSetCount(uint256)\":{\"details\":\"Function requires:         - height is less than active height\",\"params\":{\"_height\":\"Height for which to return the forward validator set count.\"}},\"inForwardValidatorSet(address,uint256)\":{\"params\":{\"_height\":\"Metablock height.\",\"_validator\":\"Address of validator.\"}},\"inValidatorSet(address,uint256)\":{\"params\":{\"_height\":\"Metablock height.\",\"_validator\":\"Address of validator.\"}},\"validatorSetCount(uint256)\":{\"details\":\"Function requires:         - height is less than active height\",\"params\":{\"_height\":\"Height for which to return the validator set count.\"}}},\"title\":\"ValidatorSetDouble contract.\"},\"userdoc\":{\"methods\":{\"forwardValidatorSetCount(uint256)\":{\"notice\":\"returns the forward validator set count for heights up to active height, but not included.\"},\"inForwardValidatorSet(address,uint256)\":{\"notice\":\"Checks if validator is in forward validator set or not.\"},\"inValidatorSet(address,uint256)\":{\"notice\":\"Checks if validator is in validator set or not.\"},\"incrementActiveHeight(uint256)\":{\"notice\":\"\\\\ref ValidatorSet.incrementActiveHeightInternal(uint256).\"},\"insertValidator(address,uint256)\":{\"notice\":\"\\\\ref ValidatorSet.insertValidatorInternal(address,uint256).\"},\"removeValidator(address,uint256)\":{\"notice\":\"\\\\ref ValidatorSet.removeValidatorInternal(address,uint256).\"},\"validatorSetCount(uint256)\":{\"notice\":\"returns the validator set count for heights up to active height, but not included.\"}},\"notice\":\"It is used for testing ValidatorSet contract.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/validator-set/ValidatorSetDouble.sol\":\"ValidatorSetDouble\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/validator-set/ValidatorSetDouble.sol\":{\"keccak256\":\"0x890e194fafe2db96d6fc6cde8bfa09e3dfa0d7f0a53727130d5662653e736614\",\"urls\":[\"bzz-raw://e5950e6e082155813aef067e09fe8e81a83f8fbb5b04f9bfdec2c12aebbf984c\",\"dweb:/ipfs/QmNmCKdWXLwUcnmnWqDEzrRTCEtUPsyv3FyG3dmfrsA7vC\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSet.sol\":{\"keccak256\":\"0xd6a72ed651ccf4ba5829e9b4f48400690b8b25880707a5a865fcf4fec83b749f\",\"urls\":[\"bzz-raw://844c6a7bf5e183e6b25a480a7645e88af7f1de4c7c6d4e15fe681a6446b22f91\",\"dweb:/ipfs/QmR61dzCY4XmYrx5QeE1xc9CZahEsxsmVMTJKumUqxizyA\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSetAbstract.sol\":{\"keccak256\":\"0x0aa1d85ab2758942bc9590f22352a14b3fdb4fe81ea896ef8548bfa58a3435b1\",\"urls\":[\"bzz-raw://c0758b2fa9e268d696edf472f6a358098835a6770268cd4636c0a2caa47b1b89\",\"dweb:/ipfs/QmVzNLU9V7zMYNcHP2Z5GHxZchKeXtRxbCJnP76BbSUfMq\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b\",\"urls\":[\"bzz-raw://1eb493553b27efd46c231a836a83ce50d215639feb97b4aac9f301d0fd034ff5\",\"dweb:/ipfs/QmbMdvSXcqGKxeeYvzF3VrWpoHQyVzMXBhzhAokF2Gdymv\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506109b0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100cf5760003560e01c8063b6735be41161008c578063dfa8b87e11610066578063dfa8b87e1461023e578063e4eaf14e14610264578063f173034a1461026c578063fa52c7d814610298576100cf565b8063b6735be4146101bb578063d1a976da146101e1578063dcf1c34a14610221576100cf565b8063088845b9146100d45780630f8a9af5146100f3578063149fbab9146101105780634adba1ce146101345780638ed89c1a146101635780639ea735fc1461018f575b600080fd5b6100f1600480360360208110156100ea57600080fd5b50356102be565b005b6100f16004803603602081101561010957600080fd5b50356102ca565b6101186102d3565b604080516001600160a01b039092168252519081900360200190f35b6101516004803603602081101561014a57600080fd5b50356102d8565b60408051918252519081900360200190f35b6100f16004803603604081101561017957600080fd5b506001600160a01b03813516906020013561032d565b6100f1600480360360408110156101a557600080fd5b506001600160a01b03813516906020013561033b565b610151600480360360208110156101d157600080fd5b50356001600160a01b0316610345565b61020d600480360360408110156101f757600080fd5b506001600160a01b038135169060200135610357565b604080519115158252519081900360200190f35b6101516004803603602081101561023757600080fd5b50356103c1565b6101516004803603602081101561025457600080fd5b50356001600160a01b0316610416565b610151610428565b61020d6004803603604081101561028257600080fd5b506001600160a01b03813516906020013561042e565b610118600480360360208110156102ae57600080fd5b50356001600160a01b0316610492565b6102c7816104ad565b50565b6102c7816104ee565b600181565b6000600554821061031a5760405162461bcd60e51b81526004018080602001828103825260408152602001806108ca6040913960400191505060405180910390fd5b5060009081526004602052604090205490565b610337828261055f565b5050565b61033782826106ca565b60016020526000908152604090205481565b6001600160a01b038216600090815260016020526040812054821080159061039757506001600160a01b0383166000908152600260205260409020548211155b80156103ba57506001600160a01b03831660009081526002602052604090205415155b9392505050565b600060055482106104035760405162461bcd60e51b815260040180806020018281038252603881526020018061090a6038913960400191505060405180910390fd5b5060009081526003602052604090205490565b60026020526000908152604090205481565b60001981565b6001600160a01b038216600090815260016020526040812054821080159061039757506001600160a01b038316600090815260026020526040902054821080156103ba575050506001600160a01b0316600090815260026020526040902054151590565b6000602081905290815260409020546001600160a01b031681565b600555600160008181526020527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d80546001600160a01b0319169091179055565b60055461050290600163ffffffff6108a216565b811461050a57fe5b60008181526003602081905260408220549161052d84600163ffffffff6108a216565b815260208082019290925260409081016000908120939093558383526003825280832054600490925290912055600555565b8080600554146105b6576040805162461bcd60e51b815260206004820181905260248201527f486569676874206d75737420657175616c20616374697665206865696768742e604482015290519081900360640190fd5b6001600160a01b038316600090815260026020526040902054600019146105d957fe5b6001600160a01b038316600090815260016020526040902054821161062f5760405162461bcd60e51b815260040180806020018281038252603a815260200180610942603a913960400191505060405180910390fd5b6001600160a01b038316600090815260026020526040812083905560055461065e90600163ffffffff6108a216565b60008181526003602052604090205490915061068190600163ffffffff6108b416565b60008281526003602090815260408083209390935560055482526004905220546106b290600163ffffffff6108b416565b60055460009081526004602052604090205550505050565b808060055414610721576040805162461bcd60e51b815260206004820181905260248201527f486569676874206d75737420657175616c20616374697665206865696768742e604482015290519081900360640190fd5b6001600160a01b03831661073157fe5b6001600160a01b03838116600090815260208190526040902054161561075357fe5b600160009081526020527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d546001600160a01b03168061078f57fe5b6001600160a01b0380851660008181526020818152604080832080549587166001600160a01b03199687161790557fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d805490951684179094559181526001808352838220879055600283528382206000199055600554825260039092529182205461081f9163ffffffff6108a216565b60058054600090815260036020819052604082208490559154929350839261084e90600163ffffffff6108a216565b8152602001908152602001600020819055506108896001600460006005548152602001908152602001600020546108a290919063ffffffff16565b6005546000908152600460205260409020555050505050565b6000828201838110156103ba57600080fd5b6000828211156108c357600080fd5b5090039056fe466f72776172642076616c696461746f722073657420636f756e74206973206f6e6c7920646566696e656420757020746f20616374697665206865696768742e56616c696461746f722073657420636f756e74206973206f6e6c7920646566696e656420757020746f20616374697665206865696768742e456e6420686569676874206d757374206265207374726963746c792067726561746572207468616e20746865207374617274206865696768742ea265627a7a723158206af736604a14fb2ec4f53d0eed47530348a05db3d2d4457f68860deee032f57864736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100cf5760003560e01c8063b6735be41161008c578063dfa8b87e11610066578063dfa8b87e1461023e578063e4eaf14e14610264578063f173034a1461026c578063fa52c7d814610298576100cf565b8063b6735be4146101bb578063d1a976da146101e1578063dcf1c34a14610221576100cf565b8063088845b9146100d45780630f8a9af5146100f3578063149fbab9146101105780634adba1ce146101345780638ed89c1a146101635780639ea735fc1461018f575b600080fd5b6100f1600480360360208110156100ea57600080fd5b50356102be565b005b6100f16004803603602081101561010957600080fd5b50356102ca565b6101186102d3565b604080516001600160a01b039092168252519081900360200190f35b6101516004803603602081101561014a57600080fd5b50356102d8565b60408051918252519081900360200190f35b6100f16004803603604081101561017957600080fd5b506001600160a01b03813516906020013561032d565b6100f1600480360360408110156101a557600080fd5b506001600160a01b03813516906020013561033b565b610151600480360360208110156101d157600080fd5b50356001600160a01b0316610345565b61020d600480360360408110156101f757600080fd5b506001600160a01b038135169060200135610357565b604080519115158252519081900360200190f35b6101516004803603602081101561023757600080fd5b50356103c1565b6101516004803603602081101561025457600080fd5b50356001600160a01b0316610416565b610151610428565b61020d6004803603604081101561028257600080fd5b506001600160a01b03813516906020013561042e565b610118600480360360208110156102ae57600080fd5b50356001600160a01b0316610492565b6102c7816104ad565b50565b6102c7816104ee565b600181565b6000600554821061031a5760405162461bcd60e51b81526004018080602001828103825260408152602001806108ca6040913960400191505060405180910390fd5b5060009081526004602052604090205490565b610337828261055f565b5050565b61033782826106ca565b60016020526000908152604090205481565b6001600160a01b038216600090815260016020526040812054821080159061039757506001600160a01b0383166000908152600260205260409020548211155b80156103ba57506001600160a01b03831660009081526002602052604090205415155b9392505050565b600060055482106104035760405162461bcd60e51b815260040180806020018281038252603881526020018061090a6038913960400191505060405180910390fd5b5060009081526003602052604090205490565b60026020526000908152604090205481565b60001981565b6001600160a01b038216600090815260016020526040812054821080159061039757506001600160a01b038316600090815260026020526040902054821080156103ba575050506001600160a01b0316600090815260026020526040902054151590565b6000602081905290815260409020546001600160a01b031681565b600555600160008181526020527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d80546001600160a01b0319169091179055565b60055461050290600163ffffffff6108a216565b811461050a57fe5b60008181526003602081905260408220549161052d84600163ffffffff6108a216565b815260208082019290925260409081016000908120939093558383526003825280832054600490925290912055600555565b8080600554146105b6576040805162461bcd60e51b815260206004820181905260248201527f486569676874206d75737420657175616c20616374697665206865696768742e604482015290519081900360640190fd5b6001600160a01b038316600090815260026020526040902054600019146105d957fe5b6001600160a01b038316600090815260016020526040902054821161062f5760405162461bcd60e51b815260040180806020018281038252603a815260200180610942603a913960400191505060405180910390fd5b6001600160a01b038316600090815260026020526040812083905560055461065e90600163ffffffff6108a216565b60008181526003602052604090205490915061068190600163ffffffff6108b416565b60008281526003602090815260408083209390935560055482526004905220546106b290600163ffffffff6108b416565b60055460009081526004602052604090205550505050565b808060055414610721576040805162461bcd60e51b815260206004820181905260248201527f486569676874206d75737420657175616c20616374697665206865696768742e604482015290519081900360640190fd5b6001600160a01b03831661073157fe5b6001600160a01b03838116600090815260208190526040902054161561075357fe5b600160009081526020527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d546001600160a01b03168061078f57fe5b6001600160a01b0380851660008181526020818152604080832080549587166001600160a01b03199687161790557fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d805490951684179094559181526001808352838220879055600283528382206000199055600554825260039092529182205461081f9163ffffffff6108a216565b60058054600090815260036020819052604082208490559154929350839261084e90600163ffffffff6108a216565b8152602001908152602001600020819055506108896001600460006005548152602001908152602001600020546108a290919063ffffffff16565b6005546000908152600460205260409020555050505050565b6000828201838110156103ba57600080fd5b6000828211156108c357600080fd5b5090039056fe466f72776172642076616c696461746f722073657420636f756e74206973206f6e6c7920646566696e656420757020746f20616374697665206865696768742e56616c696461746f722073657420636f756e74206973206f6e6c7920646566696e656420757020746f20616374697665206865696768742e456e6420686569676874206d757374206265207374726963746c792067726561746572207468616e20746865207374617274206865696768742ea265627a7a723158206af736604a14fb2ec4f53d0eed47530348a05db3d2d4457f68860deee032f57864736f6c634300050d0032",
+  "sourceMap": "776:926:97:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;776:926:97;;;;;;;",
+  "deployedSourceMap": "776:926:97:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;776:926:97;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;857:139;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;857:139:97;;:::i;:::-;;1567:133;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1567:133:97;;:::i;1243:58:102:-;;;:::i;:::-;;;;-1:-1:-1;;;;;1243:58:102;;;;;;;;;;;;;;5697:293;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5697:293:102;;:::i;:::-;;;;;;;;;;;;;;;;1329:151:97;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;1329:151:97;;;;;;;;:::i;1085:155::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;1085:155:97;;;;;;;;:::i;1654:55:102:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1654:55:102;-1:-1:-1;;;;;1654:55:102;;:::i;4042:290::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;4042:290:102;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;5106:284;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;5106:284:102;;:::i;1955:53::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1955:53:102;-1:-1:-1;;;;;1955:53:102;;:::i;1029:123::-;;;:::i;4519:296::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;4519:296:102;;;;;;;;:::i;1366:45::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1366:45:102;-1:-1:-1;;;;;1366:45:102;;:::i;857:139:97:-;944:45;975:13;944:30;:45::i;:::-;857:139;:::o;1567:133::-;1638:55;1681:11;1638:42;:55::i;1243:58:102:-;1297:3;1243:58;:::o;5697:293::-;5793:7;5847:12;;5837:7;:22;5816:133;;;;-1:-1:-1;;;5816:133:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;5966:17:102;;;;:8;:17;;;;;;;5697:293::o;1329:151:97:-;1413:60;1450:10;1462;1413:36;:60::i;:::-;1329:151;;:::o;1085:155::-;1171:62;1208:10;1220:12;1171:36;:62::i;1654:55:102:-;;;;;;;;;;;;;:::o;4042:290::-;-1:-1:-1;;;;;4175:32:102;;4148:4;4175:32;;;:20;:32;;;;;;:43;-1:-1:-1;4175:43:102;;;:100;;-1:-1:-1;;;;;;4234:30:102;;;;;;:18;:30;;;;;;:41;-1:-1:-1;4234:41:102;4175:100;:150;;;;-1:-1:-1;;;;;;4291:30:102;;4324:1;4291:30;;;:18;:30;;;;;;:34;;4175:150;4168:157;4042:290;-1:-1:-1;;;4042:290:102:o;5106:284::-;5195:7;5249:12;;5239:7;:22;5218:125;;;;-1:-1:-1;;;5218:125:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;5360:23:102;;;;:14;:23;;;;;;;5106:284::o;1955:53::-;;;;;;;;;;;;;:::o;1029:123::-;-1:-1:-1;;1029:123:102;:::o;4519:296::-;-1:-1:-1;;;;;4659:32:102;;4632:4;4659:32;;;:20;:32;;;;;;:43;-1:-1:-1;4659:43:102;;;:99;;-1:-1:-1;;;;;;4718:30:102;;;;;;:18;:30;;;;;;:40;-1:-1:-1;4659:149:102;;;;-1:-1:-1;;;;;;;;4774:30:102;4807:1;4774:30;;;:18;:30;;;;;;:34;;;4519:296::o;1366:45::-;;;;;;;;;;;;;-1:-1:-1;;;;;1366:45:102;;:::o;3655:179::-;3736:12;:28;1297:3;3774:10;:31;;;;;;:53;;-1:-1:-1;;;;;;3774:53:102;;;;;;3655:179::o;6357:477::-;6470:12;;:19;;6487:1;6470:19;:16;:19;:::i;:::-;6455:11;:34;6448:42;;;;6702:27;;;;:14;:27;;;;;;;;;6680:18;6717:11;6696:1;6680:18;:15;:18;:::i;:::-;6665:34;;;;;;;;;;;;;;-1:-1:-1;6665:34:102;;;:64;;;;6763:27;;;:14;:27;;;;;;6739:8;:21;;;;;;:51;6801:12;:26;6357:477::o;8775:730::-;8912:10;3448:7;3432:12;;:23;3411:102;;;;;-1:-1:-1;;;3411:102:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;8945:30:102;;;;;;:18;:30;;;;;;-1:-1:-1;;8945:55:102;8938:63;;;;-1:-1:-1;;;;;9033:32:102;;;;;;:20;:32;;;;;;:45;-1:-1:-1;9012:150:102;;;;-1:-1:-1;;;9012:150:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;9173:30:102;;;;;;:18;:30;;;;;:43;;;9343:12;;:19;;9360:1;9343:19;:16;:19;:::i;:::-;9401:26;;;;:14;:26;;;;;;9322:40;;-1:-1:-1;9401:33:102;;9432:1;9401:33;:30;:33;:::i;:::-;9372:26;;;;:14;:26;;;;;;;;:62;;;;9478:12;;9469:22;;:8;:22;;;;:29;;9496:1;9469:29;:26;:29;:::i;:::-;9453:12;;9444:22;;;;:8;:22;;;;;:54;-1:-1:-1;;;;8775:730:102:o;7294:986::-;7433:12;3448:7;3432:12;;:23;3411:102;;;;;-1:-1:-1;;;3411:102:102;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;7468:24:102;;7461:32;;;;-1:-1:-1;;;;;7510:22:102;;;7544:1;7510:22;;;;;;;;;;;;:36;7503:44;;;;1297:3;7558:21;7582:31;;;;;;;-1:-1:-1;;;;;7582:31:102;7630:27;7623:35;;;;-1:-1:-1;;;;;7668:22:102;;;:10;:22;;;;;;;;;;;:38;;;;;-1:-1:-1;;;;;;7668:38:102;;;;;;7716:31;:44;;;;;;;;;;7771:32;;;7668:38;7771:32;;;;;;:47;;;7828:18;:30;;;;;-1:-1:-1;;7828:54:102;;8058:12;;8043:28;;:14;:28;;;;;;;:35;;;:32;:35;:::i;:::-;8103:12;;;8088:28;;;;:14;:28;;;;;;;:52;;;8165:12;;8011:67;;-1:-1:-1;8011:67:102;;8165:19;;8182:1;8165:19;:16;:19;:::i;:::-;8150:35;;;;;;;;;;;:59;;;;8244:29;8271:1;8244:8;:22;8253:12;;8244:22;;;;;;;;;;;;:26;;:29;;;;:::i;:::-;8228:12;;8219:22;;;;:8;:22;;;;;:54;-1:-1:-1;;;;;7294:986:102:o;1431:145:106:-;1489:7;1520:5;;;1543:6;;;;1535:15;;;;;1205:145;1263:7;1295:1;1290;:6;;1282:15;;;;;;-1:-1:-1;1319:5:106;;;1205:145::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../validator-set/ValidatorSet.sol\";\n\n/**\n * @title ValidatorSetDouble contract.\n *\n * @notice It is used for testing ValidatorSet contract.\n */\ncontract ValidatorSetDouble is ValidatorSet {\n\n    /* External Functions */\n\n    function setupValidatorSetDouble(uint256 _activeHeight)\n        external\n    {\n        ValidatorSet.setupValidatorSet(_activeHeight);\n    }\n\n    /**\n     * \\ref ValidatorSet.insertValidatorInternal(address,uint256).\n     */\n    function insertValidator(address _validator, uint256 _beginHeight) external {\n        ValidatorSet.insertValidatorInternal(_validator, _beginHeight);\n    }\n\n    /**\n     * \\ref ValidatorSet.removeValidatorInternal(address,uint256).\n     */\n    function removeValidator(address _validator, uint256 _endHeight) external {\n        ValidatorSet.removeValidatorInternal(_validator, _endHeight);\n    }\n\n    /**\n     * \\ref ValidatorSet.incrementActiveHeightInternal(uint256).\n     */\n    function incrementActiveHeight(uint256 _nextHeight) external {\n        ValidatorSet.incrementActiveHeightInternal(_nextHeight);\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/validator-set/ValidatorSetDouble.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/validator-set/ValidatorSetDouble.sol",
+    "exportedSymbols": {
+      "ValidatorSetDouble": [
+        17898
+      ]
+    },
+    "id": 17899,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17840,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:97"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSet.sol",
+        "file": "../../validator-set/ValidatorSet.sol",
+        "id": 17841,
+        "nodeType": "ImportDirective",
+        "scope": 17899,
+        "sourceUnit": 18843,
+        "src": "621:46:97",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17842,
+              "name": "ValidatorSet",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18842,
+              "src": "807:12:97",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ValidatorSet_$18842",
+                "typeString": "contract ValidatorSet"
+              }
+            },
+            "id": 17843,
+            "nodeType": "InheritanceSpecifier",
+            "src": "807:12:97"
+          }
+        ],
+        "contractDependencies": [
+          18842,
+          18870
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ValidatorSetDouble contract.\n * @notice It is used for testing ValidatorSet contract.",
+        "fullyImplemented": true,
+        "id": 17898,
+        "linearizedBaseContracts": [
+          17898,
+          18842,
+          18870
+        ],
+        "name": "ValidatorSetDouble",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 17854,
+              "nodeType": "Block",
+              "src": "934:62:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17851,
+                        "name": "_activeHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17845,
+                        "src": "975:13:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17848,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "944:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17850,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupValidatorSet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18544,
+                      "src": "944:30:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 17852,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "944:45:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17853,
+                  "nodeType": "ExpressionStatement",
+                  "src": "944:45:97"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17855,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupValidatorSetDouble",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17845,
+                  "name": "_activeHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17855,
+                  "src": "890:21:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17844,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:23:97"
+            },
+            "returnParameters": {
+              "id": 17847,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "934:0:97"
+            },
+            "scope": 17898,
+            "src": "857:139:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17869,
+              "nodeType": "Block",
+              "src": "1161:79:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17865,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17857,
+                        "src": "1208:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17866,
+                        "name": "_beginHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17859,
+                        "src": "1220:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17862,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1171:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17864,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertValidatorInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18778,
+                      "src": "1171:36:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 17867,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1171:62:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17868,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1171:62:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.insertValidatorInternal(address,uint256).",
+            "id": 17870,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17860,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17857,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17870,
+                  "src": "1110:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17856,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:7:97",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17859,
+                  "name": "_beginHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17870,
+                  "src": "1130:20:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17858,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1109:42:97"
+            },
+            "returnParameters": {
+              "id": 17861,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1161:0:97"
+            },
+            "scope": 17898,
+            "src": "1085:155:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17884,
+              "nodeType": "Block",
+              "src": "1403:77:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17880,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17872,
+                        "src": "1450:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17881,
+                        "name": "_endHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17874,
+                        "src": "1462:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17877,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1413:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17879,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "removeValidatorInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18841,
+                      "src": "1413:36:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 17882,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1413:60:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17883,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1413:60:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.removeValidatorInternal(address,uint256).",
+            "id": 17885,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17875,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17872,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17885,
+                  "src": "1354:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17871,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1354:7:97",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17874,
+                  "name": "_endHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17885,
+                  "src": "1374:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17873,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1374:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1353:40:97"
+            },
+            "returnParameters": {
+              "id": 17876,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1403:0:97"
+            },
+            "scope": 17898,
+            "src": "1329:151:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17896,
+              "nodeType": "Block",
+              "src": "1628:72:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17893,
+                        "name": "_nextHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17887,
+                        "src": "1681:11:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17890,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1638:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17892,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "incrementActiveHeightInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18676,
+                      "src": "1638:42:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 17894,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1638:55:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17895,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1638:55:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.incrementActiveHeightInternal(uint256).",
+            "id": 17897,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "incrementActiveHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17888,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17887,
+                  "name": "_nextHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17897,
+                  "src": "1598:19:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17886,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1598:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1597:21:97"
+            },
+            "returnParameters": {
+              "id": 17889,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1628:0:97"
+            },
+            "scope": 17898,
+            "src": "1567:133:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17899,
+        "src": "776:926:97"
+      }
+    ],
+    "src": "0:1703:97"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/validator-set/ValidatorSetDouble.sol",
+    "exportedSymbols": {
+      "ValidatorSetDouble": [
+        17898
+      ]
+    },
+    "id": 17899,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 17840,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:97"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/validator-set/ValidatorSet.sol",
+        "file": "../../validator-set/ValidatorSet.sol",
+        "id": 17841,
+        "nodeType": "ImportDirective",
+        "scope": 17899,
+        "sourceUnit": 18843,
+        "src": "621:46:97",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 17842,
+              "name": "ValidatorSet",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 18842,
+              "src": "807:12:97",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ValidatorSet_$18842",
+                "typeString": "contract ValidatorSet"
+              }
+            },
+            "id": 17843,
+            "nodeType": "InheritanceSpecifier",
+            "src": "807:12:97"
+          }
+        ],
+        "contractDependencies": [
+          18842,
+          18870
+        ],
+        "contractKind": "contract",
+        "documentation": "@title ValidatorSetDouble contract.\n * @notice It is used for testing ValidatorSet contract.",
+        "fullyImplemented": true,
+        "id": 17898,
+        "linearizedBaseContracts": [
+          17898,
+          18842,
+          18870
+        ],
+        "name": "ValidatorSetDouble",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 17854,
+              "nodeType": "Block",
+              "src": "934:62:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17851,
+                        "name": "_activeHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17845,
+                        "src": "975:13:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17848,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "944:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17850,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "setupValidatorSet",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18544,
+                      "src": "944:30:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 17852,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "944:45:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17853,
+                  "nodeType": "ExpressionStatement",
+                  "src": "944:45:97"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 17855,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupValidatorSetDouble",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17846,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17845,
+                  "name": "_activeHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17855,
+                  "src": "890:21:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17844,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "890:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "889:23:97"
+            },
+            "returnParameters": {
+              "id": 17847,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "934:0:97"
+            },
+            "scope": 17898,
+            "src": "857:139:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17869,
+              "nodeType": "Block",
+              "src": "1161:79:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17865,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17857,
+                        "src": "1208:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17866,
+                        "name": "_beginHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17859,
+                        "src": "1220:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17862,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1171:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17864,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "insertValidatorInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18778,
+                      "src": "1171:36:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 17867,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1171:62:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17868,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1171:62:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.insertValidatorInternal(address,uint256).",
+            "id": 17870,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17860,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17857,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17870,
+                  "src": "1110:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17856,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1110:7:97",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17859,
+                  "name": "_beginHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17870,
+                  "src": "1130:20:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17858,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1109:42:97"
+            },
+            "returnParameters": {
+              "id": 17861,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1161:0:97"
+            },
+            "scope": 17898,
+            "src": "1085:155:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17884,
+              "nodeType": "Block",
+              "src": "1403:77:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17880,
+                        "name": "_validator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17872,
+                        "src": "1450:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 17881,
+                        "name": "_endHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17874,
+                        "src": "1462:10:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17877,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1413:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17879,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "removeValidatorInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18841,
+                      "src": "1413:36:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256)"
+                      }
+                    },
+                    "id": 17882,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1413:60:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17883,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1413:60:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.removeValidatorInternal(address,uint256).",
+            "id": 17885,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17875,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17872,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17885,
+                  "src": "1354:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 17871,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1354:7:97",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 17874,
+                  "name": "_endHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17885,
+                  "src": "1374:18:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17873,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1374:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1353:40:97"
+            },
+            "returnParameters": {
+              "id": 17876,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1403:0:97"
+            },
+            "scope": 17898,
+            "src": "1329:151:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 17896,
+              "nodeType": "Block",
+              "src": "1628:72:97",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 17893,
+                        "name": "_nextHeight",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17887,
+                        "src": "1681:11:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 17890,
+                        "name": "ValidatorSet",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 18842,
+                        "src": "1638:12:97",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_ValidatorSet_$18842_$",
+                          "typeString": "type(contract ValidatorSet)"
+                        }
+                      },
+                      "id": 17892,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "incrementActiveHeightInternal",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 18676,
+                      "src": "1638:42:97",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 17894,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1638:55:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 17895,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1638:55:97"
+                }
+              ]
+            },
+            "documentation": "\\ref ValidatorSet.incrementActiveHeightInternal(uint256).",
+            "id": 17897,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "incrementActiveHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17888,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17887,
+                  "name": "_nextHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 17897,
+                  "src": "1598:19:97",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 17886,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1598:7:97",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1597:21:97"
+            },
+            "returnParameters": {
+              "id": 17889,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1628:0:97"
+            },
+            "scope": 17898,
+            "src": "1567:133:97",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 17899,
+        "src": "776:926:97"
+      }
+    ],
+    "src": "0:1703:97"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.831Z",
+  "devdoc": {
+    "methods": {
+      "forwardValidatorSetCount(uint256)": {
+        "details": "Function requires:         - height is less than active height",
+        "params": {
+          "_height": "Height for which to return the forward validator set count."
+        }
+      },
+      "inForwardValidatorSet(address,uint256)": {
+        "params": {
+          "_height": "Metablock height.",
+          "_validator": "Address of validator."
+        }
+      },
+      "inValidatorSet(address,uint256)": {
+        "params": {
+          "_height": "Metablock height.",
+          "_validator": "Address of validator."
+        }
+      },
+      "validatorSetCount(uint256)": {
+        "details": "Function requires:         - height is less than active height",
+        "params": {
+          "_height": "Height for which to return the validator set count."
+        }
+      }
+    },
+    "title": "ValidatorSetDouble contract."
+  },
+  "userdoc": {
+    "methods": {
+      "forwardValidatorSetCount(uint256)": {
+        "notice": "returns the forward validator set count for heights up to active height, but not included."
+      },
+      "inForwardValidatorSet(address,uint256)": {
+        "notice": "Checks if validator is in forward validator set or not."
+      },
+      "inValidatorSet(address,uint256)": {
+        "notice": "Checks if validator is in validator set or not."
+      },
+      "incrementActiveHeight(uint256)": {
+        "notice": "\\ref ValidatorSet.incrementActiveHeightInternal(uint256)."
+      },
+      "insertValidator(address,uint256)": {
+        "notice": "\\ref ValidatorSet.insertValidatorInternal(address,uint256)."
+      },
+      "removeValidator(address,uint256)": {
+        "notice": "\\ref ValidatorSet.removeValidatorInternal(address,uint256)."
+      },
+      "validatorSetCount(uint256)": {
+        "notice": "returns the validator set count for heights up to active height, but not included."
+      }
+    },
+    "notice": "It is used for testing ValidatorSet contract."
+  }
+}

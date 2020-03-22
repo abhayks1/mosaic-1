@@ -1,0 +1,972 @@
+{
+  "contractName": "CoconsensusModule",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCoconsensus",
+      "outputs": [
+        {
+          "internalType": "contract CoconsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"getCoconsensus\",\"outputs\":[{\"internalType\":\"contract CoconsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getCoconsensus()\":{\"return\":\"Coconsensus contract address.\"}}},\"userdoc\":{\"methods\":{\"getCoconsensus()\":{\"notice\":\"Gets the coconsensus contract address.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":\"CoconsensusModule\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol\":{\"keccak256\":\"0x0f3733398949bf1b23a80e24d0db0f9b88ede265fa4235878c3032c9614ee3b1\",\"urls\":[\"bzz-raw://43b4f0e9ca35fb3379bbf4645dfc2379fd8f53b419066c4976874b5c3e7e5ae0\",\"dweb:/ipfs/Qmd2YzDr4jygAnj3tSg6d9jfajqFnhg8SaZk5Gg7Vw4L9H\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol\":{\"keccak256\":\"0xabe9fce2fae63ee9d6186ba03faa248d9d9fe8ef3202218e473dfb8d8ba4df71\",\"urls\":[\"bzz-raw://bb79cb8133c43b7ae5973180717b033a2bc9325cf25cd1a4879c9b805fee999e\",\"dweb:/ipfs/QmbUW7mmQXRJRZTVLLpNDoHZhyw2jiTwumHi92MmGE1wD5\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600080546001600160a01b031916614d00179055348015602357600080fd5b506093806100326000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806323609af714602d575b600080fd5b6033604f565b604080516001600160a01b039092168252519081900360200190f35b6000546001600160a01b03169056fea265627a7a72315820f3bd626e928ddcf43cc282da5eb395c5e6ec7c2a28642c5b98fbd77cf7fbe16264736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806323609af714602d575b600080fd5b6033604f565b604080516001600160a01b039092168252519081900360200190f35b6000546001600160a01b03169056fea265627a7a72315820f3bd626e928ddcf43cc282da5eb395c5e6ec7c2a28642c5b98fbd77cf7fbe16264736f6c634300050d0032",
+  "sourceMap": "659:724:19:-;;;775:88;;;-1:-1:-1;;;;;;775:88:19;820:42;775:88;;;659:724;5:2:-1;;;;30:1;27;20:12;5:2;659:724:19;;;;;;;",
+  "deployedSourceMap": "659:724:19:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;659:724:19;;;;;;;;;;;;;;;;;;;1248:133;;;:::i;:::-;;;;-1:-1:-1;;;;;1248:133:19;;;;;;;;;;;;;;;1295:20;1355:18;-1:-1:-1;;;;;1355:18:19;1248:133;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"./CoconsensusInterface.sol\";\n\ncontract CoconsensusModule {\n\n    /* Storage */\n\n    /** Address of Coconsensus contract on auxiliary chain. */\n    address private coconsensusAddress = address(0x0000000000000000000000000000000000004D00);\n\n\n    /* Modifiers */\n\n    modifier onlyCoconsensus()\n    {\n        require(\n            msg.sender == address(getCoconsensus()),\n            \"Only the Coconsensus contract can call this function.\"\n        );\n\n        _;\n    }\n\n\n    /* Public functions */\n\n    /**\n     * @notice Gets the coconsensus contract address.\n     *\n     * @return Coconsensus contract address.\n     */\n    function getCoconsensus() public view returns (CoconsensusInterface) {\n        return CoconsensusInterface(coconsensusAddress);\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol",
+    "exportedSymbols": {
+      "CoconsensusModule": [
+        3812
+      ]
+    },
+    "id": 3813,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3780,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:19"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol",
+        "file": "./CoconsensusInterface.sol",
+        "id": 3781,
+        "nodeType": "ImportDirective",
+        "scope": 3813,
+        "sourceUnit": 3779,
+        "src": "621:36:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3812,
+        "linearizedBaseContracts": [
+          3812
+        ],
+        "name": "CoconsensusModule",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3786,
+            "name": "coconsensusAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 3812,
+            "src": "775:88:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3782,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "775:7:19",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303034443030",
+                  "id": 3784,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "820:42:19",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "value": "0x0000000000000000000000000000000000004D00"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                ],
+                "id": 3783,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "812:7:19",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_address_$",
+                  "typeString": "type(address)"
+                },
+                "typeName": "address"
+              },
+              "id": 3785,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "812:51:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 3800,
+              "nodeType": "Block",
+              "src": "923:168:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 3795,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3789,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19576,
+                            "src": "954:3:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3790,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "954:10:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "id": 3792,
+                                "name": "getCoconsensus",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3811,
+                                "src": "976:14:19",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_CoconsensusInterface_$3778_$",
+                                  "typeString": "function () view returns (contract CoconsensusInterface)"
+                                }
+                              },
+                              "id": 3793,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "976:16:19",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                                "typeString": "contract CoconsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                                "typeString": "contract CoconsensusInterface"
+                              }
+                            ],
+                            "id": 3791,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "968:7:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 3794,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "968:25:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "954:39:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e",
+                        "id": 3796,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1007:55:19",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_385c7875ff408e9e6cb67ccf9c41865003891dcdd21d7247d65b01a19da75633",
+                          "typeString": "literal_string \"Only the Coconsensus contract can call this function.\""
+                        },
+                        "value": "Only the Coconsensus contract can call this function."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_385c7875ff408e9e6cb67ccf9c41865003891dcdd21d7247d65b01a19da75633",
+                          "typeString": "literal_string \"Only the Coconsensus contract can call this function.\""
+                        }
+                      ],
+                      "id": 3788,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "933:7:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3797,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "933:139:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3798,
+                  "nodeType": "ExpressionStatement",
+                  "src": "933:139:19"
+                },
+                {
+                  "id": 3799,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1083:1:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3801,
+            "name": "onlyCoconsensus",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "916:2:19"
+            },
+            "src": "892:199:19",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3810,
+              "nodeType": "Block",
+              "src": "1317:64:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3807,
+                        "name": "coconsensusAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3786,
+                        "src": "1355:18:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3806,
+                      "name": "CoconsensusInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3778,
+                      "src": "1334:20:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_CoconsensusInterface_$3778_$",
+                        "typeString": "type(contract CoconsensusInterface)"
+                      }
+                    },
+                    "id": 3808,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1334:40:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 3805,
+                  "id": 3809,
+                  "nodeType": "Return",
+                  "src": "1327:47:19"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the coconsensus contract address.\n     * @return Coconsensus contract address.",
+            "id": 3811,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3802,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1271:2:19"
+            },
+            "returnParameters": {
+              "id": 3805,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3804,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3811,
+                  "src": "1295:20:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3803,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1295:20:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1294:22:19"
+            },
+            "scope": 3812,
+            "src": "1248:133:19",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3813,
+        "src": "659:724:19"
+      }
+    ],
+    "src": "0:1384:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusModule.sol",
+    "exportedSymbols": {
+      "CoconsensusModule": [
+        3812
+      ]
+    },
+    "id": 3813,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3780,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:19"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoconsensusInterface.sol",
+        "file": "./CoconsensusInterface.sol",
+        "id": 3781,
+        "nodeType": "ImportDirective",
+        "scope": 3813,
+        "sourceUnit": 3779,
+        "src": "621:36:19",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 3812,
+        "linearizedBaseContracts": [
+          3812
+        ],
+        "name": "CoconsensusModule",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 3786,
+            "name": "coconsensusAddress",
+            "nodeType": "VariableDeclaration",
+            "scope": 3812,
+            "src": "775:88:19",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 3782,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "775:7:19",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "arguments": [
+                {
+                  "argumentTypes": null,
+                  "hexValue": "307830303030303030303030303030303030303030303030303030303030303030303030303034443030",
+                  "id": 3784,
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "kind": "number",
+                  "lValueRequested": false,
+                  "nodeType": "Literal",
+                  "src": "820:42:19",
+                  "subdenomination": null,
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  },
+                  "value": "0x0000000000000000000000000000000000004D00"
+                }
+              ],
+              "expression": {
+                "argumentTypes": [
+                  {
+                    "typeIdentifier": "t_address_payable",
+                    "typeString": "address payable"
+                  }
+                ],
+                "id": 3783,
+                "isConstant": false,
+                "isLValue": false,
+                "isPure": true,
+                "lValueRequested": false,
+                "nodeType": "ElementaryTypeNameExpression",
+                "src": "812:7:19",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_type$_t_address_$",
+                  "typeString": "type(address)"
+                },
+                "typeName": "address"
+              },
+              "id": 3785,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "typeConversion",
+              "lValueRequested": false,
+              "names": [],
+              "nodeType": "FunctionCall",
+              "src": "812:51:19",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address_payable",
+                "typeString": "address payable"
+              }
+            },
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 3800,
+              "nodeType": "Block",
+              "src": "923:168:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        "id": 3795,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 3789,
+                            "name": "msg",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19576,
+                            "src": "954:3:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_magic_message",
+                              "typeString": "msg"
+                            }
+                          },
+                          "id": 3790,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "sender",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "954:10:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address_payable",
+                            "typeString": "address payable"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "==",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "arguments": [
+                            {
+                              "argumentTypes": null,
+                              "arguments": [],
+                              "expression": {
+                                "argumentTypes": [],
+                                "id": 3792,
+                                "name": "getCoconsensus",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 3811,
+                                "src": "976:14:19",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_function_internal_view$__$returns$_t_contract$_CoconsensusInterface_$3778_$",
+                                  "typeString": "function () view returns (contract CoconsensusInterface)"
+                                }
+                              },
+                              "id": 3793,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "kind": "functionCall",
+                              "lValueRequested": false,
+                              "names": [],
+                              "nodeType": "FunctionCall",
+                              "src": "976:16:19",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                                "typeString": "contract CoconsensusInterface"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                                "typeString": "contract CoconsensusInterface"
+                              }
+                            ],
+                            "id": 3791,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "nodeType": "ElementaryTypeNameExpression",
+                            "src": "968:7:19",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_address_$",
+                              "typeString": "type(address)"
+                            },
+                            "typeName": "address"
+                          },
+                          "id": 3794,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "typeConversion",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "968:25:19",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "src": "954:39:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "4f6e6c792074686520436f636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2e",
+                        "id": 3796,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1007:55:19",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_385c7875ff408e9e6cb67ccf9c41865003891dcdd21d7247d65b01a19da75633",
+                          "typeString": "literal_string \"Only the Coconsensus contract can call this function.\""
+                        },
+                        "value": "Only the Coconsensus contract can call this function."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_385c7875ff408e9e6cb67ccf9c41865003891dcdd21d7247d65b01a19da75633",
+                          "typeString": "literal_string \"Only the Coconsensus contract can call this function.\""
+                        }
+                      ],
+                      "id": 3788,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        19579,
+                        19580
+                      ],
+                      "referencedDeclaration": 19580,
+                      "src": "933:7:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 3797,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "933:139:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3798,
+                  "nodeType": "ExpressionStatement",
+                  "src": "933:139:19"
+                },
+                {
+                  "id": 3799,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "1083:1:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 3801,
+            "name": "onlyCoconsensus",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 3787,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "916:2:19"
+            },
+            "src": "892:199:19",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3810,
+              "nodeType": "Block",
+              "src": "1317:64:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3807,
+                        "name": "coconsensusAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3786,
+                        "src": "1355:18:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3806,
+                      "name": "CoconsensusInterface",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3778,
+                      "src": "1334:20:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_CoconsensusInterface_$3778_$",
+                        "typeString": "type(contract CoconsensusInterface)"
+                      }
+                    },
+                    "id": 3808,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1334:40:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "functionReturnParameters": 3805,
+                  "id": 3809,
+                  "nodeType": "Return",
+                  "src": "1327:47:19"
+                }
+              ]
+            },
+            "documentation": "@notice Gets the coconsensus contract address.\n     * @return Coconsensus contract address.",
+            "id": 3811,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCoconsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3802,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1271:2:19"
+            },
+            "returnParameters": {
+              "id": 3805,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3804,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3811,
+                  "src": "1295:20:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                    "typeString": "contract CoconsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3803,
+                    "name": "CoconsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 3778,
+                    "src": "1295:20:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CoconsensusInterface_$3778",
+                      "typeString": "contract CoconsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1294:22:19"
+            },
+            "scope": 3812,
+            "src": "1248:133:19",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 3813,
+        "src": "659:724:19"
+      }
+    ],
+    "src": "0:1384:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.648Z",
+  "devdoc": {
+    "methods": {
+      "getCoconsensus()": {
+        "return": "Coconsensus contract address."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "getCoconsensus()": {
+        "notice": "Gets the coconsensus contract address."
+      }
+    }
+  }
+}

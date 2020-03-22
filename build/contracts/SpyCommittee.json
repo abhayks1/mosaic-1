@@ -1,0 +1,2734 @@
+{
+  "contractName": "SpyCommittee",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "furtherMember",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isEnterCommitteeFunctionCalled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "mockedCommitteeDecision",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyCommitteeSize",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyConsensus",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyDislocation",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyMetachainId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "spyProposal",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "validator",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "resetFunctionCallFlags",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_furtherMember",
+          "type": "address"
+        }
+      ],
+      "name": "enterCommittee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_committeeDecision",
+          "type": "bytes32"
+        }
+      ],
+      "name": "mockCommitteeDecision",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "committeeDecision",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_metachainId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "_consensus",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_committeeSize",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_dislocation",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_proposal",
+          "type": "bytes32"
+        }
+      ],
+      "name": "setup",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"committeeDecision\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_furtherMember\",\"type\":\"address\"}],\"name\":\"enterCommittee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"furtherMember\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"isEnterCommitteeFunctionCalled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_committeeDecision\",\"type\":\"bytes32\"}],\"name\":\"mockCommitteeDecision\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"mockedCommitteeDecision\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"resetFunctionCallFlags\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_metachainId\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"_consensus\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_committeeSize\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_dislocation\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"_proposal\",\"type\":\"bytes32\"}],\"name\":\"setup\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyCommitteeSize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyConsensus\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyDislocation\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyMetachainId\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"spyProposal\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"validator\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/committee/SpyCommittee.sol\":\"SpyCommittee\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol\":{\"keccak256\":\"0x2228fad5fce0a0e1579276bd4307dcf337edb62447671b4385cce0c79b0bddd4\",\"urls\":[\"bzz-raw://aaa4e991082803324cf3f16bf24b7731902fd928a7cf3a6b5a007a901d584761\",\"dweb:/ipfs/QmfHmamQBuFeKuh14xFReqXv6DX3W3iNq8kCC526mNHqNe\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/committee/SpyCommittee.sol\":{\"keccak256\":\"0x261577e5277544c434a120545a7feda1547f5c718b1a0dde4ed044b31e78957d\",\"urls\":[\"bzz-raw://4533b555eec9b62f954fb245118582aa8e22c33436a4bcc49be78c2120d65080\",\"dweb:/ipfs/QmZj8jdrcX3sUP6BzQkvoxwc55JcETjt65AMLjmuwEtP8Y\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061032d806100206000396000f3fe608060405234801561001057600080fd5b50600436106100ea5760003560e01c806365c3a26f1161008c578063bf81b13b11610066578063bf81b13b146101ce578063e528a6f8146101fc578063f204253e14610204578063f2e552081461020c576100ea565b806365c3a26f14610180578063b74e2b6b146101be578063b802eaef146101c6576100ea565b80633f274f55116100c85780633f274f551461014c5780634b1c3a501461015457806352e5f65b1461015c5780635f49ef4a14610164576100ea565b80630cef54c5146100ef578063186940881461010e5780633a5381b514610128575b600080fd5b61010c6004803603602081101561010557600080fd5b5035610214565b005b610116610219565b60408051918252519081900360200190f35b61013061021f565b604080516001600160a01b039092168252519081900360200190f35b610116610233565b610130610239565b610116610248565b61016c61024e565b604080519115158252519081900360200190f35b61010c600480360360a081101561019657600080fd5b508035906001600160a01b036020820135169060408101359060608101359060800135610257565b610116610289565b61010c61028f565b61010c600480360360408110156101e457600080fd5b506001600160a01b038135811691602001351661029b565b6101166102dd565b6101166102e3565b6101306102e9565b600155565b60025481565b60075461010090046001600160a01b031681565b60065481565b6008546001600160a01b031681565b60015481565b60075460ff1681565b600294909455600380546001600160a01b0319166001600160a01b039490941693909317909255600455600555600655565b60045481565b6007805460ff19169055565b60078054600880546001600160a01b0319166001600160a01b03948516179055610100600160a81b03191661010093909216929092021760ff19166001179055565b60015490565b60055481565b6003546001600160a01b03168156fea265627a7a72315820490fbfeabff0acf7cbce94d7006995abb23b50f4584af8570e32ce437edc9e1f64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100ea5760003560e01c806365c3a26f1161008c578063bf81b13b11610066578063bf81b13b146101ce578063e528a6f8146101fc578063f204253e14610204578063f2e552081461020c576100ea565b806365c3a26f14610180578063b74e2b6b146101be578063b802eaef146101c6576100ea565b80633f274f55116100c85780633f274f551461014c5780634b1c3a501461015457806352e5f65b1461015c5780635f49ef4a14610164576100ea565b80630cef54c5146100ef578063186940881461010e5780633a5381b514610128575b600080fd5b61010c6004803603602081101561010557600080fd5b5035610214565b005b610116610219565b60408051918252519081900360200190f35b61013061021f565b604080516001600160a01b039092168252519081900360200190f35b610116610233565b610130610239565b610116610248565b61016c61024e565b604080519115158252519081900360200190f35b61010c600480360360a081101561019657600080fd5b508035906001600160a01b036020820135169060408101359060608101359060800135610257565b610116610289565b61010c61028f565b61010c600480360360408110156101e457600080fd5b506001600160a01b038135811691602001351661029b565b6101166102dd565b6101166102e3565b6101306102e9565b600155565b60025481565b60075461010090046001600160a01b031681565b60065481565b6008546001600160a01b031681565b60015481565b60075460ff1681565b600294909455600380546001600160a01b0319166001600160a01b039490941693909317909255600455600555600655565b60045481565b6007805460ff19169055565b60078054600880546001600160a01b0319166001600160a01b03948516179055610100600160a81b03191661010093909216929092021760ff19166001179055565b60015490565b60055481565b6003546001600160a01b03168156fea265627a7a72315820490fbfeabff0acf7cbce94d7006995abb23b50f4584af8570e32ce437edc9e1f64736f6c634300050d0032",
+  "sourceMap": "723:1402:67:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;723:1402:67;;;;;;;",
+  "deployedSourceMap": "723:1402:67:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;723:1402:67;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1489:129;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1489:129:67;;:::i;:::-;;843:29;;;:::i;:::-;;;;;;;;;;;;;;;;1065:24;;;:::i;:::-;;;;-1:-1:-1;;;;;1065:24:67;;;;;;;;;;;;;;983:26;;;:::i;1095:28::-;;;:::i;798:38::-;;;:::i;1016:42::-;;;:::i;:::-;;;;;;;;;;;;;;;;;;1738:385;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;1738:385:67;;;-1:-1:-1;;;;;1738:385:67;;;;;;;;;;;;;;;;;;;;:::i;911:31::-;;;:::i;1130:110::-;;;:::i;1246:237::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;;;;1246:237:67;;;;;;;;;;:::i;1624:108::-;;;:::i;948:29::-;;;:::i;878:27::-;;;:::i;1489:129::-;1567:23;:44;1489:129::o;843:29::-;;;;:::o;1065:24::-;;;;;;-1:-1:-1;;;;;1065:24:67;;:::o;983:26::-;;;;:::o;1095:28::-;;;-1:-1:-1;;;;;1095:28:67;;:::o;798:38::-;;;;:::o;1016:42::-;;;;;;:::o;1738:385::-;1937:14;:29;;;;1976:12;:25;;-1:-1:-1;;;;;;1976:25:67;-1:-1:-1;;;;;1976:25:67;;;;;;;;;;;2011:16;:33;2054:14;:29;2093:11;:23;1738:385::o;911:31::-;;;;:::o;1130:110::-;1195:30;:38;;-1:-1:-1;;1195:38:67;;;1130:110::o;1246:237::-;1367:9;:22;;1399:13;:30;;-1:-1:-1;;;;;;1399:30:67;-1:-1:-1;;;;;1399:30:67;;;;;;-1:-1:-1;;;;;;1367:22:67;;;;;;;;;;;-1:-1:-1;;1439:37:67;-1:-1:-1;1439:37:67;;;1246:237::o;1624:108::-;1702:23;;1624:108;:::o;948:29::-;;;;:::o;878:27::-;;;-1:-1:-1;;;;;878:27:67;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"../../committee/CommitteeInterface.sol\";\nimport \"../../proxies/MasterCopyNonUpgradable.sol\";\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\ncontract SpyCommittee is MasterCopyNonUpgradable, CommitteeInterface{\n\n    bytes32 public mockedCommitteeDecision;\n\n    bytes32 public spyMetachainId;\n    address public spyConsensus;\n    uint256 public spyCommitteeSize;\n    bytes32 public spyDislocation;\n    bytes32 public spyProposal;\n\n    bool public isEnterCommitteeFunctionCalled;\n\n    address public validator;\n    address public furtherMember;\n\n    function resetFunctionCallFlags()\n        external\n    {\n        isEnterCommitteeFunctionCalled = false;\n    }\n\n    function enterCommittee(\n        address _validator,\n        address _furtherMember\n    )\n        external\n    {\n        validator = _validator;\n        furtherMember = _furtherMember;\n        isEnterCommitteeFunctionCalled = true;\n    }\n\n    function mockCommitteeDecision(bytes32 _committeeDecision) external {\n        mockedCommitteeDecision = _committeeDecision;\n    }\n\n    function committeeDecision() external view returns (bytes32) {\n        return mockedCommitteeDecision;\n    }\n\n    function setup(\n        bytes32 _metachainId,\n        address _consensus,\n        uint256 _committeeSize,\n        bytes32 _dislocation,\n        bytes32 _proposal\n    )\n        external\n    {\n        spyMetachainId = _metachainId;\n        spyConsensus = _consensus;\n        spyCommitteeSize = _committeeSize;\n        spyDislocation = _dislocation;\n        spyProposal = _proposal;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/committee/SpyCommittee.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/committee/SpyCommittee.sol",
+    "exportedSymbols": {
+      "SpyCommittee": [
+        14511
+      ]
+    },
+    "id": 14512,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14406,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:67"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol",
+        "file": "../../committee/CommitteeInterface.sol",
+        "id": 14407,
+        "nodeType": "ImportDirective",
+        "scope": 14512,
+        "sourceUnit": 2037,
+        "src": "33:48:67",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 14408,
+        "nodeType": "ImportDirective",
+        "scope": 14512,
+        "sourceUnit": 12955,
+        "src": "82:51:67",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14409,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "748:23:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 14410,
+            "nodeType": "InheritanceSpecifier",
+            "src": "748:23:67"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14411,
+              "name": "CommitteeInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2036,
+              "src": "773:18:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CommitteeInterface_$2036",
+                "typeString": "contract CommitteeInterface"
+              }
+            },
+            "id": 14412,
+            "nodeType": "InheritanceSpecifier",
+            "src": "773:18:67"
+          }
+        ],
+        "contractDependencies": [
+          2036,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14511,
+        "linearizedBaseContracts": [
+          14511,
+          2036,
+          12954
+        ],
+        "name": "SpyCommittee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14414,
+            "name": "mockedCommitteeDecision",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "798:38:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14413,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "798:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14416,
+            "name": "spyMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "843:29:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14415,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "843:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14418,
+            "name": "spyConsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "878:27:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14417,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "878:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14420,
+            "name": "spyCommitteeSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "911:31:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14419,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "911:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14422,
+            "name": "spyDislocation",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "948:29:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14421,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "948:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14424,
+            "name": "spyProposal",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "983:26:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14423,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "983:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14426,
+            "name": "isEnterCommitteeFunctionCalled",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1016:42:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 14425,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "1016:4:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14428,
+            "name": "validator",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1065:24:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14427,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1065:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14430,
+            "name": "furtherMember",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1095:28:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14429,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1095:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14437,
+              "nodeType": "Block",
+              "src": "1185:55:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14435,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14433,
+                      "name": "isEnterCommitteeFunctionCalled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14426,
+                      "src": "1195:30:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 14434,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1228:5:67",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1195:38:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 14436,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1195:38:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14438,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resetFunctionCallFlags",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14431,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1161:2:67"
+            },
+            "returnParameters": {
+              "id": 14432,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1185:0:67"
+            },
+            "scope": 14511,
+            "src": "1130:110:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14457,
+              "nodeType": "Block",
+              "src": "1357:126:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14447,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14445,
+                      "name": "validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14428,
+                      "src": "1367:9:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14446,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14440,
+                      "src": "1379:10:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1367:22:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14448,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1367:22:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14449,
+                      "name": "furtherMember",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14430,
+                      "src": "1399:13:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14450,
+                      "name": "_furtherMember",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14442,
+                      "src": "1415:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1399:30:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14452,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1399:30:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14455,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14453,
+                      "name": "isEnterCommitteeFunctionCalled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14426,
+                      "src": "1439:30:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 14454,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1472:4:67",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1439:37:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 14456,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1439:37:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14458,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enterCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14440,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14458,
+                  "src": "1279:18:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14439,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14442,
+                  "name": "_furtherMember",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14458,
+                  "src": "1307:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14441,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1307:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1269:66:67"
+            },
+            "returnParameters": {
+              "id": 14444,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1357:0:67"
+            },
+            "scope": 14511,
+            "src": "1246:237:67",
+            "stateMutability": "nonpayable",
+            "superFunction": 2030,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14467,
+              "nodeType": "Block",
+              "src": "1557:61:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14465,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14463,
+                      "name": "mockedCommitteeDecision",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14414,
+                      "src": "1567:23:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14464,
+                      "name": "_committeeDecision",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14460,
+                      "src": "1593:18:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1567:44:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14466,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1567:44:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14468,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mockCommitteeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14461,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14460,
+                  "name": "_committeeDecision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14468,
+                  "src": "1520:26:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14459,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1520:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1519:28:67"
+            },
+            "returnParameters": {
+              "id": 14462,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1557:0:67"
+            },
+            "scope": 14511,
+            "src": "1489:129:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14475,
+              "nodeType": "Block",
+              "src": "1685:47:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14473,
+                    "name": "mockedCommitteeDecision",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14414,
+                    "src": "1702:23:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 14472,
+                  "id": 14474,
+                  "nodeType": "Return",
+                  "src": "1695:30:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14476,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14469,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1650:2:67"
+            },
+            "returnParameters": {
+              "id": 14472,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14471,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14476,
+                  "src": "1676:7:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14470,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1676:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1675:9:67"
+            },
+            "scope": 14511,
+            "src": "1624:108:67",
+            "stateMutability": "view",
+            "superFunction": 2035,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14509,
+              "nodeType": "Block",
+              "src": "1927:196:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14491,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14489,
+                      "name": "spyMetachainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14416,
+                      "src": "1937:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14490,
+                      "name": "_metachainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14478,
+                      "src": "1954:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1937:29:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14492,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1937:29:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14493,
+                      "name": "spyConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14418,
+                      "src": "1976:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14494,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14480,
+                      "src": "1991:10:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1976:25:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1976:25:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14499,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14497,
+                      "name": "spyCommitteeSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14420,
+                      "src": "2011:16:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14498,
+                      "name": "_committeeSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14482,
+                      "src": "2030:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2011:33:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14500,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2011:33:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14503,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14501,
+                      "name": "spyDislocation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14422,
+                      "src": "2054:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14502,
+                      "name": "_dislocation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14484,
+                      "src": "2071:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "2054:29:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14504,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2054:29:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14507,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14505,
+                      "name": "spyProposal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14424,
+                      "src": "2093:11:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14506,
+                      "name": "_proposal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14486,
+                      "src": "2107:9:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "2093:23:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14508,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2093:23:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14510,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14478,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1762:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14477,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1762:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14480,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1792:18:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14479,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1792:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14482,
+                  "name": "_committeeSize",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1820:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14481,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1820:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14484,
+                  "name": "_dislocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1852:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14483,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1852:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14486,
+                  "name": "_proposal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1882:17:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14485,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1882:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1752:153:67"
+            },
+            "returnParameters": {
+              "id": 14488,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1927:0:67"
+            },
+            "scope": 14511,
+            "src": "1738:385:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14512,
+        "src": "723:1402:67"
+      }
+    ],
+    "src": "0:2126:67"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/committee/SpyCommittee.sol",
+    "exportedSymbols": {
+      "SpyCommittee": [
+        14511
+      ]
+    },
+    "id": 14512,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14406,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:67"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol",
+        "file": "../../committee/CommitteeInterface.sol",
+        "id": 14407,
+        "nodeType": "ImportDirective",
+        "scope": 14512,
+        "sourceUnit": 2037,
+        "src": "33:48:67",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol",
+        "file": "../../proxies/MasterCopyNonUpgradable.sol",
+        "id": 14408,
+        "nodeType": "ImportDirective",
+        "scope": 14512,
+        "sourceUnit": 12955,
+        "src": "82:51:67",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14409,
+              "name": "MasterCopyNonUpgradable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 12954,
+              "src": "748:23:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_MasterCopyNonUpgradable_$12954",
+                "typeString": "contract MasterCopyNonUpgradable"
+              }
+            },
+            "id": 14410,
+            "nodeType": "InheritanceSpecifier",
+            "src": "748:23:67"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14411,
+              "name": "CommitteeInterface",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2036,
+              "src": "773:18:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CommitteeInterface_$2036",
+                "typeString": "contract CommitteeInterface"
+              }
+            },
+            "id": 14412,
+            "nodeType": "InheritanceSpecifier",
+            "src": "773:18:67"
+          }
+        ],
+        "contractDependencies": [
+          2036,
+          12954
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14511,
+        "linearizedBaseContracts": [
+          14511,
+          2036,
+          12954
+        ],
+        "name": "SpyCommittee",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14414,
+            "name": "mockedCommitteeDecision",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "798:38:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14413,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "798:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14416,
+            "name": "spyMetachainId",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "843:29:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14415,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "843:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14418,
+            "name": "spyConsensus",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "878:27:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14417,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "878:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14420,
+            "name": "spyCommitteeSize",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "911:31:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 14419,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "911:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14422,
+            "name": "spyDislocation",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "948:29:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14421,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "948:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14424,
+            "name": "spyProposal",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "983:26:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 14423,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "983:7:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14426,
+            "name": "isEnterCommitteeFunctionCalled",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1016:42:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bool",
+              "typeString": "bool"
+            },
+            "typeName": {
+              "id": 14425,
+              "name": "bool",
+              "nodeType": "ElementaryTypeName",
+              "src": "1016:4:67",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bool",
+                "typeString": "bool"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14428,
+            "name": "validator",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1065:24:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14427,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1065:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 14430,
+            "name": "furtherMember",
+            "nodeType": "VariableDeclaration",
+            "scope": 14511,
+            "src": "1095:28:67",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14429,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "1095:7:67",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14437,
+              "nodeType": "Block",
+              "src": "1185:55:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14435,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14433,
+                      "name": "isEnterCommitteeFunctionCalled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14426,
+                      "src": "1195:30:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "66616c7365",
+                      "id": 14434,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1228:5:67",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "false"
+                    },
+                    "src": "1195:38:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 14436,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1195:38:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14438,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "resetFunctionCallFlags",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14431,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1161:2:67"
+            },
+            "returnParameters": {
+              "id": 14432,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1185:0:67"
+            },
+            "scope": 14511,
+            "src": "1130:110:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14457,
+              "nodeType": "Block",
+              "src": "1357:126:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14447,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14445,
+                      "name": "validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14428,
+                      "src": "1367:9:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14446,
+                      "name": "_validator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14440,
+                      "src": "1379:10:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1367:22:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14448,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1367:22:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14451,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14449,
+                      "name": "furtherMember",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14430,
+                      "src": "1399:13:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14450,
+                      "name": "_furtherMember",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14442,
+                      "src": "1415:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1399:30:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14452,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1399:30:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14455,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14453,
+                      "name": "isEnterCommitteeFunctionCalled",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14426,
+                      "src": "1439:30:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "hexValue": "74727565",
+                      "id": 14454,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "bool",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "1472:4:67",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      },
+                      "value": "true"
+                    },
+                    "src": "1439:37:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 14456,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1439:37:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14458,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enterCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14443,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14440,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14458,
+                  "src": "1279:18:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14439,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1279:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14442,
+                  "name": "_furtherMember",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14458,
+                  "src": "1307:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14441,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1307:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1269:66:67"
+            },
+            "returnParameters": {
+              "id": 14444,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1357:0:67"
+            },
+            "scope": 14511,
+            "src": "1246:237:67",
+            "stateMutability": "nonpayable",
+            "superFunction": 2030,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14467,
+              "nodeType": "Block",
+              "src": "1557:61:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14465,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14463,
+                      "name": "mockedCommitteeDecision",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14414,
+                      "src": "1567:23:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14464,
+                      "name": "_committeeDecision",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14460,
+                      "src": "1593:18:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1567:44:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14466,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1567:44:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14468,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "mockCommitteeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14461,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14460,
+                  "name": "_committeeDecision",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14468,
+                  "src": "1520:26:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14459,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1520:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1519:28:67"
+            },
+            "returnParameters": {
+              "id": 14462,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1557:0:67"
+            },
+            "scope": 14511,
+            "src": "1489:129:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14475,
+              "nodeType": "Block",
+              "src": "1685:47:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14473,
+                    "name": "mockedCommitteeDecision",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14414,
+                    "src": "1702:23:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 14472,
+                  "id": 14474,
+                  "nodeType": "Return",
+                  "src": "1695:30:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14476,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14469,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1650:2:67"
+            },
+            "returnParameters": {
+              "id": 14472,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14471,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14476,
+                  "src": "1676:7:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14470,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1676:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1675:9:67"
+            },
+            "scope": 14511,
+            "src": "1624:108:67",
+            "stateMutability": "view",
+            "superFunction": 2035,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 14509,
+              "nodeType": "Block",
+              "src": "1927:196:67",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14491,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14489,
+                      "name": "spyMetachainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14416,
+                      "src": "1937:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14490,
+                      "name": "_metachainId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14478,
+                      "src": "1954:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "1937:29:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14492,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1937:29:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14495,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14493,
+                      "name": "spyConsensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14418,
+                      "src": "1976:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14494,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14480,
+                      "src": "1991:10:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1976:25:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14496,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1976:25:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14499,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14497,
+                      "name": "spyCommitteeSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14420,
+                      "src": "2011:16:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14498,
+                      "name": "_committeeSize",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14482,
+                      "src": "2030:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2011:33:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 14500,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2011:33:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14503,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14501,
+                      "name": "spyDislocation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14422,
+                      "src": "2054:14:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14502,
+                      "name": "_dislocation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14484,
+                      "src": "2071:12:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "2054:29:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14504,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2054:29:67"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14507,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14505,
+                      "name": "spyProposal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14424,
+                      "src": "2093:11:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14506,
+                      "name": "_proposal",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14486,
+                      "src": "2107:9:67",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "src": "2093:23:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "id": 14508,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2093:23:67"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14510,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14487,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14478,
+                  "name": "_metachainId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1762:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14477,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1762:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14480,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1792:18:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14479,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1792:7:67",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14482,
+                  "name": "_committeeSize",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1820:22:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14481,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1820:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14484,
+                  "name": "_dislocation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1852:20:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14483,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1852:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14486,
+                  "name": "_proposal",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14510,
+                  "src": "1882:17:67",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 14485,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1882:7:67",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1752:153:67"
+            },
+            "returnParameters": {
+              "id": 14488,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1927:0:67"
+            },
+            "scope": 14511,
+            "src": "1738:385:67",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14512,
+        "src": "723:1402:67"
+      }
+    ],
+    "src": "0:2126:67"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.781Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

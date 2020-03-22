@@ -1,0 +1,853 @@
+{
+  "contractName": "ProtocoreInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "setup",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "domainSeparator",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "epochLength",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "openKernelHeight",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_kernelHeight",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_kernelHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "openKernel",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"domainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"epochLength\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_kernelHeight\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"_kernelHash\",\"type\":\"bytes32\"}],\"name\":\"openKernel\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"openKernelHeight\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"setup\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"Protocore Interface\"},\"userdoc\":{\"methods\":{\"domainSeparator()\":{\"notice\":\"Function to get the domain separator. \"},\"epochLength()\":{\"notice\":\"epochLength() function returns the epoch length. \"},\"setup()\":{\"notice\":\"setup() function initializes the protocore contract. \"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/ProtocoreInterface.sol\":\"ProtocoreInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/ProtocoreInterface.sol\":{\"keccak256\":\"0xe4f3a944ff41953fbce6e790bf895843bd6f90c8e709954348b38116f1638d41\",\"urls\":[\"bzz-raw://0eea6d1fdfe529dd8b6b74d37f65f931a1992fcc2633202dd0aec54c7ccb2014\",\"dweb:/ipfs/QmVqTAGidzSDDDm3XVip18LhFJPqErLtDDLEBRdTSZvSSj\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title Protocore Interface\n */\ninterface ProtocoreInterface {\n\n    /** @notice setup() function initializes the protocore contract. */\n    function setup() external returns (bytes32, uint256);\n\n    /** @notice Function to get the domain separator. */\n    function domainSeparator() external returns (bytes32);\n\n    /**  @notice epochLength() function returns the epoch length. */\n    function epochLength() external returns (uint256);\n\n    function openKernelHeight()\n        external\n        returns (uint256);\n\n    function openKernel(\n        uint256 _kernelHeight,\n        bytes32 _kernelHash\n    )\n        external;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/ProtocoreInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/ProtocoreInterface.sol",
+    "exportedSymbols": {
+      "ProtocoreInterface": [
+        12599
+      ]
+    },
+    "id": 12600,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12569,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:50"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Protocore Interface",
+        "fullyImplemented": false,
+        "id": 12599,
+        "linearizedBaseContracts": [
+          12599
+        ],
+        "name": "ProtocoreInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice setup() function initializes the protocore contract. ",
+            "id": 12576,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12570,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "781:2:50"
+            },
+            "returnParameters": {
+              "id": 12575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12572,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12576,
+                  "src": "802:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12571,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "802:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12576,
+                  "src": "811:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12573,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "801:18:50"
+            },
+            "scope": 12599,
+            "src": "767:53:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Function to get the domain separator. ",
+            "id": 12581,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "domainSeparator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12577,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "907:2:50"
+            },
+            "returnParameters": {
+              "id": 12580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12579,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12581,
+                  "src": "928:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12578,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "928:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "927:9:50"
+            },
+            "scope": 12599,
+            "src": "883:54:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice epochLength() function returns the epoch length. ",
+            "id": 12586,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "epochLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12582,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1032:2:50"
+            },
+            "returnParameters": {
+              "id": 12585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12584,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12586,
+                  "src": "1053:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12583,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1053:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1052:9:50"
+            },
+            "scope": 12599,
+            "src": "1012:50:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 12591,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "openKernelHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12587,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1093:2:50"
+            },
+            "returnParameters": {
+              "id": 12590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12589,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12591,
+                  "src": "1130:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12588,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:9:50"
+            },
+            "scope": 12599,
+            "src": "1068:71:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 12598,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "openKernel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12593,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12598,
+                  "src": "1174:21:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12592,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1174:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12595,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12598,
+                  "src": "1205:19:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12594,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:66:50"
+            },
+            "returnParameters": {
+              "id": 12597,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1247:0:50"
+            },
+            "scope": 12599,
+            "src": "1145:103:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12600,
+        "src": "659:591:50"
+      }
+    ],
+    "src": "0:1251:50"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/protocore/ProtocoreInterface.sol",
+    "exportedSymbols": {
+      "ProtocoreInterface": [
+        12599
+      ]
+    },
+    "id": 12600,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 12569,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:50"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title Protocore Interface",
+        "fullyImplemented": false,
+        "id": 12599,
+        "linearizedBaseContracts": [
+          12599
+        ],
+        "name": "ProtocoreInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice setup() function initializes the protocore contract. ",
+            "id": 12576,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setup",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12570,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "781:2:50"
+            },
+            "returnParameters": {
+              "id": 12575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12572,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12576,
+                  "src": "802:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12571,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "802:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12576,
+                  "src": "811:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12573,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "811:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "801:18:50"
+            },
+            "scope": 12599,
+            "src": "767:53:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice Function to get the domain separator. ",
+            "id": 12581,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "domainSeparator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12577,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "907:2:50"
+            },
+            "returnParameters": {
+              "id": 12580,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12579,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12581,
+                  "src": "928:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12578,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "928:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "927:9:50"
+            },
+            "scope": 12599,
+            "src": "883:54:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "@notice epochLength() function returns the epoch length. ",
+            "id": 12586,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "epochLength",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12582,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1032:2:50"
+            },
+            "returnParameters": {
+              "id": 12585,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12584,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12586,
+                  "src": "1053:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12583,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1053:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1052:9:50"
+            },
+            "scope": 12599,
+            "src": "1012:50:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 12591,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "openKernelHeight",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12587,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1093:2:50"
+            },
+            "returnParameters": {
+              "id": 12590,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12589,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12591,
+                  "src": "1130:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12588,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1130:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1129:9:50"
+            },
+            "scope": 12599,
+            "src": "1068:71:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "id": 12598,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "openKernel",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 12596,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 12593,
+                  "name": "_kernelHeight",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12598,
+                  "src": "1174:21:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 12592,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1174:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 12595,
+                  "name": "_kernelHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 12598,
+                  "src": "1205:19:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 12594,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1205:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1164:66:50"
+            },
+            "returnParameters": {
+              "id": 12597,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1247:0:50"
+            },
+            "scope": 12599,
+            "src": "1145:103:50",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 12600,
+        "src": "659:591:50"
+      }
+    ],
+    "src": "0:1251:50"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.755Z",
+  "devdoc": {
+    "methods": {},
+    "title": "Protocore Interface"
+  },
+  "userdoc": {
+    "methods": {
+      "domainSeparator()": {
+        "notice": "Function to get the domain separator. "
+      },
+      "epochLength()": {
+        "notice": "epochLength() function returns the epoch length. "
+      },
+      "setup()": {
+        "notice": "setup() function initializes the protocore contract. "
+      }
+    }
+  }
+}

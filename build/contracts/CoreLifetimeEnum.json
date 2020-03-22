@@ -1,0 +1,202 @@
+{
+  "contractName": "CoreLifetimeEnum",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoreLifetime.sol\":\"CoreLifetimeEnum\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoreLifetime.sol\":{\"keccak256\":\"0xa013a3cda068bc75fde6bcd76fa3b27556cc1b9b8037d0cb028ceb44ace2f74c\",\"urls\":[\"bzz-raw://52e0326efa25e09ad070a2b6d95beb01d187f7a9c7fad6353292c54588f9c833\",\"dweb:/ipfs/QmPujirjkP2R2egZjeQa3PJUJgTPF6bdzr1j6DBZn39MqG\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820a487c9d6352918123ffee838f2434331848228b195aeda037bf0ba76132fe37c64736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820a487c9d6352918123ffee838f2434331848228b195aeda037bf0ba76132fe37c64736f6c634300050d0032",
+  "sourceMap": "621:434:23:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;621:434:23;;;;;;;",
+  "deployedSourceMap": "621:434:23:-;;;;;",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\ncontract CoreLifetimeEnum {\n\n    /** Core lifetime enum */\n    enum CoreLifetime {\n        undefined,\n        // When core is halted.\n        halted,\n        // When core is corrupted.\n        corrupted,\n        // When core is in creation state.\n        creation,\n        // When core is created but no precommit is done.\n        genesis,\n        // When core is running correctly and pre-committing proposals.\n        active\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoreLifetime.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoreLifetime.sol",
+    "exportedSymbols": {
+      "CoreLifetimeEnum": [
+        5943
+      ]
+    },
+    "id": 5944,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5935,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:23"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5943,
+        "linearizedBaseContracts": [
+          5943
+        ],
+        "name": "CoreLifetimeEnum",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoreLifetimeEnum.CoreLifetime",
+            "id": 5942,
+            "members": [
+              {
+                "id": 5936,
+                "name": "undefined",
+                "nodeType": "EnumValue",
+                "src": "712:9:23"
+              },
+              {
+                "id": 5937,
+                "name": "halted",
+                "nodeType": "EnumValue",
+                "src": "763:6:23"
+              },
+              {
+                "id": 5938,
+                "name": "corrupted",
+                "nodeType": "EnumValue",
+                "src": "814:9:23"
+              },
+              {
+                "id": 5939,
+                "name": "creation",
+                "nodeType": "EnumValue",
+                "src": "876:8:23"
+              },
+              {
+                "id": 5940,
+                "name": "genesis",
+                "nodeType": "EnumValue",
+                "src": "952:7:23"
+              },
+              {
+                "id": 5941,
+                "name": "active",
+                "nodeType": "EnumValue",
+                "src": "1041:6:23"
+              }
+            ],
+            "name": "CoreLifetime",
+            "nodeType": "EnumDefinition",
+            "src": "684:369:23"
+          }
+        ],
+        "scope": 5944,
+        "src": "621:434:23"
+      }
+    ],
+    "src": "0:1056:23"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/CoreLifetime.sol",
+    "exportedSymbols": {
+      "CoreLifetimeEnum": [
+        5943
+      ]
+    },
+    "id": 5944,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 5935,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:23"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 5943,
+        "linearizedBaseContracts": [
+          5943
+        ],
+        "name": "CoreLifetimeEnum",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "CoreLifetimeEnum.CoreLifetime",
+            "id": 5942,
+            "members": [
+              {
+                "id": 5936,
+                "name": "undefined",
+                "nodeType": "EnumValue",
+                "src": "712:9:23"
+              },
+              {
+                "id": 5937,
+                "name": "halted",
+                "nodeType": "EnumValue",
+                "src": "763:6:23"
+              },
+              {
+                "id": 5938,
+                "name": "corrupted",
+                "nodeType": "EnumValue",
+                "src": "814:9:23"
+              },
+              {
+                "id": 5939,
+                "name": "creation",
+                "nodeType": "EnumValue",
+                "src": "876:8:23"
+              },
+              {
+                "id": 5940,
+                "name": "genesis",
+                "nodeType": "EnumValue",
+                "src": "952:7:23"
+              },
+              {
+                "id": 5941,
+                "name": "active",
+                "nodeType": "EnumValue",
+                "src": "1041:6:23"
+              }
+            ],
+            "name": "CoreLifetime",
+            "nodeType": "EnumDefinition",
+            "src": "684:369:23"
+          }
+        ],
+        "scope": 5944,
+        "src": "621:434:23"
+      }
+    ],
+    "src": "0:1056:23"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.676Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

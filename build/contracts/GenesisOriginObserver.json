@@ -1,0 +1,316 @@
+{
+  "contractName": "GenesisOriginObserver",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisMaxStateRootLimitCount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginBlockNumber",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "genesisOriginStateRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"genesisMaxStateRootLimitCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginBlockNumber\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"genesisOriginStateRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{},\"title\":\"GenesisOriginObserver - Contract that holds the values written in genesis block.\"},\"userdoc\":{\"methods\":{},\"notice\":\"This contract is the storage values that are written in the genesis file.        These values will be used in the setup of the contract.\"}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol\":\"GenesisOriginObserver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol\":{\"keccak256\":\"0x8e06480153083f18a53eec3f89f014c922b4e2ae76f1ef216a37b8513dec324a\",\"urls\":[\"bzz-raw://3407016779714639dc7c1dfd6e9289b49f8349fe50b08c56c31b0459ebd0b33e\",\"dweb:/ipfs/QmQZe9Lm3KyEGzfVQC6xwDNHX9VkY59p7NMpYK8ASzsLqK\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060ac8061001f6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c80631f949509146041578063691601951460595780636e47aff414605f575b600080fd5b60476065565b60408051918252519081900360200190f35b6047606b565b60476071565b60025481565b60005481565b6001548156fea265627a7a72315820b2ecaf03fe6f52a9683835c58a64b796544b464b38eb51d1491559c188f34d4264736f6c634300050d0032",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c80631f949509146041578063691601951460595780636e47aff414605f575b600080fd5b60476065565b60408051918252519081900360200190f35b6047606b565b60476071565b60025481565b60005481565b6001548156fea265627a7a72315820b2ecaf03fe6f52a9683835c58a64b796544b464b38eb51d1491559c188f34d4264736f6c634300050d0032",
+  "sourceMap": "875:329:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;875:329:3;;;;;;;",
+  "deployedSourceMap": "875:329:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;875:329:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1157:44;;;:::i;:::-;;;;;;;;;;;;;;;;964:39;;;:::i;1040:37::-;;;:::i;1157:44::-;;;;:::o;964:39::-;;;;:::o;1040:37::-;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2020 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n/**\n * @title GenesisOriginObserver - Contract that holds the values written in genesis block.\n *\n * @notice This contract is the storage values that are written in the genesis file.\n *         These values will be used in the setup of the contract.\n */\ncontract GenesisOriginObserver {\n\n    /* Storage */\n\n    /** Initial block number */\n    uint256 public genesisOriginBlockNumber;\n\n    /** Initial state root */\n    bytes32 public genesisOriginStateRoot;\n\n    /** Maximum number of state roots to be stored in circular buffer */\n    uint256 public genesisMaxStateRootLimitCount;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol",
+    "exportedSymbols": {
+      "GenesisOriginObserver": [
+        163
+      ]
+    },
+    "id": 164,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 156,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title GenesisOriginObserver - Contract that holds the values written in genesis block.\n * @notice This contract is the storage values that are written in the genesis file.\n        These values will be used in the setup of the contract.",
+        "fullyImplemented": true,
+        "id": 163,
+        "linearizedBaseContracts": [
+          163
+        ],
+        "name": "GenesisOriginObserver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 158,
+            "name": "genesisOriginBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "964:39:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 157,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "964:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 160,
+            "name": "genesisOriginStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "1040:37:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 159,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1040:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 162,
+            "name": "genesisMaxStateRootLimitCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "1157:44:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 161,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1157:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 164,
+        "src": "875:329:3"
+      }
+    ],
+    "src": "0:1205:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/GenesisOriginObserver.sol",
+    "exportedSymbols": {
+      "GenesisOriginObserver": [
+        163
+      ]
+    },
+    "id": 164,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 156,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:3"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title GenesisOriginObserver - Contract that holds the values written in genesis block.\n * @notice This contract is the storage values that are written in the genesis file.\n        These values will be used in the setup of the contract.",
+        "fullyImplemented": true,
+        "id": 163,
+        "linearizedBaseContracts": [
+          163
+        ],
+        "name": "GenesisOriginObserver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 158,
+            "name": "genesisOriginBlockNumber",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "964:39:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 157,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "964:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 160,
+            "name": "genesisOriginStateRoot",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "1040:37:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_bytes32",
+              "typeString": "bytes32"
+            },
+            "typeName": {
+              "id": 159,
+              "name": "bytes32",
+              "nodeType": "ElementaryTypeName",
+              "src": "1040:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_bytes32",
+                "typeString": "bytes32"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 162,
+            "name": "genesisMaxStateRootLimitCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 163,
+            "src": "1157:44:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 161,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "1157:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 164,
+        "src": "875:329:3"
+      }
+    ],
+    "src": "0:1205:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.592Z",
+  "devdoc": {
+    "methods": {},
+    "title": "GenesisOriginObserver - Contract that holds the values written in genesis block."
+  },
+  "userdoc": {
+    "methods": {},
+    "notice": "This contract is the storage values that are written in the genesis file.        These values will be used in the setup of the contract."
+  }
+}

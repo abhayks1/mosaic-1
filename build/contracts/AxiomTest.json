@@ -1,0 +1,1596 @@
+{
+  "contractName": "AxiomTest",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_techGov",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_consensusMasterCopy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_coreMasterCopy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_committeeMasterCopy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_reputationMasterCopy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_anchorMasterCopy",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_consensusGatewayMasterCopy",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "metachainId",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "anchor",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "mosaicVersion",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "consensusGateway",
+          "type": "address"
+        }
+      ],
+      "name": "MetachainCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract Proxy",
+          "name": "proxy",
+          "type": "address"
+        }
+      ],
+      "name": "ProxyCreation",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "CONSENSUS_SETUP_CALLPREFIX",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "REPUTATION_SETUP_CALLPREFIX",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "anchorMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "committeeMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensus",
+      "outputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensusGatewayMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "consensusMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "coreMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_anchorSetupData",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployAnchor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "anchor_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_coreSetupData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_consensusGatewaySetupData",
+          "type": "bytes"
+        }
+      ],
+      "name": "deployMetachainProxies",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "core_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "consensusGateway_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "newCommittee",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "deployedAddress_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "newCore",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "deployedAddress_",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "newMetachain",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "metachainId_",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reputation",
+      "outputs": [
+        {
+          "internalType": "contract ReputationInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "reputationMasterCopy",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_committeeSize",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_minValidators",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_joinLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_gasTargetDelta",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_coinbaseSplitPerMille",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_most",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_stakeMOSTAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "_wETH",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_stakeWETHAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_cashableEarningsPerMille",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_initialReputation",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_withdrawalCooldownPeriodInBlocks",
+          "type": "uint256"
+        }
+      ],
+      "name": "setupConsensus",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "techGov",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract ConsensusInterface",
+          "name": "_consensus",
+          "type": "address"
+        }
+      ],
+      "name": "setConsensus",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_techGov\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusMasterCopy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_coreMasterCopy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_committeeMasterCopy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_reputationMasterCopy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_anchorMasterCopy\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_consensusGatewayMasterCopy\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"metachainId\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"anchor\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"mosaicVersion\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"consensusGateway\",\"type\":\"address\"}],\"name\":\"MetachainCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"contract Proxy\",\"name\":\"proxy\",\"type\":\"address\"}],\"name\":\"ProxyCreation\",\"type\":\"event\"},{\"constant\":true,\"inputs\":[],\"name\":\"CONSENSUS_SETUP_CALLPREFIX\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"REPUTATION_SETUP_CALLPREFIX\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"anchorMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"committeeMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"consensus\",\"outputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"consensusGatewayMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"consensusMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"coreMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_anchorSetupData\",\"type\":\"bytes\"}],\"name\":\"deployAnchor\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"anchor_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_coreSetupData\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"_consensusGatewaySetupData\",\"type\":\"bytes\"}],\"name\":\"deployMetachainProxies\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"core_\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"consensusGateway_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"newCommittee\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"deployedAddress_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"newCore\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"deployedAddress_\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[],\"name\":\"newMetachain\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"metachainId_\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"reputation\",\"outputs\":[{\"internalType\":\"contract ReputationInterface\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"reputationMasterCopy\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract ConsensusInterface\",\"name\":\"_consensus\",\"type\":\"address\"}],\"name\":\"setConsensus\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_committeeSize\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_minValidators\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_joinLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_gasTargetDelta\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_coinbaseSplitPerMille\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_most\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_stakeMOSTAmount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_wETH\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_stakeWETHAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_cashableEarningsPerMille\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_initialReputation\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_withdrawalCooldownPeriodInBlocks\",\"type\":\"uint256\"}],\"name\":\"setupConsensus\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"techGov\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"constructor\":{\"params\":{\"_anchorMasterCopy\":\"Anchor master copy contract address.\",\"_committeeMasterCopy\":\"Committee master copy contract address.\",\"_consensusGatewayMasterCopy\":\"Consensus gateway master copy contract address.\",\"_consensusMasterCopy\":\"Consensus master copy contract address.\",\"_coreMasterCopy\":\"Core master copy contract address.\",\"_reputationMasterCopy\":\"Reputation master copy contract address.\",\"_techGov\":\"Technical governance address.\"}},\"deployAnchor(bytes)\":{\"params\":{\"_anchorSetupData\":\"Setup data for anchor contract.\"},\"return\":\"anchor_ Address of anchor contract.\"},\"deployMetachainProxies(bytes,bytes)\":{\"params\":{\"_consensusGatewaySetupData\":\"Setup data for consensus gateway contract.\",\"_coreSetupData\":\"Setup data for core contract.\"},\"return\":\"core_ Address of core contract.consensusGateway_ Address of consensus gateway contract.\"},\"newCommittee(bytes)\":{\"params\":{\"_data\":\"Setup function call data.\"},\"return\":\"deployedAddress_ Deployed contract address.\"},\"newCore(bytes)\":{\"params\":{\"_data\":\"Setup function call data.\"},\"return\":\"Deployed contract address.\"},\"newMetachain()\":{\"return\":\"metachainId_ Metachain id.\"},\"setupConsensus(uint256,uint256,uint256,uint256,uint256,address,uint256,address,uint256,uint256,uint256,uint256)\":{\"params\":{\"_cashableEarningsPerMille\":\"Fraction of the total amount that can                                 be cashed by validators.\",\"_coinbaseSplitPerMille\":\"Coinbase split per mille.\",\"_committeeSize\":\"Max committee size that can be formed.\",\"_gasTargetDelta\":\"Gas target delta to open new metablock.\",\"_initialReputation\":\"Initial reputations that will be set when                          validators joins.\",\"_joinLimit\":\"Maximum number of validators that can join in a core.\",\"_minValidators\":\"Minimum number of validators that must join a                      created core to open.\",\"_most\":\"MOST token address.\",\"_stakeMOSTAmount\":\"Amount of MOST that will be staked by validators.\",\"_stakeWETHAmount\":\"Amount of wEth that will be staked by validators.\",\"_wETH\":\"wEth token address.\",\"_withdrawalCooldownPeriodInBlocks\":\"Cooling period for withdrawal                                         after logout.\"}}}},\"userdoc\":{\"methods\":{\"constructor\":\"Constructor for Axiom contract\",\"deployAnchor(bytes)\":{\"notice\":\"Deploys proxy for anchor contract.\"},\"deployMetachainProxies(bytes,bytes)\":{\"notice\":\"Deploys metachain proxies. Only consensus can call this function.\"},\"newCommittee(bytes)\":{\"notice\":\"Deploy Committee proxy contract. This can be called only by consensus        contract.\"},\"newCore(bytes)\":{\"notice\":\"Deploy Core proxy contract. This can be called only by consensus        contract.\"},\"newMetachain()\":{\"notice\":\"Setup a new metachain. Only technical governance address can        call this function.\"},\"setupConsensus(uint256,uint256,uint256,uint256,uint256,address,uint256,address,uint256,uint256,uint256,uint256)\":{\"notice\":\"Setup consensus contract, this can be only called once by        technical governance address.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/axiom/AxiomTest.sol\":\"AxiomTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/Anchor.sol\":{\"keccak256\":\"0xef1a8230489dd9853fa21cc36c33deaccd47acc3ce6bc93d079a4c26214bd86d\",\"urls\":[\"bzz-raw://cdef6aae9b593adb5e29e3ddfcba0d8ed40469452ed41c4530d04ff17ee902b7\",\"dweb:/ipfs/QmdnrbYYGqTvuRUrvpkKoJXdXHcPUccrfmu7pWp7LMYwT1\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/anchor/StateRootProvider.sol\":{\"keccak256\":\"0xa87d1314d59cb0d362e8e76e742575bc98d77620cd965c6b0bdce14dba1ab195\",\"urls\":[\"bzz-raw://6b5e0705a7e3a45af926d47f27cc53070d9932c9494d619c44a553ff85c67bc2\",\"dweb:/ipfs/QmYYr2PsJnA7tfYs4ZkY4gSJUkNv6dVrt9CXvNv7iygSfW\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/Axiom.sol\":{\"keccak256\":\"0x0e06dc84c7386c35a1d907647fc4d5f71a2979c71d3b0a37d257a22b6e80ba56\",\"urls\":[\"bzz-raw://d7f5cf90f3fdd119ccf6e4e7be87c1e4eebeb71d833e269f43255ceba5bbaff1\",\"dweb:/ipfs/QmUgojBhd36HiRfCCNzTjqKCPoGGbiNHyZwxMeVf8vZz8T\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/AxiomInterface.sol\":{\"keccak256\":\"0x485cd0c45569dee79c715bc85684ae8e7d32972567b5881b0e2e46c890f83891\",\"urls\":[\"bzz-raw://fba31d86e8098335a04d782eb96feac2eb7c9abb28a05f0ec45a738f990db627\",\"dweb:/ipfs/QmXiZ6PC8rnTcroKbhjSg12FzoA2gsKSiGvmuDWeWSCbbE\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusInterface.sol\":{\"keccak256\":\"0x1912e0e28034ce3e7acaae8b34e26e1875e9afab60c4777f9bd68323e0445dd4\",\"urls\":[\"bzz-raw://574a73c3b8d5ddfd8898cdae1e65052558902126ddcdedbe4f585077400d172d\",\"dweb:/ipfs/QmP9LNk3zFphmrbtmFmb3wsXVfSGK4udbz4A6J8dBzrJdv\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/consensus/ConsensusModule.sol\":{\"keccak256\":\"0x7b6a76b998a80813b06bbd950d2037249a15e1d0c9fbba46cfc190c04d643de4\",\"urls\":[\"bzz-raw://ec6aa62754121b74b67ca7693fd60203cfc19487b579a54c7c437feef5d36d7b\",\"dweb:/ipfs/QmQKs1sCtsiFkjw2tjHmToC5ji8CKUUh2WJMqBq2qFsfGf\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol\":{\"keccak256\":\"0xa9d4af0caacd760200028696a0e489ba170568fcfae0fc90d93aab1af88e8734\",\"urls\":[\"bzz-raw://7eead9e2e268db6f8144820c293e944420017df2c3caa65f3ce55cb27f3784f7\",\"dweb:/ipfs/QmNnLSJZXR7KLZ9SCTzWsyS8Z7DW4peaaf1f3b76rAJziV\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/MasterCopyNonUpgradable.sol\":{\"keccak256\":\"0x675eaeceda96f0a2ac02345f61797c120bef572f362309ec58de3b21e321a434\",\"urls\":[\"bzz-raw://3dd3e80d5da6f94166f45b8b9f80fe08c29477ce0f0ee03d08b7b35558bc373e\",\"dweb:/ipfs/QmTkdRqRx8kicDK7GvWQsUK25PPLNE8fvotfhwpLJaECbR\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/Proxy.sol\":{\"keccak256\":\"0x894205a69638f0aa16a7138be257cc360d259e0b768456896dfef14c088013c3\",\"urls\":[\"bzz-raw://01cea74775bb22ff01b1bb4af320cb5984a32955a0952fea1ef92924efcb842a\",\"dweb:/ipfs/QmSx66QbdZfxvRifDQJfo3wAW3G6gHz7TryHKNrXVSsff1\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/proxies/ProxyFactory.sol\":{\"keccak256\":\"0x12d05158dd352937234394ee6c2d7908b652564b821db5b81988cbb1b1d12d88\",\"urls\":[\"bzz-raw://43a8d64d6d9bdd59ccbd0dd18fccf0c8ca380dedf55f37799e2163df447dc0c6\",\"dweb:/ipfs/QmYhHuEdfdgvzsfXqqJd8MXwCjyT49A68pPhmeF4aSJXGW\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/ReputationInterface.sol\":{\"keccak256\":\"0x8f9b8e2e7fbecd6b401581fc4f951aa395b78227d455e1c52c91650f88f2ec52\",\"urls\":[\"bzz-raw://e6e737aad05f25171be0671c44d7e68ac06ee825030b2fc3b82a43bb8afbb191\",\"dweb:/ipfs/QmTqMGRc4iV3WeHibPGk9BsEBts7UPZqUWQM5sonQx1X9Y\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/axiom/AxiomTest.sol\":{\"keccak256\":\"0x6d9384fc4d97dc090c20e985315252ab38447fbcbd80e3166069cef7671278c3\",\"urls\":[\"bzz-raw://43fdb85357e37e955da9d8fa8e4529253ade4c2380df41ca35212cffd003661c\",\"dweb:/ipfs/QmNRn7kYoiZzbJ3opwXawoVqNmd9fHY68PG6kMEFri2Eup\"]},\"openzeppelin-solidity/contracts/math/SafeMath.sol\":{\"keccak256\":\"0x965012d27b4262d7a41f5028cbb30c51ebd9ecd4be8fb30380aaa7a3c64fbc8b\",\"urls\":[\"bzz-raw://1eb493553b27efd46c231a836a83ce50d215639feb97b4aac9f301d0fd034ff5\",\"dweb:/ipfs/QmbMdvSXcqGKxeeYvzF3VrWpoHQyVzMXBhzhAokF2Gdymv\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516115e03803806115e0833981810160405260e081101561003357600080fd5b508051602082015160408301516060840151608085015160a086015160c0909601519495939492939192909190868686868686866001600160a01b0387166100dc57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f5465636820676f76206164647265737320697320302e00000000000000000000604482015290519081900360640190fd5b6001600160a01b03861661013b576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260238152602001806115bd6023913960400191505060405180910390fd5b6001600160a01b0385166101b057604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f436f7265206d617374657220636f7079206164647265737320697320302e0000604482015290519081900360640190fd5b6001600160a01b03841661020f576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602381526020018061154b6023913960400191505060405180910390fd5b6001600160a01b03831661026e576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806115996024913960400191505060405180910390fd5b6001600160a01b0382166102e357604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820181905260248201527f416e63686f72206d617374657220636f7079206164647265737320697320302e604482015290519081900360640190fd5b6001600160a01b038116610342576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252602b81526020018061156e602b913960400191505060405180910390fd5b600180546001600160a01b039889166001600160a01b03199182161790915560028054978916978216979097179096556003805495881695871695909517909455600480549387169386169390931790925560058054918616918516919091179055600680549185169184169190911790556007805491909316911617905550505050505050611174806103d76000396000f3fe608060405234801561001057600080fd5b50600436106101165760003560e01c8063a63c6507116100a2578063d075ac5811610071578063d075ac5814610304578063e052091114610329578063f468e2bb14610331578063f7332b8614610415578063fe08195c1461048357610116565b8063a63c650714610217578063a663d1ad1461021f578063c52164c61461028e578063ca7caf461461029657610116565b8063294a334f116100e9578063294a334f146101cf5780632a4f38bc146101d75780635da7560c146101df5780636b361e41146102075780638ef3f7611461020f57610116565b806303f920761461011b57806313cba58b1461013557806319beeb7b146101595780631a70fdb1146101c7575b600080fd5b61012361048b565b60408051918252519081900360200190f35b61013d6106f8565b604080516001600160a01b039092168252519081900360200190f35b61013d6004803603602081101561016f57600080fd5b810190602081018135600160201b81111561018957600080fd5b82018360208201111561019b57600080fd5b803590602001918460018302840111600160201b831117156101bc57600080fd5b509092509050610707565b61013d6107a2565b61013d6107b1565b61013d6107c0565b610205600480360360208110156101f557600080fd5b50356001600160a01b03166107cf565b005b61013d6107f1565b61013d610800565b61013d61080f565b610205600480360361018081101561023657600080fd5b508035906020810135906040810135906060810135906080810135906001600160a01b0360a082013581169160c08101359160e08201351690610100810135906101208101359061014081013590610160013561081e565b61013d610a8d565b61013d600480360360208110156102ac57600080fd5b810190602081018135600160201b8111156102c657600080fd5b8201836020820111156102d857600080fd5b803590602001918460018302840111600160201b831117156102f957600080fd5b509092509050610a9c565b61030c610b30565b604080516001600160e01b03199092168252519081900360200190f35b61013d610b4b565b6103ef6004803603604081101561034757600080fd5b810190602081018135600160201b81111561036157600080fd5b82018360208201111561037357600080fd5b803590602001918460018302840111600160201b8311171561039457600080fd5b919390929091602081019035600160201b8111156103b157600080fd5b8201836020820111156103c357600080fd5b803590602001918460018302840111600160201b831117156103e457600080fd5b509092509050610b5a565b604080516001600160a01b03938416815291909216602082015281519081900390910190f35b61013d6004803603602081101561042b57600080fd5b810190602081018135600160201b81111561044557600080fd5b82018360208201111561045757600080fd5b803590602001918460018302840111600160201b8311171561047857600080fd5b509092509050610c4b565b61030c610cdf565b6001546000906001600160a01b031633146104d75760405162461bcd60e51b815260040180806020018281038252602c8152602001806110be602c913960400191505060405180910390fd5b6000606060008060009054906101000a90046001600160a01b03166001600160a01b03166303f920766040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561052c57600080fd5b505af1158015610540573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052608081101561056957600080fd5b81516020830151604080850180519151939592948301929184600160201b82111561059357600080fd5b9083019060208201858111156105a857600080fd5b8251600160201b8111828201881017156105c157600080fd5b82525081516020918201929091019080838360005b838110156105ee5781810151838201526020016105d6565b50505050905090810190601f16801561061b5780820380516001836020036101000a031916815260200191505b5060408181526020928301518883526001600160a01b03808916858501528116606084015260809183018281528751928401929092528651989c50969a509498509496507f4791a65bd9f9dc261991a8ab2e9a4a5aae845715c8cc007393a21e377ed800c3958a958a958a95508994509092909160a084019186019080838360005b838110156106b557818101518382015260200161069d565b50505050905090810190601f1680156106e25780820380516001836020036101000a031916815260200191505b509550505050505060405180910390a150505090565b6006546001600160a01b031681565b600080546001600160a01b031633146107515760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600354604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b9392505050565b6004546001600160a01b031681565b6005546001600160a01b031681565b6002546001600160a01b031681565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6003546001600160a01b031681565b6000546001600160a01b031681565b6007546001600160a01b031681565b6001546001600160a01b031633146108675760405162461bcd60e51b815260040180806020018281038252602c8152602001806110be602c913960400191505060405180910390fd5b6000546001600160a01b0316156108c5576040805162461bcd60e51b815260206004820152601b60248201527f436f6e73656e73757320697320616c72656164792073657475702e0000000000604482015290519081900360640190fd5b60025460408051602081019091526000808252916108ee916001600160a01b0390911690610d6b565b90506108f981610e0f565b6060604051808061104260469139604080519182900360460182206000546001600160a01b0390811660248501528d81166044850152606484018d90528b8116608485015260a484018b905260c484018a905260e48401899052610104808501899052835180860390910181526101249094019092526020830180516001600160e01b03166001600160e01b03199092169190911790526005549193506109a292501682610d6b565b600880546001600160a01b0319166001600160a01b03929092169190911790556040516060908060366110888239603601905060405180910390208f8f8f8f8f600860009054906101000a90046001600160a01b031660405160240180878152602001868152602001858152602001848152602001838152602001826001600160a01b03166001600160a01b031681526020019650505050505050604051602081830303815290604052906001600160e01b0319166020820180516001600160e01b0383818316178352505050509050610a7c8382610e9c565b505050505050505050505050505050565b6008546001600160a01b031681565b600080546001600160a01b03163314610ae65760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600654604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b60405180604661104282396046019050604051809103902081565b6001546001600160a01b031681565b6000805481906001600160a01b03163314610ba65760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600354604080516020601f8901819004810282018101909252878152610bf0926001600160a01b0316918990899081908401838280828437600092019190915250610cfa92505050565b600754604080516020601f8801819004810282018101909252868152929450610c40926001600160a01b0390921691908790879081908401838280828437600092019190915250610cfa92505050565b905094509492505050565b600080546001600160a01b03163314610c955760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600454604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b60405180603661108882396036019050604051809103902081565b60006001600160a01b038316610d57576040805162461bcd60e51b815260206004820152601960248201527f4d617374657220636f7079206164647265737320697320302e00000000000000604482015290519081900360640190fd5b6000610d638484610d6b565b949350505050565b600082604051610d7a90610ec2565b6001600160a01b03909116815260405190819003602001906000f080158015610da7573d6000803e3d6000fd5b50825190915015610dcd5760008060008451602086016000865af11415610dcd57600080fd5b604080516001600160a01b038316815290517fa38789425dbeee0239e16ff2d2567e31720127fbc6430758c1a4efc6aef29f809181900360200190a192915050565b6000546001600160a01b031615610e575760405162461bcd60e51b815260040180806020018281038252602581526020018061101d6025913960400191505060405180910390fd5b6001600160a01b0381166107cf5760405162461bcd60e51b81526004018080602001828103825260238152602001806110ea6023913960400191505060405180910390fd5b805115610ebe5760008060008351602085016000875af11415610ebe57600080fd5b5050565b61014d80610ed08339019056fe608060405234801561001057600080fd5b5060405161014d38038061014d8339818101604052602081101561003357600080fd5b50516001600160a01b038116610094576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806101296024913960400191505060405180910390fd5b600080546001600160a01b039092166001600160a01b03199092169190911790556066806100c36000396000f3fe60806040526001600160a01b03600054163660008037600080366000845af43d6000803e80602c573d6000fd5b3d6000f3fea265627a7a723158201bcbc87e2e88421c4e9851d9787d03de469d31caee30ebab16842537c81dbe6664736f6c634300050d0032496e76616c6964206d617374657220636f707920616464726573732070726f7669646564436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e736574757028616464726573732c616464726573732c75696e743235362c616464726573732c75696e743235362c75696e743235362c75696e743235362c75696e743235362973657475702875696e743235362c75696e743235362c75696e743235362c75696e743235362c75696e743235362c616464726573732943616c6c6572206d75737420626520746563686e6963616c20676f7665726e616e636520616464726573732e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a72315820d9fd250343398c84582c2c56a8542dd09d9bfd07a40d4c2bb041ceed61f3bce764736f6c634300050d0032436f6d6d6974746565206d617374657220636f7079206164647265737320697320302e436f6e73656e7375732067617465776179206d617374657220636f7079206164647265737320697320302e52657075746174696f6e206d617374657220636f7079206164647265737320697320302e436f6e73656e737573206d617374657220636f7079206164647265737320697320302e",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101165760003560e01c8063a63c6507116100a2578063d075ac5811610071578063d075ac5814610304578063e052091114610329578063f468e2bb14610331578063f7332b8614610415578063fe08195c1461048357610116565b8063a63c650714610217578063a663d1ad1461021f578063c52164c61461028e578063ca7caf461461029657610116565b8063294a334f116100e9578063294a334f146101cf5780632a4f38bc146101d75780635da7560c146101df5780636b361e41146102075780638ef3f7611461020f57610116565b806303f920761461011b57806313cba58b1461013557806319beeb7b146101595780631a70fdb1146101c7575b600080fd5b61012361048b565b60408051918252519081900360200190f35b61013d6106f8565b604080516001600160a01b039092168252519081900360200190f35b61013d6004803603602081101561016f57600080fd5b810190602081018135600160201b81111561018957600080fd5b82018360208201111561019b57600080fd5b803590602001918460018302840111600160201b831117156101bc57600080fd5b509092509050610707565b61013d6107a2565b61013d6107b1565b61013d6107c0565b610205600480360360208110156101f557600080fd5b50356001600160a01b03166107cf565b005b61013d6107f1565b61013d610800565b61013d61080f565b610205600480360361018081101561023657600080fd5b508035906020810135906040810135906060810135906080810135906001600160a01b0360a082013581169160c08101359160e08201351690610100810135906101208101359061014081013590610160013561081e565b61013d610a8d565b61013d600480360360208110156102ac57600080fd5b810190602081018135600160201b8111156102c657600080fd5b8201836020820111156102d857600080fd5b803590602001918460018302840111600160201b831117156102f957600080fd5b509092509050610a9c565b61030c610b30565b604080516001600160e01b03199092168252519081900360200190f35b61013d610b4b565b6103ef6004803603604081101561034757600080fd5b810190602081018135600160201b81111561036157600080fd5b82018360208201111561037357600080fd5b803590602001918460018302840111600160201b8311171561039457600080fd5b919390929091602081019035600160201b8111156103b157600080fd5b8201836020820111156103c357600080fd5b803590602001918460018302840111600160201b831117156103e457600080fd5b509092509050610b5a565b604080516001600160a01b03938416815291909216602082015281519081900390910190f35b61013d6004803603602081101561042b57600080fd5b810190602081018135600160201b81111561044557600080fd5b82018360208201111561045757600080fd5b803590602001918460018302840111600160201b8311171561047857600080fd5b509092509050610c4b565b61030c610cdf565b6001546000906001600160a01b031633146104d75760405162461bcd60e51b815260040180806020018281038252602c8152602001806110be602c913960400191505060405180910390fd5b6000606060008060009054906101000a90046001600160a01b03166001600160a01b03166303f920766040518163ffffffff1660e01b8152600401600060405180830381600087803b15801561052c57600080fd5b505af1158015610540573d6000803e3d6000fd5b505050506040513d6000823e601f3d908101601f19168201604052608081101561056957600080fd5b81516020830151604080850180519151939592948301929184600160201b82111561059357600080fd5b9083019060208201858111156105a857600080fd5b8251600160201b8111828201881017156105c157600080fd5b82525081516020918201929091019080838360005b838110156105ee5781810151838201526020016105d6565b50505050905090810190601f16801561061b5780820380516001836020036101000a031916815260200191505b5060408181526020928301518883526001600160a01b03808916858501528116606084015260809183018281528751928401929092528651989c50969a509498509496507f4791a65bd9f9dc261991a8ab2e9a4a5aae845715c8cc007393a21e377ed800c3958a958a958a95508994509092909160a084019186019080838360005b838110156106b557818101518382015260200161069d565b50505050905090810190601f1680156106e25780820380516001836020036101000a031916815260200191505b509550505050505060405180910390a150505090565b6006546001600160a01b031681565b600080546001600160a01b031633146107515760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600354604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b9392505050565b6004546001600160a01b031681565b6005546001600160a01b031681565b6002546001600160a01b031681565b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6003546001600160a01b031681565b6000546001600160a01b031681565b6007546001600160a01b031681565b6001546001600160a01b031633146108675760405162461bcd60e51b815260040180806020018281038252602c8152602001806110be602c913960400191505060405180910390fd5b6000546001600160a01b0316156108c5576040805162461bcd60e51b815260206004820152601b60248201527f436f6e73656e73757320697320616c72656164792073657475702e0000000000604482015290519081900360640190fd5b60025460408051602081019091526000808252916108ee916001600160a01b0390911690610d6b565b90506108f981610e0f565b6060604051808061104260469139604080519182900360460182206000546001600160a01b0390811660248501528d81166044850152606484018d90528b8116608485015260a484018b905260c484018a905260e48401899052610104808501899052835180860390910181526101249094019092526020830180516001600160e01b03166001600160e01b03199092169190911790526005549193506109a292501682610d6b565b600880546001600160a01b0319166001600160a01b03929092169190911790556040516060908060366110888239603601905060405180910390208f8f8f8f8f600860009054906101000a90046001600160a01b031660405160240180878152602001868152602001858152602001848152602001838152602001826001600160a01b03166001600160a01b031681526020019650505050505050604051602081830303815290604052906001600160e01b0319166020820180516001600160e01b0383818316178352505050509050610a7c8382610e9c565b505050505050505050505050505050565b6008546001600160a01b031681565b600080546001600160a01b03163314610ae65760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600654604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b60405180604661104282396046019050604051809103902081565b6001546001600160a01b031681565b6000805481906001600160a01b03163314610ba65760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600354604080516020601f8901819004810282018101909252878152610bf0926001600160a01b0316918990899081908401838280828437600092019190915250610cfa92505050565b600754604080516020601f8801819004810282018101909252868152929450610c40926001600160a01b0390921691908790879081908401838280828437600092019190915250610cfa92505050565b905094509492505050565b600080546001600160a01b03163314610c955760405162461bcd60e51b815260040180806020018281038252603381526020018061110d6033913960400191505060405180910390fd5b600454604080516020601f860181900481028201810190925284815261079b926001600160a01b0316918690869081908401838280828437600092019190915250610cfa92505050565b60405180603661108882396036019050604051809103902081565b60006001600160a01b038316610d57576040805162461bcd60e51b815260206004820152601960248201527f4d617374657220636f7079206164647265737320697320302e00000000000000604482015290519081900360640190fd5b6000610d638484610d6b565b949350505050565b600082604051610d7a90610ec2565b6001600160a01b03909116815260405190819003602001906000f080158015610da7573d6000803e3d6000fd5b50825190915015610dcd5760008060008451602086016000865af11415610dcd57600080fd5b604080516001600160a01b038316815290517fa38789425dbeee0239e16ff2d2567e31720127fbc6430758c1a4efc6aef29f809181900360200190a192915050565b6000546001600160a01b031615610e575760405162461bcd60e51b815260040180806020018281038252602581526020018061101d6025913960400191505060405180910390fd5b6001600160a01b0381166107cf5760405162461bcd60e51b81526004018080602001828103825260238152602001806110ea6023913960400191505060405180910390fd5b805115610ebe5760008060008351602085016000875af11415610ebe57600080fd5b5050565b61014d80610ed08339019056fe608060405234801561001057600080fd5b5060405161014d38038061014d8339818101604052602081101561003357600080fd5b50516001600160a01b038116610094576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004018080602001828103825260248152602001806101296024913960400191505060405180910390fd5b600080546001600160a01b039092166001600160a01b03199092169190911790556066806100c36000396000f3fe60806040526001600160a01b03600054163660008037600080366000845af43d6000803e80602c573d6000fd5b3d6000f3fea265627a7a723158201bcbc87e2e88421c4e9851d9787d03de469d31caee30ebab16842537c81dbe6664736f6c634300050d0032496e76616c6964206d617374657220636f707920616464726573732070726f7669646564436f6e73656e737573206164647265737320697320616c72656164792070726573656e742e736574757028616464726573732c616464726573732c75696e743235362c616464726573732c75696e743235362c75696e743235362c75696e743235362c75696e743235362973657475702875696e743235362c75696e743235362c75696e743235362c75696e743235362c75696e743235362c616464726573732943616c6c6572206d75737420626520746563686e6963616c20676f7665726e616e636520616464726573732e436f6e73656e7375732061646472657373206d757374206e6f74206265206e756c6c2e4f6e6c792074686520636f6e73656e73757320636f6e74726163742063616e2063616c6c20746869732066756e6374696f6e2ea265627a7a72315820d9fd250343398c84582c2c56a8542dd09d9bfd07a40d4c2bb041ceed61f3bce764736f6c634300050d0032",
+  "sourceMap": "654:1291:63:-;;;1290:549;8:9:-1;5:2;;;30:1;27;20:12;5:2;1290:549:63;;;;;;;;;;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;1290:549:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3515:22:7;;3494:91;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3617:34:7;;3596:116;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3744:29:7;;3723:106;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3861:34:7;;3840:116;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;3988:35:7;;3967:118;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4117:31:7;;4096:110;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;4238:41:7;;4217:131;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4359:7;:18;;-1:-1:-1;;;;;4359:18:7;;;-1:-1:-1;;;;;;4359:18:7;;;;;;;4387:19;:42;;;;;;;;;;;;;;;4439:14;:32;;;;;;;;;;;;;;;4481:19;:42;;;;;;;;;;;;;;;4533:20;:44;;;;;;;;;;;;;;4587:16;:36;;;;;;;;;;;;;;4633:26;:56;;;;;;;;;;;-1:-1:-1;;;;;;;654:1291:63;;;;;;",
+  "deployedSourceMap": "654:1291:63:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;654:1291:63;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8839:501:7;;;:::i;:::-;;;;;;;;;;;;;;;;2364:31;;;:::i;:::-;;;;-1:-1:-1;;;;;2364:31:7;;;;;;;;;;;;;;7993:205;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;7993:205:7;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;7993:205:7;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;7993:205:7;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;7993:205:7;;-1:-1:-1;7993:205:7;-1:-1:-1;7993:205:7;:::i;2183:34::-;;;:::i;2275:35::-;;;:::i;2011:34::-;;;:::i;1844:99:63:-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1844:99:63;-1:-1:-1;;;;;1844:99:63;;:::i;:::-;;2097:29:7;;;:::i;756:35:22:-;;;:::i;2460:41:7:-;;;:::i;5924:1854::-;;;;;;13:3:-1;8;5:12;2:2;;;30:1;27;20:12;2:2;-1:-1;5924:1854:7;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;5924:1854:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;2547:37::-;;;:::i;9540:213::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;9540:213:7;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;9540:213:7;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;9540:213:7;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;9540:213:7;;-1:-1:-1;9540:213:7;-1:-1:-1;9540:213:7;:::i;1259:180::-;;;:::i;:::-;;;;-1:-1:-1;;;;;;1259:180:7;;;;;;;;;;;;;;1932:22;;;:::i;10132:444::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;10132:444:7;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;10132:444:7;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;10132:444:7;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;10132:444:7;;;;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;10132:444:7;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;10132:444:7;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;10132:444:7;;-1:-1:-1;10132:444:7;-1:-1:-1;10132:444:7;:::i;:::-;;;;-1:-1:-1;;;;;10132:444:7;;;;;;;;;;;;;;;;;;;;;;;;8442:215;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;8442:215:7;;;;;;;;-1:-1:-1;;;5:28;;2:2;;;46:1;43;36:12;2:2;8442:215:7;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;8442:215:7;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;-1:-1;;;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;-1:-1;8442:215:7;;-1:-1:-1;8442:215:7;-1:-1:-1;8442:215:7;:::i;1506:163::-;;;:::i;8839:501::-;1756:7;;8916:20;;-1:-1:-1;;;;;1756:7:7;1767:10;1756:21;1735:112;;;;-1:-1:-1;;;1735:112:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8952:14;8976:27;9013:24;9164:9;;;;;;;;;-1:-1:-1;;;;;9164:9:7;-1:-1:-1;;;;;9164:22:7;;:24;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;9164:24:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;9164:24:7;;;;;;39:16:-1;36:1;17:17;2:54;101:4;9164:24:7;80:15:-1;;;-1:-1;;76:31;65:43;;120:4;113:20;13:3;5:12;;2:2;;;30:1;27;20:12;2:2;9164:24:7;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;11:20;;8:2;;;44:1;41;34:12;8:2;62:21;;;;123:4;114:14;;138:31;;;135:2;;;182:1;179;172:12;135:2;213:10;;-1:-1;;;244:29;;285:43;;;282:58;-1:-1;233:115;230:2;;;361:1;358;351:12;230:2;372:25;;-1:-1;9164:24:7;;420:4:-1;411:14;;;;9164:24:7;;;;;411:14:-1;9164:24:7;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;9164:24:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;9164:24:7;;;;;;;;;9204:129;;;-1:-1:-1;;;;;9204:129:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9048:140;;-1:-1:-1;9048:140:7;;-1:-1:-1;9048:140:7;;-1:-1:-1;9164:24:7;;-1:-1:-1;9204:129:7;;9048:140;;;;;;-1:-1:-1;9164:24:7;;-1:-1:-1;9164:24:7;;9204:129;;;;;;;;;;;;-1:-1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;9204:129:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1858:1;;;8839:501;:::o;2364:31::-;;;-1:-1:-1;;;;;2364:31:7;;:::o;7993:205::-;8102:24;1367:9:22;;-1:-1:-1;;;;;1367:9:22;1345:10;:32;1324:130;;;;-1:-1:-1;;;1324:130:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8169:14:7;;8149:42;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;8169:14:7;;8185:5;;;;;;8149:42;;8185:5;;;;8149:42;1:33:-1;99:1;81:16;;74:27;;;;-1:-1;8149:19:7;;-1:-1:-1;;;8149:42:7:i;:::-;8142:49;7993:205;-1:-1:-1;;;7993:205:7:o;2183:34::-;;;-1:-1:-1;;;;;2183:34:7;;:::o;2275:35::-;;;-1:-1:-1;;;;;2275:35:7;;:::o;2011:34::-;;;-1:-1:-1;;;;;2011:34:7;;:::o;1844:99:63:-;1914:9;:22;;-1:-1:-1;;;;;;1914:22:63;-1:-1:-1;;;;;1914:22:63;;;;;;;;;;1844:99::o;2097:29:7:-;;;-1:-1:-1;;;;;2097:29:7;;:::o;756:35:22:-;;;-1:-1:-1;;;;;756:35:22;;:::o;2460:41:7:-;;;-1:-1:-1;;;;;2460:41:7;;:::o;5924:1854::-;1756:7;;-1:-1:-1;;;;;1756:7:7;1767:10;1756:21;1735:112;;;;-1:-1:-1;;;1735:112:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;6465:1;6443:9;-1:-1:-1;;;;;6443:9:7;6435:32;6414:106;;;;;-1:-1:-1;;;6414:106:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;6739:19;;6727:36;;;;;;;;;6704:20;6727:36;;;6704:20;6727:36;;-1:-1:-1;;;;;6739:19:7;;;;6727:11;:36::i;:::-;6704:59;;6774:75;6832:14;6774:30;:75::i;:::-;6860:32;1328:105;;;;;;;;;;;;;;;;;;;6972:9;;-1:-1:-1;;;;;6972:9:7;;;6895:312;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;6895:312:7;;;;;;;;25:18:-1;;61:17;;-1:-1;;;;;182:15;-1:-1;;;;;;6895:312:7;;;179:29:-1;;;;160:49;;7322:20:7;;6895:312;;-1:-1:-1;7289:112:7;;-1:-1:-1;7322:20:7;6895:312;7289:11;:112::i;:::-;7218:10;:207;;-1:-1:-1;;;;;;7218:207:7;-1:-1:-1;;;;;7218:207:7;;;;;;;;;;1574:89;;7436:31;;1574:89;;;;;;;;;;;;;;;;7546:14;7574;7602:10;7626:15;7655:22;7691:10;;;;;;;;;-1:-1:-1;;;;;7691:10:7;7470:241;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;7470:241:7;-1:-1:-1;;;;;7470:241:7;;;;;;;;;;;;;;;49:4:-1;39:7;30;26:21;22:32;13:7;6:49;7470:241:7;;;;-1:-1:-1;;;;;7470:241:7;;38:4:-1;29:7;25:18;67:10;61:17;-1:-1;;;;;199:8;192:4;186;182:15;179:29;167:10;160:49;0:215;;;7470:241:7;7436:275;;7722:49;7736:14;7752:18;7722:13;:49::i;:::-;1858:1;;;5924:1854;;;;;;;;;;;;:::o;2547:37::-;;;-1:-1:-1;;;;;2547:37:7;;:::o;9540:213::-;9650:15;1367:9:22;;-1:-1:-1;;;;;1367:9:22;1345:10;:32;1324:130;;;;-1:-1:-1;;;1324:130:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;9711:16:7;;9691:55;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;9711:16:7;;9729;;;;;;9691:55;;9729:16;;;;9691:55;1:33:-1;99:1;81:16;;74:27;;;;-1:-1;9691:19:7;;-1:-1:-1;;;9691:55:7:i;1259:180::-;1328:105;;;;;;;;;;;;;;;;;;1259:180;:::o;1932:22::-;;;-1:-1:-1;;;;;1932:22:7;;:::o;10132:444::-;10315:13;1367:9:22;;10315:13:7;;-1:-1:-1;;;;;1367:9:22;1345:10;:32;1324:130;;;;-1:-1:-1;;;1324:130:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;10399:14:7;;10379:51;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;10399:14:7;;10415;;;;;;10379:51;;10415:14;;;;10379:51;1:33:-1;99:1;81:16;;74:27;;;;-1:-1;10379:19:7;;-1:-1:-1;;;10379:51:7:i;:::-;10493:26;;10460:109;;;;;;;;;;;;;;;;;;;;;;10371:59;;-1:-1:-1;10460:109:7;;-1:-1:-1;;;;;10493:26:7;;;;10460:109;10533:26;;;;;;10460:109;;10533:26;;;;10460:109;1:33:-1;99:1;81:16;;74:27;;;;-1:-1;10460:19:7;;-1:-1:-1;;;10460:109:7:i;:::-;10440:129;;10132:444;;;;;;;:::o;8442:215::-;8556:24;1367:9:22;;-1:-1:-1;;;;;1367:9:22;1345:10;:32;1324:130;;;;-1:-1:-1;;;1324:130:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8623:19:7;;8603:47;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;8623:19:7;;8644:5;;;;;;8603:47;;8644:5;;;;8603:47;1:33:-1;99:1;81:16;;74:27;;;;-1:-1;8603:19:7;;-1:-1:-1;;;8603:47:7:i;1506:163::-;1574:89;;;;;;;;;;;;;;;;;;1506:163;:::o;10810:418::-;10935:24;-1:-1:-1;;;;;10996:25:7;;10975:97;;;;;-1:-1:-1;;;10975:97:7;;;;;;;;;;;;;;;;;;;;;;;;;;;;11083:19;11105:65;11130:11;11155:5;11105:11;:65::i;:::-;11083:87;10810:418;-1:-1:-1;;;;10810:418:7:o;663:425:56:-;757:11;802:10;792:21;;;;;:::i;:::-;-1:-1:-1;;;;;792:21:56;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;827:11:56;;784:29;;-1:-1:-1;827:15:56;823:224;;1014:1;1010;1007;1000:4;994:11;987:4;981;977:15;974:1;967:5;962:3;957:55;954:62;951:2;;;1029:1;1026;1019:12;951:2;1061:20;;;-1:-1:-1;;;;;1061:20:56;;;;;;;;;;;;;;;663:425;;;;:::o;925:354:22:-;1050:1;1028:9;-1:-1:-1;;;;;1028:9:22;1020:32;999:116;;;;-1:-1:-1;;;999:116:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1146:33:22;;1125:115;;;;-1:-1:-1;;;1125:115:22;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1228:392:56;1342:12;;:16;1338:276;;1535:1;1531;1528;1520:5;1514:12;1507:4;1500:5;1496:16;1493:1;1485:6;1480:3;1475:58;1472:65;1469:2;;;1570:1;1567;1560:12;1469:2;1228:392;;:::o;654:1291:63:-;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\nimport \"../../axiom/Axiom.sol\";\n\ncontract AxiomTest is Axiom {\n\n    /* Special Member Functions */\n\n    /**\n     * Constructor for Axiom contract\n     *\n     * @param _techGov Technical governance address.\n     * @param _consensusMasterCopy Consensus master copy contract address.\n     * @param _coreMasterCopy Core master copy contract address.\n     * @param _committeeMasterCopy Committee master copy contract address.\n     * @param _reputationMasterCopy Reputation master copy contract address.\n     * @param _anchorMasterCopy Anchor master copy contract address.\n     * @param _consensusGatewayMasterCopy Consensus gateway master copy contract address.\n     */\n    constructor(\n        address _techGov,\n        address _consensusMasterCopy,\n        address _coreMasterCopy,\n        address _committeeMasterCopy,\n        address _reputationMasterCopy,\n        address _anchorMasterCopy,\n        address _consensusGatewayMasterCopy\n    )\n        public\n        Axiom(\n            _techGov,\n            _consensusMasterCopy,\n            _coreMasterCopy,\n            _committeeMasterCopy,\n            _reputationMasterCopy,\n            _anchorMasterCopy,\n            _consensusGatewayMasterCopy\n        )\n    {\n\n    }\n    function setConsensus(ConsensusInterface _consensus) public {\n        consensus = _consensus;\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/axiom/AxiomTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/axiom/AxiomTest.sol",
+    "exportedSymbols": {
+      "AxiomTest": [
+        14135
+      ]
+    },
+    "id": 14136,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14094,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:63"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/Axiom.sol",
+        "file": "../../axiom/Axiom.sol",
+        "id": 14095,
+        "nodeType": "ImportDirective",
+        "scope": 14136,
+        "sourceUnit": 751,
+        "src": "621:31:63",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14096,
+              "name": "Axiom",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 750,
+              "src": "676:5:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Axiom_$750",
+                "typeString": "contract Axiom"
+              }
+            },
+            "id": 14097,
+            "nodeType": "InheritanceSpecifier",
+            "src": "676:5:63"
+          }
+        ],
+        "contractDependencies": [
+          750,
+          785,
+          5933,
+          13057
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14135,
+        "linearizedBaseContracts": [
+          14135,
+          750,
+          5933,
+          13057,
+          785
+        ],
+        "name": "AxiomTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14123,
+              "nodeType": "Block",
+              "src": "1831:8:63",
+              "statements": []
+            },
+            "documentation": "Constructor for Axiom contract\n     * @param _techGov Technical governance address.\n@param _consensusMasterCopy Consensus master copy contract address.\n@param _coreMasterCopy Core master copy contract address.\n@param _committeeMasterCopy Committee master copy contract address.\n@param _reputationMasterCopy Reputation master copy contract address.\n@param _anchorMasterCopy Anchor master copy contract address.\n@param _consensusGatewayMasterCopy Consensus gateway master copy contract address.",
+            "id": 14124,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 14114,
+                    "name": "_techGov",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14099,
+                    "src": "1604:8:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14115,
+                    "name": "_consensusMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14101,
+                    "src": "1626:20:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14116,
+                    "name": "_coreMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14103,
+                    "src": "1660:15:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14117,
+                    "name": "_committeeMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14105,
+                    "src": "1689:20:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14118,
+                    "name": "_reputationMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14107,
+                    "src": "1723:21:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14119,
+                    "name": "_anchorMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14109,
+                    "src": "1758:17:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14120,
+                    "name": "_consensusGatewayMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14111,
+                    "src": "1789:27:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 14121,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 14113,
+                  "name": "Axiom",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 750,
+                  "src": "1585:5:63",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Axiom_$750_$",
+                    "typeString": "type(contract Axiom)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1585:241:63"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14099,
+                  "name": "_techGov",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1311:16:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14098,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1311:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14101,
+                  "name": "_consensusMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1337:28:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14100,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1337:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14103,
+                  "name": "_coreMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1375:23:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14102,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1375:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14105,
+                  "name": "_committeeMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1408:28:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14104,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1408:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14107,
+                  "name": "_reputationMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1446:29:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14106,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1446:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14109,
+                  "name": "_anchorMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1485:25:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14108,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1485:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14111,
+                  "name": "_consensusGatewayMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1520:35:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14110,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1520:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1301:260:63"
+            },
+            "returnParameters": {
+              "id": 14122,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1831:0:63"
+            },
+            "scope": 14135,
+            "src": "1290:549:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14133,
+              "nodeType": "Block",
+              "src": "1904:39:63",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14131,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14129,
+                      "name": "consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5886,
+                      "src": "1914:9:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14130,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14126,
+                      "src": "1926:10:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "src": "1914:22:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "id": 14132,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1914:22:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14134,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14126,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14134,
+                  "src": "1866:29:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14125,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1866:18:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1865:31:63"
+            },
+            "returnParameters": {
+              "id": 14128,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1904:0:63"
+            },
+            "scope": 14135,
+            "src": "1844:99:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14136,
+        "src": "654:1291:63"
+      }
+    ],
+    "src": "0:1946:63"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/axiom/AxiomTest.sol",
+    "exportedSymbols": {
+      "AxiomTest": [
+        14135
+      ]
+    },
+    "id": 14136,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14094,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:63"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/axiom/Axiom.sol",
+        "file": "../../axiom/Axiom.sol",
+        "id": 14095,
+        "nodeType": "ImportDirective",
+        "scope": 14136,
+        "sourceUnit": 751,
+        "src": "621:31:63",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14096,
+              "name": "Axiom",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 750,
+              "src": "676:5:63",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Axiom_$750",
+                "typeString": "contract Axiom"
+              }
+            },
+            "id": 14097,
+            "nodeType": "InheritanceSpecifier",
+            "src": "676:5:63"
+          }
+        ],
+        "contractDependencies": [
+          750,
+          785,
+          5933,
+          13057
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14135,
+        "linearizedBaseContracts": [
+          14135,
+          750,
+          5933,
+          13057,
+          785
+        ],
+        "name": "AxiomTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14123,
+              "nodeType": "Block",
+              "src": "1831:8:63",
+              "statements": []
+            },
+            "documentation": "Constructor for Axiom contract\n     * @param _techGov Technical governance address.\n@param _consensusMasterCopy Consensus master copy contract address.\n@param _coreMasterCopy Core master copy contract address.\n@param _committeeMasterCopy Committee master copy contract address.\n@param _reputationMasterCopy Reputation master copy contract address.\n@param _anchorMasterCopy Anchor master copy contract address.\n@param _consensusGatewayMasterCopy Consensus gateway master copy contract address.",
+            "id": 14124,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 14114,
+                    "name": "_techGov",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14099,
+                    "src": "1604:8:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14115,
+                    "name": "_consensusMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14101,
+                    "src": "1626:20:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14116,
+                    "name": "_coreMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14103,
+                    "src": "1660:15:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14117,
+                    "name": "_committeeMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14105,
+                    "src": "1689:20:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14118,
+                    "name": "_reputationMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14107,
+                    "src": "1723:21:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14119,
+                    "name": "_anchorMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14109,
+                    "src": "1758:17:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  {
+                    "argumentTypes": null,
+                    "id": 14120,
+                    "name": "_consensusGatewayMasterCopy",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14111,
+                    "src": "1789:27:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 14121,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 14113,
+                  "name": "Axiom",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 750,
+                  "src": "1585:5:63",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Axiom_$750_$",
+                    "typeString": "type(contract Axiom)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1585:241:63"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14099,
+                  "name": "_techGov",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1311:16:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14098,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1311:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14101,
+                  "name": "_consensusMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1337:28:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14100,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1337:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14103,
+                  "name": "_coreMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1375:23:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14102,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1375:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14105,
+                  "name": "_committeeMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1408:28:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14104,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1408:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14107,
+                  "name": "_reputationMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1446:29:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14106,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1446:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14109,
+                  "name": "_anchorMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1485:25:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14108,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1485:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 14111,
+                  "name": "_consensusGatewayMasterCopy",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14124,
+                  "src": "1520:35:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14110,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1520:7:63",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1301:260:63"
+            },
+            "returnParameters": {
+              "id": 14122,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1831:0:63"
+            },
+            "scope": 14135,
+            "src": "1290:549:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14133,
+              "nodeType": "Block",
+              "src": "1904:39:63",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14131,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14129,
+                      "name": "consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 5886,
+                      "src": "1914:9:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14130,
+                      "name": "_consensus",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14126,
+                      "src": "1926:10:63",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                        "typeString": "contract ConsensusInterface"
+                      }
+                    },
+                    "src": "1914:22:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "id": 14132,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1914:22:63"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14134,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConsensus",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14127,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14126,
+                  "name": "_consensus",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14134,
+                  "src": "1866:29:63",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                    "typeString": "contract ConsensusInterface"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 14125,
+                    "name": "ConsensusInterface",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5881,
+                    "src": "1866:18:63",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ConsensusInterface_$5881",
+                      "typeString": "contract ConsensusInterface"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1865:31:63"
+            },
+            "returnParameters": {
+              "id": 14128,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1904:0:63"
+            },
+            "scope": 14135,
+            "src": "1844:99:63",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 14136,
+        "src": "654:1291:63"
+      }
+    ],
+    "src": "0:1946:63"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.777Z",
+  "devdoc": {
+    "methods": {
+      "constructor": {
+        "params": {
+          "_anchorMasterCopy": "Anchor master copy contract address.",
+          "_committeeMasterCopy": "Committee master copy contract address.",
+          "_consensusGatewayMasterCopy": "Consensus gateway master copy contract address.",
+          "_consensusMasterCopy": "Consensus master copy contract address.",
+          "_coreMasterCopy": "Core master copy contract address.",
+          "_reputationMasterCopy": "Reputation master copy contract address.",
+          "_techGov": "Technical governance address."
+        }
+      },
+      "deployAnchor(bytes)": {
+        "params": {
+          "_anchorSetupData": "Setup data for anchor contract."
+        },
+        "return": "anchor_ Address of anchor contract."
+      },
+      "deployMetachainProxies(bytes,bytes)": {
+        "params": {
+          "_consensusGatewaySetupData": "Setup data for consensus gateway contract.",
+          "_coreSetupData": "Setup data for core contract."
+        },
+        "return": "core_ Address of core contract.consensusGateway_ Address of consensus gateway contract."
+      },
+      "newCommittee(bytes)": {
+        "params": {
+          "_data": "Setup function call data."
+        },
+        "return": "deployedAddress_ Deployed contract address."
+      },
+      "newCore(bytes)": {
+        "params": {
+          "_data": "Setup function call data."
+        },
+        "return": "Deployed contract address."
+      },
+      "newMetachain()": {
+        "return": "metachainId_ Metachain id."
+      },
+      "setupConsensus(uint256,uint256,uint256,uint256,uint256,address,uint256,address,uint256,uint256,uint256,uint256)": {
+        "params": {
+          "_cashableEarningsPerMille": "Fraction of the total amount that can                                 be cashed by validators.",
+          "_coinbaseSplitPerMille": "Coinbase split per mille.",
+          "_committeeSize": "Max committee size that can be formed.",
+          "_gasTargetDelta": "Gas target delta to open new metablock.",
+          "_initialReputation": "Initial reputations that will be set when                          validators joins.",
+          "_joinLimit": "Maximum number of validators that can join in a core.",
+          "_minValidators": "Minimum number of validators that must join a                      created core to open.",
+          "_most": "MOST token address.",
+          "_stakeMOSTAmount": "Amount of MOST that will be staked by validators.",
+          "_stakeWETHAmount": "Amount of wEth that will be staked by validators.",
+          "_wETH": "wEth token address.",
+          "_withdrawalCooldownPeriodInBlocks": "Cooling period for withdrawal                                         after logout."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "constructor": "Constructor for Axiom contract",
+      "deployAnchor(bytes)": {
+        "notice": "Deploys proxy for anchor contract."
+      },
+      "deployMetachainProxies(bytes,bytes)": {
+        "notice": "Deploys metachain proxies. Only consensus can call this function."
+      },
+      "newCommittee(bytes)": {
+        "notice": "Deploy Committee proxy contract. This can be called only by consensus        contract."
+      },
+      "newCore(bytes)": {
+        "notice": "Deploy Core proxy contract. This can be called only by consensus        contract."
+      },
+      "newMetachain()": {
+        "notice": "Setup a new metachain. Only technical governance address can        call this function."
+      },
+      "setupConsensus(uint256,uint256,uint256,uint256,uint256,address,uint256,address,uint256,uint256,uint256,uint256)": {
+        "notice": "Setup consensus contract, this can be only called once by        technical governance address."
+      }
+    }
+  }
+}

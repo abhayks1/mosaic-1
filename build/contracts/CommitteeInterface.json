@@ -1,0 +1,434 @@
+{
+  "contractName": "CommitteeInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_furtherMember",
+          "type": "address"
+        }
+      ],
+      "name": "enterCommittee",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "committeeDecision",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"committeeDecision\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_furtherMember\",\"type\":\"address\"}],\"name\":\"enterCommittee\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"enterCommittee(address,address)\":{\"params\":{\"_furtherMember\":\"Further member (compared with the validator)                      address. The specified address:                         - has been already entered\",\"_validator\":\"Validator address to enter.                  The specified address:                     - is not 0                     - is not the member-sentinel                     - has not been already entered\"}}}},\"userdoc\":{\"methods\":{\"committeeDecision()\":{\"notice\":\"Committee decision once the quorum is reached.\"},\"enterCommittee(address,address)\":{\"notice\":\"Enters a `_validator` into the committee.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol\":\"CommitteeInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol\":{\"keccak256\":\"0x2228fad5fce0a0e1579276bd4307dcf337edb62447671b4385cce0c79b0bddd4\",\"urls\":[\"bzz-raw://aaa4e991082803324cf3f16bf24b7731902fd928a7cf3a6b5a007a901d584761\",\"dweb:/ipfs/QmfHmamQBuFeKuh14xFReqXv6DX3W3iNq8kCC526mNHqNe\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\ninterface CommitteeInterface {\n\n    /**\n     * @notice Enters a `_validator` into the committee.\n     * @param _validator Validator address to enter.\n     *                   The specified address:\n     *                      - is not 0\n     *                      - is not the member-sentinel\n     *                      - has not been already entered\n     * @param _furtherMember Further member (compared with the validator)\n     *                       address. The specified address:\n     *                          - has been already entered\n     */\n    function enterCommittee(\n        address _validator,\n        address _furtherMember\n    )\n        external;\n\n    /**\n     * Committee decision once the quorum is reached.\n     */\n    function committeeDecision() external view returns (bytes32);\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol",
+    "exportedSymbols": {
+      "CommitteeInterface": [
+        2036
+      ]
+    },
+    "id": 2037,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2023,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 2036,
+        "linearizedBaseContracts": [
+          2036
+        ],
+        "name": "CommitteeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Enters a `_validator` into the committee.\n@param _validator Validator address to enter.\n                  The specified address:\n                     - is not 0\n                     - is not the member-sentinel\n                     - has not been already entered\n@param _furtherMember Further member (compared with the validator)\n                      address. The specified address:\n                         - has been already entered",
+            "id": 2030,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enterCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2028,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2025,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "625:18:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2024,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "625:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2027,
+                  "name": "_furtherMember",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "653:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2026,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "653:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "615:66:11"
+            },
+            "returnParameters": {
+              "id": 2029,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "698:0:11"
+            },
+            "scope": 2036,
+            "src": "592:107:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Committee decision once the quorum is reached.",
+            "id": 2035,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2031,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "801:2:11"
+            },
+            "returnParameters": {
+              "id": 2034,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2033,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2035,
+                  "src": "827:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2032,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "827:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "826:9:11"
+            },
+            "scope": 2036,
+            "src": "775:61:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2037,
+        "src": "33:805:11"
+      }
+    ],
+    "src": "0:839:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/committee/CommitteeInterface.sol",
+    "exportedSymbols": {
+      "CommitteeInterface": [
+        2036
+      ]
+    },
+    "id": 2037,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2023,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:11"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 2036,
+        "linearizedBaseContracts": [
+          2036
+        ],
+        "name": "CommitteeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Enters a `_validator` into the committee.\n@param _validator Validator address to enter.\n                  The specified address:\n                     - is not 0\n                     - is not the member-sentinel\n                     - has not been already entered\n@param _furtherMember Further member (compared with the validator)\n                      address. The specified address:\n                         - has been already entered",
+            "id": 2030,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "enterCommittee",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2028,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2025,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "625:18:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2024,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "625:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2027,
+                  "name": "_furtherMember",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2030,
+                  "src": "653:22:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2026,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "653:7:11",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "615:66:11"
+            },
+            "returnParameters": {
+              "id": 2029,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "698:0:11"
+            },
+            "scope": 2036,
+            "src": "592:107:11",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": "Committee decision once the quorum is reached.",
+            "id": 2035,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "committeeDecision",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2031,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "801:2:11"
+            },
+            "returnParameters": {
+              "id": 2034,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2033,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2035,
+                  "src": "827:7:11",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 2032,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "827:7:11",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "826:9:11"
+            },
+            "scope": 2036,
+            "src": "775:61:11",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 2037,
+        "src": "33:805:11"
+      }
+    ],
+    "src": "0:839:11"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.626Z",
+  "devdoc": {
+    "methods": {
+      "enterCommittee(address,address)": {
+        "params": {
+          "_furtherMember": "Further member (compared with the validator)                      address. The specified address:                         - has been already entered",
+          "_validator": "Validator address to enter.                  The specified address:                     - is not 0                     - is not the member-sentinel                     - has not been already entered"
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "committeeDecision()": {
+        "notice": "Committee decision once the quorum is reached."
+      },
+      "enterCommittee(address,address)": {
+        "notice": "Enters a `_validator` into the committee."
+      }
+    }
+  }
+}

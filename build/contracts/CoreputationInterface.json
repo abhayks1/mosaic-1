@@ -1,0 +1,306 @@
+{
+  "contractName": "CoreputationInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_validator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_reputation",
+          "type": "uint256"
+        }
+      ],
+      "name": "upsertValidator",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_validator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_reputation\",\"type\":\"uint256\"}],\"name\":\"upsertValidator\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"upsertValidator(address,uint256)\":{\"params\":{\"_reputation\":\"Validator reputation value.\",\"_validator\":\"Validator address to upsert.\"}}}},\"userdoc\":{\"methods\":{\"upsertValidator(address,uint256)\":{\"notice\":\"Insert or update validator information.\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/CoreputationInterface.sol\":\"CoreputationInterface\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/CoreputationInterface.sol\":{\"keccak256\":\"0xdb9f5a23c72becd679917a030d8813c5d727c1838a5a49e6ec21e1139503ae9f\",\"urls\":[\"bzz-raw://bbf88416b2590ab2366735eaa8cd7ed82f69c24d2243ed2bb91ea0c9f91e244b\",\"dweb:/ipfs/QmTYcsMSYGvKuukSChed6JSeawoidxNDuAPpbmXUDFjKkf\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\ninterface CoreputationInterface {\n\n    /**\n     * @notice Insert or update validator information.\n     *\n     * @param _validator Validator address to upsert.\n     * @param _reputation Validator reputation value.\n     */\n    function upsertValidator(\n        address _validator,\n        uint256 _reputation\n    )\n        external;\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/CoreputationInterface.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/CoreputationInterface.sol",
+    "exportedSymbols": {
+      "CoreputationInterface": [
+        13178
+      ]
+    },
+    "id": 13179,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13170,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:58"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 13178,
+        "linearizedBaseContracts": [
+          13178
+        ],
+        "name": "CoreputationInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Insert or update validator information.\n     * @param _validator Validator address to upsert.\n@param _reputation Validator reputation value.",
+            "id": 13177,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13172,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13177,
+                  "src": "880:18:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13171,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:58",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13174,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13177,
+                  "src": "908:19:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13173,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:7:58",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "870:63:58"
+            },
+            "returnParameters": {
+              "id": 13176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "950:0:58"
+            },
+            "scope": 13178,
+            "src": "846:105:58",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 13179,
+        "src": "621:332:58"
+      }
+    ],
+    "src": "0:954:58"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/reputation/CoreputationInterface.sol",
+    "exportedSymbols": {
+      "CoreputationInterface": [
+        13178
+      ]
+    },
+    "id": 13179,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 13170,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:58"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 13178,
+        "linearizedBaseContracts": [
+          13178
+        ],
+        "name": "CoreputationInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Insert or update validator information.\n     * @param _validator Validator address to upsert.\n@param _reputation Validator reputation value.",
+            "id": 13177,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "upsertValidator",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 13175,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 13172,
+                  "name": "_validator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13177,
+                  "src": "880:18:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 13171,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:58",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 13174,
+                  "name": "_reputation",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 13177,
+                  "src": "908:19:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 13173,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "908:7:58",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "870:63:58"
+            },
+            "returnParameters": {
+              "id": 13176,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "950:0:58"
+            },
+            "scope": 13178,
+            "src": "846:105:58",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 13179,
+        "src": "621:332:58"
+      }
+    ],
+    "src": "0:954:58"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.765Z",
+  "devdoc": {
+    "methods": {
+      "upsertValidator(address,uint256)": {
+        "params": {
+          "_reputation": "Validator reputation value.",
+          "_validator": "Validator address to upsert."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "upsertValidator(address,uint256)": {
+        "notice": "Insert or update validator information."
+      }
+    }
+  }
+}

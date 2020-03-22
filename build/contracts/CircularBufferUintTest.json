@@ -1,0 +1,422 @@
+{
+  "contractName": "CircularBufferUintTest",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_maxItems",
+          "type": "uint256"
+        }
+      ],
+      "name": "setupCircularBufferExternal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_maxItems\",\"type\":\"uint256\"}],\"name\":\"setupCircularBufferExternal\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/circular_buffer_uint/CircularBufferUintTest.sol\":\"CircularBufferUintTest\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol\":{\"keccak256\":\"0xa9d4af0caacd760200028696a0e489ba170568fcfae0fc90d93aab1af88e8734\",\"urls\":[\"bzz-raw://7eead9e2e268db6f8144820c293e944420017df2c3caa65f3ce55cb27f3784f7\",\"dweb:/ipfs/QmNnLSJZXR7KLZ9SCTzWsyS8Z7DW4peaaf1f3b76rAJziV\"]},\"/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/circular_buffer_uint/CircularBufferUintTest.sol\":{\"keccak256\":\"0xb209dd09d54bbf9220bd0aa546c733a3a62d26dd37145a5b85be4205c7f78543\",\"urls\":[\"bzz-raw://010c56aad895d91ef07ac8f8d797953fd0be1767fe4bda70cb9dd0195039a188\",\"dweb:/ipfs/QmePzBsk1anPAWFewYdBjKywG7RBsFaGwAE1nySFK3vye5\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506101dc806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c806398fb734614610030575b600080fd5b61004d6004803603602081101561004657600080fd5b503561004f565b005b6100588161005b565b50565b6000811161009a5760405162461bcd60e51b815260040180806020018281038252604d81526020018061015b604d913960600191505060405180910390fd5b600054156100d95760405162461bcd60e51b81526004018080602001828103825260278152602001806101346027913960400191505060405180910390fd5b806100e56000826100e9565b5050565b81548183558181111561010d5760008381526020902061010d918101908301610112565b505050565b61013091905b8082111561012c5760008155600101610118565b5090565b9056fe43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a72315820e2aae664e654f8ee594040aa297840d4b77d1352afea2f1e36569b7ed98b008c64736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c806398fb734614610030575b600080fd5b61004d6004803603602081101561004657600080fd5b503561004f565b005b6100588161005b565b50565b6000811161009a5760405162461bcd60e51b815260040180806020018281038252604d81526020018061015b604d913960600191505060405180910390fd5b600054156100d95760405162461bcd60e51b81526004018080602001828103825260278152602001806101346027913960400191505060405180910390fd5b806100e56000826100e9565b5050565b81548183558181111561010d5760008381526020902061010d918101908301610112565b505050565b61013091905b8082111561012c5760008155600101610118565b5090565b9056fe43697263756c6172206275666665722073697a652063616e206265207365747570206f6e63652e546865206d6178206e756d626572206f66206974656d7320746f2073746f726520696e20612063697263756c617220627566666572206d7573742062652067726561746572207468616e20302ea265627a7a72315820e2aae664e654f8ee594040aa297840d4b77d1352afea2f1e36569b7ed98b008c64736f6c634300050d0032",
+  "sourceMap": "666:175:65:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:175:65;;;;;;;",
+  "deployedSourceMap": "666:175:65:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;666:175:65;;;;;;;;;;;;;;;;;;;727:112;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;727:112:65;;:::i;:::-;;;802:30;822:9;802:19;:30::i;:::-;727:112;:::o;1840:361:34:-;1941:1;1929:9;:13;1908:137;;;;-1:-1:-1;;;1908:137:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2077:5;:12;:17;2056:103;;;;-1:-1:-1;;;2056:103:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2185:9;2170:24;:5;2185:9;2170:24;:::i;:::-;;1840:361;:::o;666:175:65:-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\nimport \"../../lib/CircularBufferUint.sol\";\n\n// Copyright 2019 OpenST Ltd.\n//\n// Licensed under the Apache License, Version 2.0 (the \"License\");\n// you may not use this file except in compliance with the License.\n// You may obtain a copy of the License at\n//\n//    http://www.apache.org/licenses/LICENSE-2.0\n//\n// Unless required by applicable law or agreed to in writing, software\n// distributed under the License is distributed on an \"AS IS\" BASIS,\n// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n// See the License for the specific language governing permissions and\n// limitations under the License.\n\n\ncontract CircularBufferUintTest is CircularBufferUint {\n\n    function setupCircularBufferExternal(uint256 _maxItems) external {\n        setupCircularBuffer(_maxItems);\n    }\n}\n",
+  "sourcePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/circular_buffer_uint/CircularBufferUintTest.sol",
+  "ast": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/circular_buffer_uint/CircularBufferUintTest.sol",
+    "exportedSymbols": {
+      "CircularBufferUintTest": [
+        14298
+      ]
+    },
+    "id": 14299,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14284,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:65"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol",
+        "file": "../../lib/CircularBufferUint.sol",
+        "id": 14285,
+        "nodeType": "ImportDirective",
+        "scope": 14299,
+        "sourceUnit": 8874,
+        "src": "33:42:65",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14286,
+              "name": "CircularBufferUint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8873,
+              "src": "701:18:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CircularBufferUint_$8873",
+                "typeString": "contract CircularBufferUint"
+              }
+            },
+            "id": 14287,
+            "nodeType": "InheritanceSpecifier",
+            "src": "701:18:65"
+          }
+        ],
+        "contractDependencies": [
+          8873
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14298,
+        "linearizedBaseContracts": [
+          14298,
+          8873
+        ],
+        "name": "CircularBufferUintTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14296,
+              "nodeType": "Block",
+              "src": "792:47:65",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14293,
+                        "name": "_maxItems",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14289,
+                        "src": "822:9:65",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 14292,
+                      "name": "setupCircularBuffer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8820,
+                      "src": "802:19:65",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 14294,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "802:30:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14295,
+                  "nodeType": "ExpressionStatement",
+                  "src": "802:30:65"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14297,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupCircularBufferExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14290,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14289,
+                  "name": "_maxItems",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14297,
+                  "src": "764:17:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14288,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "764:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "763:19:65"
+            },
+            "returnParameters": {
+              "id": 14291,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "792:0:65"
+            },
+            "scope": 14298,
+            "src": "727:112:65",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14299,
+        "src": "666:175:65"
+      }
+    ],
+    "src": "0:842:65"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/test/circular_buffer_uint/CircularBufferUintTest.sol",
+    "exportedSymbols": {
+      "CircularBufferUintTest": [
+        14298
+      ]
+    },
+    "id": 14299,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14284,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:65"
+      },
+      {
+        "absolutePath": "/Users/abhay/Documents/projects/abhayforks/mosaic-1/contracts/lib/CircularBufferUint.sol",
+        "file": "../../lib/CircularBufferUint.sol",
+        "id": 14285,
+        "nodeType": "ImportDirective",
+        "scope": 14299,
+        "sourceUnit": 8874,
+        "src": "33:42:65",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14286,
+              "name": "CircularBufferUint",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 8873,
+              "src": "701:18:65",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CircularBufferUint_$8873",
+                "typeString": "contract CircularBufferUint"
+              }
+            },
+            "id": 14287,
+            "nodeType": "InheritanceSpecifier",
+            "src": "701:18:65"
+          }
+        ],
+        "contractDependencies": [
+          8873
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14298,
+        "linearizedBaseContracts": [
+          14298,
+          8873
+        ],
+        "name": "CircularBufferUintTest",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 14296,
+              "nodeType": "Block",
+              "src": "792:47:65",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14293,
+                        "name": "_maxItems",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14289,
+                        "src": "822:9:65",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 14292,
+                      "name": "setupCircularBuffer",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 8820,
+                      "src": "802:19:65",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 14294,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "802:30:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14295,
+                  "nodeType": "ExpressionStatement",
+                  "src": "802:30:65"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 14297,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setupCircularBufferExternal",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 14290,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14289,
+                  "name": "_maxItems",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14297,
+                  "src": "764:17:65",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 14288,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "764:7:65",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "763:19:65"
+            },
+            "returnParameters": {
+              "id": 14291,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "792:0:65"
+            },
+            "scope": 14298,
+            "src": "727:112:65",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14299,
+        "src": "666:175:65"
+      }
+    ],
+    "src": "0:842:65"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.17",
+  "updatedAt": "2020-03-21T06:48:34.780Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
